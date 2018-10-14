@@ -1,0 +1,6 @@
+@startuml
+  application_client -> wildfire_server : login
+  wildfire_server -> application_client : login success（with token）
+  application_client -> SDK : connect （userId, token）
+  SDK --> application_client : connection status
+@enduml

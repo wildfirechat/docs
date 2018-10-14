@@ -1,0 +1,784 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>机器内存的选择 · 火信开发手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="火信">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="benchmark.html" />
+    
+    
+    <link rel="prev" href="db_config.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    产品介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../quick_start/">
+            
+                <a href="../quick_start/">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../quick_start/server.html">
+            
+                <a href="../quick_start/server.html">
+            
+                    
+                    服务器部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../quick_start/android.html">
+            
+                <a href="../quick_start/android.html">
+            
+                    
+                    安卓编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../quick_start/iOS.html">
+            
+                <a href="../quick_start/iOS.html">
+            
+                    
+                    iOS编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../architecture/">
+            
+                <a href="../architecture/">
+            
+                    
+                    系统架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../base_knowledge/">
+            
+                <a href="../base_knowledge/">
+            
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../base_knowledge/sdk_demo.html">
+            
+                <a href="../base_knowledge/sdk_demo.html">
+            
+                    
+                    SDK与Demo的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../base_knowledge/user.html">
+            
+                <a href="../base_knowledge/user.html">
+            
+                    
+                    用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../base_knowledge/sdk_abilities.html">
+            
+                <a href="../base_knowledge/sdk_abilities.html">
+            
+                    
+                    SDK的功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../base_knowledge/connect.html">
+            
+                <a href="../base_knowledge/connect.html">
+            
+                    
+                    连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../base_knowledge/conversation.html">
+            
+                <a href="../base_knowledge/conversation.html">
+            
+                    
+                    会话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../base_knowledge/message.html">
+            
+                <a href="../base_knowledge/message.html">
+            
+                    
+                    消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../base_knowledge/message_content.html">
+            
+                <a href="../base_knowledge/message_content.html">
+            
+                    
+                    消息内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../base_knowledge/message_payload.html">
+            
+                <a href="../base_knowledge/message_payload.html">
+            
+                    
+                    消息负载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../base_knowledge/storage_and_sync.html">
+            
+                <a href="../base_knowledge/storage_and_sync.html">
+            
+                    
+                    存储与同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../base_knowledge/offline_message.html">
+            
+                <a href="../base_knowledge/offline_message.html">
+            
+                    
+                    离线消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../base_knowledge/group.html">
+            
+                <a href="../base_knowledge/group.html">
+            
+                    
+                    群组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../base_knowledge/chatroom.html">
+            
+                <a href="../base_knowledge/chatroom.html">
+            
+                    
+                    聊天室
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    服务器说明
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="api_description.html">
+            
+                <a href="api_description.html">
+            
+                    
+                    服务器接口说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="db_config.html">
+            
+                <a href="db_config.html">
+            
+                    
+                    数据库配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="server_memory.html">
+            
+                <a href="server_memory.html">
+            
+                    
+                    机器内存的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="benchmark.html">
+            
+                <a href="benchmark.html">
+            
+                    
+                    性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="server_config.html">
+            
+                <a href="server_config.html">
+            
+                    
+                    服务器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="admin_api/">
+            
+                <a href="admin_api/">
+            
+                    
+                    Admin API接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="admin_api/user_api.html">
+            
+                <a href="admin_api/user_api.html">
+            
+                    
+                    用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="admin_api/message_api.html">
+            
+                <a href="admin_api/message_api.html">
+            
+                    
+                    消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="admin_api/group_api.html">
+            
+                <a href="admin_api/group_api.html">
+            
+                    
+                    群组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="admin_api/chatroom_api.html">
+            
+                <a href="admin_api/chatroom_api.html">
+            
+                    
+                    聊天室
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="admin_api/event_callback_api.html">
+            
+                <a href="admin_api/event_callback_api.html">
+            
+                    
+                    事件回调
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="event_callback.html">
+            
+                <a href="event_callback.html">
+            
+                    
+                    事件回调
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="push_config.html">
+            
+                <a href="push_config.html">
+            
+                    
+                    推送证书设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="media_server.html">
+            
+                <a href="media_server.html">
+            
+                    
+                    媒体服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="db_clean.html">
+            
+                <a href="db_clean.html">
+            
+                    
+                    数据库的清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../android/">
+            
+                <a href="../android/">
+            
+                    
+                    Android开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../android/compile.html">
+            
+                <a href="../android/compile.html">
+            
+                    
+                    代码下载与编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ios/">
+            
+                <a href="../ios/">
+            
+                    
+                    iOS开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ios/compile.html">
+            
+                <a href="../ios/compile.html">
+            
+                    
+                    代码下与编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >机器内存的选择</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x673A;&#x5668;&#x5185;&#x5B58;&#x7684;&#x9009;&#x62E9;">&#x673A;&#x5668;&#x5185;&#x5B58;&#x7684;&#x9009;&#x62E9;</h1>
+<p>&#x706B;&#x4FE1;&#x4F7F;&#x7528;&#x4E86;<a href="https://hazelcast.com" target="_blank">hazelcast</a>&#x4F5C;&#x4E3A;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x3002;&#x5728;&#x5185;&#x5B58;&#x8D8A;&#x6765;&#x8D8A;&#x4FBF;&#x5B9C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5408;&#x7406;&#x5730;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#xFF0C;&#x4F1A;&#x5E26;&#x6765;&#x6027;&#x80FD;&#x7684;&#x5927;&#x5E45;&#x63D0;&#x5347;&#x3002;&#x706B;&#x4FE1;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x3002;</p>
+<h2 id="&#x6D88;&#x606F;&#x6570;&#x636E;">&#x6D88;&#x606F;&#x6570;&#x636E;</h2>
+<h4 id="&#x6D88;&#x606F;&#x5BF9;&#x5185;&#x5B58;&#x7684;&#x5360;&#x7528;">&#x6D88;&#x606F;&#x5BF9;&#x5185;&#x5B58;&#x7684;&#x5360;&#x7528;</h4>
+<p>&#x706B;&#x4FE1;&#x91C7;&#x7528;&#x4E86;&#x5148;&#x8FDB;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5BF9;&#x4E8E;&#x6D88;&#x606F;&#x53EA;&#x4FDD;&#x5B58;&#x4E00;&#x6761;&#x539F;&#x59CB;&#x6570;&#x636E;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;1&#x5BF9;1&#x804A;&#x5929;&#x548C;&#x7FA4;&#x804A;&#x6BCF;&#x53D1;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x706B;&#x4FE1;&#x53EA;&#x4FDD;&#x5B58;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x3002;&#x53E6;&#x5916;&#x706B;&#x4FE1;&#x7684;&#x6D88;&#x606F;&#x5C3A;&#x5BF8;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x5BF9;&#x4E8E;&#x56FE;&#x7247;&#x89C6;&#x9891;&#x8BED;&#x97F3;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;&#x5A92;&#x4F53;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;&#x5A92;&#x4F53;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6D88;&#x606F;&#x4F53;&#x5185;&#x53EA;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;url&#xFF0C;&#x6D88;&#x606F;&#x4F7F;&#x7528;pb&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#xFF0C;&#x5E73;&#x5747;&#x4E0B;&#x6765;&#x4E0D;&#x4F1A;&#x5927;&#x4E8E;1K&#x5B57;&#x8282;&#x3002;</p>
+<h4 id="&#x7F13;&#x5B58;&#x7684;&#x914D;&#x7F6E;">&#x7F13;&#x5B58;&#x7684;&#x914D;&#x7F6E;</h4>
+<p>&#x6D88;&#x606F;&#x6570;&#x636E;&#x4F1A;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7EBF;&#x6027;&#x79EF;&#x7D2F;&#xFF0C;&#x800C;&#x4E14;&#x65E7;&#x7684;&#x6D88;&#x606F;&#x53EF;&#x80FD;&#x518D;&#x4E5F;&#x7528;&#x4E0D;&#x5230;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x4E8E;&#x6D88;&#x606F;&#xFF0C;&#x706B;&#x4FE1;&#x7684;&#x5EFA;&#x8BAE;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7F13;&#x5B58;&#x6700;&#x65B0;150&#x6761;7&#x5929;&#x4EE5;&#x5185;&#x6D88;&#x606F;&#x3002;&#x9884;&#x4F30;&#x4E00;&#x4E0B;&#xFF0C;&#x5047;&#x5982;&#x6BCF;&#x6761;&#x6D88;&#x606F;1K&#xFF0C;10W&#x6D3B;&#x8DC3;&#x7528;&#x6237;&#xFF0C;10W <em> 150 </em> 1K = 15G&#x3002;&#x5F53;&#x7528;&#x6237;&#x62C9;&#x53D6;&#x6D88;&#x606F;&#x6CA1;&#x6709;&#x547D;&#x4E2D;&#x65F6;&#xFF0C;&#x4F1A;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x52A0;&#x8F7D;&#x8BE5;&#x6D88;&#x606F;&#xFF0C;&#x4E0D;&#x4F1A;&#x4E22;&#x5931;&#x6D88;&#x606F;&#x3002;&#x4FEE;&#x6539;&#x914D;&#x7F6E;<code>config/hazelcast.xml</code>, <code>max-size</code>&#x4FEE;&#x6539;&#x4E3A;&#x60A8;&#x7684;&#x7528;&#x6237;&#x6570;*100</p>
+<pre><code>&lt;map name=&quot;messages_map&quot;&gt;
+    &lt;!-- 7 days --&gt;
+    &lt;time-to-live-seconds&gt;604800&lt;/time-to-live-seconds&gt;
+    &lt;eviction-policy&gt;LRU&lt;/eviction-policy&gt;
+    &lt;max-size policy=&quot;PER_NODE&quot;&gt;15000000&lt;/max-size&gt;
+    &lt;eviction-percentage&gt;10&lt;/eviction-percentage&gt;
+    &lt;map-store enabled=&quot;true&quot;&gt;
+        &lt;class-name&gt;io.moquette.persistence.MessageLoader&lt;/class-name&gt;
+        &lt;write-delay-seconds&gt;0&lt;/write-delay-seconds&gt;
+    &lt;/map-store&gt;
+&lt;/map&gt;
+</code></pre><blockquote>
+<p>&#x6CE8;&#xFF1A;&#x6D3B;&#x8DC3;&#x7528;&#x6237;&#x6570;&#x6307;7&#x5929;&#x4EE5;&#x5185;&#x767B;&#x9646;&#x7684;&#x7528;&#x6237;&#x6570;&#x3002;</p>
+</blockquote>
+<h2 id="&#x5176;&#x5B83;&#x6570;&#x636E;">&#x5176;&#x5B83;&#x6570;&#x636E;</h2>
+<p>&#x5176;&#x5B83;&#x6570;&#x636E;&#x6BD4;&#x5982;&#x7528;&#x6237;&#xFF0C;&#x597D;&#x53CB;&#xFF0C;&#x7FA4;&#x7EC4;&#xFF0C;&#x8BBE;&#x7F6E;&#x3002;&#x57FA;&#x672C;&#x4E0E;&#x7528;&#x6237;&#x6570;&#x6210;&#x6BD4;&#x4F8B;&#xFF0C;&#x6BCF;&#x4EBA;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;50K&#x6570;&#x636E;&#xFF0C;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#xFF0C;&#x56E0;&#x6B64;&#x5168;&#x90E8;&#x653E;&#x5230;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x4E2D;&#x3002;&#x9884;&#x8BA1;&#x6709;10W&#x6D3B;&#x8DC3;&#x7528;&#x6237;&#xFF0C; 10W * 50K = 5G&#x3002;</p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x7528;&#x6237;&#x9700;&#x6C42;&#x8F83;&#x9AD8;&#x4E14;&#x7528;&#x6237;&#x6BD4;&#x8F83;&#x6D3B;&#x8DC3;&#xFF0C;&#x5EFA;&#x8BAE;&#x60A8;&#x6BCF;10W&#x6D3B;&#x8DC3;&#x7528;&#x6237;&#x914D;&#x7F6E;24G&#x5185;&#x5B58;&#xFF08;&#x8FD8;&#x6709;&#x5176;&#x5B83;&#x90E8;&#x5206;&#x6570;&#x636E;&#x6BD4;&#x5982;&#x63A8;&#x9001;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#xFF09;&#x3002;&#x5426;&#x5219;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x964D;&#x4F4E;&#x7F13;&#x5B58;&#x6570;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="db_config.html" class="navigation navigation-prev " aria-label="Previous page: 数据库配置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="benchmark.html" class="navigation navigation-next " aria-label="Next page: 性能测试">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"机器内存的选择","level":"1.5.3","depth":2,"next":{"title":"性能测试","level":"1.5.4","depth":2,"path":"server/benchmark.md","ref":"server/benchmark.md","articles":[]},"previous":{"title":"数据库配置","level":"1.5.2","depth":2,"path":"server/db_config.md","ref":"server/db_config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"火信","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"火信开发手册","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":true,"all":false}},"gitbook":"*","description":"火信开发手册"},"file":{"path":"server/server_memory.md","mtime":"2018-10-09T14:00:10.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-14T02:41:20.806Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
