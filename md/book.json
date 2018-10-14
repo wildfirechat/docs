@@ -1,0 +1,31 @@
+{
+    "title": "火信开发手册",
+    "description": "火信开发手册",
+    "author": "火信",
+
+    "links": {
+      "sharing": {
+          "google": false,
+          "facebook": false,
+          "twitter": false,
+          "weibo": true,
+          "all": false
+      }
+    },
+
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css"
+    },
+
+    "pdf": {
+      "fontSize": 9,
+      "margin": {
+        "top": 56,
+        "bottom": 56,
+        "right": 45,
+        "left": 45
+      }
+    },
+    "plugins":["toggle-chapters"]
+}
