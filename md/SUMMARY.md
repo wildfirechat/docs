@@ -34,7 +34,7 @@
     * [事件回调](server/event_callback.md)
     * [推送证书设置](server/push_config.md)
     * [媒体服务](server/media_server.md)
-    * [数据库的清理](server/db_clean.md)
+    * [服务的维护](server/server_clean.md)
 * [Android开发](android/README.md)
     * [代码下载与编译](android/compile.md)
 * [iOS开发](ios/README.md)

@@ -8,7 +8,7 @@ media.server.use_qiniu 0
 local.media.server.ip 0.0.0.0
 local.media.storage.root fs
 ```
-> 内置文件服务器有很大的限制。受限于linux的inode数，文件不能太多，需要定时清理，另外媒体文件提交较大，没有cdn加速下载会很慢，建议使用七牛媒体服务器，价格不贵，而且有CDN加速。
+> 内置文件服务器不是一个商业化的媒体服务器，有很大的限制。受限于linux的inode数，文件不能太多，需要定时清理，另外媒体文件提交较大，没有cdn加速下载会很慢，强烈建议客户在正式商用时使用七牛媒体服务器。
 
 #### 七牛服务器
 修改如下配置，```media.server.use_qiniu```配置为1，其它配置都需要配置正确。
