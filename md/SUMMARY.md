@@ -27,10 +27,11 @@
     * [服务器配置](server/server_config.md)
     * [Admin API接口](server/admin_api/README.md)
         * [用户](server/admin_api/user_api.md)
+        * [用户关系](server/admin_api/user_relation.md)
         * [消息](server/admin_api/message_api.md)
         * [群组](server/admin_api/group_api.md)
         * [聊天室](server/admin_api/chatroom_api.md)
-        * [事件回调](server/admin_api/event_callback_api.md)
+        * [code状态码](server/admin_api/error_code.md)
     * [事件回调](server/event_callback.md)
     * [推送证书设置](server/push_config.md)
     * [媒体服务](server/media_server.md)
@@ -39,4 +40,3 @@
     * [代码下载与编译](android/compile.md)
 * [iOS开发](ios/README.md)
     * [代码下与编译](ios/compile.md)
-
