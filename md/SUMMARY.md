@@ -20,7 +20,7 @@
     * [群组](base_knowledge/group.md)
     * [聊天室](base_knowledge/chatroom.md)
 * [服务器说明](server/README.md)
-    * [服务器接口说明](server/api_description.md)
+    * [服务器端口说明](server/server_port.md)
     * [数据库配置](server/db_config.md)
     * [机器内存的选择](server/server_memory.md)
     * [性能测试](server/benchmark.md)
