@@ -104,37 +104,63 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 }
 ```
 
-## 禁用用户
+## 更新用户状态
+封禁/禁言用户
 #### 地址
 ```
-http://domain/admin/user/block
+http://domain/admin/user/status
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
+| status | int | 是 | 用户状态，0 正常；1 被禁言，2 被封禁 |
 
 #### 响应
 N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_token
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\", \"status\":1}" http://localhost/admin/user/status
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 查询用户状态
+#### 地址
+```
+http://domain/admin/user/checkstatus
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| status | int | 是 | 用户状态，0 正常；1 被禁言，2 被封禁 |
+
+
+#### 示例
+```
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/checkstatus
 
 {
   "code":0,
   "msg":"success",
   "result":{
-    "userId":"a",
-    "imToken":"hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r"
+    "status":0
   }
 }
 ```
-
-## 解禁用户
+## 获取封禁/禁言用户列表
 #### 地址
 ```
-http://domain/admin/user/unblock
+http://domain/admin/user/statuslist
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -149,44 +175,25 @@ http://domain/admin/user/unblock
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_token
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/statuslist
 
 {
   "code":0,
   "msg":"success",
-  "result":{
-    "userId":"a",
-    "imToken":"hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r"
-  }
-}
-```
-## 获取封禁用户列表
-#### 地址
-```
-http://domain/admin/user/blocklist
-```
-#### body
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
-
-#### 响应
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
-| imToken | string | 是 | 用户token |
-
-#### 示例
-```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_token
-
-{
-  "code":0,
-  "msg":"success",
-  "result":{
-    "userId":"a",
-    "imToken":"hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r"
-  }
+  "result":[
+    {
+      "userId":"a",
+      "status":1,
+    },
+    {
+      "userId":"b",
+      "status":2,
+    },
+    {
+      "userId":"c",
+      "status":3,
+    },
+  ]
 }
 ```
 
