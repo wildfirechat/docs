@@ -358,12 +358,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../api_description.html">
+        <li class="chapter " data-level="1.5.1" data-path="../server_port.html">
             
-                <a href="../api_description.html">
+                <a href="../server_port.html">
             
                     
-                    服务器接口说明
+                    服务器端口说明
             
                 </a>
             
@@ -687,17 +687,484 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7528;&#x6237;">&#x7528;&#x6237;</h1>
-<h4 id="&#x83B7;&#x53D6;&#x7528;&#x6237;token">&#x83B7;&#x53D6;&#x7528;&#x6237;token</h4>
-<h4 id="&#x6CE8;&#x518C;&#x66F4;&#x65B0;&#x7528;&#x6237;">&#x6CE8;&#x518C;/&#x66F4;&#x65B0;&#x7528;&#x6237;</h4>
-<h4 id="&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</h4>
-<h4 id="&#x7981;&#x7528;&#x7528;&#x6237;">&#x7981;&#x7528;&#x7528;&#x6237;</h4>
-<h4 id="&#x89E3;&#x7981;&#x7528;&#x6237;">&#x89E3;&#x7981;&#x7528;&#x6237;</h4>
-<h4 id="&#x83B7;&#x53D6;&#x5C01;&#x7981;&#x7528;&#x6237;&#x5217;&#x8868;">&#x83B7;&#x53D6;&#x5C01;&#x7981;&#x7528;&#x6237;&#x5217;&#x8868;</h4>
-<h4 id="&#x7981;&#x8A00;&#x7528;&#x6237;">&#x7981;&#x8A00;&#x7528;&#x6237;</h4>
-<h4 id="&#x89E3;&#x9664;&#x7981;&#x8A00;&#x7528;&#x6237;">&#x89E3;&#x9664;&#x7981;&#x8A00;&#x7528;&#x6237;</h4>
-<h4 id="&#x83B7;&#x53D6;&#x7981;&#x8A00;&#x7528;&#x6237;&#x5217;&#x8868;">&#x83B7;&#x53D6;&#x7981;&#x8A00;&#x7528;&#x6237;&#x5217;&#x8868;</h4>
-<h4 id="&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;</h4>
+<h2 id="&#x83B7;&#x53D6;&#x7528;&#x6237;token">&#x83B7;&#x53D6;&#x7528;&#x6237;token</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/token
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td>imToken</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;token</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;userId\&quot;:\&quot;a\&quot;}&quot; http://localhost/admin/user/token
 
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:{
+    &quot;userId&quot;:&quot;a&quot;,
+    &quot;imToken&quot;:&quot;hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r&quot;
+  }
+}
+</code></pre><h2 id="&#x6CE8;&#x518C;&#x66F4;&#x65B0;&#x7528;&#x6237;">&#x6CE8;&#x518C;/&#x66F4;&#x65B0;&#x7528;&#x6237;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/create
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;ID&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x7A7A;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7528;&#x6237;id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x767B;&#x9646;&#x540D;</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x5BC6;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x7528;&#x6237;&#x4E0D;&#x53EF;&#x4EE5;&#x5728;&#x706B;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#x767B;&#x9646;</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x663E;&#x793A;&#x540D;&#x5B57;</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x5934;&#x50CF;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x7801;</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x90AE;&#x7BB1;</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x516C;&#x53F8;</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x9644;&#x52A0;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;name\&quot;:\&quot;a\&quot;,\&quot;displayName\&quot;:\&quot;A\&quot;,\&quot;password\&quot;:\&quot;123456\&quot;}&quot; http://localhost/admin/user/create
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:{
+    &quot;userId&quot;:&quot;a&quot;,
+  }
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/info
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;ID&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x7A7A;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7528;&#x6237;id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x767B;&#x9646;&#x540D;</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x5BC6;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x7528;&#x6237;&#x4E0D;&#x53EF;&#x4EE5;&#x5728;&#x706B;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#x767B;&#x9646;</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x663E;&#x793A;&#x540D;&#x5B57;</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x5934;&#x50CF;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;&#x7801;</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x90AE;&#x7BB1;</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>company</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x7528;&#x6237;&#x516C;&#x53F8;</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x9644;&#x52A0;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;userId\&quot;:\&quot;a\&quot;}&quot; http://localhost/admin/user/get_token
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:{
+    &quot;userId&quot;:&quot;a&quot;,
+    &quot;imToken&quot;:&quot;hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r&quot;
+  }
+}
+</code></pre><h2 id="&#x66F4;&#x65B0;&#x7528;&#x6237;&#x72B6;&#x6001;">&#x66F4;&#x65B0;&#x7528;&#x6237;&#x72B6;&#x6001;</h2>
+<p>&#x5C01;&#x7981;/&#x7981;&#x8A00;&#x7528;&#x6237;</p>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/status
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x72B6;&#x6001;&#xFF0C;0 &#x6B63;&#x5E38;&#xFF1B;1 &#x88AB;&#x7981;&#x8A00;&#xFF0C;2 &#x88AB;&#x5C01;&#x7981;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<p>N/A</p>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;userId\&quot;:\&quot;a\&quot;, \&quot;status\&quot;:1}&quot; http://localhost/admin/user/status
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;
+}
+</code></pre><h2 id="&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x72B6;&#x6001;">&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x72B6;&#x6001;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/checkstatus
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x72B6;&#x6001;&#xFF0C;0 &#x6B63;&#x5E38;&#xFF1B;1 &#x88AB;&#x7981;&#x8A00;&#xFF0C;2 &#x88AB;&#x5C01;&#x7981;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;userId\&quot;:\&quot;a\&quot;}&quot; http://localhost/admin/user/checkstatus
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:{
+    &quot;status&quot;:0
+  }
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;&#x5C01;&#x7981;&#x7981;&#x8A00;&#x7528;&#x6237;&#x5217;&#x8868;">&#x83B7;&#x53D6;&#x5C01;&#x7981;/&#x7981;&#x8A00;&#x7528;&#x6237;&#x5217;&#x8868;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/statuslist
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td>imToken</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;token</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;userId\&quot;:\&quot;a\&quot;}&quot; http://localhost/admin/user/statuslist
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:[
+    {
+      &quot;userId&quot;:&quot;a&quot;,
+      &quot;status&quot;:1,
+    },
+    {
+      &quot;userId&quot;:&quot;b&quot;,
+      &quot;status&quot;:2,
+    },
+    {
+      &quot;userId&quot;:&quot;c&quot;,
+      &quot;status&quot;:3,
+    },
+  ]
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/user/onlinestatus
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>0 online, 1 have session offline, 2 no session</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;userId\&quot;:\&quot;a\&quot;}&quot; http://localhost/admin/user/onlinestatus
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:{
+    &quot;status&quot;:0
+  }
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -740,7 +1207,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"用户","level":"1.5.6.1","depth":3,"next":{"title":"用户关系","level":"1.5.6.2","depth":3,"path":"server/admin_api/user_relation.md","ref":"server/admin_api/user_relation.md","articles":[]},"previous":{"title":"Admin API接口","level":"1.5.6","depth":2,"path":"server/admin_api/README.md","ref":"server/admin_api/README.md","articles":[{"title":"用户","level":"1.5.6.1","depth":3,"path":"server/admin_api/user_api.md","ref":"server/admin_api/user_api.md","articles":[]},{"title":"用户关系","level":"1.5.6.2","depth":3,"path":"server/admin_api/user_relation.md","ref":"server/admin_api/user_relation.md","articles":[]},{"title":"消息","level":"1.5.6.3","depth":3,"path":"server/admin_api/message_api.md","ref":"server/admin_api/message_api.md","articles":[]},{"title":"群组","level":"1.5.6.4","depth":3,"path":"server/admin_api/group_api.md","ref":"server/admin_api/group_api.md","articles":[]},{"title":"聊天室","level":"1.5.6.5","depth":3,"path":"server/admin_api/chatroom_api.md","ref":"server/admin_api/chatroom_api.md","articles":[]},{"title":"code状态码","level":"1.5.6.6","depth":3,"path":"server/admin_api/error_code.md","ref":"server/admin_api/error_code.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["toggle-chapters"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"火信","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"火信开发手册","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":true,"all":false}},"gitbook":"*","description":"火信开发手册"},"file":{"path":"server/admin_api/user_api.md","mtime":"2018-10-15T13:45:47.570Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T13:57:52.050Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"用户","level":"1.5.6.1","depth":3,"next":{"title":"用户关系","level":"1.5.6.2","depth":3,"path":"server/admin_api/user_relation.md","ref":"server/admin_api/user_relation.md","articles":[]},"previous":{"title":"Admin API接口","level":"1.5.6","depth":2,"path":"server/admin_api/README.md","ref":"server/admin_api/README.md","articles":[{"title":"用户","level":"1.5.6.1","depth":3,"path":"server/admin_api/user_api.md","ref":"server/admin_api/user_api.md","articles":[]},{"title":"用户关系","level":"1.5.6.2","depth":3,"path":"server/admin_api/user_relation.md","ref":"server/admin_api/user_relation.md","articles":[]},{"title":"消息","level":"1.5.6.3","depth":3,"path":"server/admin_api/message_api.md","ref":"server/admin_api/message_api.md","articles":[]},{"title":"群组","level":"1.5.6.4","depth":3,"path":"server/admin_api/group_api.md","ref":"server/admin_api/group_api.md","articles":[]},{"title":"聊天室","level":"1.5.6.5","depth":3,"path":"server/admin_api/chatroom_api.md","ref":"server/admin_api/chatroom_api.md","articles":[]},{"title":"code状态码","level":"1.5.6.6","depth":3,"path":"server/admin_api/error_code.md","ref":"server/admin_api/error_code.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["toggle-chapters"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"火信","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"火信开发手册","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":true,"all":false}},"gitbook":"*","description":"火信开发手册"},"file":{"path":"server/admin_api/user_api.md","mtime":"2018-10-18T12:18:01.522Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-19T12:30:43.538Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

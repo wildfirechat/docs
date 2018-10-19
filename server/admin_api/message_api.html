@@ -358,12 +358,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../api_description.html">
+        <li class="chapter " data-level="1.5.1" data-path="../server_port.html">
             
-                <a href="../api_description.html">
+                <a href="../server_port.html">
             
                     
-                    服务器接口说明
+                    服务器端口说明
             
                 </a>
             
@@ -687,9 +687,206 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7528;&#x6237;">&#x7528;&#x6237;</h1>
-<h4 id="&#x53D1;&#x9001;&#x6D88;&#x606F;">&#x53D1;&#x9001;&#x6D88;&#x606F;</h4>
-<h4 id="&#x64A4;&#x56DE;&#x6D88;&#x606F;">&#x64A4;&#x56DE;&#x6D88;&#x606F;</h4>
+<h2 id="&#x53D1;&#x9001;&#x6D88;&#x606F;">&#x53D1;&#x9001;&#x6D88;&#x606F;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/message/send
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sender</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x53D1;&#x9001;&#x8005;ID</td>
+</tr>
+<tr>
+<td>conv</td>
+<td>json</td>
+<td>&#x662F;</td>
+<td>&#x4F1A;&#x8BDD;</td>
+</tr>
+<tr>
+<td>conv.type</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>&#x4F1A;&#x8BDD;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>conv.target</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x4F1A;&#x8BDD;&#x76EE;&#x6807;</td>
+</tr>
+<tr>
+<td>conv.line</td>
+<td>int</td>
+<td>&#x5426;</td>
+<td>&#x4F1A;&#x8BDD;&#x7EBF;&#x8DEF;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;0</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>json</td>
+<td>&#x662F;</td>
+<td>&#x6D88;&#x606F;&#x8D1F;&#x8F7D;</td>
+</tr>
+<tr>
+<td>payload.type</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>&#x6D88;&#x606F;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>payload.searchableContent</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x53EF;&#x641C;&#x7D22;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>payload.pushContent</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x63A8;&#x9001;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>payload.content</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>payload.base64edData</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x4E8C;&#x8FDB;&#x5236;&#x5185;&#x5BB9;&#xFF0C;base64&#x7F16;&#x7801;</td>
+</tr>
+<tr>
+<td>payload.mediaType</td>
+<td>int</td>
+<td>&#x5426;</td>
+<td>&#x5A92;&#x4F53;&#x6D88;&#x606F;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>payload.remoteMediaUrl</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x5A92;&#x4F53;&#x5185;&#x5BB9;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td>payload.expireDuration</td>
+<td>long</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>payload.mentionedType</td>
+<td>int</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x63D0;&#x9192;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>payload.mentionedTarget</td>
+<td>string list</td>
+<td>&#x5426;</td>
+<td>&#x6D88;&#x606F;&#x63D0;&#x9192;&#x5BF9;&#x8C61;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messageUid</td>
+<td>long</td>
+<td>&#x662F;</td>
+<td>&#x6D88;&#x606F;&#x552F;&#x4E00;ID</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>long</td>
+<td>&#x662F;</td>
+<td>&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x65F6;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d   \
+  &quot;{                       \
+    \&quot;sender\&quot;:\&quot;a\&quot;,       \
+    \&quot;conv\&quot;: {              \
+      \&quot;type\&quot;:1,            \
+      \&quot;target\&quot;:\&quot;a\&quot;,      \
+      \&quot;line\&quot;:0,           \
+    },                        \
+    \&quot;payload\&quot;:{                 \
+      \&quot;type\&quot;:1,                       \
+      \&quot;searchableContent\&quot;:\&quot;hello\&quot;   \
+    }                                   \
+  }&quot;                                \
+  http://localhost/admin/message/send
 
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+  &quot;result&quot;:{
+    &quot;messageUid&quot;:5323423532,
+    &quot;timestamp&quot;:13123423234324,
+  }
+}
+</code></pre><h2 id="&#x64A4;&#x56DE;&#x6D88;&#x606F;">&#x64A4;&#x56DE;&#x6D88;&#x606F;</h2>
+<h4 id="&#x5730;&#x5740;">&#x5730;&#x5740;</h4>
+<pre><code>http://domain/admin/message/recall
+</code></pre><h4 id="body">body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x64A4;&#x56DE;&#x8005;</td>
+</tr>
+<tr>
+<td>messageUid</td>
+<td>long</td>
+<td>&#x662F;</td>
+<td>&#x6D88;&#x606F;&#x552F;&#x4E00;ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">&#x54CD;&#x5E94;</h4>
+<p>N/A</p>
+<h4 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h4>
+<pre><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;operator\&quot;:\&quot;a\&quot;,\&quot;messageUid\&quot;:5323423532}&quot; http://localhost/admin/message/recall
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;,
+
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -732,7 +929,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"消息","level":"1.5.6.3","depth":3,"next":{"title":"群组","level":"1.5.6.4","depth":3,"path":"server/admin_api/group_api.md","ref":"server/admin_api/group_api.md","articles":[]},"previous":{"title":"用户关系","level":"1.5.6.2","depth":3,"path":"server/admin_api/user_relation.md","ref":"server/admin_api/user_relation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"火信","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"火信开发手册","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":true,"all":false}},"gitbook":"*","description":"火信开发手册"},"file":{"path":"server/admin_api/message_api.md","mtime":"2018-10-15T13:32:08.472Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T13:57:52.050Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"消息","level":"1.5.6.3","depth":3,"next":{"title":"群组","level":"1.5.6.4","depth":3,"path":"server/admin_api/group_api.md","ref":"server/admin_api/group_api.md","articles":[]},"previous":{"title":"用户关系","level":"1.5.6.2","depth":3,"path":"server/admin_api/user_relation.md","ref":"server/admin_api/user_relation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"火信","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"火信开发手册","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":true,"all":false}},"gitbook":"*","description":"火信开发手册"},"file":{"path":"server/admin_api/message_api.md","mtime":"2018-10-19T07:27:11.219Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-19T12:30:43.538Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
