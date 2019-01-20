@@ -2,11 +2,10 @@
 火信的消息分为普通消息和媒体消息。媒体消息一般比较大，发送时需要先上传媒体文件到媒体服务器，得到一个url地址，然后再把包含这个url地址的消息发出去。火信同时支持内置媒体服务器和七牛媒体服务器。客户端不用修改。
 
 #### 使用内置媒体服务器。
-修改如下配置，```media.server.use_qiniu```配置为0，```local.media.server.ip```配置成本机的公网ip。这样所有媒体文件都讲上传到fs目录，按照日期和类型存放。
+修改如下配置，```media.server.use_qiniu```配置为0，这样所有媒体文件都将上传到fs目录，按照日期和类型存放。
 ```
 media.server.use_qiniu 0
-local.media.server.ip 0.0.0.0
-local.media.storage.root fs
+local.media.storage.root ../fs
 ```
 > 内置文件服务器不是一个商业化的媒体服务器，有很大的限制。受限于linux的inode数，文件不能太多，需要定时清理，另外媒体文件提交较大，没有cdn加速下载会很慢，强烈建议客户在正式商用时使用七牛媒体服务器。
 

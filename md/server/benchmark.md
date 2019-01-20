@@ -1,4 +1,4 @@
-# 性能测试
+# 性能测试（暂未完成）
 1. 修改最大文件打开数（ulimit），修改方法请用百度查。
 2. 单独部署db，并对配置进行优化。
 3. 下载jmeter3.3版本。把```tools/jmeter/*.jar```放到```\pathtojmeter\lib\ext```。

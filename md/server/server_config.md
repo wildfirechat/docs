@@ -9,9 +9,9 @@
 server.ip 0.0.0.0
 port 1883
 http_port 80
-websocket_port 8080
+websocket_port 8083
 ```
-> 客户端需要设置服务器地址，请使用域名指向这个ip，然后使用http://${domain} 地址（当然如果没有域名直接使用ip也行）。如果您的域名为www.liyufan.win，那么客户端的服务器地址为http://www.liyufan.win。 出于[安全考虑](./api_description.md#安全防护)，建议您部署https站点。
+> 客户端需要设置服务器地址，请使用域名指向这个ip，然后使用http://${domain} 地址（当然如果没有域名直接使用ip也行）。如果您的域名为www.wildfirechat.cn，那么客户端的服务器地址为http://www.wildfirechat.cn。 由于[mars](./api_description.md#安全防护)的限制，请使用https站点（不用担心，都经过AES加密的）。
 
 #### 2.修改数据库
 请参考[数据库配置](./db_config.md)
