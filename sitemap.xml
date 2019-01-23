@@ -40,4 +40,8 @@
 <url> <loc>http://wildfirechat.cn/android/compile.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/ios/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/ios/compile.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/faq/general.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/faq/server.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/faq/android.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/faq/ios.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
