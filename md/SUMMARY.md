@@ -40,3 +40,8 @@
     * [代码下载与编译](android/compile.md)
 * [iOS开发](ios/README.md)
     * [代码下与编译](ios/compile.md)
+* [常见问题](faq/README.md)
+    * [通用问题](faq/general.md)
+    * [服务器问题](faq/server.md)
+    * [安卓问题](faq/android.md)
+    * [iOS问题](faq/ios.md)
