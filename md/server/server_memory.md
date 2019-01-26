@@ -1,13 +1,13 @@
 # 机器内存的选择
-火信使用了[hazelcast](https://hazelcast.com)作为内存缓存。在内存越来越便宜的情况下，合理地使用缓存，会带来性能的大幅提升。火信针对不同的数据使用不同的缓存策略。
+野火IM使用了[hazelcast](https://hazelcast.com)作为内存缓存。在内存越来越便宜的情况下，合理地使用缓存，会带来性能的大幅提升。野火IM针对不同的数据使用不同的缓存策略。
 
 ## 消息数据
 
 #### 消息对内存的占用
-火信采用了先进的设计，对于消息只保存一条原始数据。也就是说1对1聊天和群聊每发一条消息，火信只保存一条消息。另外火信的消息尺寸比较小，对于图片视频语音都是作为媒体文件上传到媒体服务器，消息体内只保存一个url，消息使用pb格式存储，平均下来不会大于1K字节。
+野火IM采用了先进的设计，对于消息只保存一条原始数据。也就是说1对1聊天和群聊每发一条消息，野火IM只保存一条消息。另外野火IM的消息尺寸比较小，对于图片视频语音都是作为媒体文件上传到媒体服务器，消息体内只保存一个url，消息使用pb格式存储，平均下来不会大于1K字节。
 
 ####缓存的配置
-消息数据会随着时间线性积累，而且旧的消息可能再也用不到，因此对于消息，火信的建议每个用户缓存最新100条7天以内消息。预估一下，假如每条消息1K，10W活跃用户，10W * 100 * 1K = 10G。当用户接收消息缓存没有命中时，会从数据库加载该消息，不会丢失消息。修改配置```config/hazelcast.xml```, ```max-size```修改为您的用户数*100
+消息数据会随着时间线性积累，而且旧的消息可能再也用不到，因此对于消息，野火IM的建议每个用户缓存最新100条7天以内消息。预估一下，假如每条消息1K，10W活跃用户，10W * 100 * 1K = 10G。当用户接收消息缓存没有命中时，会从数据库加载该消息，不会丢失消息。修改配置```config/hazelcast.xml```, ```max-size```修改为您的用户数*100
 ```
 <map name="messages_map">
     <!-- 7 days -->
@@ -16,7 +16,7 @@
     <max-size policy="PER_NODE">10000000</max-size>
     <eviction-percentage>10</eviction-percentage>
     <map-store enabled="true">
-        <class-name>io.moquette.persistence.MessageLoader</class-name>
+        <class-name>io.wildfirechat.persistence.MessageLoader</class-name>
         <write-delay-seconds>0</write-delay-seconds>
     </map-store>
 </map>

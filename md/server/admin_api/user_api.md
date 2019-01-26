@@ -40,7 +40,7 @@ http://domain/admin/user/create
 | ------ | ------ | --- | ------ |
 | userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id |
 | name | string | 是 | 登陆名 |
-| password | string | 否 | 用户密码，可以为空，如果为空，用户不可以在火信服务器登陆 |
+| password | string | 否 | 用户密码，可以为空，如果为空，用户不可以在野火IM服务器登陆 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |
@@ -81,7 +81,7 @@ http://domain/admin/user/info
 | ------ | ------ | --- | ------ |
 | userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id |
 | name | string | 是 | 登陆名 |
-| password | string | 否 | 用户密码，可以为空，如果为空，用户不可以在火信服务器登陆 |
+| password | string | 否 | 用户密码，可以为空，如果为空，用户不可以在野火IM服务器登陆 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |
