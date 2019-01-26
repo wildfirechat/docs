@@ -5,4 +5,4 @@
 
 [Android编译](android.md)
 
-[iOS快速编译](iOS.md)
+[iOS编译](iOS.md)

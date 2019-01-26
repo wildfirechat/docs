@@ -77,7 +77,7 @@
             "url": "https://github.com/wildfirechat/docs"
         },
         "github-buttons": {
-            "repo": "wildfirechat/ios-chat",
+            "repo": "wildfirechat/server",
             "types": [
                 "star"
             ],
