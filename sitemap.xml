@@ -28,10 +28,13 @@
 <url> <loc>http://wildfirechat.cn/server/admin_api/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/admin_api/user_api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/admin_api/user_relation.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/server/admin_api/robot_api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/admin_api/message_api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/admin_api/group_api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/admin_api/chatroom_api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/server/admin_api/sensitive_word_api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/admin_api/error_code.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/server/robot_api/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/event_callback.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/push_config.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/media_server.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

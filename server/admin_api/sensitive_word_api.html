@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>用户关系 · 野火IM开发手册</title>
+        <title>敏感词 · 野火IM开发手册</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -117,10 +117,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="robot_api.html" />
+    <link rel="next" href="error_code.html" />
     
     
-    <link rel="prev" href="user_api.html" />
+    <link rel="prev" href="chatroom_api.html" />
     
 
     
@@ -606,7 +606,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.6.2" data-path="user_relation.html">
+        <li class="chapter " data-level="1.5.6.2" data-path="user_relation.html">
             
                 <a href="user_relation.html">
             
@@ -681,7 +681,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6.7" data-path="sensitive_word_api.html">
+        <li class="chapter active" data-level="1.5.6.7" data-path="sensitive_word_api.html">
             
                 <a href="sensitive_word_api.html">
             
@@ -979,7 +979,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >用户关系</a>
+        <a href="../.." >敏感词</a>
     </h1>
 </div>
 
@@ -994,16 +994,109 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x7528;&#x6237;&#x5173;&#x7CFB;">&#x7528;&#x6237;&#x5173;&#x7CFB;</a></li></ul></div><a href="#&#x7528;&#x6237;&#x5173;&#x7CFB;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7528;&#x6237;&#x5173;&#x7CFB;"><a name="&#x7528;&#x6237;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6237;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7528;&#x6237;&#x5173;&#x7CFB;</h1>
-<h4 id="&#x5EFA;&#x7ACB;&#x597D;&#x53CB;&#x5173;&#x7CFB;">0.0.1. &#x5EFA;&#x7ACB;&#x597D;&#x53CB;&#x5173;&#x7CFB;</h4>
-<h4 id="&#x89E3;&#x9664;&#x597D;&#x53CB;&#x5173;&#x7CFB;">0.0.2. &#x89E3;&#x9664;&#x597D;&#x53CB;&#x5173;&#x7CFB;</h4>
-<h4 id="&#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x597D;&#x53CB;&#x5217;&#x8868;">0.0.3. &#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x597D;&#x53CB;&#x5217;&#x8868;</h4>
-<h4 id="&#x6DFB;&#x52A0;&#x9ED1;&#x540D;&#x5355;">0.0.4. &#x6DFB;&#x52A0;&#x9ED1;&#x540D;&#x5355;</h4>
-<h4 id="&#x79FB;&#x9664;&#x9ED1;&#x540D;&#x5355;">0.0.5. &#x79FB;&#x9664;&#x9ED1;&#x540D;&#x5355;</h4>
-<h4 id="&#x83B7;&#x53D6;&#x9ED1;&#x540D;&#x5355;&#x5217;&#x8868;">0.0.6. &#x83B7;&#x53D6;&#x9ED1;&#x540D;&#x5355;&#x5217;&#x8868;</h4>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x654F;&#x611F;&#x8BCD;">&#x654F;&#x611F;&#x8BCD;</a></li><ul><li><a href="#&#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;">&#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;</a></li><li><a href="#&#x5220;&#x9664;&#x654F;&#x611F;&#x8BCD;">&#x5220;&#x9664;&#x654F;&#x611F;&#x8BCD;</a></li><li><a href="#&#x83B7;&#x53D6;&#x654F;&#x611F;&#x8BCD;&#x5217;&#x8868;">&#x83B7;&#x53D6;&#x654F;&#x611F;&#x8BCD;&#x5217;&#x8868;</a></li><li><a href="#&#x654F;&#x611F;&#x8BCD;&#x7684;&#x9AD8;&#x7EA7;&#x5904;&#x7406;&#x65B9;&#x6CD5;">&#x654F;&#x611F;&#x8BCD;&#x7684;&#x9AD8;&#x7EA7;&#x5904;&#x7406;&#x65B9;&#x6CD5;</a></li></ul></ul></div><a href="#&#x654F;&#x611F;&#x8BCD;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x654F;&#x611F;&#x8BCD;"><a name="&#x654F;&#x611F;&#x8BCD;" class="anchor-navigation-ex-anchor" href="#&#x654F;&#x611F;&#x8BCD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x654F;&#x611F;&#x8BCD;</h1>
+<p>&#x91CE;&#x706B;IM&#x5185;&#x7F6E;&#x6709;&#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x529F;&#x80FD;&#xFF0C;&#x5BF9;&#x6587;&#x672C;&#x6D88;&#x606F;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#x3002;&#x4E3A;&#x4E86;&#x4E0D;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#xFF0C;&#x8BF7;&#x4FDD;&#x6301;&#x654F;&#x611F;&#x8BCD;&#x5728;1000&#x4E2A;&#x4EE5;&#x5185;&#x3002;</p>
+<h2 id="&#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;">1. &#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;</h2>
+<h4 id="&#x5730;&#x5740;">1.0.1. &#x5730;&#x5740;</h4>
+<pre class="language-"><code>http://domain/admin/sensitive/add
+</code></pre><h4 id="body">1.0.2. body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>words</td>
+<td>list<string></string></td>
+<td>&#x662F;</td>
+<td>&#x654F;&#x611F;&#x8BCD;&#x6570;&#x7EC4;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">1.0.3. &#x54CD;&#x5E94;</h4>
+<p>N/A</p>
+<h4 id="&#x793A;&#x4F8B;">1.0.4. &#x793A;&#x4F8B;</h4>
+<pre class="language-"><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;words\&quot;:[\&quot;a\&quot;,\&quot;b\&quot;,\&quot;c\&quot;]}&quot; http://localhost/admin/sensitive/add
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;
+}
+</code></pre><h2 id="&#x5220;&#x9664;&#x654F;&#x611F;&#x8BCD;">2. &#x5220;&#x9664;&#x654F;&#x611F;&#x8BCD;</h2>
+<h4 id="&#x5730;&#x5740;">2.0.1. &#x5730;&#x5740;</h4>
+<pre class="language-"><code>http://domain/admin/sensitive/del
+</code></pre><h4 id="body">2.0.2. body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>words</td>
+<td>list<string></string></td>
+<td>&#x662F;</td>
+<td>&#x654F;&#x611F;&#x8BCD;&#x6570;&#x7EC4;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">2.0.3. &#x54CD;&#x5E94;</h4>
+<p>N/A</p>
+<h4 id="&#x793A;&#x4F8B;">2.0.4. &#x793A;&#x4F8B;</h4>
+<pre class="language-"><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot; -d &quot;{\&quot;words\&quot;:[\&quot;a\&quot;,\&quot;b\&quot;,\&quot;c\&quot;]}&quot; http://localhost/admin/sensitive/del
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;&#x654F;&#x611F;&#x8BCD;&#x5217;&#x8868;">3. &#x83B7;&#x53D6;&#x654F;&#x611F;&#x8BCD;&#x5217;&#x8868;</h2>
+<h4 id="&#x5730;&#x5740;">3.0.1. &#x5730;&#x5740;</h4>
+<pre class="language-"><code>http://domain/admin/sensitive/query
+</code></pre><h4 id="body">3.0.2. body</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x9700;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>words</td>
+<td>list<string></string></td>
+<td>&#x662F;</td>
+<td>&#x654F;&#x611F;&#x8BCD;&#x6570;&#x7EC4;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;">3.0.3. &#x54CD;&#x5E94;</h4>
+<p>N/A</p>
+<h4 id="&#x793A;&#x4F8B;">3.0.4. &#x793A;&#x4F8B;</h4>
+<pre class="language-"><code>curl -X POST -H &quot;nonce:14723&quot; -H &quot;timestamp&quot;:&quot;1539698981861&quot; -H &quot;sign&quot;:&quot;9e9f98672f466a81e6dd61570689528cf38e6418&quot; -H &quot;Content-Type:application/json&quot;  http://localhost/admin/sensitive/query
+
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;success&quot;
+  &quot;result&quot;: {
+    &quot;words&quot;:[\&quot;a\&quot;,\&quot;b\&quot;,\&quot;c&quot;]
+  }
+}
+</code></pre><h2 id="&#x654F;&#x611F;&#x8BCD;&#x7684;&#x9AD8;&#x7EA7;&#x5904;&#x7406;&#x65B9;&#x6CD5;">4. &#x654F;&#x611F;&#x8BCD;&#x7684;&#x9AD8;&#x7EA7;&#x5904;&#x7406;&#x65B9;&#x6CD5;</h2>
+<p>&#x5185;&#x7F6E;&#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x529F;&#x80FD;&#x53EA;&#x80FD;&#x5BF9;&#x6587;&#x672C;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x654F;&#x611F;&#x8BCD;&#x5339;&#x914D;&#x3002;&#x5982;&#x679C;&#x60A8;&#x6709;&#x9AD8;&#x7EA7;&#x9700;&#x6C42;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x56FE;&#x7247;&#x6D88;&#x606F;/&#x8BED;&#x97F3;&#x6D88;&#x606F;&#x6216;&#x5176;&#x5B83;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#x3002;&#x8BF7;&#x4F7F;&#x7528;&#x6D88;&#x606F;<a href="../event_callback.html#&#x63A5;&#x6536;&#x6D88;&#x606F;&#x56DE;&#x8C03;">&#x8F6C;&#x53D1;&#x529F;&#x80FD;</a>&#xFF0C;&#x628A;&#x6BCF;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x90FD;&#x8F6C;&#x53D1;&#x8FC7;&#x53BB;&#xFF0C;&#x5F02;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x547D;&#x4E2D;&#x654F;&#x611F;&#x8BCD;&#xFF0C;&#x518D;&#x8C03;&#x7528;<a href="message_api.html#&#x64A4;&#x56DE;&#x6D88;&#x606F;">&#x64A4;&#x56DE;</a>&#x65B9;&#x6CD5;&#x5BF9;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x64A4;&#x56DE;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">2018 &#xA9; wildfirechat.cn &#x4EAC;ICP&#x5907;18060403&#x53F7;-1 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-02-06 16:29:12
-</span></footer><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x7528;&#x6237;&#x5173;&#x7CFB;">&#x7528;&#x6237;&#x5173;&#x7CFB;</a></p><li><a href="#">none</a></li><ul><li><a href="#">none</a></li><ul><li><a href="#&#x5EFA;&#x7ACB;&#x597D;&#x53CB;&#x5173;&#x7CFB;">0.0.1. &#x5EFA;&#x7ACB;&#x597D;&#x53CB;&#x5173;&#x7CFB;</a></li><li><a href="#&#x89E3;&#x9664;&#x597D;&#x53CB;&#x5173;&#x7CFB;">0.0.2. &#x89E3;&#x9664;&#x597D;&#x53CB;&#x5173;&#x7CFB;</a></li><li><a href="#&#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x597D;&#x53CB;&#x5217;&#x8868;">0.0.3. &#x83B7;&#x53D6;&#x7528;&#x6237;&#x7684;&#x597D;&#x53CB;&#x5217;&#x8868;</a></li><li><a href="#&#x6DFB;&#x52A0;&#x9ED1;&#x540D;&#x5355;">0.0.4. &#x6DFB;&#x52A0;&#x9ED1;&#x540D;&#x5355;</a></li><li><a href="#&#x79FB;&#x9664;&#x9ED1;&#x540D;&#x5355;">0.0.5. &#x79FB;&#x9664;&#x9ED1;&#x540D;&#x5355;</a></li><li><a href="#&#x83B7;&#x53D6;&#x9ED1;&#x540D;&#x5355;&#x5217;&#x8868;">0.0.6. &#x83B7;&#x53D6;&#x9ED1;&#x540D;&#x5355;&#x5217;&#x8868;</a></li></ul></ul></ul></div><a href="#" id="goTop"><i class="fa fa-arrow-up"></i></a>
+2019-02-06 16:10:40
+</span></footer><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x654F;&#x611F;&#x8BCD;">&#x654F;&#x611F;&#x8BCD;</a></p><li><a href="#&#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;">1. &#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;</a></li><ul><li><a href="#">none</a></li><ul><li><a href="#&#x5730;&#x5740;">1.0.1. &#x5730;&#x5740;</a></li><li><a href="#body">1.0.2. body</a></li><li><a href="#&#x54CD;&#x5E94;">1.0.3. &#x54CD;&#x5E94;</a></li><li><a href="#&#x793A;&#x4F8B;">1.0.4. &#x793A;&#x4F8B;</a></li></ul></ul><li><a href="#&#x5220;&#x9664;&#x654F;&#x611F;&#x8BCD;">2. &#x5220;&#x9664;&#x654F;&#x611F;&#x8BCD;</a></li><ul><li><a href="#">none</a></li><ul><li><a href="#&#x5730;&#x5740;">2.0.1. &#x5730;&#x5740;</a></li><li><a href="#body">2.0.2. body</a></li><li><a href="#&#x54CD;&#x5E94;">2.0.3. &#x54CD;&#x5E94;</a></li><li><a href="#&#x793A;&#x4F8B;">2.0.4. &#x793A;&#x4F8B;</a></li></ul></ul><li><a href="#&#x83B7;&#x53D6;&#x654F;&#x611F;&#x8BCD;&#x5217;&#x8868;">3. &#x83B7;&#x53D6;&#x654F;&#x611F;&#x8BCD;&#x5217;&#x8868;</a></li><ul><li><a href="#">none</a></li><ul><li><a href="#&#x5730;&#x5740;">3.0.1. &#x5730;&#x5740;</a></li><li><a href="#body">3.0.2. body</a></li><li><a href="#&#x54CD;&#x5E94;">3.0.3. &#x54CD;&#x5E94;</a></li><li><a href="#&#x793A;&#x4F8B;">3.0.4. &#x793A;&#x4F8B;</a></li></ul></ul><li><a href="#&#x654F;&#x611F;&#x8BCD;&#x7684;&#x9AD8;&#x7EA7;&#x5904;&#x7406;&#x65B9;&#x6CD5;">4. &#x654F;&#x611F;&#x8BCD;&#x7684;&#x9AD8;&#x7EA7;&#x5904;&#x7406;&#x65B9;&#x6CD5;</a></li></ul></div><a href="#&#x6DFB;&#x52A0;&#x654F;&#x611F;&#x8BCD;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -1030,12 +1123,12 @@
 
             
                 
-                <a href="user_api.html" class="navigation navigation-prev " aria-label="Previous page: 用户">
+                <a href="chatroom_api.html" class="navigation navigation-prev " aria-label="Previous page: 聊天室">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="robot_api.html" class="navigation navigation-next " aria-label="Next page: 机器人">
+                <a href="error_code.html" class="navigation navigation-next " aria-label="Next page: code状态码">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1046,7 +1139,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"用户关系","level":"1.5.6.2","depth":3,"next":{"title":"机器人","level":"1.5.6.3","depth":3,"path":"server/admin_api/robot_api.md","ref":"server/admin_api/robot_api.md","articles":[]},"previous":{"title":"用户","level":"1.5.6.1","depth":3,"path":"server/admin_api/user_api.md","ref":"server/admin_api/user_api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","anchors@^0.7.1","emphasize@^1.1.0","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","sitemap-general@^0.1.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2","todo@^0.1.3","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","include-codeblock@^3.0.2","ace@^0.3.2","mermaid-gb3@2.1.0","katex@^1.1.3","navigator"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2018 © wildfirechat.cn 京ICP备18060403号-1","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"disqus":{"shortName":"gitbookuse"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/wildfirechat/docs"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://wildfirechat.cn"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"navigator":{},"alerts":{},"github-buttons":{"repo":"wildfirechat/server","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"ff100361cdce95dd4c8fb96b4009f7bc"},"expandable-chapters-small":{},"local-video":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"野火IM","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"野火IM开发手册","links":{"sidebar":{"Home":"http://www.wildfirechat.cn"}},"gitbook":"*","description":"野火IM开发手册"},"file":{"path":"server/admin_api/user_relation.md","mtime":"2019-02-06T08:29:12.237Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-06T08:50:11.952Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"敏感词","level":"1.5.6.7","depth":3,"next":{"title":"code状态码","level":"1.5.6.8","depth":3,"path":"server/admin_api/error_code.md","ref":"server/admin_api/error_code.md","articles":[]},"previous":{"title":"聊天室","level":"1.5.6.6","depth":3,"path":"server/admin_api/chatroom_api.md","ref":"server/admin_api/chatroom_api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","anchors@^0.7.1","emphasize@^1.1.0","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","sitemap-general@^0.1.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2","todo@^0.1.3","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","include-codeblock@^3.0.2","ace@^0.3.2","mermaid-gb3@2.1.0","katex@^1.1.3","navigator"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2018 © wildfirechat.cn 京ICP备18060403号-1","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"disqus":{"shortName":"gitbookuse"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/wildfirechat/docs"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://wildfirechat.cn"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"navigator":{},"alerts":{},"github-buttons":{"repo":"wildfirechat/server","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"ff100361cdce95dd4c8fb96b4009f7bc"},"expandable-chapters-small":{},"local-video":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"野火IM","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"野火IM开发手册","links":{"sidebar":{"Home":"http://www.wildfirechat.cn"}},"gitbook":"*","description":"野火IM开发手册"},"file":{"path":"server/admin_api/sensitive_word_api.md","mtime":"2019-02-06T08:10:40.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-06T08:50:11.952Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
