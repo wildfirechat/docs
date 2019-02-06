@@ -79,9 +79,8 @@ http://domain/admin/user/info
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id |
+| userId | string | 否 | 用户ID |
 | name | string | 是 | 登陆名 |
-| password | string | 否 | 用户密码，可以为空，如果为空，用户不可以在野火IM服务器登陆 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |
@@ -92,14 +91,14 @@ http://domain/admin/user/info
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_token
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/info
 
 {
   "code":0,
   "msg":"success",
   "result":{
     "userId":"a",
-    "imToken":"hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r"
+    "name":"usera"
   }
 }
 ```
