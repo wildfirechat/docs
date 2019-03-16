@@ -4,12 +4,12 @@
 ![架构图](wildfire_architecture.png)
 
 ## SDK
-SDK分为2部分，一部分是功能SDK，功能SDK内嵌于应用内，只需要调用connect，传入用户Id和token，SDK会自动做好连接/重连、消息同步、群组关系同步、用户信息同步、好友关系同步等。移动客户端和PC客户端使用微信Mars和自定义协议实现，使用C++实现具有跨平台功能。Web客户端使用自定义协议和websocket实现。另外一部分是UISDK，实现了常用的UI界面，方便客户集成使用。
+SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文中简称ChatClient，只需要调用connect，传入用户Id和token，ChatClient会自动做好连接/重连、消息同步、群组关系同步、用户信息同步、好友关系同步等。移动客户端和PC客户端使用微信Mars和自定义协议实现，使用C++实现具有跨平台功能。Web客户端使用自定义协议和websocket实现。另外一部分是UI的SDK，实现了常用的UI界面，方便客户集成使用，后文中使用简称ChatUI。
  ![客户端架构图](client_architecture.png)
 > 目前仅实现了移动端平台，mac/windows/web平台暂未实现。其中mac/windows平台的实现较为容易，会很快提供SDK。
 
 ## 应用服务器
-应用服务器需要处理用户注册/用户登陆等业务。如果使用用户信息托管切包含用户密码，则可以去野火IM服务器登陆换取token。如果没有使用用户信息托管或没有托管密码，则登陆时，应用服务器需要去野火IM服务器换取token。我们提供有[Demo](https://github.com/wildfirechat/app_server)供参考。
+应用服务器需要处理用户注册/用户登陆等业务。应用服务器在用户登陆时去野火IM服务器换取token，然后返回给客户端。我们提供有[Demo](https://github.com/wildfirechat/app_server)供参考。
 
 ## 野火IM服务器
 负责IM业务的处理，负责群组业务的处理，负责用户信息于好友关系的处理。

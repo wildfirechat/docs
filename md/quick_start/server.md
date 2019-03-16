@@ -18,4 +18,4 @@ app软件下载解压后，修改```/config/sms.properties```文件，设置```s
 >> 发送短信需要购买短信服务，在没有短信服务的情况下，使用superCode作为验证码来登陆。
 
 #### 运行
-执行```java -jar app-xxxx.jar```。
+执行```java -jar app-0.0.1-SNAPSHOT.jar```。
