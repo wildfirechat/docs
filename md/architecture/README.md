@@ -39,3 +39,14 @@ SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文�
 
   * 不托管用户信息
   注册时不用同步用户信息到野火IM服务器，获取token不依赖必须存在用户信息。
+
+## 开源代码列表
+  * [server](https://github.com/wildfirechat/server)  IM服务源码
+  * [android-chat](https://github.com/wildfirechat/android-chat) Android SDK及demo应用源码
+  * [ios-chat](https://github.com/wildfirechat/ios-chat) iOS SDK及demo应用源码
+  * [pc-chat](https://github.com/wildfirechat/pc-chat) PC客户端源码
+  * [proto](https://github.com/wildfirechat/proto) 协议栈（mars）源码
+  * [app_server](https://github.com/wildfirechat/app_server) 应用服务源码
+  * [push_server](https://github.com/wildfirechat/push_server) 推送服务源码
+  * [robot_server](https://github.com/wildfirechat/robot_server) 机器人服务源码
+  * [docs](https://github.com/wildfirechat/docs/tree/master/md) 文档源码
