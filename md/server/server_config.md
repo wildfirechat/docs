@@ -22,11 +22,11 @@ websocket_port 8083
 http.admin.secret_key 123456
 ```
 
-#### 修改客户端密钥
-16个字节的随机数，注意同步修改客户端对应的密钥，不然连不上。
+#### 修改token密钥
+服务器用此密钥生产token，客户端连接时会带上这个token，然后服务器去解token，来验证用户的有消息。此token非常重要，一定要在上线时修改，防止泄漏
 ```
-##客户端协议栈密钥，需要与客户端协议栈文件libemqq.cc文件中的aes_key值保持一致，16进制byte用逗号分割
-client.proto.secret_key 0x00,0x11,0x22,0x33,0x44,0x55,0x66,0x77,0x78,0x79,0x7A,0x7B,0x7C,0x7D,0x7E,0x7F
+##用来生产im token的私钥，只在服务器使用，客户端不用。正式使用时为了安全一定要修改这个值，切记切记
+token.key hellomyimsecret
 
 ```
 
