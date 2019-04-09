@@ -50,5 +50,6 @@
 * [常见问题](faq/README.md)
     * [通用问题](faq/general.md)
     * [服务器问题](faq/server.md)
+      * [如何导入到IDE中](faq/server/q1.md)
     * [安卓问题](faq/android.md)
     * [iOS问题](faq/ios.md)
