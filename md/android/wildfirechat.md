@@ -1,5 +1,6 @@
 # Wildfire Chat简介
-Wildfire Chat是使用ChatClient和ChatUIKit的示范应用。
+
+Wildfire Chat是使用ChatClient和ChatUIKit的示范应用，设计时，充分考虑了二次开发的需求。
 
 1. 应用在```application:didFinishLaunchingWithOptions:```对ChatClient进行初始化，
 2. 关于推送方面的处理，当获取到token后，调用ChatClient的接口，设置token
