@@ -55,6 +55,6 @@
     * [通用问题](faq/general.md)
     * [服务器问题](faq/server.md)
       * [如何导入到IDE中](faq/server/q1.md)
-      * [如何解决等登陆但一直连接中的问题](server/q2.md)
+      * [如何解决等登陆但一直连接中的问题](faq/server/q2.md)
     * [安卓问题](faq/android.md)
     * [iOS问题](faq/ios.md)
