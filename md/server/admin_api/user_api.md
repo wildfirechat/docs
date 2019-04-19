@@ -9,6 +9,8 @@ http://domain/admin/user/token
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
+| clientId | string | 是 | 客户端ID |
+> clientId为客户端ID，客户端SDK有获取clientId的接口
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
@@ -18,7 +20,7 @@ http://domain/admin/user/token
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/token
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\"}" http://localhost/admin/user/token
 
 {
   "code":0,
