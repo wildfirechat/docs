@@ -39,6 +39,7 @@
 <url> <loc>http://wildfirechat.cn/server/push_config.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/media_server.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/server/server_clean.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/server/mysql_tune.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/compile.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/ChatClient.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
