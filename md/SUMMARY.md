@@ -41,6 +41,7 @@
     * [媒体服务](server/media_server.md)
     * [服务的维护](server/server_clean.md)
     * [MySQL调优](server/mysql_tune.md)
+    * [升级指南](server/upgrade.md)
 * [Android开发](android/README.md)
     * [代码编译与工程说明](android/compile.md)
     * [ChatClient简介](android/chatclient.md)
