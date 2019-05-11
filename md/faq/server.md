@@ -7,4 +7,4 @@ A. [回答](server/q1.md)
 A. [回答](server/q2.md)
 
 #### Q. 消息存储在数据库中的那张表中
-A. 使用h2db存储消息时，消息存储在t_message标中；使用mysql存储消息时，消息存储在t_message_X表中，X等于年份%3+月份，例如19年4月存储在t_message_27表中
+A. 使用h2db存储消息时，消息存储在t_message标中；使用mysql存储消息时，消息存储在t_message_X表中，X等于```月份-1+年份%3```，例如2019年4月存储在t_message_3表中(4-1+2019%3).
