@@ -44,7 +44,6 @@
 <url> <loc>http://wildfirechat.cn/server/upgrade.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/compile.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://wildfirechat.cn/android/chatclient.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/chatuikit.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/wildfirechat.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/android/push.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
