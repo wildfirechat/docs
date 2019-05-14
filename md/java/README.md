@@ -11,7 +11,7 @@
 //token与userid和clientid是绑定的，使用时一定要传入正确的userid和clientid，不然会认为token非法
 IMClient client = new IMClient("yzyOyOKK", "7SJk13q+YdHHe6EwDzry9BKogxTNf3UgtYj50cBTZgWNkNuxEkiqg2koKg0lXViONIX1LmwCR1jN0Mw8hvk6KGpiSKFi+IRaRkIb3mNzgIfrq4afhyIHaQfa2HOfsi6Ws+9YobkdDgdq7W70bEdVfiCSU9+JOIY449nxZzfg2Zw=", "DD72C212-26C7-4B38-A5FC-88550896B170", "192.168.1.101", 80);
 ```
-> 理解所有参数的意义，每一个参数不能错误。客户经常出现的错误就是随便填写clientid，clientid与用户的session对应，clientid不是获取token时传入的值时，将无法连接。
+> 理解所有参数的意义，每一个参数不能错误。客户经常出现的错误就是随便填写clientid，clientid与用户的session对应，clientid不是获取token时传入的值时，将无法连接。这里的参数及client源码里的测试参数仅为示例，无法直接使用。请参考demo的登录过程获取这几个参数（登录请求里有clientId，响应里有token和userId）。
 
 ##### 2.设置回调函数， 可以设置连接回调和发消息回调。
 
