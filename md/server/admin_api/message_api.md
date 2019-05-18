@@ -10,11 +10,11 @@ http://domain/admin/message/send
 | ------ | ------ | --- | ------ |
 | sender | string | 是 | 发送者ID |
 | conv | json | 是 | 会话 |
-| conv.type | int | 是 | 会话类型 |
+| conv.type | int | 是 | [会话类型](../../base_knowledge/conversation.md#####会话类型) |
 | conv.target | string | 是 | 会话目标 |
 | conv.line | int | 否 | 会话线路，缺省为0 |
 | payload | json | 是 | 消息负载 |
-| payload.type | int | 是 | 消息类型 |
+| payload.type | int | 是 | [消息内容类型](../../base_knowledge/message_payload.md#####contentType) |
 | payload.searchableContent | string | 否 | 消息可搜索内容 |
 | payload.pushContent | string | 否 | 消息推送内容 |
 | payload.content | string | 否 | 消息内容 |

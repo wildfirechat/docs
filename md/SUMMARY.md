@@ -26,7 +26,7 @@
     * [机器内存的选择](server/server_memory.md)
     * [性能测试](server/benchmark.md)
     * [服务器配置](server/server_config.md)
-    * [Admin API接口](server/admin_api/README.md)
+    * [Server API接口](server/admin_api/README.md)
         * [用户](server/admin_api/user_api.md)
         * [用户关系](server/admin_api/user_relation.md)
         * [机器人](server/admin_api/robot_api.md)
