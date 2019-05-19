@@ -11,7 +11,7 @@
 1. jmeter工具，选择打开按钮，选择```Wildfire Connection Sampler.jmx```脚本
 ![测试计划](./assert/connect1.png)
 
-2. 选择线程组（Thread Group），然后填写连接数（Number of Threads）和发起时间（Ramp-Up Period）。由于建立连接需要实现，可以按照每秒100个的速度建立连接，比如你要实现1W个连接，时间可以填写100.
+2. 选择线程组（Thread Group），然后填写连接数（Number of Threads）和发起时间（Ramp-Up Period）。由于建立连接需要时间，可以按照每秒100个的速度建立连接，比如你要实现1W个连接，时间可以填写100.
 ![连接数](./assert/connect2.png)
 
 3. 选择连接测试计划（Wildfire Connection Sampler），设置IM服务器地址和端口。应用服务器测试程序会自动利用IM服务器和8888端口。
