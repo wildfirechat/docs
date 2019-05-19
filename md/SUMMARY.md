@@ -56,6 +56,7 @@
     * [推送集成](ios/push.md)
 * [Java客户端](java/README.md)
 * [音视频](webrtc/README.md)
+* [维护说明](base_knowledge/maintain.md)
 * [常见问题](faq/README.md)
     * [通用问题](faq/general.md)
     * [服务器问题](faq/server.md)
@@ -63,5 +64,3 @@
       * [如何解决等登陆但一直连接中的问题](faq/server/q2.md)
     * [安卓问题](faq/android.md)
     * [iOS问题](faq/ios.md)
-
-    
