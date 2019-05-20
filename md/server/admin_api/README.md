@@ -1,5 +1,5 @@
 # Server API接口
-Server API是供客户服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。
+Server API是供客户服务器调用的。所有的请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。
 
 ## 签名规则
 以下参数需要放在Http Request Header中
