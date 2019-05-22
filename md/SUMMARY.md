@@ -66,4 +66,5 @@
       * [如何导入到IDE中](faq/server/q1.md)
       * [如何解决等登陆但一直连接中的问题](faq/server/q2.md)
     * [安卓问题](faq/android.md)
+      * [如何导入到Android Studio中](faq/android/q1.md)
     * [iOS问题](faq/ios.md)

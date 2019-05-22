@@ -63,5 +63,6 @@
 <url> <loc>http://wildfirechat.cn/faq/server/q1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/faq/server/q2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/faq/android.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/faq/android/q1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/faq/ios.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
