@@ -3,7 +3,7 @@
 ## 获取用户token
 #### 地址
 ```
-http://domain/admin/user/token
+http://domain/admin/user/get_token
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -20,7 +20,7 @@ http://domain/admin/user/token
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\"}" http://localhost/admin/user/token
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\"}" http://localhost/admin/user/get_token
 
 {
   "code":0,
@@ -71,7 +71,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 ## 获取用户信息
 #### 地址
 ```
-http://domain/admin/user/info
+http://domain/admin/user/get_info
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -93,7 +93,7 @@ http://domain/admin/user/info
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/info
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_info
 
 {
   "code":0,
@@ -109,7 +109,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 封禁/禁言用户
 #### 地址
 ```
-http://domain/admin/user/status
+http://domain/admin/user/update_block_status
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -122,7 +122,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\", \"status\":1}" http://localhost/admin/user/status
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\", \"status\":1}" http://localhost/admin/user/update_block_status
 
 {
   "code":0,
@@ -133,7 +133,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 ## 查询用户状态
 #### 地址
 ```
-http://domain/admin/user/checkstatus
+http://domain/admin/user/check_block_status
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -148,7 +148,7 @@ http://domain/admin/user/checkstatus
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/checkstatus
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/check_block_status
 
 {
   "code":0,
@@ -161,7 +161,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 ## 获取封禁/禁言用户列表
 #### 地址
 ```
-http://domain/admin/user/statuslist
+http://domain/admin/user/get_blocked_list
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -176,7 +176,7 @@ http://domain/admin/user/statuslist
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/statuslist
+curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_blocked_list
 
 {
   "code":0,

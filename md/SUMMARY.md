@@ -35,6 +35,7 @@
         * [聊天室](server/admin_api/chatroom_api.md)
         * [敏感词](server/admin_api/sensitive_word_api.md)
         * [code状态码](server/admin_api/error_code.md)
+    * [Server SDK](server/sdk.md)
     * [Robot API接口](server/robot_api/README.md)
     * [事件回调](server/event_callback.md)
     * [推送说明](server/push_config.md)

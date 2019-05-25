@@ -1,5 +1,5 @@
 # Robot API接口
-Robot API是供机器人服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。
+Robot API是供机器人服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。端口使用```http_port```端口（默认80），不同于Sever API的端口(默认18080)
 
 ## 签名规则
 以下参数需要放在Http Request Header中
