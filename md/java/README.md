@@ -58,3 +58,6 @@ client.sendMessage(conversation, messageContent, new SendMessageCallback() {
     }
 });
 ```
+
+##### 5. 特别注意事项
+clientId唯一代表一台设备，一个clientId只能存在一个连接。如果有多个地方使用同一个clientId，比如同时在手机和服务器使用同一个clientId，会产生不可预料的错误。
