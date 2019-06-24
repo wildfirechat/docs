@@ -43,11 +43,13 @@ ChatUIKit包含以下页面：
 
 2. 自定义消息UI
 
-   1. 普通消息，靠边显示，显示发送者。
+   1. 根据消息类型，继承相应的基类，并添加```MessageContentType```和```LayoutRes```注解，参考```TextMessageContentViewHolder```
 
-      继承```NormalMessageContentViewHolder```，并添加响应注解，参考```TextMessageContentViewHolder```
+   2. 普通消息，靠边显示，显示发送者。
 
-   2. 通知消息，居中显示，不显示消息发送者。
+      继承```NormalMessageContentViewHolder```，并添加相应注解，
+
+   3. 通知消息，居中显示，不显示消息发送者。
 
       1. 简单/小灰条通知，界面只显示一个小灰条
 
@@ -57,7 +59,7 @@ ChatUIKit包含以下页面：
 
          继承```NotificationMessageContentViewHolder```，实现相关方法，并添加对应的```MessageContent```和布局注解，请参考```ExampleRichNotificationMessageContentViewHolder```
 
-   3. 响应用户动作
+   4. 响应用户动作
 
       1. 单击
 
@@ -69,7 +71,7 @@ ChatUIKit包含以下页面：
 
       3. 双击，目前尚未支持
 
-   4. 注册自定义消息UI
+   5. 注册自定义消息UI
 
       调用```MessageViewHolderManager#registerMessageViewHolder```注册新的消息UI，或者直接修改```MessageViewHolderManager#init```进行注册。
 
