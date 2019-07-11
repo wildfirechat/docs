@@ -44,3 +44,10 @@
 8. 启动新服务，测试是否正确
 
 > 涉及到数据需要注意安全，在正式商用之前先在测试环境上进行演练。
+
+#### 0.24版本升级说明
+0.24版本修改了数据库的时区，因此需要小心处理，在升级前一定要先备份好数据库，jdbcUrl里加上时区信息，比如如下：
+```
+<property name="jdbcUrl">jdbc:mysql://localhost:3306/wfchat?useSSL=false&amp;serverTimezone=GMT%2B8&amp;allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;characterEncoding=utf8</property>
+```
+出现问题，请及时用备份数据会滚
