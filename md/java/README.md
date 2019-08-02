@@ -62,7 +62,7 @@ client.sendMessage(conversation, messageContent, new SendMessageCallback() {
 ##### 5. 特别注意事项
 clientId唯一代表一台设备，一个clientId只能存在一个连接。如果有多个地方使用同一个clientId，比如同时在手机和服务器使用同一个clientId，会产生不可预料的错误。
 
-#### 6. 使用java client的流程
+##### 6. 使用java client的流程
 1. 首先需要生成一个uuid，java有类库来实现，需要保证uuid的唯一性。
 2. 使用uuid到im服务去获取token（调用sdk中的getIMToken方法）。
 3. 使用uuid+token去连接。
