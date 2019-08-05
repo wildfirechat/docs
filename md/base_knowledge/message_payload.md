@@ -31,7 +31,7 @@ public class MessagePayload {
 
 | 内容类型 | 值 | 说明 |
 | ------- | --------- | ----------- |
-| MESSAGE_CONTENT_TYPE_UNKNOWN | 0 | 位置消息内容 |
+| MESSAGE_CONTENT_TYPE_UNKNOWN | 0 | 未知消息内容 |
 | MESSAGE_CONTENT_TYPE_TEXT | 1 | 文本消息内容 |
 | MESSAGE_CONTENT_TYPE_SOUND | 2| 语音消息内容 |
 | MESSAGE_CONTENT_TYPE_IMAGE | 3| 图片消息内容 |
