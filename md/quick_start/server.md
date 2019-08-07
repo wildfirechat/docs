@@ -6,7 +6,7 @@ Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果�
 
 ## 野火IM服务器的部署
 #### 配置修改
-社区版软件下载解压后，修改```/config/wildfirechat.conf```文件，修改```http_port```为80，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1或localhost***
+社区版软件下载**（[点这儿去下载编译好的版本](https://github.com/wildfirechat/server/releases)，如果需要自行编译的话，请用git clone，别打包下载zip压缩包，压缩包会编译错误!）**解压后，修改```/config/wildfirechat.conf```文件，修改```http_port```为80，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1或localhost***
 >> 这里有个限制http_port必须为80端口，如果使用其它端口，在使用七牛文件服务器时，发送媒体消息会失败
 
 #### 运行
