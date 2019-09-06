@@ -17,3 +17,6 @@ A. 敏感词列表是从网络上搜索出来的，里面有部分重复敏感�
 ```
 DELETE from  `t_sensitiveword` WHERE `_word` IN (SELECT `_word` FROM (SELECT * from `t_sensitiveword`) as t1 GROUP BY `_word` HAVING count(`_word`) > 1) AND `id` NOT IN (SELECT min(`id`) FROM (SELECT * from `t_sensitiveword`) as t2 GROUP BY `_word` HAVING count(`_word`) > 1);
 ```
+
+#### Q. 为什么在数据库中添加了一个用户/群组/好友，为啥不起作用？
+A. 因为服务使用了大量的缓存，只更新数据库是不能起效果的，另外数据还有完整性需求，直接写数据库可能会出问题。所以可以直接从数据库中读信息，但所有更新操作都***必须只能通过服务API的接口来进行***。
