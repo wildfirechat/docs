@@ -44,6 +44,7 @@
     * [MySQL调优](server/mysql_tune.md)
     * [硬件要求](server/hardware_requirement.md)
     * [升级指南](server/upgrade.md)
+    * [客户端数据库密钥](server/client_database_secret.md)
 * [Android开发](android/README.md)
     * [代码编译与工程说明](android/compile.md)
     * [ChatClient简介](android/chatclient.md)
