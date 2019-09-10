@@ -62,7 +62,7 @@
 * [维护说明](base_knowledge/maintain.md)
 * [应用服务](https://github.com/wildfirechat/im-app_server/blob/master/README.md)
 * [推送服务](https://github.com/wildfirechat/push_server/blob/master/README.md)
-* [推送服务](https://github.com/wildfirechat/robot_server/blob/master/README.md)
+* [机器人服务](https://github.com/wildfirechat/robot_server/blob/master/README.md)
 * [常见问题](faq/README.md)
     * [通用问题](faq/general.md)
     * [服务器问题](faq/server.md)
