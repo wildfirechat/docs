@@ -1,5 +1,5 @@
 # 服务器部署
-服务器提供[社区版](https://github.com/wildfirechat/server/releases)和[Demo服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登陆等功能。
+服务器提供[社区版](https://github.com/wildfirechat/server/releases)和[Demo应用服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登陆等功能。
 
 ## 环境需求
 Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果没有公网IP，也可以在局域网内体验。需要开通```1883```、```80```和```8888```端口。
@@ -24,7 +24,7 @@ Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果�
 
 1. 使用命令行窗口执行```bin\wildfirechat.bat```（双击执行不可用，必须命令行)。
 
-   
+
 
 执行相应系统的启动命令之后，等待10秒钟后，在浏览器中输入```http://${服务器的IP}/api/version```，查看版本信息。
 
@@ -35,3 +35,6 @@ app软件下载解压后，修改```/config/sms.properties```文件，设置```s
 
 #### 运行
 执行```java -jar app-0.0.1-SNAPSHOT.jar```。
+
+#### 检查程序可用性
+等待10秒钟，在浏览器中输入```http://${服务器的IP}:8888/```，查看是否返回OK。
