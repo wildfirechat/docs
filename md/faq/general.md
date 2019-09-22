@@ -29,4 +29,4 @@ A: 和微信逻辑一致，需要将群组保存到通讯录，才能在联系�
 A: 为了保证专业版和社区版协议一致性，我们不对外提供协议修改能力。正常情况下把IM作为一个管道用，业务要跟IM解耦，不能把业务的东西加到IM中。如果是IM方面的扩展，可以给我们提需求。合理通用的需求我们都会满足，在社区版和专业版上都加上。另外我们很多实体都带有extra字段，保留给客户扩展使用，注意extra字段使用时要使用json格式，保留未来继续扩展的可能性。
 
 ## 8. 连接状态码有什么需要注意的吗？
-A: 对于特殊的几种状态码一定要处理，不然容易出严重问题。对于```kConnectionStatusRejected```，表明当前用户已经被禁止登录。需要跳出到登录界面；对于```kConnectionStatusTokenIncorrect```和```kConnectionStatusSecretKeyMismatch```，需要重新获取token，重新调用connect。也可以调用disconnect来登出；对于```kConnectionStatusLogout```，协议栈认为你已经登出，需要重新获取token，重新调用connect，也可以直接跳到登录界面让用户重新登录。出现的问题原因多种多样，一个常见的问题就是切换过服务器，客户端跟服务器密钥不匹配，另外常见于安卓，保存的token损坏等。
+A: 对于特殊的几种状态码一定要处理，不然容易出严重问题。对于```kConnectionStatusRejected```，表明当前用户已经被禁止登录。需要跳出到登录界面；对于```kConnectionStatusTokenIncorrect```、```kConnectionStatusSecretKeyMismatch```和```kConnectionStatusLogout```，需要重新获取token，重新调用connect，也可以直接跳到登录界面让用户重新登录。出现的问题原因多种多样，一个常见的问题就是切换过服务器，客户端跟服务器密钥不匹配，另外常见于安卓，保存的token损坏等。
