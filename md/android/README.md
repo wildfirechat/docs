@@ -1,6 +1,6 @@
 # Android开发
 
-- [代码编译与工程说明](compile.md)
+- [代码编译部署与工程说明](compile.md)
 - [ChatClient简介](chatclient.md)
 - [ChatUIKit简介](chatuikit.md)
 - [WildfireChat简介](wildfirechat.md)
