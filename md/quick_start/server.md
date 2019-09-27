@@ -6,8 +6,9 @@ Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果�
 
 ## 野火IM服务器的部署
 #### 配置修改
-社区版软件下载**（[点这儿去下载编译好的版本](https://github.com/wildfirechat/server/releases)，如果想自行编译的话，请用git clone整个仓库下来，别打包下载zip压缩包，压缩包会编译错误!）**解压后，修改```/config/wildfirechat.conf```文件，修改```http_port```为80，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1或localhost***
+社区版软件下载 **（[点这儿去下载编译好的版本](https://github.com/wildfirechat/server/releases)，如果想自行编译的话，请用git clone整个仓库下来，别打包下载zip压缩包，压缩包会编译错误!）** 解压后，修改```/config/wildfirechat.conf```文件，修改```http_port```为80，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1或localhost***, ***另外要注意是使用软件包，不是源码，如果您下载的是源码的话需要先编译***。
 >> 这里有个限制http_port必须为80端口，如果使用其它端口，在使用七牛文件服务器时，发送媒体消息会失败
+>> 需要注意软件包和源码的区别，这里操作的是软件包不是源码，如果您下载的源码可以按照说明编译出软件包来进行配置和运行。
 
 #### 运行
 
@@ -33,6 +34,7 @@ Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果�
 #### 配置修改
 app软件下载解压后，修改```/config/sms.properties```文件，设置```superCode```为```66666```
 >> 发送短信需要购买短信服务，在没有短信服务的情况下，使用superCode作为验证码来登陆。
+>> 下载地址在本文的最开头处，同样需要使用软件包，如果是源码需要先编译。
 
 #### 运行
 执行```java -jar app-0.0.1-SNAPSHOT.jar```。
