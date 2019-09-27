@@ -41,3 +41,6 @@ A. 消息审查和过滤是确保设计软件能够安全运营重要的一环�
 
 #### Q. 历史消息数据如何清理？
 A. 野火IM的消息存放有3种选择。第一种是使用h2db，这种只能用户开发模式，或者用户数极少的情况下，对这种情况下重置数据库就行。第二种方法是使用mysql，其中对message表（t_messages_xxxx)和用户message关系表(t_user_message_xxx)都做了分表，message表是按照月份分的，按照文档说明找到对应的表清空就可以了。用户message关系表，是使用用户ID哈希成128个表，需要对每个表里的数据按照时间进行删除。如果表内数据比较大，需要在业务不繁忙阶段，分表分批次删除，需要部分的开发量。第三种方式就是mongodb的方式，系统会自动过期删除，不用人工干预。
+
+#### Q. 服务器一直出现 ```javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.``` 这个错误提示？
+A. 野火IM客户端与服务器保存有每个客户端的密钥，如果因为某种原因服务器没有对应的密钥（更换服务器没有迁移数据或出现异常情况），服务器将与客户端无法进行配合工作。解决办法就是需要在客户端对某些特殊的状态码进行处理，请参考[连接状态码有什么需要注意的吗](./general.md).
