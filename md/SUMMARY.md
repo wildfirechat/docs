@@ -72,3 +72,4 @@
       * [如何导入到Android Studio中](faq/android/q1.md)
       * [如何集成到现有项目中](faq/android/q2.md)
     * [iOS问题](faq/ios.md)
+    * [最佳实践](faq/practicality.md)

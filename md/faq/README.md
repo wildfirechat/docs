@@ -5,3 +5,4 @@
 * [服务器问题](server.md)
 * [安卓问题](android.md)
 * [iOS问题](ios.md)
+* [最佳实践](practicality.md)
