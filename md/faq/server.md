@@ -44,3 +44,8 @@ A. 野火IM的消息存放有3种选择。第一种是使用h2db，这种只能�
 
 #### Q. 服务器一直出现 ```javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.``` 这个错误提示？
 A. 野火IM客户端与服务器保存有每个客户端的密钥，如果因为某种原因服务器没有对应的密钥（更换服务器没有迁移数据或出现异常情况），服务器将与客户端无法进行配合工作。解决办法就是需要在客户端对某些特殊的状态码进行处理，请参考[连接状态码有什么需要注意的吗](./general.md).
+
+#### Q. Windows系统部署，提示时区不合法（The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' xxx)
+
+A. 去报Mysql版本5.6，或以上，然后参考[这个链接](https://www.cnblogs.com/smiler/p/9983146.html?tdsourcetag=s_pcqq_aiomsg)
+
