@@ -74,3 +74,4 @@
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
     * [最佳实践](faq/practicality.md)
+      * [小表情大世界](faq/practicality/stickers.md)
