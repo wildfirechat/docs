@@ -18,7 +18,7 @@
       "fontSize": 9,
       "margin": {
         "top": 56,
-        "bottom": 56,
+        "bottom": 56,git
         "right": 45,
         "left": 45
       }
@@ -144,6 +144,7 @@
             "copyButtons": true,
             "fade": false,
             "style": "flat"
-        }
+        },
+        "keywords": "野火IM,即时通讯,开源IM,高仿微信,聊天软件"
     }
 }
