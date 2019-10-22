@@ -57,7 +57,6 @@
     * [ChatUIKit简介](ios/chatuikit.md)
     * [WildfireChat简介](ios/wildfirechat.md)
     * [推送集成](ios/push.md)
-* [Java客户端](java/README.md)
 * [音视频](webrtc/README.md)
 * [维护说明](base_knowledge/maintain.md)
 * [应用服务](https://github.com/wildfirechat/im-app_server/blob/master/README.md)
