@@ -27,4 +27,6 @@ A. 这种问题一般是使用不当造成的，请确保不要改动chatclient�
     [[WFCCNetworkService sharedInstance] setServerAddress:IM_SERVER_HOST port:IM_SERVER_PORT];
     [[WFCCNetworkService sharedInstance] connect:userId token:token];
 ```
+> 可以不用在同一个地方，比如应用启动时开启日志和设置服务器地址。然后再合适的时机connect，但一定要确保调用任何接口之前要先调用connect
+
 如果还出问题，请打日志出来，在调用connect之后打出日志，在crash调用之前打出日志，把日志和截图贴到论坛或者github给我们分析
