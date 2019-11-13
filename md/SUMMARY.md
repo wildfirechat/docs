@@ -77,4 +77,5 @@
 * [文章](blogs/README.md)
   * [如何开发一款微信](blogs/如何开发一款微信.md)
   * [如何修改野火应用服务生成用户名的策略](blogs/如何修改野火应用服务生成用户名的策略.md)
-  * [苹果ATS处理](blogs/苹果ATS处理.d)
+  * [苹果ATS处理](blogs/苹果ATS处理.md)
+  * [野火IM的商业逻辑](blogs/野火IM的商业逻辑.md)
