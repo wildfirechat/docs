@@ -64,6 +64,7 @@
 * [机器人服务](https://github.com/wildfirechat/robot_server/blob/master/README.md)
 * [常见问题](faq/README.md)
     * [通用问题](faq/general.md)
+      * [购买流程](./faq/buy.md)
     * [服务器问题](faq/server.md)
       * [如何导入到IDE中](faq/server/q1.md)
       * [如何解决等登陆但一直连接中的问题](faq/server/q2.md)
