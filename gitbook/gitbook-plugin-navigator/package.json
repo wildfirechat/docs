@@ -9,7 +9,7 @@
         "spec": "1.1.1",
         "type": "version"
       },
-      "/Users/tomlee/Workspace/wildfirechat/md"
+      "/Users/dali/Workspace/docs/md"
     ]
   ],
   "_from": "gitbook-plugin-navigator@1.1.1",
@@ -43,7 +43,7 @@
   "_shasum": "b5e17ce78d89cbecce430599f91c9ee0450a0b95",
   "_shrinkwrap": null,
   "_spec": "gitbook-plugin-navigator@1.1.1",
-  "_where": "/Users/tomlee/Workspace/wildfirechat/md",
+  "_where": "/Users/dali/Workspace/docs/md",
   "author": {
     "name": "zhangzq"
   },
