@@ -5,6 +5,7 @@
 <url> <loc>http://wildfirechat.cn/quick_start/server.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/quick_start/android.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/quick_start/iOS.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://wildfirechat.cn/quick_start/pc.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/architecture/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/base_knowledge/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://wildfirechat.cn/base_knowledge/sdk_demo.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
