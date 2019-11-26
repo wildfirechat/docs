@@ -75,6 +75,7 @@
     * [Web问题](faq/web.md)
     * [最佳实践](faq/practicality.md)
       * [小表情大世界](faq/practicality/stickers.md)
+      * [在线匹配](faq/practicality/online_match.md)
 * [文章](blogs/README.md)
   * [如何开发一款微信](blogs/如何开发一款微信.md)
   * [如何修改野火应用服务生成用户名的策略](blogs/如何修改野火应用服务生成用户名的策略.md)
