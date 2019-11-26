@@ -5,6 +5,7 @@
     * [服务器部署](quick_start/server.md)
     * [安卓编译](quick_start/android.md)
     * [iOS编译](quick_start/iOS.md)
+    * [PC体验](quick_start/pc.md)
 * [系统架构](architecture/README.md)
 * [基础知识](base_knowledge/README.md)
     * [SDK与Demo的关系](base_knowledge/sdk_demo.md)

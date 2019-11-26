@@ -18,3 +18,5 @@
 [Android编译](android.md)
 
 [iOS编译](iOS.md)
+
+[PC版本试用](pc.md)
