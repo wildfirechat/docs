@@ -49,3 +49,59 @@ A. 野火IM客户端与服务器保存有每个客户端的密钥，如果因为
 
 A. 去报Mysql版本5.6，或以上，然后参考[这个链接](https://www.cnblogs.com/smiler/p/9983146.html?tdsourcetag=s_pcqq_aiomsg)
 
+#### Q. 服务器端如何发消息？类似问题服务器如何发图片，服务器端如何发自定义消息
+A. IM服务的核心功能就是个管道，在管道内传输的不是文本消息，图片消息或自定义消息等具体消息，传输的是[Payload](../base_knowledge/message_payload.md)。客户端上会定义各种消息，包括文本、语音、图片及自定义消息，在发送时统一编码为Payload，然后再收到后再解码为具体的消息。服务器端发送消息时，首先要确认客户端上编码/解码的规则，发送对应的Payload即可。唯一例外的是Payload字段中的二进制数据需要做base64编码。例如图片消息，在android上的定义如下：
+```
+@ContentTag(type = MessageContentType.ContentType_Image, flag = PersistFlag.Persist_And_Count)
+public class ImageMessageContent extends MediaMessageContent {
+
+    @Override
+    public MessagePayload encode() {
+        MessagePayload payload = super.encode();
+        payload.searchableContent = "[图片]";
+
+        Bitmap thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(localPath), 200, 200);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        thumbnail.compress(Bitmap.CompressFormat.JPEG, 75, baos);
+        payload.binaryContent = baos.toByteArray();
+
+        return payload;
+    }
+
+
+    @Override
+    public void decode(MessagePayload payload) {
+        super.decode(payload);
+        thumbnailBytes = payload.binaryContent;
+    }
+  }
+
+  ...
+}
+
+public abstract class MediaMessageContent extends MessageContent {
+
+    @Override
+    public MessagePayload encode() {
+        MessagePayload payload = new MessagePayload();
+        payload.localMediaPath = this.localPath;
+        payload.remoteMediaUrl = this.remoteUrl;
+        payload.mediaType = mediaType;
+        return payload;
+    }
+
+    @Override
+    public void decode(MessagePayload payload) {
+        this.localPath = payload.localMediaPath;
+        this.remoteUrl = payload.remoteMediaUrl;
+        this.mediaType = payload.mediaType;
+    }
+
+    ...
+}
+```
+因此服务器发送图片的参数为
+```
+{"payload":{"type":3,"searchableContent":"[图片]","base64edData":"图片缩略图的base64内容","mediaType":1,"remoteUrl":"http://图片的地址"}}
+```
+> type是消息类型，3(MessageContentType.ContentType_Image)为图片。mediaType是媒体类型，对应文件服务器的bucket，1(MessageContentMediaType.IMAGE)为图片的桶。
