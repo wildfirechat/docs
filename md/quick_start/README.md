@@ -1,10 +1,18 @@
 # 快速开始
 #### 体验我们的应用
-您可以直接下载安装野火IM的[Android](https://github.com/wildfirechat/android-chat/releases)或[iOS](itms-apps://itunes.apple.com/cn/app/1450256455?mt=8)平台的DEMO来体验野火IM，或者微信扫码下面二维码。PC请在[PC发布包](https://github.com/wildfirechat/pc-chat/releases)中下载最新安装版本。
+您可以直接使用我们提供的应用进行体验
+
+[点我体验 Android 端](https://github.com/wildfirechat/android-chat/releases) 或微信扫码下方二维码
+
+[点我体验 iOS 端](itms-apps://itunes.apple.com/cn/app/1450256455?mt=8) 或微信扫码下方二维码
+
 
 ![野火IM](http://static.wildfirechat.cn/download_qrcode.png)
 
-> 您需要使用两个账户互加为好友聊天，也可以添加作者（FireChat）或者机器人（小火）进行互动。
+[点我体验 PC 端](https://github.com/wildfirechat/pc-chat/releases)，从release中下载对应的平台，使用野火IM移动端扫码登陆（不是使用微信扫码）
+
+[点我体验 Web 端](http://web.wildfirechat.cn)，打开页面后，使用野火IM移动端扫码登陆（不是使用微信扫码）
+
 
 加入我们的体验交流群，可以跟野火IM爱好者一起分享探讨使用野火IM的经验和问题，使用野火IM移动客户端（不要用微信）扫码下面二维码：
 
