@@ -83,3 +83,4 @@
   * [苹果ATS处理](blogs/苹果ATS处理.md)
   * [野火IM的商业逻辑](blogs/野火IM的商业逻辑.md)
   * [如何理解野火IM设计理念](blogs/如何理解野火IM设计理念.md)
+  * [为什么野火IM不全免费](blogs/为什么野火IM不全免费.md)
