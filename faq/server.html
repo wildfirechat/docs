@@ -12,7 +12,6 @@
         
         
     
-    
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
@@ -54,10 +53,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
@@ -67,18 +62,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
                 
             
                 
@@ -99,12 +82,7 @@
         
     
 
-
-    
-
         
-    
-    
     
     
     
@@ -122,15 +100,6 @@
     
     <link rel="prev" href="buy.html" />
     
-
-    
-    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
-    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
-    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
-    
-
-    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
-    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
 
     
         <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
@@ -1484,6 +1453,66 @@
             
         </li>
     
+        <li class="chapter " data-level="1.14.5" data-path="../blogs/如何理解野火IM设计理念.html">
+            
+                <a href="../blogs/如何理解野火IM设计理念.html">
+            
+                    
+                        <b>1.14.5.</b>
+                    
+                    如何理解野火IM设计理念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../blogs/为什么野火IM不全免费.html">
+            
+                <a href="../blogs/为什么野火IM不全免费.html">
+            
+                    
+                        <b>1.14.6.</b>
+                    
+                    为什么野火IM不全免费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../blogs/开发运营社交软件也要遵守法律.html">
+            
+                <a href="../blogs/开发运营社交软件也要遵守法律.html">
+            
+                    
+                        <b>1.14.7.</b>
+                    
+                    开发运营社交软件也要遵守法律
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../blogs/如何实现聊天记录的备份与恢复.html">
+            
+                <a href="../blogs/如何实现聊天记录的备份与恢复.html">
+            
+                    
+                        <b>1.14.8.</b>
+                    
+                    如何实现聊天记录的备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1622,9 +1651,15 @@ public abstract class MediaMessageContent extends MessageContent {
 </code></pre><blockquote>
 <p>type&#x662F;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;3(MessageContentType.ContentType_Image)&#x4E3A;&#x56FE;&#x7247;&#x3002;mediaType&#x662F;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x7684;bucket&#xFF0C;1(MessageContentMediaType.IMAGE)&#x4E3A;&#x56FE;&#x7247;&#x7684;&#x6876;&#x3002;</p>
 </blockquote>
+<h4 id="Q__&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x6570;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x80FD;&#x6539;&#x52A8;&#x5417;&#xFF0C;&#x600E;&#x4E48;&#x6539;&#x52A8;&#xFF1F;">0.0.14. Q. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x6570;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x80FD;&#x6539;&#x52A8;&#x5417;&#xFF0C;&#x600E;&#x4E48;&#x6539;&#x52A8;&#xFF1F;</h4>
+<p>A. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E3A;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x7EBF;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;1024&#x6761;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x6709;&#x8D85;&#x8FC7;1024&#x6761;&#x6D88;&#x606F;&#x6CA1;&#x6709;&#x63A5;&#x6536;&#x65F6;&#xFF0C;&#x65E7;&#x7684;&#x6D88;&#x606F;&#x5C06;&#x88AB;&#x629B;&#x5F03;&#xFF0C;&#x53EA;&#x4FDD;&#x8BC1;&#x6700;&#x65B0;1024&#x6761;&#x6700;&#x65B0;&#x6D88;&#x606F;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x53EF;&#x4EE5;&#x6539;&#x5927;&#xFF0C;&#x4F46;&#x6539;&#x5927;&#x5E26;&#x6765;&#x7684;&#x98CE;&#x9669;&#x662F;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x91CF;&#x4F1A;&#x63D0;&#x5347;&#x5F88;&#x591A;&#xFF08;&#x6BCF;&#x589E;&#x52A0;1&#xFF0C;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x589E;&#x52A0;50&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#x7528;&#x6237;&#x6570;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x3002;&#x4E13;&#x4E1A;&#x7248;&#x4E0D;&#x53D7;&#x6B64;&#x5F71;&#x54CD;&#xFF09;&#xFF0C;&#x53E6;&#x5916;&#x5927;&#x91CF;&#x6D88;&#x606F;&#x7684;&#x62C9;&#x53D6;&#x65F6;&#x95F4;&#x4E5F;&#x53D8;&#x5F97;&#x5F88;&#x957F;&#xFF0C;&#x5F71;&#x54CD;&#x5BA2;&#x6237;&#x7AEF;&#x4F53;&#x9A8C;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x80FD;&#x627E;&#x5230;&#x3002;</p>
+<h4 id="Q__&#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x592A;&#x4E25;&#x683C;&#x4E86;&#x3002;">0.0.15. Q. &#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x592A;&#x4E25;&#x683C;&#x4E86;&#x3002;</h4>
+<p>A. &#x654F;&#x611F;&#x8BCD;&#x662F;&#x793E;&#x4EA4;&#x8FD0;&#x8425;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x4E00;&#x73AF;&#xFF0C;&#x56FD;&#x5185;&#x8FD0;&#x8425;IM&#x5FC5;&#x987B;&#x8FDB;&#x884C;&#x76D1;&#x7BA1;&#xFF0C;&#x9632;&#x6B62;&#x89E6;&#x72AF;&#x6CD5;&#x5F8B;&#x3002;&#x73B0;&#x5728;&#x654F;&#x611F;&#x8BCD;&#x8BBE;&#x7F6E;&#x8FC7;&#x4E8E;&#x4E25;&#x683C;&#x800C;&#x4E14;&#x6709;&#x4E9B;&#x8FC7;&#x65F6;&#xFF0C;&#x56E0;&#x6B64;&#x5BA2;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5220;&#x6389;&#x73B0;&#x6709;&#x7684;&#x654F;&#x611F;&#x8BCD;&#x6DFB;&#x52A0;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;&#x7684;&#x654F;&#x611F;&#x8BCD;&#xFF08;&#x4E0D;&#x8981;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x5E93;&#x811A;&#x672C;&#xFF0C;&#x56E0;&#x4E3A;&#x4FEE;&#x6539;&#x4E86;&#x811A;&#x672C;&#xFF0C;&#x5347;&#x7EA7;&#x7248;&#x672C;&#x65F6;flyway&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6821;&#x9A8C;&#x4F1A;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x7B49;&#x751F;&#x6210;&#x4E86;&#x5E93;&#x540E;&#x518D;&#x5220;&#x9664;&#xFF09;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x6DFB;&#x52A0;&#x7684;&#x654F;&#x611F;&#x8BCD;&#x4F1A;&#x5728;1&#x5C0F;&#x65F6;&#x5185;&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x751F;&#x6548;&#x3002;&#x53E6;&#x5916;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x4E00;&#x4E0B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;&#x654F;&#x611F;&#x8BCD;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x654F;&#x611F;&#x8BCD;&#x53EA;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x4E0D;&#x963B;&#x62E6;&#x53D1;&#x9001;&#x3002;&#x4E8B;&#x540E;&#x518D;&#x68C0;&#x67E5;&#x654F;&#x611F;&#x8BCD;&#x6D88;&#x606F;&#x3002;&#x53E6;&#x5916;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x6709;<a href="https://github.com/wildfirechat/admin" target="_blank">&#x7BA1;&#x7406;&#x540E;&#x53F0;</a>&#xFF0C;&#x5BA2;&#x6237;&#x53EF;&#x4EE5;&#x8D2D;&#x4E70;&#x8FDB;&#x884C;&#x5305;&#x62EC;&#x654F;&#x611F;&#x8BCD;&#x5728;&#x5185;&#x7684;&#x7BA1;&#x7406;.</p>
+<h4 id="Q__IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#x62A5;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x662F;flywayXXXX">0.0.16. Q. IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#x62A5;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x662F;flywayXXXX</h4>
+<p>A. &#x91CE;&#x706B;IM&#x4F7F;&#x7528;&#x4E86;<a href="https://flywaydb.org" target="_blank">flyway</a>&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x5E93;migration&#x5DE5;&#x5177;&#x3002;flyway&#x4F1A;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x811A;&#x672C;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x505A;&#x6821;&#x9A8C;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x6539;&#x52A8;&#x8FC7;sql&#x811A;&#x672C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x6821;&#x9A8C;&#x4E0D;&#x8FC7;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x60A8;&#x4E0D;&#x8981;&#x4FEE;&#x6539;sql&#x8BED;&#x53E5;&#x3002;&#x4E0D;&#x8981;&#x5C1D;&#x8BD5;&#x628A;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x52A0;&#x5230;IM&#x670D;&#x52A1;&#x4E2D;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">2018 &#xA9; wildfirechat.cn &#x4EAC;ICP&#x5907;18060403&#x53F7;-1 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-11-28 12:29:16
-</span></footer><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#Server_FAQ">Server FAQ</a></p><li><a href="#">none</a></li><ul><li><a href="#">none</a></li><ul><li><a href="#Q__&#x5982;&#x4F55;&#x628A;IM&#x670D;&#x52A1;&#x5012;&#x5165;&#x5230;IDE&#x4E2D;&#xFF1F;">0.0.1. Q. &#x5982;&#x4F55;&#x628A;IM&#x670D;&#x52A1;&#x5012;&#x5165;&#x5230;IDE&#x4E2D;&#xFF1F;</a></li><li><a href="#Q__&#x6211;&#x90E8;&#x7F72;&#x5B8C;&#x6210;Demo&#x670D;&#x52A1;&#x540E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x767B;&#x9646;&#xFF0C;&#x4F46;&#x4E00;&#x53EA;&#x663E;&#x793A;&#x8FDE;&#x63A5;&#x4E2D;&#xFF1F;">0.0.2. Q. &#x6211;&#x90E8;&#x7F72;&#x5B8C;&#x6210;Demo&#x670D;&#x52A1;&#x540E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x767B;&#x9646;&#xFF0C;&#x4F46;&#x4E00;&#x53EA;&#x663E;&#x793A;&#x8FDE;&#x63A5;&#x4E2D;&#xFF1F;</a></li><li><a href="#Q__&#x6D88;&#x606F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x90A3;&#x5F20;&#x8868;&#x4E2D;">0.0.3. Q. &#x6D88;&#x606F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x90A3;&#x5F20;&#x8868;&#x4E2D;</a></li><li><a href="#Q__IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x811A;&#x672C;&#x5728;windows&#x4E0B;&#x6539;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x653E;&#x5230;linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x62A5;&#x9519;">0.0.4. Q. IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x811A;&#x672C;&#x5728;windows&#x4E0B;&#x6539;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x653E;&#x5230;linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x62A5;&#x9519;</a></li><li><a href="#Q__&#x4E3A;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x654F;&#x611F;&#x8BCD;&#x6570;&#x76EE;&#x8981;&#x6BD4;&#x901A;&#x8FC7;API&#x83B7;&#x53D6;&#x5230;&#x7684;&#x6570;&#x76EE;&#x8981;&#x591A;">0.0.5. Q. &#x4E3A;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x654F;&#x611F;&#x8BCD;&#x6570;&#x76EE;&#x8981;&#x6BD4;&#x901A;&#x8FC7;API&#x83B7;&#x53D6;&#x5230;&#x7684;&#x6570;&#x76EE;&#x8981;&#x591A;</a></li><li><a href="#Q__&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x6237;_&#x7FA4;&#x7EC4;_&#x597D;&#x53CB;&#xFF0C;&#x4E3A;&#x5565;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1F;">0.0.6. Q. &#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x6237;/&#x7FA4;&#x7EC4;/&#x597D;&#x53CB;&#xFF0C;&#x4E3A;&#x5565;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1F;</a></li><li><a href="#Q__&#x4E3A;&#x4EC0;&#x4E48;&#x673A;&#x5668;&#x4EBA;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x4EE5;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x63D0;&#x793A;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x9519;&#x8BEF;&#xFF1F;">0.0.7. Q. &#x4E3A;&#x4EC0;&#x4E48;&#x673A;&#x5668;&#x4EBA;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x4EE5;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x63D0;&#x793A;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x9519;&#x8BEF;&#xFF1F;</a></li><li><a href="#Q__&#x600E;&#x4E48;&#x4FEE;&#x6539;&#x5C0F;&#x706B;&#x673A;&#x5668;&#x4EBA;&#x5934;&#x50CF;&#x540D;&#x79F0;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#xFF1F;">0.0.8. Q. &#x600E;&#x4E48;&#x4FEE;&#x6539;&#x5C0F;&#x706B;&#x673A;&#x5668;&#x4EBA;&#x5934;&#x50CF;&#x540D;&#x79F0;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#xFF1F;</a></li><li><a href="#Q__&#x5982;&#x4F55;&#x505A;&#x6D88;&#x606F;&#x5BA1;&#x67E5;&#x548C;&#x8FC7;&#x6EE4;&#xFF1F;">0.0.9. Q. &#x5982;&#x4F55;&#x505A;&#x6D88;&#x606F;&#x5BA1;&#x67E5;&#x548C;&#x8FC7;&#x6EE4;&#xFF1F;</a></li><li><a href="#Q__&#x5386;&#x53F2;&#x6D88;&#x606F;&#x6570;&#x636E;&#x5982;&#x4F55;&#x6E05;&#x7406;&#xFF1F;">0.0.10. Q. &#x5386;&#x53F2;&#x6D88;&#x606F;&#x6570;&#x636E;&#x5982;&#x4F55;&#x6E05;&#x7406;&#xFF1F;</a></li><li><a href="#Q__&#x670D;&#x52A1;&#x5668;&#x4E00;&#x76F4;&#x51FA;&#x73B0;_javax_crypto_BadPaddingException:_Given_final_block_not_properly_padded__Such_issues_can_arise_if_a_bad_key_is_used_during_decryption__&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF1F;">0.0.11. Q. &#x670D;&#x52A1;&#x5668;&#x4E00;&#x76F4;&#x51FA;&#x73B0; javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption. &#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF1F;</a></li><li><a href="#Q__Windows&#x7CFB;&#x7EDF;&#x90E8;&#x7F72;&#xFF0C;&#x63D0;&#x793A;&#x65F6;&#x533A;&#x4E0D;&#x5408;&#x6CD5;&#xFF08;The_server_time_zone_value_" öð¹ú±ê×¼ê±¼ä'_xxx)'="">0.0.12. Q. Windows&#x7CFB;&#x7EDF;&#x90E8;&#x7F72;&#xFF0C;&#x63D0;&#x793A;&#x65F6;&#x533A;&#x4E0D;&#x5408;&#x6CD5;&#xFF08;The server time zone value &apos;&#xD6;&#xD0;&#xB9;&#xFA;&#xB1;&#xEA;&#xD7;&#xBC;&#xCA;&#xB1;&#xBC;&#xE4;&apos; xxx)</a></li><li><a href="#Q__&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x6D88;&#x606F;&#xFF1F;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x670D;&#x52A1;&#x5668;&#x5982;&#x4F55;&#x53D1;&#x56FE;&#x7247;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;">0.0.13. Q. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x6D88;&#x606F;&#xFF1F;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x670D;&#x52A1;&#x5668;&#x5982;&#x4F55;&#x53D1;&#x56FE;&#x7247;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;</a></li></ul></ul></ul></div><a href="#" id="goTop"><i class="fa fa-arrow-up"></i></a>
+2019-12-10 22:33:19
+</span></footer><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#Server_FAQ">Server FAQ</a></p><li><a href="#">none</a></li><ul><li><a href="#">none</a></li><ul><li><a href="#Q__&#x5982;&#x4F55;&#x628A;IM&#x670D;&#x52A1;&#x5012;&#x5165;&#x5230;IDE&#x4E2D;&#xFF1F;">0.0.1. Q. &#x5982;&#x4F55;&#x628A;IM&#x670D;&#x52A1;&#x5012;&#x5165;&#x5230;IDE&#x4E2D;&#xFF1F;</a></li><li><a href="#Q__&#x6211;&#x90E8;&#x7F72;&#x5B8C;&#x6210;Demo&#x670D;&#x52A1;&#x540E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x767B;&#x9646;&#xFF0C;&#x4F46;&#x4E00;&#x53EA;&#x663E;&#x793A;&#x8FDE;&#x63A5;&#x4E2D;&#xFF1F;">0.0.2. Q. &#x6211;&#x90E8;&#x7F72;&#x5B8C;&#x6210;Demo&#x670D;&#x52A1;&#x540E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x767B;&#x9646;&#xFF0C;&#x4F46;&#x4E00;&#x53EA;&#x663E;&#x793A;&#x8FDE;&#x63A5;&#x4E2D;&#xFF1F;</a></li><li><a href="#Q__&#x6D88;&#x606F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x90A3;&#x5F20;&#x8868;&#x4E2D;">0.0.3. Q. &#x6D88;&#x606F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x90A3;&#x5F20;&#x8868;&#x4E2D;</a></li><li><a href="#Q__IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x811A;&#x672C;&#x5728;windows&#x4E0B;&#x6539;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x653E;&#x5230;linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x62A5;&#x9519;">0.0.4. Q. IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x811A;&#x672C;&#x5728;windows&#x4E0B;&#x6539;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x653E;&#x5230;linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x62A5;&#x9519;</a></li><li><a href="#Q__&#x4E3A;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x654F;&#x611F;&#x8BCD;&#x6570;&#x76EE;&#x8981;&#x6BD4;&#x901A;&#x8FC7;API&#x83B7;&#x53D6;&#x5230;&#x7684;&#x6570;&#x76EE;&#x8981;&#x591A;">0.0.5. Q. &#x4E3A;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x654F;&#x611F;&#x8BCD;&#x6570;&#x76EE;&#x8981;&#x6BD4;&#x901A;&#x8FC7;API&#x83B7;&#x53D6;&#x5230;&#x7684;&#x6570;&#x76EE;&#x8981;&#x591A;</a></li><li><a href="#Q__&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x6237;_&#x7FA4;&#x7EC4;_&#x597D;&#x53CB;&#xFF0C;&#x4E3A;&#x5565;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1F;">0.0.6. Q. &#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x6237;/&#x7FA4;&#x7EC4;/&#x597D;&#x53CB;&#xFF0C;&#x4E3A;&#x5565;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1F;</a></li><li><a href="#Q__&#x4E3A;&#x4EC0;&#x4E48;&#x673A;&#x5668;&#x4EBA;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x4EE5;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x63D0;&#x793A;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x9519;&#x8BEF;&#xFF1F;">0.0.7. Q. &#x4E3A;&#x4EC0;&#x4E48;&#x673A;&#x5668;&#x4EBA;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x4EE5;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x63D0;&#x793A;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x9519;&#x8BEF;&#xFF1F;</a></li><li><a href="#Q__&#x600E;&#x4E48;&#x4FEE;&#x6539;&#x5C0F;&#x706B;&#x673A;&#x5668;&#x4EBA;&#x5934;&#x50CF;&#x540D;&#x79F0;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#xFF1F;">0.0.8. Q. &#x600E;&#x4E48;&#x4FEE;&#x6539;&#x5C0F;&#x706B;&#x673A;&#x5668;&#x4EBA;&#x5934;&#x50CF;&#x540D;&#x79F0;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#xFF1F;</a></li><li><a href="#Q__&#x5982;&#x4F55;&#x505A;&#x6D88;&#x606F;&#x5BA1;&#x67E5;&#x548C;&#x8FC7;&#x6EE4;&#xFF1F;">0.0.9. Q. &#x5982;&#x4F55;&#x505A;&#x6D88;&#x606F;&#x5BA1;&#x67E5;&#x548C;&#x8FC7;&#x6EE4;&#xFF1F;</a></li><li><a href="#Q__&#x5386;&#x53F2;&#x6D88;&#x606F;&#x6570;&#x636E;&#x5982;&#x4F55;&#x6E05;&#x7406;&#xFF1F;">0.0.10. Q. &#x5386;&#x53F2;&#x6D88;&#x606F;&#x6570;&#x636E;&#x5982;&#x4F55;&#x6E05;&#x7406;&#xFF1F;</a></li><li><a href="#Q__&#x670D;&#x52A1;&#x5668;&#x4E00;&#x76F4;&#x51FA;&#x73B0;_javax_crypto_BadPaddingException:_Given_final_block_not_properly_padded__Such_issues_can_arise_if_a_bad_key_is_used_during_decryption__&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF1F;">0.0.11. Q. &#x670D;&#x52A1;&#x5668;&#x4E00;&#x76F4;&#x51FA;&#x73B0; javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption. &#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF1F;</a></li><li><a href="#Q__Windows&#x7CFB;&#x7EDF;&#x90E8;&#x7F72;&#xFF0C;&#x63D0;&#x793A;&#x65F6;&#x533A;&#x4E0D;&#x5408;&#x6CD5;&#xFF08;The_server_time_zone_value_" öð¹ú±ê×¼ê±¼ä'_xxx)'="">0.0.12. Q. Windows&#x7CFB;&#x7EDF;&#x90E8;&#x7F72;&#xFF0C;&#x63D0;&#x793A;&#x65F6;&#x533A;&#x4E0D;&#x5408;&#x6CD5;&#xFF08;The server time zone value &apos;&#xD6;&#xD0;&#xB9;&#xFA;&#xB1;&#xEA;&#xD7;&#xBC;&#xCA;&#xB1;&#xBC;&#xE4;&apos; xxx)</a></li><li><a href="#Q__&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x6D88;&#x606F;&#xFF1F;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x670D;&#x52A1;&#x5668;&#x5982;&#x4F55;&#x53D1;&#x56FE;&#x7247;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;">0.0.13. Q. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x6D88;&#x606F;&#xFF1F;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x670D;&#x52A1;&#x5668;&#x5982;&#x4F55;&#x53D1;&#x56FE;&#x7247;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5982;&#x4F55;&#x53D1;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;</a></li><li><a href="#Q__&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x6570;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x80FD;&#x6539;&#x52A8;&#x5417;&#xFF0C;&#x600E;&#x4E48;&#x6539;&#x52A8;&#xFF1F;">0.0.14. Q. &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x79BB;&#x7EBF;&#x6D88;&#x606F;&#x6570;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x80FD;&#x6539;&#x52A8;&#x5417;&#xFF0C;&#x600E;&#x4E48;&#x6539;&#x52A8;&#xFF1F;</a></li><li><a href="#Q__&#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x592A;&#x4E25;&#x683C;&#x4E86;&#x3002;">0.0.15. Q. &#x654F;&#x611F;&#x8BCD;&#x8FC7;&#x6EE4;&#x592A;&#x4E25;&#x683C;&#x4E86;&#x3002;</a></li><li><a href="#Q__IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#x62A5;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x662F;flywayXXXX">0.0.16. Q. IM&#x670D;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#x62A5;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x662F;flywayXXXX</a></li></ul></ul></ul></div><a href="#" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -1667,13 +1702,12 @@ public abstract class MediaMessageContent extends MessageContent {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"服务器问题","level":"1.13.2","depth":2,"next":{"title":"如何导入到IDE中","level":"1.13.2.1","depth":3,"path":"faq/server/q1.md","ref":"faq/server/q1.md","articles":[]},"previous":{"title":"购买流程","level":"1.13.1.1","depth":3,"path":"faq/buy.md","ref":"./faq/buy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","anchors@^0.7.1","emphasize@^1.1.0","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","sitemap-general@^0.1.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2","todo@^0.1.3","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","include-codeblock@^3.0.2","ace@^0.3.2","mermaid-gb3@2.1.0","katex@^1.1.3","navigator"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2018 © wildfirechat.cn 京ICP备18060403号-1","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"disqus":{"shortName":"gitbookuse"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/wildfirechat/docs"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://wildfirechat.cn"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"navigator":{},"alerts":{},"github-buttons":{"repo":"wildfirechat/server","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"ff100361cdce95dd4c8fb96b4009f7bc"},"expandable-chapters-small":{},"local-video":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"野火IM","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"野火IM开发手册","links":{"sidebar":{"Home":"http://www.wildfirechat.cn"}},"gitbook":"*","description":"野火IM开发手册"},"file":{"path":"faq/server.md","mtime":"2019-11-28T04:29:16.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-28T04:30:53.002Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"服务器问题","level":"1.13.2","depth":2,"next":{"title":"如何导入到IDE中","level":"1.13.2.1","depth":3,"path":"faq/server/q1.md","ref":"faq/server/q1.md","articles":[]},"previous":{"title":"购买流程","level":"1.13.1.1","depth":3,"path":"faq/buy.md","ref":"./faq/buy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","anchors@^0.7.1","emphasize@^1.1.0","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","sitemap-general@^0.1.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2","todo@^0.1.3","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","-sharing","sharing-plus@^0.0.2","include-codeblock@^3.0.2","navigator"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2018 © wildfirechat.cn 京ICP备18060403号-1","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"disqus":{"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/wildfirechat/docs"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"sitemap-general":{"prefix":"http://wildfirechat.cn"},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"navigator":{},"alerts":{},"github-buttons":{"repo":"wildfirechat/server","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"ff100361cdce95dd4c8fb96b4009f7bc"},"expandable-chapters-small":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"野火IM","pdf":{"pageNumbers":true,"fontSize":9,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":45,"left":45,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"野火IM开发手册","links":{"sidebar":{"Home":"http://www.wildfirechat.cn"}},"gitbook":"*","description":"野火IM开发手册"},"file":{"path":"faq/server.md","mtime":"2019-12-10T14:33:19.833Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-10T15:11:58.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1710,10 +1744,6 @@ public abstract class MediaMessageContent extends MessageContent {
         
     
         
-        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
-        
-    
-        
         <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
         
     
@@ -1726,39 +1756,13 @@ public abstract class MediaMessageContent extends MessageContent {
         
     
         
-        <script src="../gitbook/gitbook-plugin-musicxml/osmd.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-musicxml/musicxml.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-musicxml/promise.min.js"></script>
-        
-    
-        
         <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>

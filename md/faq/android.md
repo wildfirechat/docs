@@ -43,3 +43,8 @@ A. 产品上线之前，一定要更换包名和签名
 1. ```client```module下的包名不可更改
 2. 修改```chat/build.gradle```里面的```applicationId```
 
+
+
+#### 	Q. 如何抓取日志
+
+A. [回答](android/q3.md)
