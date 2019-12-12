@@ -72,6 +72,7 @@
     * [安卓问题](faq/android.md)
       * [如何导入到Android Studio中](faq/android/q1.md)
       * [如何集成到现有项目中](faq/android/q2.md)
+      * [如何抓取日志](faq/android/q3.md)
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
     * [最佳实践](faq/practicality.md)
