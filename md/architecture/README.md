@@ -53,4 +53,4 @@ SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文�
 > 客户端中sdk（imclient/imuikit）稳定性比较高，建议您直接使用，有问题提issue或PR。应用部分往往跟您的业务密切相关，因此应用是demo级别的，您可以参考demo进行集成。
 
 ## 专业版拓扑图
-![专业版拓扑图](commercial_im_topology.png)
+![专业版拓扑图](commericial_im_topology.png)
