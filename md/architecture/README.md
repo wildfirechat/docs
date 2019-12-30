@@ -51,3 +51,6 @@ SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文�
   * [docs](https://github.com/wildfirechat/docs/tree/master/md) 文档源码
 > 其中IM服务成熟稳定，是可用于商业化的，如果有问题，请提issue或者PR。push需要集成更多的手机厂商的推送服务。其它的两个服务app/robot是配合IM服务的，往往跟您的业务关系比较大，所以是demo级别的，你可以参考来集成您的业务。
 > 客户端中sdk（imclient/imuikit）稳定性比较高，建议您直接使用，有问题提issue或PR。应用部分往往跟您的业务密切相关，因此应用是demo级别的，您可以参考demo进行集成。
+
+## 专业版拓扑图
+![专业版拓扑图](commercial_im_topology.png)
