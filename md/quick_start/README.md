@@ -28,3 +28,5 @@
 [iOS编译](iOS.md)
 
 [PC版本试用](pc.md)
+
+[试用专业版和Web/小程序](trial.md)
