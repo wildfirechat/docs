@@ -18,7 +18,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"friendUid\":\"b\",\"status\":0}" http://localhost/admin/friend/status
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"friendUid\":\"b\",\"status\":0}" http://localhost:18080/admin/friend/status
 
 {
   "code":0,
@@ -44,7 +44,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"status\":0}" http://localhost/admin/friend/status
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"status\":0}" http://localhost:18080/admin/friend/status
 
 {
   "code":0,

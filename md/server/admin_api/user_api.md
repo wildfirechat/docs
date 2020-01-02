@@ -20,7 +20,7 @@ http://domain:18080/admin/user/get_token
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\"}" http://localhost/admin/user/get_token
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\"}" http://localhost:18080/admin/user/get_token
 
 {
   "code":0,
@@ -58,7 +58,7 @@ http://domain:18080/admin/user/create
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"password\":\"123456\"}" http://localhost/admin/user/create
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"password\":\"123456\"}" http://localhost:18080/admin/user/create
 
 {
   "code":0,
@@ -93,7 +93,7 @@ http://domain:18080/admin/user/get_info
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_info
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost:18080/admin/user/get_info
 
 {
   "code":0,
@@ -122,7 +122,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\", \"status\":1}" http://localhost/admin/user/update_block_status
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\", \"status\":1}" http://localhost:18080/admin/user/update_block_status
 
 {
   "code":0,
@@ -148,7 +148,7 @@ http://domain:18080/admin/user/check_block_status
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/check_block_status
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost:18080/admin/user/check_block_status
 
 {
   "code":0,
@@ -176,7 +176,7 @@ http://domain:18080/admin/user/get_blocked_list
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/get_blocked_list
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost:18080/admin/user/get_blocked_list
 
 {
   "code":0,
@@ -215,7 +215,7 @@ http://domain:18080/admin/user/onlinestatus
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost/admin/user/onlinestatus
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost:18080/admin/user/onlinestatus
 
 {
   "code":0,

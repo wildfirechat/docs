@@ -36,4 +36,4 @@ Server API是供客户服务器调用的。所有的请求都是POST方式，bod
 ##nonce = "76616", timestamp = "1558350862502", sign = "b98f9b0717f59febccf1440067a7f50d9b31bdde"
 http.admin.no_check_time false
 ```
-在secret没有变，且关掉时间检查开关的情况下，可以直接使用上述的签名进行测试。在正式上线时要修改secret和打开时间检查。
+在secret没有变，且关掉时间检查开关的情况下，可以直接使用上述的签名进行测试。在正式上线时 ***一定要修改secret和打开时间检查***，否则就相当于家里的大门开着，很容易被黑客攻击。

@@ -16,7 +16,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost/admin/sensitive/add
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost:18080/admin/sensitive/add
 
 {
   "code":0,
@@ -39,7 +39,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost/admin/sensitive/del
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost:18080/admin/sensitive/del
 
 {
   "code":0,
@@ -62,7 +62,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json"  http://localhost/admin/sensitive/query
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json"  http://localhost:18080/admin/sensitive/query
 
 {
   "code":0,

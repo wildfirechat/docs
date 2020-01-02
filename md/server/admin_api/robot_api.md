@@ -34,7 +34,7 @@ http://domain:18080/admin/robot/create
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"callback\":\"http://localhost/robot\",\"owner\":\"b\"}" http://localhost/admin/robot/create
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"callback\":\"http://localhost/robot\",\"owner\":\"b\"}" http://localhost:18080/admin/robot/create
 
 {
   "code":0,
