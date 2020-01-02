@@ -3,7 +3,7 @@
 ## 设置用户关系
 #### 地址
 ```
-http://domain/admin/friend/status
+http://domain:18080/admin/friend/status
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -18,7 +18,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"friendUid\":\"b\",\"status\":0}" http://localhost/admin/friend/status
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"friendUid\":\"b\",\"status\":0}" http://localhost/admin/friend/status
 
 {
   "code":0,
@@ -30,7 +30,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 #### 获取用户关系列表
 #### 地址
 ```
-http://domain/admin/friend/list
+http://domain:18080/admin/friend/list
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -44,7 +44,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"status\":0}" http://localhost/admin/friend/status
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"status\":0}" http://localhost/admin/friend/status
 
 {
   "code":0,

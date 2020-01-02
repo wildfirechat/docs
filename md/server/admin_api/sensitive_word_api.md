@@ -4,7 +4,7 @@
 ## 添加敏感词
 #### 地址
 ```
-http://domain/admin/sensitive/add
+http://domain:18080/admin/sensitive/add
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -16,7 +16,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost/admin/sensitive/add
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost/admin/sensitive/add
 
 {
   "code":0,
@@ -27,7 +27,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 ## 删除敏感词
 #### 地址
 ```
-http://domain/admin/sensitive/del
+http://domain:18080/admin/sensitive/del
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -39,7 +39,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost/admin/sensitive/del
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"words\":[\"a\",\"b\",\"c\"]}" http://localhost/admin/sensitive/del
 
 {
   "code":0,
@@ -50,7 +50,7 @@ curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f9867
 ## 获取敏感词列表
 #### 地址
 ```
-http://domain/admin/sensitive/query
+http://domain:18080/admin/sensitive/query
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -62,7 +62,7 @@ N/A
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json"  http://localhost/admin/sensitive/query
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json"  http://localhost/admin/sensitive/query
 
 {
   "code":0,

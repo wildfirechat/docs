@@ -64,7 +64,7 @@ http://domain/robot/message/send
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -H "rid":"robota" -d   \
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
   "{                       \
     \"sender\":\"robota\",       \
     \"conv\": {              \
@@ -113,7 +113,7 @@ http://domain/robot/user_info
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"userId\":\"a\"}" http://localhost/robot/user_info
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"userId\":\"a\"}" http://localhost/robot/user_info
 
 {
   "code":0,

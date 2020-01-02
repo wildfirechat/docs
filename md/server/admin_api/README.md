@@ -29,3 +29,11 @@ Server API是供客户服务器调用的。所有的请求都是POST方式，bod
   }
 }
 ```
+## 测试
+服务器配置中有个参数，可以关掉时间检查，能够方便大家进行调试
+```
+#服务器API接口参数是否检查时间。当设置为false时，所有的请求会检查时间的有效性；当设置为true时，可以在http.admin.secret_key保持不变的情况下，使用固定的服务API签名
+##nonce = "76616", timestamp = "1558350862502", sign = "b98f9b0717f59febccf1440067a7f50d9b31bdde"
+http.admin.no_check_time false
+```
+在secret没有变，且关掉时间检查开关的情况下，可以直接使用上述的签名进行测试。在正式上线时要修改secret和打开时间检查。

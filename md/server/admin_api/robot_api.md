@@ -4,7 +4,7 @@
 ## 注册/更新机器人
 #### 地址
 ```
-http://domain/admin/robot/create
+http://domain:18080/admin/robot/create
 ```
 #### body
 | 参数 | 类型 | 必需 | 描述 |
@@ -34,7 +34,7 @@ http://domain/admin/robot/create
 
 #### 示例
 ```
-curl -X POST -H "nonce:14723" -H "timestamp":"1539698981861" -H "sign":"9e9f98672f466a81e6dd61570689528cf38e6418" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"callback\":\"http://localhost/robot\",\"owner\":\"b\"}" http://localhost/admin/robot/create
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"callback\":\"http://localhost/robot\",\"owner\":\"b\"}" http://localhost/admin/robot/create
 
 {
   "code":0,
