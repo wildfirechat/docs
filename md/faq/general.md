@@ -51,6 +51,7 @@ A: 首先连接状态-6对应的值是```kConnectionStatusSecretKeyMismatch```�
 2. 客户端disconnect时，参数传的是1，这个时候IM服务器会完全销毁掉这个session，当用户下次再登录时就无法解码。如果主动断开后期望保存session，参数传0.
 3. 服务器做迁移的时候，没迁移数据库，也就没有用户之前保存的session。
 4. 客户端被踢，系统设计每个平台只能有一个设备登录，当另外一个手机登录同一个账户时，之前的session会被标记为deleted状态。
+5. 客户端卸载重装，cid会变化，如果某个环境缓存了token，则登录时就找不到对应的session。
 
 解决办法：不要在应用服务器缓存token，使用正确的clientid和platform。如果是这几种情况，可以跳到登录界面，让用户重新登录，重新登录时使用正确的clientId和platform。如果不太可能是这几种情况，可以检查服务器的```t_user_session```表，确认session状态。
 
