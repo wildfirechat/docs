@@ -33,3 +33,9 @@ A. 这种问题一般是使用不当造成的，请确保不要改动chatclient�
 
 #### Q. 苹果手机上图片打不开
 A. 因为图片访问方式默认使用的是http方式，根据[ATS](https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=84053098_3_dg&wd=ios%20ats&oq=ats&rsv_pq=befae743006ab63c&rsv_t=bf550nXKa277BSCevvQ%2FlxRsKTxtKRlHFBTAjnNQpciyfz5LbxtXPDStdwHb0IgTctBAPw&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=6&rsv_sug1=3&rsv_sug7=100&rsv_sug2=0&inputT=2653&rsv_sug4=2992)的限制，应用服务无法访问HTTP的资源。解决办法要么关掉ATS或者在ATS中加上例外，要么是配置资源的HTTPS访问方式并在配置中配上https的资源路径。建议在ATS中加上文件存储服务的例外，解决办法请自行百度。另外上传不受ATS影响。
+
+#### Q. 野火IM是否支持bitcode
+A. 最新版本协议栈和imclient已经支持bitcode，但imuikit和chat依赖于webrtc库，而谷歌官方发布webrtc库不支持bitcode，所以如果imuikit和chat要支持bitcode必须移除掉音视频功能（移除掉wfavengkit库和webrtc库，屏蔽掉相关代码）。或者找到我们对应版本支持bitcode的webrtc库。
+
+#### Q. 如何移除音视频功能
+A. 在imuikit和chat的工程中搜索```WFCU_SUPPORT_VOIP```，找到2处宏定义的地方，改为0。然后依赖库中去掉对wfavengkit和webrtc两个库的依赖。
