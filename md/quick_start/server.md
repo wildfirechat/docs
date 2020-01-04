@@ -14,14 +14,14 @@ Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果�
 
 **注意一定到在```bin```的同级目录下执行命令，不要到```bin```内执行**
 
-#####mac/linux系统
+##### mac/linux系统
 
   1. 命令行到解压目录
 
   2. **使用root用户**，执行``` sh ./bin/wildfirechat.sh```
+> 后台执行可以使用命令```nohup sh ./bin/wildfirechat.sh 2>&1 &```，确保退出终端时程序能够继续运行
 
-
-#####windows系统
+##### windows系统
 
 1. 使用命令行窗口执行```bin\wildfirechat.bat```（双击执行不可用，必须命令行)。
 
