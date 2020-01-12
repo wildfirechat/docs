@@ -12,4 +12,8 @@ Web和小程序依赖于专业版，如果需要使用web和小程序，必须�
 4. 发邮件给sales@wildfirechat.cn，告知支付体验费用给哪位支持人员了，域名是多少，ip是多少，公司的信息，还有使用im的用途。我们会通过邮件的方式把体验软件包和使用说明发给您。
 
 ## 申请体验Web和小程序
-0.
+1. 从GitHub下载[web-chat](https://github.com/wildfirechat/web-chat)或[wx-chat](https://github.com/wildfirechat/wx-chat)，根据说明文档进行编译，并体验。
+
+   > 此时，web-chat和wx-chat连的是官方服务器，web端需要用官方Android或iOS扫码登录，微信小程序需要使用手机号登录。
+
+2. 申请体验专业版时，同时注明想体验web版、或小程序版。
