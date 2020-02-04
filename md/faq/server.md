@@ -117,3 +117,10 @@ A. 野火IM使用了[flyway](https://flywaydb.org)作为数据库migration工具
 
 #### Q. t_messages_xxxx和t_user_messages_xxxx都是做什么用的有什么关系。
 A. t_messages是存放消息实体的，每发送一条消息都会存储下来一条；t_user_messages是存放用户消息对应关系的，每条消息的每个目标用户都会存储一条记录。比如在一个1000人的群里发送一条消息，t_messages会存储一条记录，t_user_messages就会存储1000条记录。因此随着时间的增加这两张表的数据内容可能会非常大，因此对这两张表做了分表处理。t_messages的分表可以参加前面问题3，t_user_messages的分表是用户id的hash值对128取模，因此就有128张表。专业版可以选用mongodb存储这两部分内容，mongodb在海量数据时比mysql有着更好的性能表现，使用mongodb时，mysql数据库中还会继续存在这些表，只不过是不使用了，不要删除，保留不变，防止数据库有效性校验出错。
+
+#### Q. 禁止多端登录无效！
+A. 禁止多端的逻辑是这样的：客户端在login时同时带上```clientId```和```platform```，appserver在获取token时同时带上```clientId```和```platform```，IM服务生产token时会踢掉相同平台的其它设备。IM server中有个配置如下，需要设置为false，如果不生效，则检查appserver和客户端在登录时是否携带了```platform```。
+```
+# 是否支持多端登陆
+server.multi_endpoint false
+```

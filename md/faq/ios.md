@@ -1,9 +1,9 @@
 # iOS FAQ
 
-#### Q. 1编译WildfireChat工程报错，提示找不到部分依赖？
+#### Q. 编译WildfireChat工程报错，提示找不到部分依赖？
 A. WildfireChat隐式依赖于WFChatUIKit和WFChatClient，第一次运行必须先运行WFChatClient，再运行WFChatUIKit。运行之后会自动把库文件和依赖资源拷贝到对应目录，WildfireChat就可以编译运行了。
 
-#### Q. 2如何修改野火IM标题栏颜色
+#### Q. 如何修改野火IM标题栏颜色
 A. 在野火IM Demo应用的AppDelegate.m文件中，有对全局navi的设置，在这里可以修改标题栏颜色
 ```
 - (void)setupNavBar {
@@ -17,7 +17,7 @@ A. 在野火IM Demo应用的AppDelegate.m文件中，有对全局navi的设置�
 }
 ```
 
-#### Q. 3如何打包上架
+#### Q. 如何打包上架
 A. 野火IM中使用了动态库，包含了x86_64架构（模拟器需要这种架构），因此上线前需要移除这种架构。以野火IM的demo为例，首先在ios-chat项目空间运行到真机运行，然后关掉空间。命令行到```$ProjectPath/ios-chat/wfchat```目录下，执行```sh removex86.sh```进行依赖库瘦身。然后打开```WildFireChat.xcodeproj```进行打包（注意一定不要打开```ios-chat```空间打包，在这个空间打包会从新把一些依赖去拷贝过去，导致有x86架构打包失败)。
 
 #### Q. 崩溃在协议栈中
@@ -39,3 +39,6 @@ A. 最新版本协议栈和imclient已经支持bitcode，但imuikit和chat依赖
 
 #### Q. 如何移除音视频功能
 A. 在imuikit和chat的工程中搜索```WFCU_SUPPORT_VOIP```，找到2处宏定义的地方，改为0。然后依赖库中去掉对wfavengkit和webrtc两个库的依赖。
+
+#### Q. 为什么SDK不支持armv7架构了？
+A. 从iphone5s起，架构已经是arm64了。目前iphone5及之前的设备基本上没有了，可以不用再支持armv7架构了。省去armv7架构可以有效的减少sdk及软件包的大小，请移除armv7架构的支持。

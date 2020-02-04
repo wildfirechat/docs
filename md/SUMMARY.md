@@ -77,6 +77,7 @@
       * [如何抓取日志](faq/android/q3.md)
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
+    * [小程序问题](faq/wx.md)
     * [最佳实践](faq/practicality.md)
       * [小表情大世界](faq/practicality/stickers.md)
       * [在线匹配](faq/practicality/online_match.md)
@@ -89,4 +90,5 @@
   * [为什么野火IM不全免费](blogs/为什么野火IM不全免费.md)
   * [开发运营社交软件也要遵守法律](blogs/开发运营社交软件也要遵守法律.md)
   * [如何实现聊天记录的备份与恢复](blogs/如何实现聊天记录的备份与恢复.md)
+  * [如何远程收集日志](blogs/如何远程收集日志.md)
   * [抗击疫情行动](blogs/野火IM抗击疫情行动.md)
