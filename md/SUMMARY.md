@@ -77,6 +77,7 @@
       * [如何抓取日志](faq/android/q3.md)
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
+    * [PC问题](faq/pc.md)
     * [小程序问题](faq/wx.md)
     * [最佳实践](faq/practicality.md)
       * [小表情大世界](faq/practicality/stickers.md)
