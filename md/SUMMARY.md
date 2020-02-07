@@ -6,6 +6,8 @@
     * [安卓编译](quick_start/android.md)
     * [iOS编译](quick_start/iOS.md)
     * [PC试用](quick_start/pc.md)
+    * [Web试用](quick_start/web.md)
+    * [微信小程序试用](quick_start/wx.md)
     * [试用专业版和Web/小程序](quick_start/trial.md)
 * [系统架构](architecture/README.md)
 * [基础知识](base_knowledge/README.md)
