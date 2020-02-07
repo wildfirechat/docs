@@ -38,6 +38,7 @@ app软件下载解压后，修改```/config/sms.properties```文件，设置```s
 
 #### 运行
 执行```java -jar app-0.0.1-SNAPSHOT.jar```。
+> 后台执行可以使用命令```nohup java -jar app-0.0.1-SNAPSHOT.jar 2>&1 &```，确保退出终端时程序能够继续运行
 
 #### 检查程序可用性
 等待10秒钟，在浏览器中输入```http://${服务器的IP}:8888/```，查看是否返回OK。
