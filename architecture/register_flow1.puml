@@ -1,6 +1,0 @@
-@startuml
-  application_client -> application_server : register user
-  application_server -> wildfire_server : register user
-  wildfire_server -> application_server : register success
-  application_server -> application_client : register success
-@enduml
