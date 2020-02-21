@@ -4,7 +4,7 @@
 #### Step 1 定义消息内容类型并注册
 消息内容都有一个共同的基类[```MessageContent```](message_content.md)，自定义消息也需要继承这个类，并实现其中的方法，可以参考内置的消息类型。
 
-需要注意的是[```MessagePayload```](./message_payload.md)有个```pushContent```字段。如果需要推送，请在这个字段中填上需要推送的内容。
+需要注意的是[```MessagePayload```](./message_payload.md)有个```pushContent```字段。如果需要推送，请在这个字段中填上需要推送的内容。有个```searchableContent```字段，填写消息的搜索内容，比如您有个很复杂的消息，然后需要它能被搜索到，需要把关键字放到这个字段。
 
 消息定义完成后，需要在connect之前，调用```registerMessageContent```方法来注册到SDK中.
 
