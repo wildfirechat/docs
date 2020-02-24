@@ -68,7 +68,7 @@ public class MessagePayload {
 对于自定义消息，如果需要推送需要encode此字段。推送内容会使用此字段。
 
 #### mentionedType
-提醒类型。0 不提醒；1 对mentionedTargets里的user进行提醒；2 对群内所有人提醒。
+提醒类型（就是@某人或@全体）。0 不提醒；1 对mentionedTargets里的user进行提醒；2 对群内所有人提醒。
 
 #### mediaType
 媒体类型，媒体消息内容使用，用来区别在服务器端文件对应的bucket。
