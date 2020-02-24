@@ -33,7 +33,22 @@ qiniu.bucket_favorite_name media
 qiniu.bucket_favorite_domain http://pghnpyzos.bkt.clouddn.com
 ```
 > 一定要使用不同的bucket，至少要区分长期保存和短期保存。头像/收藏等需要长期保存，其它根据情况可能会定期清除。
-> bucket公开的安全性问题不是很大，每个文件上传会生成一长串随机数名字，基本不可能穷举到的。如果要选择私有，需要在客户端进行处理，对链接的访问加上七牛的鉴权信息，具体信息请查阅七牛的技术文档。
+> bucket公开的安全性没有问题，每个文件上传会生成一长串随机数名字，基本不可能穷举到的。如果要选择私有，需要在客户端进行处理，对链接的访问加上七牛的鉴权信息，具体信息请查阅七牛的技术文档。
+
+##### 选择正确的server_url
+server_url对应不同的七牛存储区域，选择下表中对应区域的服务器上传地址（上传是客户端传的，但客户端模拟的服务器上传，实际上两个地址都可以用）
+
+|  存储区域   | 地域简称  | 上传域名 |
+|  ----  | ----  | ---- |
+| 华东 | z0 | 服务器端上传：http(s)://up.qiniup.com <br> 客户端上传： http(s)://upload.qiniup.com |
+| 华北 | z1 | 服务器端上传：http(s)://up-z1.qiniup.com <br> 客户端上传：http(s)://upload-z1.qiniup.com |
+| 华南 | z2 | 服务器端上传：http(s)://up-z2.qiniup.com <br> 客户端上传：http(s)://upload-z2.qiniup.com |
+| 北美 | na0 | 服务器端上传：http(s)://up-na0.qiniup.com <br> 客户端上传：http(s)://upload-na0.qiniup.com |
+| 东南亚 | as0 | 服务器端上传：http(s)://up-as0.qiniup.com <br> 客户端上传：http(s)://upload-as0.qiniup.com |
+
+##### 选择正确的bucket和domain
+如下图所示，请绑定域名，使用绑定的域名和正确的bucket。
+![bucket和domain](./assert/qiniu_bucket_domain.jpeg)
 
 #### 使用其它服务器
 上述两种服务服务器的url中都带有32位的uuid，基本上不会被穷举。但生成的url没有访问控制，传输过程中也没有加密，因此如果客户需要传输非常敏感的媒体文件，请在客户端上传文件到自己的应用服务器，然后再调用sdk发送消息。
