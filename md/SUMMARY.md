@@ -97,3 +97,4 @@
   * [如何远程收集日志](blogs/如何远程收集日志.md)
   * [野火IM抗击疫情行动](blogs/野火IM抗击疫情行动.md)
   * [多端登录的处理](blogs/多端登录的处理.md)
+  * [野火IM应用之Webhook机器人](blogs/野火IM应用之Webhook机器人.md)
