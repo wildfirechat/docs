@@ -15,7 +15,7 @@
 
 
 ##### 会话目标(Target)：
-  跟会话类型不同而不同，Single类型时，目标为用户Id；Group类型时，目标为群Id；Chatroom类型时，目标为聊天室Id；Channel类型时 目标为Channel ID。
+  跟会话类型不同而不同，Single类型时，目标为对方用户Id；Group类型时，目标为群Id；Chatroom类型时，目标为聊天室Id；Channel类型时 目标为Channel ID。
 
 #### 会话线路(Line)：
   会话线路可以更加方便的过滤会话。比如同一个app中不同部门可以使用不同的line区分。或者可以设计不同的场景使用不同的line等。
