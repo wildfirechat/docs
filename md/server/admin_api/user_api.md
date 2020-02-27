@@ -10,7 +10,9 @@ http://domain:18080/admin/user/get_token
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
 | clientId | string | 是 | 客户端ID |
-> clientId为客户端ID，客户端SDK有获取clientId的接口
+| platform | int | 否 | 平台类型iOS 1, Android 2, Windows 3, OSX 4, WEB = 5 |
+> clientId为客户端ID，客户端SDK有获取clientId的接口。如果需要开启多端互踢，需要转入正确的platform。
+
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
@@ -20,7 +22,7 @@ http://domain:18080/admin/user/get_token
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\"}" http://localhost:18080/admin/user/get_token
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\",\"clientId\":\"xxxxx\",\"platform\":1}" http://localhost:18080/admin/user/get_token
 
 {
   "code":0,
@@ -76,12 +78,14 @@ http://domain:18080/admin/user/get_info
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
+| userId | string | 否（三个参数必须且只能存在一个） | 用户ID |
+| name | string | 否（三个参数必须且只能存在一个）  | 登陆名 |
+| mobile | string | 否（三个参数必须且只能存在一个）  | 用户手机号码 |
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| userId | string | 否 | 用户ID |
+| userId | string | 是 | 用户ID |
 | name | string | 是 | 登陆名 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |

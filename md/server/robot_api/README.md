@@ -39,21 +39,8 @@ http://domain/robot/message/send
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | sender | string | 是 | 发送者ID |
-| conv | json | 是 | 会话 |
-| conv.type | int | 是 | 会话类型 |
-| conv.target | string | 是 | 会话目标 |
-| conv.line | int | 否 | 会话线路，缺省为0 |
-| payload | json | 是 | 消息负载 |
-| payload.type | int | 是 | 消息类型 |
-| payload.searchableContent | string | 否 | 消息可搜索内容 |
-| payload.pushContent | string | 否 | 消息推送内容 |
-| payload.content | string | 否 | 消息内容 |
-| payload.base64edData | string | 否 | 消息二进制内容，base64编码 |
-| payload.mediaType | int | 否 | 媒体消息类型 |
-| payload.remoteMediaUrl | string | 否 | 媒体内容链接 |
-| payload.expireDuration | long | 否 | 消息过期时间 |
-| payload.mentionedType | int | 否 | 消息提醒类型 |
-| payload.mentionedTarget | string list | 否 | 消息提醒对象列表 |
+| conv | [json](../admin_api/models.md##Conversation) | 是 | 会话 |
+| payload | [json](../admin_api/models.md##MessagePayload) | 是 | 消息负载 |
 
 
 #### 响应
@@ -96,7 +83,9 @@ http://domain/robot/user_info
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
+| userId | string | 否（三个参数必须且只能存在一个） | 用户ID |
+| name | string | 否（三个参数必须且只能存在一个）  | 登陆名 |
+| mobile | string | 否（三个参数必须且只能存在一个）  | 用户手机号码 |
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
