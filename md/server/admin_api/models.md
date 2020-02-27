@@ -32,3 +32,48 @@
 ```
 {"type":0,"target":"userId"}  
 ```
+
+## GroupMember
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| member_id | string | 是 | 群成员的用户ID |
+| alias | string | 否 | 群成员的群名片 |
+| type | int | 否 | 群成员类型，0 普通成员, 1 管理员 |
+
+示例:
+```
+{"member_id":"userId1","alias":"老王"}  
+```
+
+## GroupInfo
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| target_id | string | 否 | 群组ID，创建群组时为可选参数，获取群组信息时是必填项 |
+| name | string | 否 | 群组名称 |
+| portrait | string | 否 | 群组头像 |
+| owner | string | 是 | 群主用户ID |
+| type | int | 是 | 群类型，0 weixin 风格群组；2 qq 风格群组。移动端demo使用的是2 |
+| extra | string | 否 | 群的extra信息供客户扩展使用 |
+
+示例:
+```
+{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":3}  
+```
+
+## Group
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| group_info | [json](./models.md##GroupInfo) | 是 | 群组ID |
+| members | list<[json](./models.md##GroupMember)> | 否 | 群组成员列表 |
+
+
+示例:
+```
+{
+  "group_info":{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":3},
+  "members":[{"member_id":"memberId1","name":"老王的朋友们","owner":"laowang","type":3}]
+}
+```
