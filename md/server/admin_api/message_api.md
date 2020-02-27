@@ -9,8 +9,8 @@ http://domain:18080/admin/message/send
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | sender | string | 是 | 发送者ID |
-| conv | [json](../models.md##Conversation) | 是 | 会话 |
-| payload | [json](../models.md##MessagePayload) | 是 | 消息负载 |
+| conv | [json](./models.md##Conversation) | 是 | 会话 |
+| payload | [json](./models.md##MessagePayload) | 是 | 消息负载 |
 
 
 #### 响应
@@ -83,7 +83,7 @@ http://domain:18080/admin/message/multicast
 | sender | string | 是 | 发送者ID |
 | targets | list<string> | 是 | 接收者ID列表 |
 | line | int | 否 | 会话线路，缺省为0 |
-| payload | [json](../models.md##MessagePayload) | 是 | 消息负载 |
+| payload | [json](./models.md##MessagePayload) | 是 | 消息负载 |
 
 
 #### 响应
@@ -128,7 +128,7 @@ http://domain:18080/admin/message/broadcast
 | ------ | ------ | --- | ------ |
 | sender | string | 是 | 发送者ID |
 | line | int | 否 | 会话线路，缺省为0 |
-| payload | [json](../models.md##MessagePayload) | 是 | 消息负载 |
+| payload | [json](./models.md##MessagePayload) | 是 | 消息负载 |
 
 
 #### 响应

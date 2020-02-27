@@ -11,7 +11,7 @@ http://domain:18080/admin/user/get_token
 | userId | string | 是 | 用户ID |
 | clientId | string | 是 | 客户端ID |
 | platform | int | 否 | 平台类型iOS 1, Android 2, Windows 3, OSX 4, WEB = 5 |
-> clientId为客户端ID，客户端SDK有获取clientId的接口。如果需要开启多端互踢，需要转入正确的platform。
+> clientId为客户端ID，客户端SDK有获取clientId的接口。如果需要开启多端互踢，需要使用正确的platform。
 
 
 #### 响应
