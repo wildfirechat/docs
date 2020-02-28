@@ -126,9 +126,10 @@ http://domain/channel/get_profile
 | owner | string | 否 | 频道的拥有者 |
 | updateDt | string | 否 | 频道更新日期 |
 | callback | string | 否 | 频道回调地址 |
+| state | int | 是 | [频道状态](../../base_knowledge/channel##频道状态) |
 | automatic | string | 否 | 消息是否发给owner，0 发送；1 不发送 |
 
-
+频道状态
 #### 示例
 ```
 curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1"  http://localhost/channel/get_profile

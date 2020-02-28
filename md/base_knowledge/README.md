@@ -11,4 +11,5 @@
 * [离线消息](offline_message.md)
 * [群组](group.md)
 * [聊天室](chatroom.md)
+* [频道](channel.md)
 * [自定义消息内容](custom_message_content.md)
