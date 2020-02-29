@@ -90,8 +90,6 @@ http://domain:18080/admin/message/multicast
 | messageUid | long | 是 | 消息唯一ID |
 | timestamp | long | 是 | 服务器处理时间 |
 
-##nonce = "76616", timestamp = "1558350862502", sign = "b98f9b0717f59febccf1440067a7f50d9b31bdde"
-http.admin.no_check_time false
 #### 示例
 ```
 curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
