@@ -4,7 +4,7 @@
 
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| type | int | 是 | [消息内容类型](../../base_knowledge/message_md#####contentType) |
+| type | int | 是 | [消息内容类型](../../base_knowledge/message_payload.md#####contentType) |
 | searchableContent | string | 否 | 消息可搜索内容 |
 | pushContent | string | 否 | 消息推送内容 |
 | content | string | 否 | 消息内容 |
