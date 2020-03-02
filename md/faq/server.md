@@ -47,7 +47,7 @@ A. 野火IM客户端与服务器保存有每个客户端的密钥，如果因为
 
 #### Q. Windows系统部署，提示时区不合法（The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' xxx)
 
-A. 去报Mysql版本5.6，或以上，然后参考[这个链接](https://www.cnblogs.com/smiler/p/9983146.html?tdsourcetag=s_pcqq_aiomsg)
+A. 安装Mysql5.7的最新版本，然后参考[这个链接](https://www.cnblogs.com/smiler/p/9983146.html?tdsourcetag=s_pcqq_aiomsg)
 
 #### Q. 服务器端如何发消息？类似问题服务器如何发图片，服务器端如何发自定义消息
 A. IM服务的核心功能就是个管道，在管道内传输的不是文本消息，图片消息或自定义消息等具体消息，传输的是[Payload](../base_knowledge/message_payload.md)。客户端上会定义各种消息，包括文本、语音、图片及自定义消息，在发送时统一编码为Payload，然后再收到后再解码为具体的消息。服务器端发送消息时，首先要确认客户端上编码/解码的规则，发送对应的Payload即可。唯一例外的是Payload字段中的二进制数据需要做base64编码。例如图片消息，在android上的定义如下：
@@ -124,3 +124,6 @@ A. 禁止多端的逻辑是这样的：客户端在login时同时带上```client
 # 是否支持多端登陆
 server.multi_endpoint false
 ```
+
+#### Q. IM服务启动sql语句报错“Specified key was too long; max key length is 767 bytes Location”！
+A. 这是因为mysql的版本不够新，mysql的旧版本默认key的最大长度是767字节，如果需要更大的可以手动更改。更简单的办法是升级到mysql5.7.27之后的版本，从5.7.27版本之后默认支持长索引。
