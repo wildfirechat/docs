@@ -127,3 +127,6 @@ server.multi_endpoint false
 
 #### Q. IM服务启动sql语句报错“Specified key was too long; max key length is 767 bytes Location”！
 A. 这是因为mysql的版本不够新，mysql的旧版本默认key的最大长度是767字节，如果需要更大的可以手动更改。更简单的办法是升级到mysql5.7.27之后的版本，从5.7.27版本之后默认支持长索引。
+
+#### Q. 纯内网环境是否需要部署turn服务器，部署在哪里？
+A. 音视频通话是p2p的，需要2端能够建立直接连接。如果2端在不同的NAT后面，就需要turn服务提供穿墙打洞的支持。turn服务不一定要部署在公网，但有个前提条件是 ***所有客户端能够访问到的IP*** 才行，turn服务需要放开TCP3478和所有UDP端口（也可以在turn服务的配置中指定范围）。turn服务器的部署请自行百度解决.
