@@ -16,7 +16,7 @@ Webrtc是目前主流的音视频解决方案，它提供了媒体能力，信�
 2. 部署Turn服务器，建议部署coTurn，部署方法请使用百度查询。部署完毕后，使用[这个链接](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/)检查turn服务是否部署成功
 ![图片](turn_check.jpeg)
 
-> 当Type为"relay"时表明turn服务部署成功
+> 当Type为"relay"时表明turn服务部署成功，否则为失败。
 
 3. 修改客户端配置
 在客户端的config文件中，修改地址为您部署的turn服务器地址
@@ -35,3 +35,7 @@ NSString *ICE_PASSWORD = @"wfchat";
 
 #### 上线一定要自己部署Turn服务
 野火IM提供了体验用的环境，环境配置为1C1G1M，仅能够供应体验使用，上线商用时一定要切换到自己的Turn服务器。
+
+#### 其它
+1. 多人音视频授权绑定的是IM的域名，不是绑定的turn服务域名，所以可以使用任意turn服务器地址。
+2. turn服务可以部署多个，在客户端多次调用addIceServer即可。当用户在全球多个区域分布式，可以在不同区域部署多个turn服务，提高体验。
