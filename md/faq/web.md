@@ -11,3 +11,20 @@ A. Web SDK必须跟专业版配合使用。因为Web SDK的同步机制与移动
 
 ### Q. route返回22
 A. 错误码22，表示未授权，请确认```config.js```里面```WEB_APP_ID```和```WEB_APP_KEY```是否正确修改。
+
+### Q. ```Web SDK```到底有哪些依赖？
+A. ```Web SDK```的依赖如下：
+
+    'base64-arraybuffer'
+    'long'
+    'mobx'
+    'long'
+    'js-base64'
+    'detectrtc'
+    'events'
+    'long'
+    'events'
+    'atob'
+    'btoa'
+
+其中,```mobx```不是必须，可将其从```wfc/messages/message.js```中移除。
