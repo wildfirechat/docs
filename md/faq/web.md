@@ -8,3 +8,23 @@ A. Web SDK以发布包形式提供，不提供源码。另外Web SDK与专业版
 
 #### Q. Web SDK可以跟社区版配合使用吗？
 A. Web SDK必须跟专业版配合使用。因为Web SDK的同步机制与移动端和PC端不一致，相比而言更消耗性能，需要更高性能的专业版配合使用。
+
+### Q. route返回22
+A. 错误码22，表示未授权，请确认```config.js```里面```WEB_APP_ID```和```WEB_APP_KEY```是否正确修改。
+
+### Q. ```Web SDK```到底有哪些依赖？
+A. ```Web SDK```的依赖如下：
+
+    'base64-arraybuffer'
+    'long'
+    'mobx'
+    'long'
+    'js-base64'
+    'detectrtc'
+    'events'
+    'long'
+    'events'
+    'atob'
+    'btoa'
+
+其中,```mobx```不是必须，可将其从```wfc/messages/message.js```中移除。
