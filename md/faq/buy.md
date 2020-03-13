@@ -5,7 +5,7 @@
 
 2. 根据文档确认购买的产品内容和价格。
 
-3. PC SDK/专业版IM/Web SDK/小程序SDK支持试用，可根据文档中的流程申请试用，试用一段时间做到心中有数。
+3. PC SDK/专业版IM/Web SDK/小程序SDK/多人音视频等SDK都支持试用，需根据文档中的流程申请试用，试用一段时间确保满足需求后再购买。
 
 4. 发送邮件给[sales@wildfirechat.cn](mailto:sales@wildfirechat.cn)，说明公司，使用目的，购买内容，我们会通过邮件回复对应的合同。
 
