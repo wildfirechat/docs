@@ -13,7 +13,7 @@ Webrtc是目前主流的音视频解决方案，它提供了媒体能力，信�
 #### 使用方法
 1. 确保野火IM功能正常，确保通话双方能够收发消息
 
-2. 部署Turn服务器，建议部署coTurn，部署方法请使用百度查询。部署完毕后，使用[这个链接](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/)检查turn服务是否部署成功
+2. 部署Turn服务器，建议部署coTurn，部署方法请使用百度查询。部署完毕后，使用[这个链接](https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/)检查turn服务是否部署成功。***注意一定要是turn服务，不能是stun服务，一定要出现下图中红线标注的type***。
 ![图片](turn_check.jpeg)
 
 > 当Type为"relay"时表明turn服务部署成功，否则为失败。
