@@ -8,7 +8,7 @@ PC需要自己打包，从[这里](https://github.com/wildfirechat/pc-chat)下�
 PC是使用的electron跨平台技术，打包时需要严格按照工程中的readme要求配置环境和打包步骤，否则非常可能打包出错。
 
 ## 申请体验SDK
-确认已经可以打包运行PC端程序的前提下，向我们申请PC体验SDK。微信添加```wildfirechat```或```wfchat```，支付100元体验费用，然后发邮件给[sales@wildfirechat.cn](mailto:sales@wildfirechat.cn)，说明公司，使用用途，服务器ip地址，我们将会为您打包好指定IP的功能库（内含我们提供的测试域名，解析到您的IP地址）并通过邮件发送给您，体验期限是一个月。如果购买，体验费用可以抵扣或者退还；如果不购买，则作为打包小哥的辛苦费了。注意gmail的邮箱会屏蔽掉压缩包，建议使用非gmail的邮箱。
+确认已经可以打包运行PC端程序的前提下，向我们申请PC体验SDK。微信添加```wildfirechat```或```wfchat```，支付100元体验费用，然后发邮件给[sales@wildfirechat.cn](mailto:sales@wildfirechat.cn)，说明公司，使用用途，IM服务器ip地址（注意是IM服务的，不是appserver），我们将会为您打包好指定IP的功能库（内含我们提供的测试域名，解析到您的IP地址）并通过邮件发送给您，体验期限是一个月。如果购买，体验费用可以抵扣或者退还；如果不购买，则作为打包小哥的辛苦费了。注意gmail的邮箱会屏蔽掉压缩包，建议使用非gmail的邮箱。
 
 ## 替换IM功能库
 体验库一般是通过邮件发送，邮件正文会带有替换说明。请按照我们提供的说明更换功能库。
