@@ -20,14 +20,16 @@
 | 项目 | 包含内容 | 价格 | 促销价格|
 | ------ | ------ | ------ | ------- |
 | 专业版IM服务 | 专业版IM服务软件包，不包含源码 | 5.9W/套 |  2.9W/套 |
-| PC SDK（Electron版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/pc-chat)，不影响二次开发)(仅包含win/mac平台。linux平台请联系我们) | 5.9W/套 |  2.9W/套 |
+| PC SDK（Electron版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/pc-chat)，不影响二次开发)(仅包含win/mac平台) | 5.9W/套 |  2.9W/套 |
+| PC SDK（Electron版本 Linux版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/pc-chat)，不影响二次开发)(仅包含linux平台) | 5.9W/套 |  2.9W/套 |
 | PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 5.9W/套 |  2.9W/套 |
 | 单人音视频源码 | 单人音视频源码，如果需要二次开发才需要，sdk可以免费使用 | 5W |   N/A |
 | Web SDK | Web功能库（发布包，提供[开源Demo](https://github.com/wildfirechat/web-chat)，依赖专业版IM） | 2W/套 | 1W/套 |
 | 小程序SDK | 微信小程序功能库（发布包，UI开源，依赖专业版IM) | 2W/套 | 1W/套 |
-| 多人音视频SDK | 支持多人实时音视频，sdk，闭源。只支持移动端。 | 2W/套 | 1W/套 |
+| 多人音视频SDK | 支持多人实时音视频，sdk，闭源，UI开源。只支持移动端（PC部分支持）。 | 2W/套 | 1W/套 |
+| 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 2W/套 | 1W/套 |
 
-> 开业促销，2020年专业版、PC SDK和Web SDK 五折促销。专业版、PC SDK和Web SDK会绑定域名，以上是每套的价格。
+> 开业促销，2020年专业版、PC SDK和Web SDK 五折促销。专业版、PC SDK和Web SDK会绑定域名，以上是每套的价格。可以先[试用](trail/README.md)后购买
 
 > 开发团队量大从优，享受阶梯价格，具体详情请联系我们。
 
@@ -50,7 +52,6 @@
 
 还有如下功能正在开发中，敬请期待
 
-* 朋友圈
 * 频道（公众号）服务
 
   如果您有基于即时通讯的产品，也可与我们合作，共同丰富基于野火IM的生态环境。

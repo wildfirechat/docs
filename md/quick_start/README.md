@@ -27,6 +27,5 @@
 
 [iOS编译](iOS.md)
 
-[PC版本试用](pc.md)
-
-[试用专业版和Web/小程序](trial.md)
+收费的SDK和软件包也可以向我们申请试用
+[试用](../tral/README.md)
