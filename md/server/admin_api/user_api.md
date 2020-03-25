@@ -215,7 +215,16 @@ http://domain:18080/admin/user/onlinestatus
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| status | int | 是 | 0 online, 1 have session offline, 2 no session |
+| sessions | json list | 是 | 所有端的连接情况 |
+
+#### session
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| clientId | string | 是 | 客户端ID |
+| userId | string | 是 | User Id |
+| platform | int | 是 | platform |
+| status | int | 是 | 0 online, 1 have session offline |
+| lastSeen | long | 是 | 最后一次可见时间 |
 
 #### 示例
 ```
@@ -224,8 +233,12 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 {
   "code":0,
   "msg":"success",
-  "result":{
-    "status":0
-  }
+  "result":[{
+    "clientId":"clientidxxx",
+    "userId":"useridxxx",
+    "platform":0,
+    "status":0,
+    "lastSeen":1392312342
+  }]
 }
 ```
