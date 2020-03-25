@@ -1,12 +1,12 @@
 # 服务器部署
-服务器提供[社区版](https://github.com/wildfirechat/server/releases)和[Demo应用服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登陆等功能。
+服务器提供[IM服务社区版](https://github.com/wildfirechat/server/releases)和[Demo应用服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登陆等功能。
 
 ## 环境需求
 Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果没有公网IP，也可以在局域网内体验。需要开通```1883```、```80```和```8888```端口。
 
 ## 野火IM服务器的部署
 #### 配置修改
-社区版软件下载 **（[点这儿去下载编译好的软件包](https://github.com/wildfirechat/server/releases)，如果想自行编译的话，请用git clone整个仓库下来，别打包下载zip压缩包，压缩包会编译错误！源码下载后不能直接运行，需要编译，编译方法参考源码中的```README.md```，编译完成后按照readme的说明找到软件包）** 解压后，修改```/config/wildfirechat.conf```文件，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1、0.0.0.0或者localhost***, ***另外要注意是使用软件包，不是源码，如果您下载的是源码的话需要先编译***。
+IM服务社区版软件下载 **（[点这儿去下载编译好的软件包](https://github.com/wildfirechat/server/releases)，如果想自行编译的话，请用git clone整个仓库下来，别打包下载zip压缩包，压缩包会编译错误！源码下载后不能直接运行，需要编译，编译方法参考源码中的```README.md```，编译完成后按照readme的说明找到软件包）** 解压后，修改```/config/wildfirechat.conf```文件，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1、0.0.0.0或者localhost***, ***另外要注意是使用软件包，不是源码，如果您下载的是源码的话需要先编译***。
 >> 这里有个限制http_port必须为80端口，因为客户端强制绑定的是80端口。在云服务器上运行必须经过备案才能和域名一起使用80端口。
 >> 需要注意软件包和源码的区别，这里操作的是软件包不是源码，如果您下载的源码可以按照说明编译出软件包来进行配置和运行。
 
@@ -32,7 +32,7 @@ Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果�
 
 ## Demo应用服务器的部署
 #### 配置修改
-app软件下载解压后，修改```/config/sms.properties```文件，设置```superCode```为```66666```
+Demo应用服务软件[点这儿去下载](https://github.com/wildfirechat/app_server/releases)，下载解压后，修改```/config/sms.properties```文件，设置```superCode```为```66666```
 >> 发送短信需要购买短信服务，在没有短信服务的情况下，使用superCode作为验证码来登陆。
 >> 下载地址在本文的最开头处，同样需要使用软件包，如果是源码需要先编译。
 
