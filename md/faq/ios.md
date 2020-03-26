@@ -42,3 +42,6 @@ A. 在imuikit和chat的工程中搜索```WFCU_SUPPORT_VOIP```，找到2处宏定
 
 #### Q. 为什么SDK不支持armv7架构了？
 A. 从iphone5s起，架构已经是arm64了。目前iphone5及之前的设备基本上没有了，可以不用再支持armv7架构了。省去armv7架构可以有效的减少sdk及软件包的大小，请移除armv7架构的支持。
+
+#### Q. 国内不允许使用CallKit功能怎么办？
+A. 苹果不允许不使用CallKit功能的应用使用Voip推送，针对这个问题的处理很简单，那就是使用普通推送呗。由于SDK中对CallKit.framework有依赖，所以打包必须带上这个依赖。Appstore上架是没有问题的。
