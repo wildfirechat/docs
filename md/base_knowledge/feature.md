@@ -23,7 +23,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <th>专业版版</th>  
 	</tr >
 	<tr >
-	    <td rowspan="13">单聊</td>
+	    <td rowspan="13" bgcolor="white">单聊</td>
 	    <td>文本消息</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -89,7 +89,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
 	</tr>
   <tr>
-      <td rowspan="25">群聊</td>
+      <td rowspan="25" bgcolor="white">群聊</td>
       <td>语音消息</td>
       <td>支持</td>
       <td>支持</td>
@@ -215,7 +215,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
 	</tr>
   <tr >
-	    <td rowspan="6">好友关系</td>
+	    <td rowspan="6" bgcolor="white">好友关系</td>
 	    <td>请求添加好友</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -246,7 +246,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td >支持</td>
   </tr>
   <tr >
-	    <td rowspan="3">黑名单</td>
+	    <td rowspan="3" bgcolor="white">黑名单</td>
 	    <td>添加黑名单</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -262,7 +262,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td >支持</td>
   </tr>
   <tr >
-	    <td rowspan="4">设置</td>
+	    <td rowspan="4" bgcolor="white">设置</td>
 	    <td>个人头像设置</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -283,7 +283,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td >支持</td>
   </tr>
   <tr >
-	    <td rowspan="4">敏感词</td>
+	    <td rowspan="4" bgcolor="white">敏感词</td>
 	    <td>添加敏感词</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -304,7 +304,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td >支持</td>
   </tr>
   <tr >
-	    <td rowspan="3">安全</td>
+	    <td rowspan="3" bgcolor="white">安全</td>
 	    <td>信令加密</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -320,7 +320,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
 	    <td >支持</td>
 	</tr>
   <tr >
-	    <td rowspan="7">推送</td>
+	    <td rowspan="7" bgcolor="white">推送</td>
 	    <td>苹果推送</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -356,7 +356,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
   </tr>
   <tr >
-	    <td rowspan="4">部署</td>
+	    <td rowspan="4" bgcolor="white">部署</td>
 	    <td>集群</td>
 	    <td>不支持</td>
       <td>支持</td>
@@ -377,7 +377,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
   </tr>
   <tr >
-	    <td rowspan="4">媒体存储</td>
+	    <td rowspan="4" bgcolor="white">媒体存储</td>
 	    <td>测试存储服务</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -398,7 +398,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
   </tr>
   <tr >
-	    <td rowspan="2">频道</td>
+	    <td rowspan="2" bgcolor="white">频道</td>
 	    <td>创建频道</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -409,7 +409,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
   </tr>
   <tr >
-	    <td rowspan="2">聊天室</td>
+	    <td rowspan="2" bgcolor="white">聊天室</td>
 	    <td>创建聊天室</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -420,7 +420,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="6">单人音视频</td>
+      <td rowspan="6" bgcolor="white">单人音视频</td>
       <td>单人音频</td>
       <td>支持</td>
       <td>支持</td>
@@ -451,7 +451,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>不支持</td>
   </tr>
   <tr >
-      <td rowspan="6">多人音视频（收费）</td>
+      <td rowspan="6" bgcolor="white">多人音视频（收费）</td>
       <td>单人音频</td>
       <td>支持</td>
       <td>支持</td>
@@ -482,25 +482,25 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持（稳定性不高）</td>
   </tr>
   <tr >
-      <td rowspan="1">Web（收费）</td>
+      <td rowspan="1" bgcolor="white">Web（收费）</td>
       <td>朋友圈主页</td>
       <td>不支持</td>
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="1">小程序（收费）</td>
+      <td rowspan="1" bgcolor="white">小程序（收费）</td>
       <td>朋友圈主页</td>
       <td>不支持</td>
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="1">PC端（收费）</td>
+      <td rowspan="1" bgcolor="white">PC端（收费）</td>
       <td>朋友圈主页</td>
       <td>支持</td>
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="2">多端</td>
+      <td rowspan="2" bgcolor="white">多端</td>
       <td>多端消息同步</td>
       <td>支持</td>
       <td>支持</td>
@@ -511,7 +511,7 @@ linx/windows/mac 不限制，只要支持jre8就可以。
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="12">朋友圈（收费）</td>
+      <td rowspan="12" bgcolor="white">朋友圈（收费）</td>
       <td>朋友圈主页</td>
       <td>不支持</td>
       <td>支持</td>
