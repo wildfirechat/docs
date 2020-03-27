@@ -14,6 +14,7 @@
     * [朋友圈](trial/moments.md)
 * [系统架构](architecture/README.md)
 * [基础知识](base_knowledge/README.md)
+    * [支持功能](base_knowledge/feature.md)
     * [SDK与Demo的关系](base_knowledge/sdk_demo.md)
     * [用户](base_knowledge/user.md)
     * [SDK的功能](base_knowledge/sdk_abilities.md)

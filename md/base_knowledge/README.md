@@ -1,4 +1,5 @@
 # 基础知识
+* [支持功能](feature.md)
 * [SDK与Demo](sdk_demo.md)
 * [用户](user.md)
 * [SDK的功能](sdk_abilities.md)
