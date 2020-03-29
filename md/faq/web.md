@@ -29,5 +29,5 @@ A. ```Web SDK```的依赖如下：
 
 其中,```mobx```不是必须，可将其从```wfc/messages/message.js```中移除。
 
-### Q. 如果启用https?
+### Q. 如何启用https?
 A. [回答](./web/https.md)
