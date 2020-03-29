@@ -62,7 +62,7 @@ server {
 ```
 
 ## 4. imserver支持https
-请参考专业版IM的配置中关于Web HTTPS的支持部分
+请参考专业版IM的配置中关于 ***Web HTTPS支持*** 部分
 
 ## 5. 文件存储支持https
 请参考[媒体服务章节](../../server/media_server.md)
