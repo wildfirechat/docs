@@ -2,7 +2,16 @@
 为了提高网站的安全性，建议启用HTTPS支持。启用https支持需要下面五步，注意必须全部实现缺一不可。
 
 ## 1. 修改```web-chat```代码，启用https
-参考```web-chat```项目```config.js```文件的注释
+修改```web-chat```项目```config.js```文件，开启```WSS```，设定端口，并修改```appserver```为HTTPS地址：
+```
+// 开启WSS
+static USE_WSS = true;
+// WSS 端口
+static WSS_PORT = 8084;
+
+// APP SERVER的地址。启用https时，APP SERVER必须是https地址
+static APP_SERVER = 'https://app.wildfirechat.cn';
+```
 
 ## 2. 网页站点支持https
 部署web站点时启用https支持，可以使用nginx来开启https。部署方法请自行解决，下面是我们的nginx配置，可以参考
