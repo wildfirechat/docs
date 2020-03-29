@@ -86,6 +86,8 @@
       * [如何导入到Android Studio中](faq/android/q1.md)
       * [如何集成到现有项目中](faq/android/q2.md)
       * [如何抓取日志](faq/android/q3.md)
+    * [web问题](faq/web.md)
+      * [如何启用https](faq/web/https.md)
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
     * [PC问题](faq/pc.md)
