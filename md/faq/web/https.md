@@ -57,6 +57,7 @@ server {
 
         root html;
         index index.html index.htm;
+        client_max_body_size  10m; #文件最大大小
         ssl_certificate   cert/app.pem;
         ssl_certificate_key  cert/app.key;
         ssl_session_timeout 5m;
