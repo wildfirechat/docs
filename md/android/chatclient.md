@@ -24,7 +24,7 @@ ChatClient是协议栈在Android平台的wrapper和平台实现，只加上了�
 
 - 频道(和微信公众号类似)功能
 
-  
+
 
 #### 简单使用步骤
 
@@ -32,8 +32,8 @@ ChatClient是协议栈在Android平台的wrapper和平台实现，只加上了�
 
 1. 初始化
 
-   ```java	
-   ChatManager.init(application, Config.IM_SERVER_HOST, Config.IM_SERVER_PORT);
+   ```java
+   ChatManager.init(application, Config.IM_SERVER_HOST);
    ```
 
 2. 置事件回调
@@ -88,4 +88,3 @@ UserInfo getUserInfo(String userId, boolean refresh);
 #### 函数说明
 
 请参考```ChatManger```这个类
-
