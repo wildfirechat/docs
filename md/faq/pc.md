@@ -16,3 +16,5 @@ A. 只有手机端和PC端所对应的APP、IM Server都相同时，才能扫码
 ### Q. 扫码无法登陆，如果让PC端连接自己部署的服务？
 A. 请参考上一问题。
 
+### Q. 二维码不显示
+A. 控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
