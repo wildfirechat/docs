@@ -2,7 +2,13 @@
 服务器提供[IM服务社区版](https://github.com/wildfirechat/server/releases)和[Demo应用服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登陆等功能。
 
 ## 环境需求
-Windows/Linux/MacOS都可以，需要JRE1.8以上，需要网络环境。如果没有公网IP，也可以在局域网内体验。需要开通```1883```、```80```和```8888```端口。
+1. 系统要求
+
+   Windows/Linux/MacOS都可以，需要网络环境。如果没有公网IP，也可以在局域网内体验。需要开通```1883```、```80```和```8888```端口。
+2. 软件要求
+   JRE：1.8
+   MySQL：5.7.27
+
 
 ## 野火IM服务器的部署
 #### 配置修改

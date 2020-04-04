@@ -31,3 +31,6 @@ A. ```Web SDK```的依赖如下：
 
 ### Q. 如何启用https?
 A. [回答](./web/https.md)
+
+### Q. 二维码不显示
+A. 控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)

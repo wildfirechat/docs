@@ -109,3 +109,4 @@
   * [多端登录的处理](blogs/多端登录的处理.md)
   * [野火IM应用之Webhook机器人](blogs/野火IM应用之Webhook机器人.md)
   * [野火IM应用之对讲机](blogs/野火IM应用之对讲机.md)
+  * [群的一些细节问题](blogs/群的一些细节问题.md)
