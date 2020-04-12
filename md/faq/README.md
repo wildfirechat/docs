@@ -6,4 +6,7 @@
 * [安卓问题](android.md)
 * [iOS问题](ios.md)
 * [Web问题](web.md)
+* [PC问题](pc.md)
+* [小程序问题](wx.md)
+* [音视频问题](webrtc.md)
 * [最佳实践](practicality.md)

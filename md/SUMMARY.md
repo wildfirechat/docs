@@ -92,6 +92,7 @@
     * [Web问题](faq/web.md)
     * [PC问题](faq/pc.md)
     * [小程序问题](faq/wx.md)
+    * [音视频问题](faq/webrtc.md)
     * [最佳实践](faq/practicality.md)
       * [小表情大世界](faq/practicality/stickers.md)
       * [在线匹配](faq/practicality/online_match.md)
