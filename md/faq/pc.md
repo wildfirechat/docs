@@ -12,9 +12,12 @@ A. 只有手机端和PC端所对应的APP、IM Server都相同时，才能扫码
 
     1. PC端需要购买```PC SDK```才能连接自己部署的服务，默认只能连接官方服务。确认是否想官方购买了```PC SDK```，如果未购买，可[申请试用](../quick_start/trial.md)
     2. 确认PC端```config.js```和手机端```Config.java```或```WFCConfig.m```所配置的```APP_SERVER```是否一致。
-   
+
 ### Q. 扫码无法登陆，如果让PC端连接自己部署的服务？
 A. 请参考上一问题。
 
 ### Q. 二维码不显示
 A. 控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
+
+### Q. 手机扫码，提示未登录或者错误
+A. AppServer从0.40版本起引入了shiro，所有移动端的请求都需要进行认证，您需要把移动端升级到最新版本另外退出重新登录一下，具体原因请参考[这里](https://github.com/wildfirechat/im-app_server/blob/master/README.md#版本兼容)。如果还是无法解决问题，请自行DEBUG一下，相关部分所有代码都是开源的。
