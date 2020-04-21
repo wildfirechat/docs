@@ -21,9 +21,8 @@
 
    ```java
    // cn.wildfire.chat.app.Config.java
-   // IM server相关地址及端口，不用写http
+   // IM server相关地址，不用写http
    String IM_SERVER_HOST = "wildfirechat.cn"; 
-   int IM_SERVER_PORT = 80;
    
    // App server相关地址及端口，一定要写http
    String APP_SERVER_ADDRESS = "http://wildfirechat.cn:8888";
