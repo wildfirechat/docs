@@ -8,7 +8,6 @@
 ```
 server.ip 0.0.0.0
 port 1883
-http_port 80
 websocket_port 8083
 ```
 

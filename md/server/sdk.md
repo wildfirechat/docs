@@ -83,7 +83,7 @@ ChatConfig.initAdmin(mIMConfig.admin_url, mIMConfig.admin_secret);
 ChatConfig.initRobot(mRobotConfig.im_url, mRobotConfig.getIm_id(), mRobotConfig.im_secret);
 ChatConfig.initChannel(mChannelConfig.im_url, mChannelConfig.getIm_id(), mChannelConfig.im_secret);
 ```
-> Admin URL使用server API端口（默认是18080）， Robot和Channel API使用http_port端口（默认是80）
+> Admin URL使用server API端口（默认是18080）， Robot和Channel API使用80端口。
 
 2. 调用不同的接口，来实现功能，比如获取userToken
 ```java
