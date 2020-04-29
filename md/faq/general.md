@@ -111,3 +111,12 @@ A：获取token是使用的server api，需要secret进行签名才行，这样�
 
 ## 消息什么情况下会重复？
 A：在发送方弱网的情况下，可能消息发送到IM服务后，IM服务回复ack失败，这样客户端会再尝试一次，如果成功就会产生发送一条，产生2条的情况。一般情况下比较少见，如果您的场景严格不能出现重复，可以考虑在消息中加上业务唯一id，然后再收到后去重。
+
+## 扫码登录，扫码加群，扫码加好友的实现原理？
+A: 这些功能都不属于IM的功能，都是应用层的业务，这里只简单说一下。二维码实质是个URI，扫码只是方便手机输入这个URI，跟手动输入也没有实质性的区别。这个URI格式和意义需要展示方和扫码方共同支持，这样才能在双方直接传递信息。一个URI正常情况下是这种格式的 ***[scheme:][//authority][path][?query][#fragment]***。Scheme是确定是那个 应用提供服务的，移动端需要去注册这个Scheme，我们提供的demo中使用的Scheme是***wildfirechat***。这样当移动端浏览器打开这个scheme的URI时会自动打开我们的应用，并把URI传递给我们。Authority是服务的类型，Scheme确定了是那个应用，Authority则是定义了这个应用中的那个服务。Path定义了服务的具体内容。野火的DEMO中使用了如下三个URI
+```
+wildfirechat://user/useridxxxxx
+wildfirechat://group/groupidxxxx
+wildfirechat://pcsession/sessionidxxxx
+```
+根据扫码获取的URI就能很方便的获取到对应的用户ID/群组ID/PC会话ID。由于是应用层的业务，所以客户可以随意修改这些定义，只需要注意2点，一个是一定要改成自己的不要用我们默认的，如果另外一个app也用我们默认的会引起冲突；另外一个是需要扫码方和展示方对齐URI的格式和含义，这样才能正确传递信息。
