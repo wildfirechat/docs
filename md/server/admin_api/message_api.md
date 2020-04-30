@@ -46,6 +46,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 ## 撤回消息
+> 群发、广播的消息，不支持撤回
 #### 地址
 ```
 http://domain:18080/admin/message/recall
