@@ -12,3 +12,6 @@ A. 音视频默认的质量是640*360/15FPS，可以对此进行修改，Android
 
 #### Q. 免费的单人音视频能够平滑升级到多人音视频吗？
 A. 单人音视频和多人音视频具有相同的接口，如果使用我们提供的原生iOS/Android Demo应用，购买多人音视频库后，直接替换即可使用。如果您已经对UI进行过修改，需要进行验证，可能问题也不大。
+
+#### Q. 网页端音视频工作不正常？
+A. 请先到[WEBRTC能力测试](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html)进行测试，看浏览器是否支持。
