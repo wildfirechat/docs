@@ -12,7 +12,7 @@
 > 除了Web和小程序外，其它所有平台公用同一个协议栈，SDK功能和接口定义全部一致。
 
 ## 服务器
-linx/windows/mac 不限制，只要支持jre8就可以。
+linux/windows/mac 不限制，只要支持jre8就可以。
 
 ## 功能列表
 <table>
@@ -483,19 +483,19 @@ linx/windows/mac 不限制，只要支持jre8就可以。
   </tr>
   <tr >
       <td rowspan="1" bgcolor="white">Web（收费）</td>
-      <td>朋友圈主页</td>
+      <td>-</td>
       <td>不支持</td>
       <td>支持</td>
   </tr>
   <tr >
       <td rowspan="1" bgcolor="white">小程序（收费）</td>
-      <td>朋友圈主页</td>
+      <td>-</td>
       <td>不支持</td>
       <td>支持</td>
   </tr>
   <tr >
       <td rowspan="1" bgcolor="white">PC端（收费）</td>
-      <td>朋友圈主页</td>
+      <td>-</td>
       <td>支持</td>
       <td>支持</td>
   </tr>
@@ -558,4 +558,4 @@ linx/windows/mac 不限制，只要支持jre8就可以。
   </tr>
 </table>
 
-> PC的SDK是与移动端完全一致，但UI的功能相对与移动端有部分没有实现，客户可以自己来实现。
+> PC的SDK是与移动端完全一致，但UI的功能相对于移动端有部分没有实现，客户可以自己来实现。
