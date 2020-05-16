@@ -8,7 +8,7 @@
 * [试用](trial/README.md)
     * [PC试用](trial/pc.md)
     * [Web试用](trial/web.md)
-    * [微信小程序试用](trial/wx.md)
+    * [小程序试用](trial/wx.md)
     * [试用专业版和Web/小程序](trial/trial.md)
     * [多人音视频](trial/voip.md)
     * [朋友圈](trial/moments.md)

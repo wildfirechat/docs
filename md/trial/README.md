@@ -25,7 +25,7 @@
 ## 具体试用说明
 * [PC试用](pc.md)
 * [Web试用](web.md)
-* [微信小程序试用](wx.md)
+* [小程序试用](wx.md)
 * [试用专业版和Web/小程序](trial.md)
 * [多人音视频](voip.md)
 * [朋友圈](moments.md)
