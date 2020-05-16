@@ -20,7 +20,7 @@ linux/windows/mac 不限制，只要支持jre8就可以。
 	    <th>类别</th>
 	    <th>细分功能</th>
 	    <th>社区版</th>  
-      <th>专业版版</th>  
+      <th>专业版</th>  
 	</tr >
 	<tr >
 	    <td rowspan="13" bgcolor="white">单聊</td>
