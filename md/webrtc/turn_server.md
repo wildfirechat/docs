@@ -41,9 +41,11 @@ make && make install
 #### 配置
 使用vi 编辑 ```/usr/local/etc/turnserver.conf```文件，修改如下部分:
 ```
-user=username:password
+listening-ip=${内网IP}
+relay-ip=${内网IP}
+external-ip=${外网IP}
 
-listening-ip=${本机IP}
+user=username:password
 
 min-port=49152
 max-port=65535
