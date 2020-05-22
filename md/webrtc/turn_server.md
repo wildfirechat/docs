@@ -35,7 +35,9 @@ tar -xvzf turnserver-4.5.1.2.tar.gz
 
 cd turnserver-4.5.1.2 && ./configure
 
-make && make install
+make
+
+sudo make install
 ```
 
 #### 配置
@@ -65,3 +67,6 @@ turnserver -v -r ${公网IP}:3478 -a -o -c /usr/local/etc/turnserver.conf
 
 #### 进阶设置
 启用TLS，生成证书并配置证书，这个就从网上自己找吧。
+
+#### 最后
+为了方便大家学习部署，我们录制了视频，点击[TURN部署部署](https://www.bilibili.com/video/BV1ok4y167b9/)观看。
