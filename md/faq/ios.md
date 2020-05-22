@@ -24,7 +24,7 @@ A. 野火IM中使用了动态库，包含了x86_64架构（模拟器需要这种
 A. 这种问题一般是使用不当造成的，请确保不要改动chatclient和协议栈的任何代码，然后在使用chatclient之前必须做如下初始化：
 ```
     [WFCCNetworkService startLog];
-    [[WFCCNetworkService sharedInstance] setServerAddress:IM_SERVER_HOST port:IM_SERVER_PORT];
+    [[WFCCNetworkService sharedInstance] setServerAddress:IM_SERVER_HOST];
     [[WFCCNetworkService sharedInstance] connect:userId token:token];
 ```
 > 可以不用在同一个地方，比如应用启动时开启日志和设置服务器地址。然后再合适的时机connect，但一定要确保调用任何接口之前要先调用connect

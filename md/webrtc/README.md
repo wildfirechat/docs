@@ -23,7 +23,6 @@ Webrtc是目前主流的音视频解决方案，它提供了媒体能力，信�
 
 ```
 NSString *IM_SERVER_HOST = @"192.168.1.101";
-int IM_SERVER_PORT = 80;
 
 NSString *APP_SERVER_HOST = @"192.168.1.101";
 int APP_SERVER_PORT = 8888;
@@ -32,6 +31,7 @@ NSString *ICE_ADDRESS = @"turn:turn.liyufan.win:3478";
 NSString *ICE_USERNAME = @"wfchat";
 NSString *ICE_PASSWORD = @"wfchat";
 ```
+> 注意如果客户分属多区域，可以部署多个turn服务器来提高用户体验。音视频添加turn服务信息的接口可以调用多次，每次增加一个turn服务器。
 
 #### 上线一定要自己部署Turn服务
 野火IM提供了体验用的环境，环境配置为1C1G1M，仅能够供应体验使用，上线商用时一定要切换到自己的Turn服务器。
@@ -39,3 +39,6 @@ NSString *ICE_PASSWORD = @"wfchat";
 #### 其它
 1. 多人音视频授权绑定的是IM的域名，不是绑定的turn服务域名，所以可以使用任意turn服务器地址。
 2. turn服务可以部署多个，在客户端多次调用addIceServer即可。当用户在全球多个区域分布式，可以在不同区域部署多个turn服务，提高体验。
+
+#### 如何安装Turn服务
+Turn服务不是野火IM的内容，就像mysql，redis之类的基础组件，需要客户自行安装的，这里也提供一个安装说明，仅供大家参考。点[如何安装Turn服务]()了解详情。
