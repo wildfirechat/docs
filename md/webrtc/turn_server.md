@@ -50,6 +50,7 @@ user=username:password
 min-port=49152
 max-port=65535
 ```
+> 有些服务器没有在NAT内，只有一个IP，那么配置中的内网IP就使用这个IP。
 
 #### 运行
 ```
