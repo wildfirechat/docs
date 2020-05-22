@@ -41,4 +41,4 @@ NSString *ICE_PASSWORD = @"wfchat";
 2. turn服务可以部署多个，在客户端多次调用addIceServer即可。当用户在全球多个区域分布式，可以在不同区域部署多个turn服务，提高体验。
 
 #### 如何安装Turn服务
-Turn服务不是野火IM的内容，就像mysql，redis之类的基础组件，需要客户自行安装的，这里也提供一个安装说明，仅供大家参考。点[如何安装Turn服务]()了解详情。
+Turn服务不是野火IM的内容，就像mysql，redis之类的基础组件，需要客户自行安装的，这里也提供一个安装说明，仅供大家参考。点[如何安装Turn服务](./turn_server.md)了解详情。
