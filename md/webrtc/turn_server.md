@@ -16,7 +16,7 @@ sudo yum install -y openssl-devel libevent libevent-devel
 ```
 wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
 
-tar xvfz libevent-2.0.21-stable.tar.gz
+tar -xvfz libevent-2.0.21-stable.tar.gz
 
 cd libevent-2.0.21-stable && ./configure
 
@@ -61,3 +61,6 @@ turnserver -v -r ${公网IP}:3478 -a -o -c /usr/local/etc/turnserver.conf
 ![图片](turn_check.jpeg)
 
 > 当Type为"relay"且后面的地址为您的公网IP时，表明turn服务部署成功，否则为失败。
+
+#### 进阶设置
+启用TLS，生成证书并配置证书，这个就从网上自己找吧。
