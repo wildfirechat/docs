@@ -5,10 +5,12 @@
 public class MessagePayload {
 
     public int contentType;
+    
     public String searchableContent;
     public String pushContent;
     public String content;
     public byte[] binaryContent;
+    public String extra;
 
     public int mentionedType;
     public List<String> mentionedTargets;
