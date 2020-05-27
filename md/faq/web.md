@@ -10,7 +10,11 @@ A. Web SDK以发布包形式提供，不提供源码。另外Web SDK与专业版
 A. Web SDK必须跟专业版配合使用。因为Web SDK的同步机制与移动端和PC端不一致，相比而言更消耗性能，需要更高性能的专业版配合使用。
 
 ### Q. route返回22
-A. 错误码22，表示未授权，请确认```config.js```里面```WEB_APP_ID```和```WEB_APP_KEY```是否正确修改。
+A. 错误码22，表示未授权，请确认
+
+    1. ```config.js```里面```WEB_APP_ID```和```WEB_APP_KEY```是否正确修改
+    2. ```proto.min.js```是否正确替换
+    3. ```config.js```里面是否正确修改```APP_SERVER```
 
 ### Q. ```Web SDK```到底有哪些依赖？
 A. ```Web SDK```的依赖如下：
