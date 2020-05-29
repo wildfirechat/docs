@@ -8,6 +8,10 @@ public abstract class MessageContent implements Parcelable {
     public abstract void decode(MessagePayload payload);
     public abstract String digest();
 
+    // 自定义消息，必须包含一个无参构造函数
+    public MessageContent() {
+    }
+
     public int getType() {
         ContentTag tag = getClass().getAnnotation(ContentTag.class);
         if(tag != null) {
