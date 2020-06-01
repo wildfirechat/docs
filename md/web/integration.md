@@ -1,5 +1,5 @@
 # 二次开发
-[web-chat](https://github.com/wildfirechat/web-chat)是一个可以直接使用的demo，推荐参考```web-chat```进行二次开发，如果不想基于```web-chat```进行二次开发，可以按以下步骤进行集成：
+[web-chat](https://github.com/wildfirechat/web-chat)是一个可以直接使用的demo，推荐参考```web-chat```进行二次开发，如果不想基于```web-chat```进行二次开发
 
 ## 基于```web-chat```二次开发
 1. 修改```config.js```中的配置信息，如果不进行修改或修改错误，将不能正确连接IM：
@@ -11,6 +11,7 @@
 
 ## 集成到自己的项目
 > 集成过程，请随时参考```web-chat```
+
 1. 将```src/js/wfc```和```src/js/config.js```拷贝到自己项目，并且```wfc```目录和```config.js```处于同级目录。
 2. 修改```config.js```中的配置信息，如果不进行修改或修改错误，将不能正确连接IM：
    * ```APP_SERVER```：应用服务器地址，需要指向自行部署的```app-server```，注意端口不能省略。

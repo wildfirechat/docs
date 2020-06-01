@@ -30,15 +30,12 @@ ChatUIKit包含以下页面：
 - 通知消息
 - 自定义消息，可以自己添加任意类型消息
 
-音视频通话： 音视频通话只支持1对1，如果不需要可以选择去掉。
-
-
-
 ## 开发
 
 1. 自定义消息
 
    1. 继承```MessageContent```，并添加```ContentTag```注解，用于标识消息类型和消息存储类型。自定义消息类型要求大于1000。消息类型，参考```MessageContentType```；消息存储类型，参考```PersistFlag```。
+      > **一定保证自定义消息类，包含一个无参构造函数!!!**
    2. 调用```ChatManager#registerMessageContent```注册新消息类型，或者直接修改```ClientService#onCreate```进行消息注册
 
 2. 自定义消息UI
