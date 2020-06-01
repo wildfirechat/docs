@@ -67,7 +67,7 @@
     * [WildfireChat简介](ios/wildfirechat.md)
     * [推送集成](ios/push.md)
 * [Web开发](web/README.md)
-    * [集成](web/integration.md)
+    * [二次开发](web/integration.md)
 * [音视频](webrtc/README.md)
     * [TURN服务](webrtc/turn_server.md)
 * [code状态码](server/error_code.md)

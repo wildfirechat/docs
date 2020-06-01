@@ -1,5 +1,9 @@
 # Web FAQ
 
+## 前置说明
+1. 仔细阅读[web二次开发](./../web/integration.md)
+2. 请打开浏览器的控制台，查看网络请求和日志。
+
 #### Q. Web SDK有UI吗？
 A. Web SDK是功能库，是Web端的client，不包含UI。[web-chat](https://github.com/wildfirechat/web-chat)项目是基于Web SDK开发的，提供UI，客户可以进行体验、二次开发等。
 
@@ -15,6 +19,11 @@ A. 错误码22，表示未授权，请确认
     1. ```config.js```里面```WEB_APP_ID```和```WEB_APP_KEY```是否正确修改
     2. ```proto.min.js```是否正确替换
     3. ```config.js```里面是否正确修改```APP_SERVER```
+
+> ```WEB_APP_ID```，```WEB_APP_KEY```，```proto.min.js```由邮件提供，请查阅相关邮件
+
+### Q. 扫码之后，无法进入主页，连接状态返回-1
+A. 参考上一个问题
 
 ### Q. ```Web SDK```到底有哪些依赖？
 A. ```Web SDK```的依赖如下：
@@ -37,4 +46,4 @@ A. ```Web SDK```的依赖如下：
 A. [回答](./web/https.md)
 
 ### Q. 二维码不显示
-A. 控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
+A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
