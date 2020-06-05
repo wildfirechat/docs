@@ -4,7 +4,7 @@
 
 [点我体验 Android 端](https://github.com/wildfirechat/android-chat/releases) 或微信扫码下方二维码
 
-[点我体验 iOS 端](itms-apps://itunes.apple.com/cn/app/1450256455?mt=8) 或微信扫码下方二维码
+[点我体验 iOS 端](itms-apps://itunes.apple.com/cn/app/野火通/id1514518305?ls=1&mt=8) 或微信扫码下方二维码
 
 
 ![野火IM](http://static.wildfirechat.cn/download_qrcode.png)
