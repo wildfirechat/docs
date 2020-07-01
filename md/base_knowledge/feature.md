@@ -342,12 +342,12 @@ linux/windows/mac 不限制，只要支持jre8就可以。
   </tr>
   <tr >
       <td>OPPO推送</td>
-      <td>不支持</td>
+      <td>支持</td>
       <td>支持</td>
   </tr>
   <tr >
       <td>VIVO推送</td>
-      <td>不支持</td>
+      <td>支持</td>
       <td>支持</td>
   </tr>
   <tr >
