@@ -66,6 +66,8 @@
     * [ChatUIKit简介](ios/chatuikit.md)
     * [WildfireChat简介](ios/wildfirechat.md)
     * [推送集成](ios/push.md)
+* [PC开发](pc/README.md)
+    * [二次开发](pc/dev.md)
 * [Web开发](web/README.md)
     * [二次开发](web/integration.md)
 * [音视频](webrtc/README.md)
