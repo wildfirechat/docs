@@ -28,11 +28,12 @@ ChatClient是协议栈在Android平台的wrapper和平台实现，只加上了�
 
 #### 简单使用步骤
 
-​	初始化操作，只需在主进程进行，下面只列出最简步骤，详情请参考[android-chat](<https://github.com/wildfirechat/android-chat>)项目
+​	***初始化操作，只需在主进程进行，否则会出现重复收到消息等各种奇怪的现象***，下面只列出最简步骤，详情请参考[android-chat](<https://github.com/wildfirechat/android-chat>)项目
 
 1. 初始化
 
    ```java
+   // 只在主进程进行初始化，可参考MyApp.java
    ChatManager.init(application, Config.IM_SERVER_HOST);
    ```
 

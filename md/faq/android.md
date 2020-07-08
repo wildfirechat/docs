@@ -43,7 +43,9 @@ A. 产品上线之前，一定要更换包名和签名
 1. ```client```module下的包名不可更改
 2. 修改```chat/build.gradle```里面的```applicationId```
 
+#### Q. 重复收到消息/同一条消息，触发多次onReceiveMessage回调
 
+A. 野火IM SDK 只允许在主进程进行初始化，即```ChatManager.init```或```WfcUIKit.init```只需在主进程调用一次，可参考```MyApp.java```
 
 #### Q. 如何抓取日志
 
