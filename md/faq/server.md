@@ -158,9 +158,9 @@ A. 首先不能改动软件包附带的sql脚本，以免以后升级时出现sq
 #### Q. PC或Web登录后，客户端没有登录提示
 A. 该功能默认关闭的，需要修改IM服务的配置如下，并重启服务。
 ```
-# 是否支持多端登陆
+# 是否支持多端登陆，为true时支持任意平台任意多个客户端同时登录；为false时每个平台只支持一个端登录，但不同平台可以同时登录。
 server.multi_endpoint false
 
-# 多平台连接状态通知（仅当multi_endpoint为false时有效）
+# 多平台连接状态通知（仅当multi_endpoint为false时有效），true时移动端可以收到pc或web端登录的通知。
 server.multi_platform_notification true
 ```
