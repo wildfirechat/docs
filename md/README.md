@@ -26,7 +26,7 @@
 | 单人音视频源码 | 单人音视频源码，如果需要二次开发才需要，sdk可以免费使用 | 5W |   N/A |
 | Web SDK | Web功能库（发布包，提供[开源Demo](https://github.com/wildfirechat/web-chat)，依赖专业版IM） | 2W/套 | 1W/套 |
 | 小程序SDK | 小程序功能库（发布包，支持微信、QQ、支付宝、百度、今日头条，提供开源的[微信小程序Demo](https://github.com/wildfirechat/wx-chat)，依赖专业版IM) | 2W/套 | 1W/套 |
-| 多人音视频SDK | 支持多人实时音视频，sdk，闭源，UI开源。只支持移动端（PC、Web部分支持）。 | 2W/套 | 1W/套 |
+| 多人音视频SDK | 支持多人实时音视频，SDK闭源，UI开源，只包含移动端。PC和Web版本SDK已包含。 | 2W/套 | 1W/套 |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 2W/套 | 1W/套 |
 
 > 开业促销，2020年专业版、PC SDK和Web SDK 五折促销。专业版、PC SDK和Web SDK会绑定域名，以上是每套的价格。
