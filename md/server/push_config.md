@@ -35,6 +35,7 @@ push.ios.server.address http://localhost:8085/ios/push
 | pushMessageType | int | 是 | 0 普通消息；1 voip消息。在支持透传的系统上，voip消息用透传 |
 | pushType | int | 是 | 推送类型，android推送分为小米/华为/魅族等。ios分别为开发和发布。 |
 | pushContent | string | 是 | 消息推送内容 |
+| pushData | string | 否 | 消息推送数据 |
 | unReceivedMsg | int | 是 | 服务器端没有接收下来的消息数（只计算计数消息） |
 | mentionedType | int | 否 | 消息提醒类型，0，没提醒；1，提醒了当前用户；2，提醒了所有人 |
 | packageName | string | 否 | 应用包名 |

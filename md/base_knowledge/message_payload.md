@@ -5,9 +5,10 @@
 public class MessagePayload {
 
     public int contentType;
-    
+
     public String searchableContent;
     public String pushContent;
+    public String pushData;
     public String content;
     public byte[] binaryContent;
     public String extra;
@@ -67,7 +68,10 @@ public class MessagePayload {
 可搜索内容，用于本地搜索或者在服务器搜索
 
 #### pushContent
-对于自定义消息，如果需要推送需要encode此字段。推送内容会使用此字段。
+对于自定义消息，如果需要推送需要encode此字段。推送内容会使用此字段。此字段会显示在用户手机推送内容区。
+
+#### pushData
+对于自定义消息，如果需要推送需要encode此字段。推送内容会使用此字段。此字段不显示在推送内容中，但可以作为推送点击之后的数据。比如内容为订单号，点击打开对应订单。
 
 #### mentionedType
 提醒类型（就是@某人或@全体）。0 不提醒；1 对mentionedTargets里的user进行提醒；2 对群内所有人提醒。

@@ -18,6 +18,7 @@
 | payload.type | int | 是 | 消息类型 |
 | payload.searchableContent | string | 否 | 消息可搜索内容 |
 | payload.pushContent | string | 否 | 消息推送内容 |
+| payload.pushData | string | 否 | 消息推送数据 |
 | payload.content | string | 否 | 消息内容 |
 | payload.base64edData | string | 否 | 消息二进制内容，base64编码 |
 | payload.mediaType | int | 否 | 媒体消息类型 |
