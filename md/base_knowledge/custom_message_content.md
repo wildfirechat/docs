@@ -4,7 +4,7 @@
 #### Step 1 定义消息内容类型并注册
 消息内容都有一个共同的基类[```MessageContent```](message_content.md)，自定义消息也需要继承这个类，并实现其中的方法(Android端自定义消息，需要注意：***一定要包含一个无参构造函数***)，可以参考内置的消息类型。
 
-需要注意的是[```MessagePayload```](./message_payload.md)有个```pushContent```字段。如果需要推送，请在这个字段中填上需要推送的内容。有个```searchableContent```字段，填写消息的搜索内容，比如您有个很复杂的消息，然后需要它能被搜索到，需要把关键字放到这个字段。
+需要注意的是[```MessagePayload```](./message_payload.md)有个```pushContent```字段。如果需要推送，请在这个字段中填上需要推送的内容。有一个```pushData```字段，可以为推送提供更多信息。有个```searchableContent```字段，填写消息的搜索内容，比如您有个很复杂的消息，然后需要它能被搜索到，需要把关键字放到这个字段。
 
 所有的客户端和服务器端都需要使用相同的encode/decode规则，也就是传输在网络上的```MessagePayload```定义必须是一样的，这样才能无误的在各个端和服务直接传递。
 
