@@ -90,6 +90,7 @@
       * [如何导入到Android Studio中](faq/android/q1.md)
       * [如何集成到现有项目中](faq/android/q2.md)
       * [如何抓取日志](faq/android/q3.md)
+      * [点击消息推送通知，如何根据消息类型，跳转到不同的界面？](faq/android/q5.md)
     * [web问题](faq/web.md)
       * [如何启用https](faq/web/https.md)
     * [iOS问题](faq/ios.md)
@@ -124,3 +125,4 @@
   * [推送计数不准确的问题](blogs/推送计数不准确的问题.md)
   * [手机通讯录用户关系和好友推荐](blogs/手机通讯录用户关系和好友推荐.md)
   * [上线检查事项](blogs/上线检查事项.md)
+  * [推送的extra在哪里](blogs/推送的extra在哪里.md)

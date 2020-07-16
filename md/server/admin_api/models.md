@@ -7,6 +7,7 @@
 | type | int | 是 | [消息内容类型](../../base_knowledge/message_payload.md#####contentType) |
 | searchableContent | string | 否 | 消息可搜索内容 |
 | pushContent | string | 否 | 消息推送内容 |
+| pushData | string | 否 | 消息推送数据 |
 | content | string | 否 | 消息内容 |
 | base64edData | string | 否 | 消息二进制内容，base64编码 |
 | mediaType | int | 否 | 媒体消息类型 |
