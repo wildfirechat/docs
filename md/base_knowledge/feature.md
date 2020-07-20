@@ -507,7 +507,7 @@ linux/windows/mac 不限制，只要支持jre8就可以。
   </tr>
   <tr>
       <td>已读状态多端同步</td>
-      <td>支持</td>
+      <td>不支持</td>
       <td>支持</td>
   </tr>
   <tr >
