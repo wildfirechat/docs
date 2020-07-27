@@ -6,7 +6,12 @@
    * ```APP_SERVER```：应用服务器地址，需要指向自行部署的```app-server```，注意端口不能省略。
    * ```ICE_ADDRESS```、```ICE_USERNAME```、```ICE_PASSWORD```：音视频通话相关的turn服务信息，开发测试的时候，可以直接使用现有配置，上线时，请修改了指向自行部署的turn服务。
 2. 根据邮件的说明，替换```proto``` 目录下的相关文件
-3. 没有其他配置了，执行```npm run dev```即可启动野火IM PC版本，然后用野火IM移动端扫码登录。
+3. 执行```npm run copy-xxx```
+   1. windows系统下，node为32位时(```node -p "process.arch"```可确认架构)，执行```npm run copy-win32```
+   2. windows系统下，node为64位时，执行```npm run copy-win```
+   3. mac系统下，执行```npm run copy-mac```
+   4. linux系统下，执行```npm run copy-linux```
+4. 没有其他配置了，执行```npm run dev```即可启动野火IM PC版本，然后用野火IM移动端扫码登录。
 
 ## 集成到自己的项目
 > 集成过程，请随时参考```pc-chat```
