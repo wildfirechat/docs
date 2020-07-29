@@ -16,7 +16,7 @@ sudo yum install -y openssl-devel libevent libevent-devel
 ```
 wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
 
-tar -xvzf libevent-2.0.21-stable.tar.gz
+tar -xvfz libevent-2.0.21-stable.tar.gz
 
 cd libevent-2.0.21-stable && ./configure
 
