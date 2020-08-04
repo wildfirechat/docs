@@ -36,6 +36,14 @@ IM服务社区版软件下载 **（[点这儿去下载编译好的软件包](htt
 
 执行相应系统的启动命令之后，等待10秒钟后，在浏览器中输入```http://${服务器的IP}/api/version```，查看版本信息。
 
+#### 停止
+当需要重启时，关掉``` sh ./bin/wildfirechat.sh```的进程并不能关掉服务，linux用户请用下面命令找到服务的PID，然后用```kill```命令停掉服务.
+```
+ps -ef | grep wildfirechat
+```
+> windows用户可以用任务管理器找到wildfirechat进程，并杀掉它。
+> kill命令不要用-9，因为关闭时有些数据是要回写到数据库的，-9会导致丢消息
+
 ## Demo应用服务器的部署
 #### 配置修改
 Demo应用服务软件[点这儿去下载](https://github.com/wildfirechat/app_server/releases)，下载解压后，修改```/config/application.properties```文件，设置```superCode```为```66666```

@@ -51,3 +51,12 @@ sensitive.filter.type 0
 ##消息转发地址
 message.forward.url http://localhost:8087/message/forward
 ```
+
+#### 用户在线事件回调
+```
+#*********************************************************************
+# User online status event callback
+#*********************************************************************
+##用户在线状态事件回调地址
+#user.online_status_callback http://localhost:8888/user/online_event
+```
