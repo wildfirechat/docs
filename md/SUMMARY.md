@@ -81,6 +81,7 @@
 * [推送服务](https://github.com/wildfirechat/push_server/blob/master/README.md)
 * [机器人服务](https://github.com/wildfirechat/robot_server/blob/master/README.md)
 * [常见问题](faq/README.md)
+    * [部署检查单](faq/checklist.md)
     * [通用问题](faq/general.md)
       * [购买流程](./faq/buy.md)
     * [服务器问题](faq/server.md)
