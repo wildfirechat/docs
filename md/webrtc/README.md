@@ -49,3 +49,8 @@ Turn服务不是野火IM的内容，就像mysql，redis之类的基础组件，�
 3. 修改客户端的配置，注意格式，```turn:域名或ip:3478```，不要忘记头部的```turn```字段。
 4. 如果客户在内网，一定要确认内网防火墙是否开通了对turn服务的3478端口及UDP端口的访问权限。
 5. 如果是多人音视频，注意是否使用的是绑定的域名。
+
+##### 针对浏览器问题排查
+0. 完成上一步的前置问题排查
+1. 测试浏览器是否支持webrtc，[测试地址](https://test.webrtc.org/)
+2. 默认只有通过localhost或https访问网页时，才可以使用webrtc功能。如果需要在http访问网页时，测试webrtc功能，请参考[这儿](https://blog.csdn.net/weixin_30727835/article/details/97888745)
