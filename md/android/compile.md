@@ -17,21 +17,7 @@
 
 ### 编译部署
 
-1. 如果服务器是私有部署，则需对应修改服务器地址，然后编译。
-
-   ```java
-   // cn.wildfire.chat.app.Config.java
-   // IM server相关地址，不用写http
-   String IM_SERVER_HOST = "wildfirechat.cn"; 
-   
-   // App server相关地址及端口，一定要写http
-   String APP_SERVER_ADDRESS = "http://wildfirechat.cn:8888";
-   
-   // Voip turn服务相关
-   String ICE_ADDRESS = "turn:turn.liyufan.win:3478";
-   String ICE_USERNAME = "wfchat";
-   String ICE_PASSWORD = "wfchat";
-   ```
+1. 参考快速开始部分进行修改配置
    
 2. 导入```Android Studio```进行编译，或者在项目根目录执行```./gradlew clean build```进行编译。
 
