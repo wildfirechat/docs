@@ -72,7 +72,64 @@ server {
 ```
 
 ## 4. imserver支持https
-请参考专业版IM的配置中关于 ***Web HTTPS支持*** 部分
+1. route接口支持https
+
+    请查阅相关邮件，确定真实的```ROUTE_PORT```，通过```nginx```等手段，将访问该端口的```route```请求转到 im server，下面是我们的配置，可以参考:
+    ```
+    upstream imserver_cluster  {
+    server 192.168.2.1;
+    server 192.168.2.2;
+    server 192.168.2.3;
+    }
+
+    server {
+        listen 80;
+        server_name  wildfirechat.cn;
+
+        root   html;
+        index  index.html index.htm index.php;
+
+
+        location /route {
+            proxy_set_header  Host  $host;
+            proxy_set_header  X-real-ip $remote_addr;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass  http://imserver_cluster;
+        }
+
+        location /api {
+            proxy_pass  http://imserver_cluster;
+        }
+
+    }
+
+    server {
+            listen 443;
+            server_name wildfirechat.cn;
+            ssl on;
+            root html;
+            index index.html index.htm;
+            ssl_certificate   cert/a.pem;
+            ssl_certificate_key  cert/a.key;
+            ssl_session_timeout 5m;
+            ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+            ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+            ssl_prefer_server_ciphers on;
+            location /route {
+                    proxy_set_header  Host  $host;
+                    proxy_set_header  X-real-ip $remote_addr;
+                    proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+                    proxy_pass  http://imserver_cluster;
+            }
+
+            location /api {
+                    proxy_pass  http://imserver_cluster;
+            }
+    }
+    ```
+2. 配置wss
+
+    请参考专业版IM的配置中关于 ***secret websocket*** 部分
 
 ## 5. 文件存储支持https
 请参考[媒体服务章节](../../server/media_server.md)
