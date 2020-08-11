@@ -1,4 +1,4 @@
-1. 编译ios-chat项目，真机和模拟器都编译一遍。
+1. 编译ios-chat空间的每个项目，真机和模拟器都编译一遍。
 2. 把项目wfchat目录下的FrameWorks拖拽到新工程中。
 3. 把野火的库都改成Embed & Sign
 4. 添加库 CallKit.framework, UserNotifications.framework.
