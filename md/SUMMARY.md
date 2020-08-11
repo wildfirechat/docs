@@ -66,6 +66,7 @@
     * [ChatClient简介](ios/chatclient.md)
     * [ChatUIKit简介](ios/chatuikit.md)
     * [WildfireChat简介](ios/wildfirechat.md)
+    * [集成说明](ios/ios_integration.md)
     * [推送集成](ios/push.md)
 * [PC开发](pc/README.md)
     * [二次开发](pc/dev.md)
