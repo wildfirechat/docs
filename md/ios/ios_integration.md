@@ -4,7 +4,7 @@
 4. 添加库 CallKit.framework, UserNotifications.framework.
 5. Build Settings -> Allow Non-modular Includes In Framework Modules 设置为YES
 6. 在AppDelegate文件中做如下处理:
-引入header
+    1. 引入header
 ```
 #import <WFChatClient/WFCChatClient.h>
 #import <WFAVEngineKit/WFAVEngineKit.h>
@@ -12,8 +12,7 @@
 #import <UserNotifications/UserNotifications.h>
 ```
 
-在application:didFinishLaunchingWithOptions:函数中初始化client，
-
+    2. 在application:didFinishLaunchingWithOptions:函数中初始化client，
 ```
     [WFCCNetworkService startLog];
     [WFCCNetworkService sharedInstance].connectionStatusDelegate = self;
@@ -21,34 +20,30 @@
     [[WFCCNetworkService sharedInstance] setServerAddress:IM_SERVER_HOST];
 ```
 
-初始化音视频
+    3. 初始化音视频
+    ```
+    [[WFAVEngineKit sharedEngineKit] addIceServer:ICE_ADDRESS userName:ICE_USERNAME password:ICE_PASSWORD];
+    [[WFAVEngineKit sharedEngineKit] setVideoProfile:kWFAVVideoProfile360P swapWidthHeight:YES];
+    [WFAVEngineKit sharedEngineKit].delegate = self;
+    [WFAVEngineKit sharedEngineKit].maxVideoCallCount = 4;
+    [WFAVEngineKit sharedEngineKit].maxAudioCallCount = 9;
+```
 
-```
-[[WFAVEngineKit sharedEngineKit] addIceServer:ICE_ADDRESS userName:ICE_USERNAME password:ICE_PASSWORD];
-[[WFAVEngineKit sharedEngineKit] setVideoProfile:kWFAVVideoProfile360P swapWidthHeight:YES];
-[WFAVEngineKit sharedEngineKit].delegate = self;
-[WFAVEngineKit sharedEngineKit].maxVideoCallCount = 4;
-[WFAVEngineKit sharedEngineKit].maxAudioCallCount = 9;
-```
+    4. 设置AppServerProvider
+    ```
+    //[WFCUConfigManager globalManager].appServiceProvider = [AppService sharedAppService];
+    ```
+    > ChatUIKit有些操作需要上层来完成，需要设置appServiceProvider，快速集成时可以先注释掉。
 
-设置AppServerProvider
-
-```
-//[WFCUConfigManager globalManager].appServiceProvider = [AppService sharedAppService];
-```
-> ChatUIKit有些操作需要上层来完成，需要设置appServiceProvider，快速集成时可以先注释掉。
-
-设置QRCode的代理
-
-```
-setQrCodeDelegate(self);
-```
+    5. 设置QRCode的代理
+    ```
+    setQrCodeDelegate(self);
+    ```
 
 7. 处理推送token
-先在application:didFinishLaunchingWithOptions:函数中注册用户通知设置
-
-```
-if (@available(iOS 10.0, *)) {
+    1. 先在application:didFinishLaunchingWithOptions:函数中注册用户通知设置
+    ```
+    if (@available(iOS 10.0, *)) {
         //第一步：获取推送通知中心
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         center.delegate = self;
@@ -69,20 +64,20 @@ if (@available(iOS 10.0, *)) {
                                                 categories:nil];
         [application registerUserNotificationSettings:settings];
     }
-```
+    ```
 
-然后在application:didRegisterUserNotificationSettings:函数中注册远程推送
+    2. 然后在application:didRegisterUserNotificationSettings:函数中注册远程推送
+    ```
+    - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:
+    (UIUserNotificationSettings *)notificationSettings {
+      // register to receive notifications
+      [application registerForRemoteNotifications];
+    }
+    ```
 
-```
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:
-(UIUserNotificationSettings *)notificationSettings {
-    // register to receive notifications
-    [application registerForRemoteNotifications];
-}
-```
-在application:didRegisterForRemoteNotificationsWithDeviceToken:函数中设置推送token到client
-```
-  if ([deviceToken isKindOfClass:[NSData class]]) {
+    3. 在application:didRegisterForRemoteNotificationsWithDeviceToken:函数中设置推送token到client
+    ```
+    if ([deviceToken isKindOfClass:[NSData class]]) {
         const unsigned *tokenBytes = [deviceToken bytes];
         NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
                               ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
@@ -99,50 +94,55 @@ if (@available(iOS 10.0, *)) {
 
         [[WFCCNetworkService sharedInstance] setDeviceToken:token];
     }
-```
+    ```
 
 8. 设置角标，当程序退到后台时读取未读数，设置角标。如果还有其它用用的未读信息，需要进行累计。
-```
-- (void)applicationDidEnterBackground:(UIApplication *)application {
+
+  ```
+  - (void)applicationDidEnterBackground:(UIApplication *)application {
     WFCCUnreadCount *unreadCount = [[WFCCIMService sharedWFCIMService] getUnreadCount:@[@(Single_Type), @(Group_Type), @(Channel_Type)] lines:@[@(0)]];
     int unreadFriendRequest = [[WFCCIMService sharedWFCIMService] getUnreadFriendRequestStatus];
     [UIApplication sharedApplication].applicationIconBadgeNumber = unreadCount.unread + unreadFriendRequest;
-}
-```
+  }
+  ```
 
 9. 程序停止运行时停止日志
-```
-- (void)applicationWillTerminate:(UIApplication *)application {
+
+  ```
+  - (void)applicationWillTerminate:(UIApplication *)application {
     [WFCCNetworkService startLog];
-}
-```
+  }
+  ```
 10. 实现各种delegate和provider
-先声明实现这些代理
-```
-@interface AppDelegate () <ConnectionStatusDelegate, ReceiveMessageDelegate, WFAVEngineDelegate,UNUserNotificationCenterDelegate, QrCodeDelegate>
-@property(nonatomic, strong) AVAudioPlayer *audioPlayer;
-@end
-```
-ConnectionStatusDelegate 是连接状态的处理，有些状态码需要进行处理，比如密钥错误或者token错误，示例代码如下:
+    1. 先声明实现这些代理
+    ```
+    @interface AppDelegate () <ConnectionStatusDelegate, ReceiveMessageDelegate, WFAVEngineDelegate,UNUserNotificationCenterDelegate, QrCodeDelegate>
+    @property(nonatomic, strong) AVAudioPlayer *audioPlayer;
+    @end
+    ```
 
-```
-- (void)onConnectionStatusChanged:(ConnectionStatus)status {
-    if (status == kConnectionStatusRejected || status == kConnectionStatusTokenIncorrect || status == kConnectionStatusSecretKeyMismatch) {
-        [[WFCCNetworkService sharedInstance] disconnect:YES clearSession:YES];
-    } else if (status == kConnectionStatusLogout) {
-      //Todo 这些跳出到您的app登录界面。
-//        UIViewController *loginVC = [[WFCLoginViewController alloc] init];
-//        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-//        self.window.rootViewController = nav;
+    2. ConnectionStatusDelegate 是连接状态的处理，有些状态码需要进行处理，比如密钥错误或者token错误，示例代码如下:
+
+    ```
+    - (void)onConnectionStatusChanged:(ConnectionStatus)status {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (status == kConnectionStatusRejected || status == kConnectionStatusTokenIncorrect || status == kConnectionStatusSecretKeyMismatch) {
+                [[WFCCNetworkService sharedInstance] disconnect:YES clearSession:YES];
+            } else if (status == kConnectionStatusLogout) {
+                //UIViewController *loginVC = [[WFCLoginViewController alloc] init];
+                //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+                //self.window.rootViewController = nav;
+            }
+        });
     }
-}
-```
-> 状态码 kConnectionStatusLogout 时需要跳转到应用的登录界面。
 
-ReceiveMessageDelegate 接受消息的代码，如果在后台，需要实现本地通知。
-```
-- (void)onReceiveMessage:(NSArray<WFCCMessage *> *)messages hasMore:(BOOL)hasMore {
-    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+    ```
+
+    3. ReceiveMessageDelegate 接受消息的代码，如果在后台，需要实现本地通知。
+
+    ```
+    - (void)onReceiveMessage:(NSArray<WFCCMessage *> *)messages hasMore:(BOOL)hasMore {
+      if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
         WFCCUnreadCount *unreadCount = [[WFCCIMService sharedWFCIMService] getUnreadCount:@[@(Single_Type), @(Group_Type), @(Channel_Type)] lines:@[@(0)]];
         int count = unreadCount.unread;
         [UIApplication sharedApplication].applicationIconBadgeNumber = count;
@@ -207,143 +207,144 @@ ReceiveMessageDelegate 接受消息的代码，如果在后台，需要实现本
             }
         }
 
+      }
     }
-}
-```
-WFAVEngineDelegate 音视频代理。
-```
-//收到了来电
-- (void)didReceiveCall:(WFAVCallSession *)session {
-    UIViewController *videoVC;
-    if (session.conversation.type == Group_Type && [WFAVEngineKit sharedEngineKit].supportMultiCall) {
-        videoVC = [[WFCUMultiVideoViewController alloc] initWithSession:session];
-    } else {
-        videoVC = [[WFCUVideoViewController alloc] initWithSession:session];
+    ```
+
+    4. WFAVEngineDelegate 音视频代理。
+
+    ```
+    - (void)didReceiveCall:(WFAVCallSession *)session {
+        UIViewController *videoVC;
+        if (session.conversation.type == Group_Type && [WFAVEngineKit sharedEngineKit].supportMultiCall) {
+            videoVC = [[WFCUMultiVideoViewController alloc] initWithSession:session];
+        } else {
+            videoVC = [[WFCUVideoViewController alloc] initWithSession:session];
+        }
+
+        [[WFAVEngineKit sharedEngineKit] presentViewController:videoVC];
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+            UILocalNotification *localNote = [[UILocalNotification alloc] init];
+
+            localNote.alertBody = @"来电话了";
+
+                WFCCUserInfo *sender = [[WFCCIMService sharedWFCIMService] getUserInfo:session.participantIds[0] refresh:NO];
+                if (sender.displayName) {
+                    if (@available(iOS 8.2, *)) {
+                        localNote.alertTitle = sender.displayName;
+                    } else {
+                        // Fallback on earlier versions
+
+                    }
+                }
+
+            localNote.soundName = @"ring.caf";
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
+            });
+        }
     }
 
-    [[WFAVEngineKit sharedEngineKit] presentViewController:videoVC];
-    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
-        UILocalNotification *localNote = [[UILocalNotification alloc] init];
+    - (void)shouldStartRing:(BOOL)isIncoming {
 
-        localNote.alertBody = @"来电话了";
+        if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+            AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, NULL, NULL, systemAudioCallback, NULL);
+            AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
+        } else {
+            AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+            //默认情况按静音或者锁屏键会静音
+            [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+            [audioSession setActive:YES error:nil];
 
-            WFCCUserInfo *sender = [[WFCCIMService sharedWFCIMService] getUserInfo:session.participantIds[0] refresh:NO];
-            if (sender.displayName) {
-                if (@available(iOS 8.2, *)) {
-                    localNote.alertTitle = sender.displayName;
-                } else {
-                    // Fallback on earlier versions
+            if (self.audioPlayer) {
+                [self shouldStopRing];
+            }
 
+            NSURL *url = [[NSBundle mainBundle] URLForResource:@"ring" withExtension:@"mp3"];
+            NSError *error = nil;
+            self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+            if (!error) {
+                self.audioPlayer.numberOfLoops = -1;
+                self.audioPlayer.volume = 1.0;
+                [self.audioPlayer prepareToPlay];
+                [self.audioPlayer play];
+            }
+        }
+    }
+
+    void systemAudioCallback (SystemSoundID soundID, void* clientData) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+                if ([WFAVEngineKit sharedEngineKit].currentSession.state == kWFAVEngineStateIncomming) {
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                 }
             }
-
-        localNote.soundName = @"ring.caf";
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
         });
     }
-}
 
-//需要响铃了， isIncoming是是否是来电，还是往外呼出
-- (void)shouldStartRing:(BOOL)isIncoming {
-
-    if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
-        AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, NULL, NULL, systemAudioCallback, NULL);
-        AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
-    } else {
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        //默认情况按静音或者锁屏键会静音
-        [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
-        [audioSession setActive:YES error:nil];
-
+    - (void)shouldStopRing {
         if (self.audioPlayer) {
-            [self shouldStopRing];
-        }
-
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"ring" withExtension:@"mp3"];
-        NSError *error = nil;
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-        if (!error) {
-            self.audioPlayer.numberOfLoops = -1;
-            self.audioPlayer.volume = 1.0;
-            [self.audioPlayer prepareToPlay];
-            [self.audioPlayer play];
+            [self.audioPlayer stop];
+            self.audioPlayer = nil;
+            [[AVAudioSession sharedInstance] setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
         }
     }
-}
+    ```
 
-void systemAudioCallback (SystemSoundID soundID, void* clientData) {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
-            if ([WFAVEngineKit sharedEngineKit].currentSession.state == kWFAVEngineStateIncomming) {
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    5. UNUserNotificationCenterDelegate
+
+    ```
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
+        NSLog(@"----------willPresentNotification");
+    }
+    //已经完成推送
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
+        NSLog(@"============didReceiveNotificationResponse");
+        NSString *categoryID = response.notification.request.content.categoryIdentifier;
+        if ([categoryID isEqualToString:@"categoryIdentifier"]) {
+            if ([response.actionIdentifier isEqualToString:@"enterApp"]) {
+                if (@available(iOS 10.0, *)) {
+
+                } else {
+                    // Fallback on earlier versions
+                }
+            }else{
+                NSLog(@"No======");
             }
         }
-    });
-}
-//结束响铃
-- (void)shouldStopRing {
-    if (self.audioPlayer) {
-        [self.audioPlayer stop];
-        self.audioPlayer = nil;
-        [[AVAudioSession sharedInstance] setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+        completionHandler();
     }
-}
-```
-UNUserNotificationCenterDelegate
-```
-//将要推送
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
-    NSLog(@"----------willPresentNotification");
-}
-//已经完成推送
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
-    NSLog(@"============didReceiveNotificationResponse");
-    NSString *categoryID = response.notification.request.content.categoryIdentifier;
-    if ([categoryID isEqualToString:@"categoryIdentifier"]) {
-        if ([response.actionIdentifier isEqualToString:@"enterApp"]) {
-            if (@available(iOS 10.0, *)) {
+    ```
 
-            } else {
-                // Fallback on earlier versions
-            }
-        }else{
-            NSLog(@"No======");
+    6. QrCodeDelegate ChatUIKit需要显示二维码或者扫码二维码
+
+    ```
+    - (void)showQrCodeViewController:(UINavigationController *)navigator type:(int)type target:(NSString *)target {
+            CreateBarCodeViewController *vc = [CreateBarCodeViewController new];
+            vc.qrType = type;
+            vc.target = target;
+            [navigator pushViewController:vc animated:YES];
         }
-    }
-    completionHandler();
-}
-```
-QrCodeDelegate ChatUIKit需要显示二维码或者扫码二维码
-```
-- (void)showQrCodeViewController:(UINavigationController *)navigator type:(int)type target:(NSString *)target {
-    //显示二维码
-    //CreateBarCodeViewController *vc = [CreateBarCodeViewController new];
-    //vc.qrType = type;
-    //vc.target = target;
-    //[navigator pushViewController:vc animated:YES];
-}
 
-- (void)scanQrCode:(UINavigationController *)navigator {
-  // 启动扫描
-  //    QQLBXScanViewController *vc = [QQLBXScanViewController new];
-  //    vc.libraryType = SLT_Native;
-  //    vc.scanCodeType = SCT_QRCode;
-  //
-  //    vc.style = [StyleDIY qqStyle];
-  //
-  //    //镜头拉远拉近功能
-  //    vc.isVideoZoom = YES;
-  //
-  //    vc.hidesBottomBarWhenPushed = YES;
-  //    __weak typeof(self)ws = self;
-  //    vc.scanResult = ^(NSString *str) {
-  //        [ws handleUrl:str withNav:navigator];
-  //    };
-  //    [navigator pushViewController:vc animated:YES];
-}
-```
+        - (void)scanQrCode:(UINavigationController *)navigator {
+        //    QQLBXScanViewController *vc = [QQLBXScanViewController new];
+        //    vc.libraryType = SLT_Native;
+        //    vc.scanCodeType = SCT_QRCode;
+        //
+        //    vc.style = [StyleDIY qqStyle];
+        //
+        //    //镜头拉远拉近功能
+        //    vc.isVideoZoom = YES;
+        //
+        //    vc.hidesBottomBarWhenPushed = YES;
+        //    __weak typeof(self)ws = self;
+        //    vc.scanResult = ^(NSString *str) {
+        //        [ws handleUrl:str withNav:navigator];
+        //    };
+        //    [navigator pushViewController:vc animated:YES];
+        }
+    ```
 
 11. 处理OpenUrl
 
@@ -391,3 +392,9 @@ QrCodeDelegate ChatUIKit需要显示二维码或者扫码二维码
 [[WFCCNetworkService sharedInstance] connect:savedUserId token:savedToken];
 ```
 > 登录成功后可以保存在NSUserDefaults，下次应用启动时可以直接使用保存的userId&token进行连接。
+
+17. 打开会话列表
+```
+WFCUConversationTableViewController *vc = [[WFCUConversationTableViewController alloc] init];
+    //Show vc
+```
