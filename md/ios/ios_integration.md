@@ -67,13 +67,12 @@
     ```
 
     2. 然后在application:didRegisterUserNotificationSettings:函数中注册远程推送
-    ```
-    - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:
+```
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:
     (UIUserNotificationSettings *)notificationSettings {
-        // register to receive notifications
-        [application registerForRemoteNotifications];
-    }
-    ```
+    [application registerForRemoteNotifications];
+}
+```
 
     3. 在application:didRegisterForRemoteNotificationsWithDeviceToken:函数中设置推送token到client
     ```
@@ -99,7 +98,7 @@
 8. 设置角标，当程序退到后台时读取未读数，设置角标。如果还有其它用用的未读信息，需要进行累计。
 
   ```
-  - (void)applicationDidEnterBackground:(UIApplication *)application {
+  -(void)applicationDidEnterBackground:(UIApplication *)application {
     WFCCUnreadCount *unreadCount = [[WFCCIMService sharedWFCIMService] getUnreadCount:@[@(Single_Type), @(Group_Type), @(Channel_Type)] lines:@[@(0)]];
     int unreadFriendRequest = [[WFCCIMService sharedWFCIMService] getUnreadFriendRequestStatus];
     [UIApplication sharedApplication].applicationIconBadgeNumber = unreadCount.unread + unreadFriendRequest;
@@ -109,7 +108,7 @@
 9. 程序停止运行时停止日志
 
   ```
-  - (void)applicationWillTerminate:(UIApplication *)application {
+  -(void)applicationWillTerminate:(UIApplication *)application {
     [WFCCNetworkService startLog];
   }
   ```
@@ -124,7 +123,7 @@
     2. ConnectionStatusDelegate 是连接状态的处理，有些状态码需要进行处理，比如密钥错误或者token错误，示例代码如下:
 
     ```
-    - (void)onConnectionStatusChanged:(ConnectionStatus)status {
+    -(void)onConnectionStatusChanged:(ConnectionStatus)status {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (status == kConnectionStatusRejected || status == kConnectionStatusTokenIncorrect || status == kConnectionStatusSecretKeyMismatch) {
                 [[WFCCNetworkService sharedInstance] disconnect:YES clearSession:YES];
@@ -141,7 +140,7 @@
     3. ReceiveMessageDelegate 接受消息的代码，如果在后台，需要实现本地通知。
 
     ```
-    - (void)onReceiveMessage:(NSArray<WFCCMessage *> *)messages hasMore:(BOOL)hasMore {
+    -(void)onReceiveMessage:(NSArray<WFCCMessage *> *)messages hasMore:(BOOL)hasMore {
       if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
         WFCCUnreadCount *unreadCount = [[WFCCIMService sharedWFCIMService] getUnreadCount:@[@(Single_Type), @(Group_Type), @(Channel_Type)] lines:@[@(0)]];
         int count = unreadCount.unread;
@@ -149,7 +148,7 @@
 
         for (WFCCMessage *msg in messages) {
             //当在后台活跃时收到新消息，需要弹出本地通知。有一种可能时客户端已经收到远程推送，然后由于voip/backgroud fetch在后台拉活了应用，此时会收到接收下来消息，因此需要避免重复通知
-            if (([[NSDate date] timeIntervalSince1970] - (msg.serverTime - [WFCCNetworkService sharedInstance].serverDeltaTime)/1000) > 3) {
+            if (([[NSDate date] timeIntervalSince1970] -(msg.serverTime -[WFCCNetworkService sharedInstance].serverDeltaTime)/1000) > 3) {
                 continue;
             }
 
@@ -214,7 +213,7 @@
     4. WFAVEngineDelegate 音视频代理。
 
     ```
-    - (void)didReceiveCall:(WFAVCallSession *)session {
+    -(void)didReceiveCall:(WFAVCallSession *)session {
         UIViewController *videoVC;
         if (session.conversation.type == Group_Type && [WFAVEngineKit sharedEngineKit].supportMultiCall) {
             videoVC = [[WFCUMultiVideoViewController alloc] initWithSession:session];
@@ -246,7 +245,7 @@
         }
     }
 
-    - (void)shouldStartRing:(BOOL)isIncoming {
+    -(void)shouldStartRing:(BOOL)isIncoming {
 
         if([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
             AudioServicesAddSystemSoundCompletion(kSystemSoundID_Vibrate, NULL, NULL, systemAudioCallback, NULL);
@@ -283,7 +282,7 @@
         });
     }
 
-    - (void)shouldStopRing {
+    -(void)shouldStopRing {
         if (self.audioPlayer) {
             [self.audioPlayer stop];
             self.audioPlayer = nil;
@@ -295,11 +294,11 @@
     5. UNUserNotificationCenterDelegate
 
     ```
-    - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
+    -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
         NSLog(@"----------willPresentNotification");
     }
     //已经完成推送
-    - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
+    -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
         NSLog(@"============didReceiveNotificationResponse");
         NSString *categoryID = response.notification.request.content.categoryIdentifier;
         if ([categoryID isEqualToString:@"categoryIdentifier"]) {
@@ -320,14 +319,14 @@
     6. QrCodeDelegate ChatUIKit需要显示二维码或者扫码二维码
 
     ```
-    - (void)showQrCodeViewController:(UINavigationController *)navigator type:(int)type target:(NSString *)target {
+    -(void)showQrCodeViewController:(UINavigationController *)navigator type:(int)type target:(NSString *)target {
             CreateBarCodeViewController *vc = [CreateBarCodeViewController new];
             vc.qrType = type;
             vc.target = target;
             [navigator pushViewController:vc animated:YES];
         }
 
-        - (void)scanQrCode:(UINavigationController *)navigator {
+        -(void)scanQrCode:(UINavigationController *)navigator {
         //    QQLBXScanViewController *vc = [QQLBXScanViewController new];
         //    vc.libraryType = SLT_Native;
         //    vc.scanCodeType = SCT_QRCode;
@@ -349,11 +348,11 @@
 11. 处理OpenUrl
 
 ```
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [self handleUrl:[url absoluteString] withNav:application.delegate.window.rootViewController.navigationController];
 }
 
-- (BOOL)handleUrl:(NSString *)str withNav:(UINavigationController *)navigator {
+-(BOOL)handleUrl:(NSString *)str withNav:(UINavigationController *)navigator {
     NSLog(@"str scanned %@", str);
     if ([str rangeOfString:@"wildfirechat://user" options:NSCaseInsensitiveSearch].location == 0) {
         NSString *userId = [str lastPathComponent];
@@ -364,18 +363,18 @@
         [navigator pushViewController:vc2 animated:YES];
         return YES;
     } else if ([str rangeOfString:@"wildfirechat://group" options:NSCaseInsensitiveSearch].location == 0) {
-        //NSString *groupId = [str lastPathComponent];
-        //GroupInfoViewController *vc2 = [[GroupInfoViewController alloc] init];
-        //vc2.groupId = groupId;
-        //vc2.hidesBottomBarWhenPushed = YES;
-        //[navigator pushViewController:vc2 animated:YES];
+        /* NSString *groupId = [str lastPathComponent];
+        GroupInfoViewController *vc2 = [[GroupInfoViewController alloc] init];
+        vc2.groupId = groupId;
+        vc2.hidesBottomBarWhenPushed = YES;
+        [navigator pushViewController:vc2 animated:YES]; */
         return YES;
     } else if ([str rangeOfString:@"wildfirechat://pcsession" options:NSCaseInsensitiveSearch].location == 0) {
-        //NSString *sessionId = [str lastPathComponent];
-        //PCLoginConfirmViewController *vc2 = [[PCLoginConfirmViewController alloc] init];
-        //vc2.sessionId = sessionId;
-        //vc2.hidesBottomBarWhenPushed = YES;
-        //[navigator pushViewController:vc2 animated:YES];
+        /* NSString *sessionId = [str lastPathComponent];
+        PCLoginConfirmViewController *vc2 = [[PCLoginConfirmViewController alloc] init];
+        vc2.sessionId = sessionId;
+        vc2.hidesBottomBarWhenPushed = YES;
+        [navigator pushViewController:vc2 animated:YES]; */
         return YES;
     }
     return NO;
