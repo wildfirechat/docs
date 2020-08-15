@@ -1,3 +1,7 @@
+# 集成说明
+野火客户端是分层的，客户可以只集成[ChatClient](chatclient.md)，然后自己实现所有的UI和交互，难度和工作量都比较大；也可以集成[ChatClient](chatclient.md)和[ChatUIKit](chatuikit.md)，省掉大部分的UI开发。
+
+## 集成ChatUIKit
 1. 编译ios-chat空间的每个项目，真机和模拟器都编译一遍。
 2. 把项目wfchat目录下的FrameWorks拖拽到新工程中。
 3. 把野火的库都改成Embed & Sign
@@ -109,7 +113,7 @@
 
   ```
   -(void)applicationWillTerminate:(UIApplication *)application {
-    [WFCCNetworkService startLog];
+    [WFCCNetworkService stopLog];
   }
   ```
 10. 实现各种delegate和provider
@@ -395,5 +399,8 @@
 17. 打开会话列表
 ```
 WFCUConversationTableViewController *vc = [[WFCUConversationTableViewController alloc] init];
-    //Show vc
+// Todo Show vc
 ```
+
+## 集成ChatClient
+ChatClient只是个功能库，所有的UI都是需要自己来实现，难度也比较高，需要资深研发工程师进行集成。首先参考集成ChatUIKit的方法，只引入ChatClient.framework，然后去掉所有关于ChatUIKit和音视频的操作。然后参考ChatClient库中的```WFCCNetworkService.h```和```WFCCIMService.h```的方法进行各种接口调用和回调监听。如果有问题可以参考ChatUIKit的代码。
