@@ -9,7 +9,7 @@
 #### 媒体文件的清理
 媒体文件如果使用七牛，可以定时清理媒体消息内容的bucket，而头像和收藏等bucket要注意保留。
 
-使用自带的媒体服务器，受限于inode的节点数，一定要注意不能接近inode的节点数，使用```df -i```命令查看。文件存储在fs目录下，目录为${type}/${year}/${month}/${day}/${hour}/${uuid}。其中type分别表示如下类型
+使用自带的对象存储服务器，受限于inode的节点数，一定要注意不能接近inode的节点数，使用```df -i```命令查看。文件存储在fs目录下，目录为${type}/${year}/${month}/${day}/${hour}/${uuid}。其中type分别表示如下类型
 ```
     Media_Type_GENERAL = 0,
     Media_Type_IMAGE = 1,

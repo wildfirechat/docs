@@ -383,7 +383,7 @@
 
 12. Background Modes 勾选 "Voice over IP" 和 "Remote notifications"
 13. 添加URL Schemes。注意我们demo使用的是```wildfirechat```，需要更换成你们自己的，然后步骤11，Scheme替换成你们自己的
-14. 添加ATS。如果IM服务媒体服务支持https，可以不用添加ATS支持。
+14. 添加ATS。如果IM服务对象存储服务支持https，可以不用添加ATS支持。
 15. 添加权限，麦克风，地理位置，相机，相册等
 16. 添加登录代码。应用登录时返回token，然后使用token连接
 ```

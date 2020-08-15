@@ -132,4 +132,4 @@ server {
     请参考专业版IM的配置中关于 ***secret websocket*** 部分
 
 ## 5. 文件存储支持https
-请参考[媒体服务章节](../../server/media_server.md)
+请参考[对象存储服务章节](../../server/oss.md)

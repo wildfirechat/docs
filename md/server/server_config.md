@@ -28,8 +28,8 @@ token.key hellomyimsecret
 
 ```
 
-#### 配置媒体服务器
-请参考[媒体服务器选择](./media_server.md)
+#### 配置对象存储服务器
+请参考[对象存储服务器选择](./oss.md)
 
 #### 推送配置
 请参考[推送说明](.push_config.md)

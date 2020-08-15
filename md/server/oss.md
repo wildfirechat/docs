@@ -1,13 +1,13 @@
-# 媒体服务
-野火IM的消息分为普通消息和媒体消息。媒体消息一般比较大，发送时需要先上传媒体文件到媒体服务器，得到一个url地址，然后再把包含这个url地址的消息发出去。野火IM同时支持内置媒体服务器和七牛媒体服务器。客户端不用修改。
+# 对象存储服务
+野火IM的消息分为普通消息和媒体消息。媒体消息一般比较大，发送时需要先上传媒体文件到对象存储服务器，得到一个url地址，然后再把包含这个url地址的消息发出去。野火IM同时支持内置对象存储服务器和七牛对象存储服务器。客户端不用修改。
 
-## 使用内置媒体服务器。
+## 使用内置对象存储服务器。
 修改如下配置，```media.server.use_qiniu```配置为0，这样所有媒体文件都将上传到fs目录，按照日期和类型存放。
 ```
 media.server.use_qiniu 0
 local.media.storage.root ../fs
 ```
-> 内置文件服务器不是一个商业化的媒体服务器，有很大的限制。受限于linux的inode数，文件不能太多，需要定时清理，另外媒体文件提交较大，没有cdn加速下载会很慢，强烈建议客户在正式商用时使用七牛媒体服务器。
+> 内置文件服务器不是一个商业化的对象存储服务器，有很大的限制。受限于linux的inode数，文件不能太多，需要定时清理，另外媒体文件提交较大，没有cdn加速下载会很慢，强烈建议客户在正式商用时使用七牛对象存储服务器。
 
 ## 七牛服务器
 去七牛官网申请存储服务，修改如下配置，```media.server.use_qiniu```配置为1，填写```access_key```和```secret_key```，```server_url```为上传地址，跟您选择的区有关，请选择正确的地址。然后为不同类型的媒体文件创建不同的bucket，并配置正确。主要要区分长期保存的bucket和会清理的bucket。另外bucket的权限要选择公开，这样接收方可以使用url来访问资源。
@@ -51,7 +51,7 @@ server_url对应不同的七牛存储区域，选择下表中对应区域的服�
 ![bucket和domain](./assert/qiniu_bucket_domain.jpeg)
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么媒体服务器也必须支持HTTPS。按照七牛网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照七牛网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
 
 然后修改配置，domain改成https地址
 ```
@@ -62,7 +62,7 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 野火IM专业版支持野火IM私有存储，按照[说明](https://github.com/wildfirechat/WF-minio)进行部署。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传（数据经过加密上传的）。
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么媒体服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
 
 然后修改配置，domain改成https地址
 ```
@@ -73,7 +73,7 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 野火IM专业版支持，可以参考七牛开通服务并配置。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传。
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么媒体服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
 
 然后修改配置，domain改成https地址
 ```
