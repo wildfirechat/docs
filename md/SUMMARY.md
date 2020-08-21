@@ -130,3 +130,4 @@
   * [推送的extra在哪里](blogs/推送的extra在哪里.md)
   * [国产化系统鲲鹏CPU+UOS适配经历](blogs/国产化系统鲲鹏CPU+UOS适配经历.md)
   * [在线状态](blogs/在线状态.md)
+  * [面对面建群](blogs/面对面建群.md)
