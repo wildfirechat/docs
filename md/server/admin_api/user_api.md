@@ -42,8 +42,8 @@ http://domain:18080/admin/user/create
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id |
-| name | string | 是 | 登陆名 |
+| userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id。***必须保证唯一性。*** |
+| name | string | 是 | 帐号名，***必须保证唯一性。*** |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |
@@ -51,6 +51,8 @@ http://domain:18080/admin/user/create
 | address | string | 否 | 用户地址 |
 | company | string | 否 | 用户公司 |
 | extra | string | 否 | 附加信息 |
+
+> userId是用户在系统中的唯一ID，会一直保持不变，一般是对用户不可见的。name是用户的可见账户ID，可以是登录名，特殊情况下可以修改，但要保持唯一性。以微信为例，微信号就是我们的“name”，可以看见，可以用来登录使用，可以查找用户，也可以修改；另外微信还给每个用户分配一个UUID，这个是不可见的，也会是一直保持不变的，这个就对应我们的”userId“。
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
