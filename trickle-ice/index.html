@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta itemprop="description" content="Client-side WebRTC code samples">
+    <meta itemprop="image" content="./images/webrtc-icon-192x192.png">
+    <meta itemprop="name" content="WebRTC code samples">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+
+    <base target="_blank">
+
+    <title>Trickle ICE</title>
+
+    <link rel="icon" sizes="192x192" href="./images/webrtc-icon-192x192.png">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/main.css"/>
+
+</head>
+
+<body>
+
+<div id="container">
+
+    <h1>Turn服务功能测试</h1>
+
+    <h2>测试步骤:</h2>
+    <section>
+
+        <p>1. 填写TURN URI，格式为<strong>turn:IP或URL:3478</strong>，比如野火IM提供的测试服务是 turn:turn.wildfirechat.cn:3478。</p>
+
+        <p>2. 填写您的TURN服务的用户名和密码，比如野火IM提供的测试服务器用户名和密码都是wfchat。
+        </p>
+
+        <p>3. 点击添加按钮，提交TURN服务信息，提交成功后，TURN服务框中会列有您刚添加的turn服务信息。</p>
+
+        <p>4. 如果有多余的TURN服务，可以选中然后点删除按钮来删除。</p>
+        <p>5. 点击<strong>收集候选</strong>按钮，查看结果，当<strong><em>候选结果中出现relay，且IP地址为您的turn服务公网地址时，证明您的TURN服务部署成功，否则就是失败</em></strong>!</p>
+
+    </section>
+
+    <section id="iceServers">
+
+        <h2>TURN服务</h2>
+
+        <select id="servers" size="4">
+        </select>
+
+        <div>
+            <label for="url">TURN URI:</label>
+            <input id="url">
+        </div>
+
+        <div>
+            <label for="username">TURN用户名:</label>
+            <input id="username">
+        </div>
+
+        <div>
+            <label for="password">TURN密码:</label>
+            <input id="password">
+        </div>
+
+        <div>
+            <button id="add">添加服务</button>
+            <button id="remove">删除服务</button>
+            <button id="reset">重置</button>
+        </div>
+
+    </section>
+
+    <section id="iceOptions">
+
+        <h2>ICE options</h2>
+
+        <div id="iceTransports">
+            <label for="transports"><span>IceTransports value:</span></label>
+            <input type="radio" name="transports" value="all" id="all" checked>
+            <span>all</span>
+            <input type="radio" name="transports" value="relay" id="relay">
+            <span>relay</span>
+        </div>
+        <div>
+            <label>ICE Candidate Pool:</label>
+            <span id="poolValue">0</span>
+            <span class="gray">0</span>
+            <input id="iceCandidatePool" type="range" min="0" max="10" value="0">
+            <span class="gray">10</span>
+        </div>
+
+    </section>
+
+    <section>
+
+        <table id="candidates">
+            <thead id="candidatesHead">
+            <tr>
+                <th>Time</th>
+                <th>Component</th>
+                <th>Type</th>
+                <th>Foundation</th>
+                <th>Protocol</th>
+                <th>Address</th>
+                <th>Port</th>
+                <th>Priority</th>
+            </tr>
+            </thead>
+            <tbody id="candidatesBody"></tbody>
+        </table>
+        <button id="gather">收集候选</button>
+        <div id="error-note">Note: errors from onicecandidateerror above are not neccessarily fatal. For example an IPv6 DNS lookup may fail but relay candidates can still be gathered via IPv4.</div>
+        <div id="error"></div>
+    </section>
+
+</div>
+
+<script src="js/adapter-latest.js"></script>
+<script src="js/main.js" async></script>
+
+</body>
+</html>
