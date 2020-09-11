@@ -164,3 +164,16 @@ server.multi_endpoint false
 # 多平台连接状态通知（仅当multi_endpoint为false时有效），true时移动端可以收到pc或web端登录的通知。
 server.multi_platform_notification true
 ```
+
+#### Q. 朋友圈中文乱码
+A. 由于服务器不支持中文导致。linux服务器可参考如下步骤处理：
+
+1. 在```~/.bashrc```最后添加如下两行：
+    ```
+    export LANG='zh_CN.UTF-8'
+    export LC_CTYPE='zh_CN.UTF-8'
+    ```
+2. 执行```source ~/.bashrc```
+3. 执行```locale```确认```LC_CTYPE```是否修改为```zh_CN.UTF-8```
+4. 重启野火IM服务
+
