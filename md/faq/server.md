@@ -178,7 +178,7 @@ A. 由于服务器不支持中文导致。linux服务器可参考如下步骤处
 4. 重启野火IM服务
 
 #### Q. 客户端调用群公告接口失败。
-A. 失败常见于iOS端和Web端和PC端，这个接口是调用appserver的，在appserver登录以后会返回cookies。由于网络的安全性问题，这个cookies在iOS和Web有着比较严格的检查，这个是系统（或浏览器）决定的。检查appserver的配置文件```application.properties```中的如下配置:
+A. 失败常见于iOS端和Web端和PC端，这个接口是调用appserver的，在appserver登录以后会返回cookies。由于网络的安全性问题，这个cookies在iOS和Web有着比较严格的检查，这个是系统（或浏览器）决定的，具体原因请参考[这里](https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=84053098_3_dg&wd=cookies%20samesite&oq=cookies%2520SameSite&rsv_pq=fad323cc00037074&rsv_t=2237f4tQJfngetPiUD313GsZam7TduUYBCNL7HKFjU89nr9H%2FouZB7D%2FYIH%2F53DMYYffDQ&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_sug3=10&rsv_sug2=0&rsv_btype=t&inputT=2124&rsv_sug4=3182)。检查appserver的配置文件```application.properties```中的如下配置:
 ```
 # 是否支持SSL，如果所有客户端调用appserver都支持https，请把下面开关设置为true，否则为false。
 # 如果为false，在Web端和wx端的appserve的群公告等功能将不可用。
