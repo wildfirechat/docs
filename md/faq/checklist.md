@@ -27,7 +27,7 @@ todo
 
 ## Android
 1. ```Config.java```里面的```IM_HOST```是否修改？
-2. ```Config.java```里面的```APP_SERVER_ADDRESS```是否修改？
+2. ```AppService.java```里面的```APP_SERVER_ADDRESS```是否修改？
 
 ## iOS
 1. ```config.m```里面的```IM_HOST```是否修改？
