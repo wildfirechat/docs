@@ -45,20 +45,38 @@ sensitive.filter.type 0
 
 #### 消息转发
 ```
-#*********************************************************************
-# Message forward configuration
-#*********************************************************************
 ##消息转发地址
 message.forward.url http://localhost:8087/message/forward
 ```
 
 #### 用户在线事件回调
 ```
-#*********************************************************************
-# User online status event callback
-#*********************************************************************
 ##用户在线状态事件回调地址
 #user.online_status_callback http://localhost:8888/user/online_event
+```
+
+#### 群组信息变动事件回调
+```
+##群组信息变动事件回调地址
+#group.group_info_update_callback http://localhost:8888/group/group_info_updated
+```
+
+#### 群组成员变动事件回调
+```
+##群组信息变动事件回调地址
+#group.group_member_update_callback http://localhost:8888/group/group_member_updated
+```
+
+#### 用户关系变动事件回调
+```
+##用户信息变动事件回调地址
+#relation.update_callback http://localhost:8888/relation/updated
+```
+
+#### 用户信息变动事件回调
+```
+##用户信息变动事件回调地址
+#user.info_update_callback http://localhost:8888/user/user_info_updated
 ```
 
 #### 更多配置，请参考```wildfirechat.conf```文件

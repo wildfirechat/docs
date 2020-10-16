@@ -18,7 +18,7 @@ http://domain:18080/admin/user/get_token
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
-| imToken | string | 是 | 用户token |
+| token | string | 是 | 用户token |
 
 #### 示例
 ```
@@ -29,7 +29,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "msg":"success",
   "result":{
     "userId":"a",
-    "imToken":"hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r"
+    "token":"hN0AF2XX6+pOWqMS7iQiZnCFfGA53r1r"
   }
 }
 ```
