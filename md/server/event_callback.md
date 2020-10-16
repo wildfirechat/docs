@@ -69,9 +69,9 @@ http code 200
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| operatorId | string | 是 | 操作的用户 |
-| groupId | string | 是 | 操作的用户 |
-| memberId | string | 是 | 操作的用户 |
+| operatorId | string | 是 | 操作者用户ID |
+| groupId | string | 是 | 群组ID |
+| memberId | string | 是 | 群成员ID |
 | type | int | 是 | 0加入群组，1离开群组，3群成员状态改变，4修改群昵称 |
 | value | string | 否 | 当type为4时为群昵称，type为3时值为群成员新的状态 |
 > 群组成员状态0，普通群成员；1，管理员；2，群主；3，禁言；5，白名单
