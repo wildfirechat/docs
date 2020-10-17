@@ -72,7 +72,7 @@ http code 200
 | operatorId | string | 是 | 操作者用户ID |
 | groupId | string | 是 | 群组ID |
 | memberId | string | 是 | 群成员ID |
-| type | int | 是 | 0加入群组，1离开群组，3群成员状态改变，4修改群昵称 |
+| type | int | 是 | 0加入群组，1主动离开群组，2被移出群组，3群成员状态改变，4修改群昵称 |
 | value | string | 否 | 当type为4时为群昵称，type为3时值为群成员新的状态 |
 > 群组成员状态0，普通群成员；1，管理员；2，群主；3，禁言；5，白名单
 
@@ -109,6 +109,34 @@ http code 200
 | address | string | 否 | 用户地址 |
 | company | string | 否 | 用户公司 |
 | extra | string | 否 | 附加信息 |
+
+#### 响应
+http code 200
+
+## 频道订阅状态变更回调
+当用户订阅/取消订阅时进行回调
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| channelId | string | 是 | 频道Id |
+| status | int | 是 | 0，取消订阅；1，订阅。 |
+
+
+#### 响应
+http code 200
+
+## 聊天室回调
+当用户加入/退出时进行回调
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| chatroomId | string | 是 | 聊天室Id |
+| status | int | 是 | 0，退出；1，加入。 |
+
 
 #### 响应
 http code 200
