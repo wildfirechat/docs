@@ -81,14 +81,14 @@ http://domain:18080/admin/user/get_info
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 否（三个参数必须且只能存在一个） | 用户ID |
-| name | string | 否（三个参数必须且只能存在一个）  | 登陆名 |
+| name | string | 否（三个参数必须且只能存在一个）  | 登录名 |
 | mobile | string | 否（三个参数必须且只能存在一个）  | 用户手机号码 |
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
-| name | string | 是 | 登陆名 |
+| name | string | 是 | 登录名 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |

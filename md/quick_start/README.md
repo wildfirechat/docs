@@ -10,9 +10,9 @@
 
  ![野火IM](https://static.wildfirechat.cn/download_qrcode.png)
 
-* [点我体验 PC 端](https://github.com/wildfirechat/pc-chat/releases)，从release中下载对应的平台，使用野火IM移动端（不是使用微信扫码）扫码登陆。
+* [点我体验 PC 端](https://github.com/wildfirechat/pc-chat/releases)，从release中下载对应的平台，使用野火IM移动端（不是使用微信扫码）扫码登录。
 
-* [点我体验 Web 端](https://web.wildfirechat.cn)，打开页面后，使用野火IM移动端（不是使用微信扫码）扫码登陆。
+* [点我体验 Web 端](https://web.wildfirechat.cn)，打开页面后，使用野火IM移动端（不是使用微信扫码）扫码登录。
 
 * 微信扫描下方小程序码，体验小程序版
 

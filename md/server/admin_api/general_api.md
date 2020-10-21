@@ -9,7 +9,7 @@ http://domain:18080/admin/robot/create
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id |
-| name | string | 是 | 登陆名 |
+| name | string | 是 | 登录名 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |
