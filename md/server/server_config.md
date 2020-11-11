@@ -1,6 +1,6 @@
 # 服务器配置
 
-```config``` 目录下放有所有服务器的配置，部署时需要对配置进行修改，***本文只列出了常用配置，更多配置参考```config```目录下配置文件的注释，强烈讲义通读一下```wildfirechat.conf```中的各项配置***。
+```config``` 目录下放有所有服务器的配置，部署时需要对配置进行修改，***本文只列出了常用配置，更多配置参考```config```目录下配置文件的注释，强烈讲义通读一下```wildfirechat.conf```中的各项配置***。此外还需要配置启动脚本```wildfirechat.sh```。
 
 #### 服务器的地址
 修改```wildfirechat.conf```文件，***把下面四个0替换成您的公网IP地址***（如果您在局域网内体验，请改成局域网内地址，不能使用127.0.0.1或localhost，上线时要根据[这里](../faq/server.md#Q_如何给IM服务器配置域名)改成域名），并且开通这3个端口。端口要保持不变并开通公网访问，不要用其它端口，不然无法使用！***如果您是要运行中linux服务器上，最好是在linux服务器上修改配置文件，遇见过部分客户在windows下改动引入了linux无法识别的字符，导致启动失败***
@@ -79,4 +79,13 @@ message.forward.url http://localhost:8087/message/forward
 #user.info_update_callback http://localhost:8888/user/user_info_updated
 ```
 
-#### 更多配置，请参考```wildfirechat.conf```文件
+#### 更多配置
+请参考```wildfirechat.conf```文件
+
+#### 启动脚本的配置
+启动脚本在```./bin/wildfirechat.sh```。windows也在对应目录有bat文件。在启动脚本中有各种的jvm的参数配置，其中最重要的是jvm堆内存大小的配置。
+```
+#JAVA_OPTS="$JAVA_OPTS -Xmx128M"
+#JAVA_OPTS="$JAVA_OPTS -Xms128M"
+```
+默认是关闭的，请打开然后设置上给IM服务分配的大小。如果不设置将以来系统默认的jvm参数，如果默认堆内存太小会导致内存浪费甚至出现OOM问题。
