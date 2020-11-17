@@ -12,6 +12,7 @@ local.media.storage.root ../fs
 ## 七牛服务器
 去七牛官网申请存储服务，修改如下配置，```media.server.use_qiniu```配置为1，填写```access_key```和```secret_key```，```server_url```为上传地址，跟您选择的区有关，请选择正确的地址。然后为不同类型的媒体文件创建不同的bucket，并配置正确。主要要区分长期保存的bucket和会清理的bucket。另外bucket的权限要选择公开，这样接收方可以使用url来访问资源。
 ```
+#专业版的开关名称是media.server.media_type，社区版的是media.server.use_qiniu
 media.server.use_qiniu 1
 media.server_url  http://up.qbox.me
 media.access_key tU3vdBK5BL5j4N7jI5N5uZgq_HQDo170w5C9Amnn
