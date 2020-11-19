@@ -4,6 +4,7 @@
 ## 集成ChatUIKit
 1. 编译ios-chat空间的每个项目，真机和模拟器都编译一遍。
 2. 把项目wfchat目录下的FrameWorks拖拽到新工程中。
+3. 找到```wfuikit/WFChatUIKit/Vendor/ZLPhotoBrowser/ZLPhotoBrowser.framework```和```wfchat/WildFireChat/SDWebImage/SDWebImage.framework```这两个库，也拖拽到新工程中。
 3. 把野火的库都改成Embed & Sign
 4. 添加库 CallKit.framework, UserNotifications.framework.
 5. Build Settings -> Allow Non-modular Includes In Framework Modules 设置为YES

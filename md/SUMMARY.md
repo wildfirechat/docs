@@ -68,6 +68,7 @@
     * [WildfireChat简介](ios/wildfirechat.md)
     * [集成说明](ios/ios_integration.md)
     * [推送集成](ios/push.md)
+    * [打包](ios/distribution.md)
 * [PC开发](pc/README.md)
     * [二次开发](pc/dev.md)
 * [Web开发](web/README.md)

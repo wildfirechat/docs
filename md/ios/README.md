@@ -6,3 +6,4 @@
 * [集成说明](ios_integration.md)
 * [推送集成](push.md)
 * [iOS常见问题](../faq/ios.md)
+* [打包](distribution.md)
