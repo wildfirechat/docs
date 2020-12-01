@@ -43,7 +43,7 @@ http code 200
 | userId | string | 是 | 用户ID |
 | clientId | string | 是 | client ID |
 | platform| int | 是 | 平台 |
-| status | int | 是 | 状态。0 下线；1 上线； -1 客户端调用logout |
+| status | int | 是 | 状态。0 在线；1 下线； -1 客户端调用logout |
 | packageName | string | 是 | 应用包名 |
 | timestamp | long | 是 | 时间戳 |
 
