@@ -55,8 +55,15 @@
 | name | string | 否 | 群组名称 |
 | portrait | string | 否 | 群组头像 |
 | owner | string | 是 | 群主用户ID |
-| type | int | 是 | 群类型，0 weixin 风格群组；2 qq 风格群组。移动端demo使用的是2 |
+| type | int | 是 | 群类型，0 weixin 风格群组；2 qq 风格群组。移动端demo使用的是2，建议使用2. |
 | extra | string | 否 | 群的extra信息供客户扩展使用 |
+| mute | int | 否 | 是否全员禁言，0 不禁言；1 全员禁言。 |
+| join_type | int | 否 | 加入群权限，0 所有人可以加入；1 群成员可以拉人；2 群管理员或群组可以拉人。 |
+| private_chat | int | 否 | 是否禁止私聊，0 允许群成员发起私聊；1 不允许群成员发起私聊。 |
+| searchable | int | 否 | 群是否可以被搜索，但目前没有实现。如果需要请在appserver实现。 |
+| max_member_count | int | 否 | 群最大成员数，社区版该字段无效，群最大参加在t_setting表中配置。专业版可以指定某个群的最大成员数。 |
+| history_message | int | 否 | 是否允许查看群成员查看加入群之前的历史消息，0 不允许；1 是允许。 |
+
 
 示例:
 ```
