@@ -136,3 +136,6 @@ A：先了解一下野火IM发送文件的流程。SDK调用协议栈发送媒�
 
 ## 为什么服务要限定使用80端口？
 A：强制使用80端口有几个原因：1，使用80端口在国内是必须备案的，会明确受到监管，防止用在非法犯罪的地方；2，使用80端口能提高IM的成功率，很多用户处在防火墙/路由器内，80端口的策略最宽松，使用80端口遇到这方面问题的可能性最小；3，商业策略问题，我们需要绑定一个固定的端口使用。如果是安全单位无法使用80端口，比如政府事业单位或国企，可以发邮件给 support@wildfirechat.cn 免费申请特殊端口的SDK。
+
+## xlog日志如何解压
+xlog日志是微信[mars](https://github.com/tencent/mars)日志格式，可以参考他们的[介绍](https://mp.weixin.qq.com/s/cnhuEodJGIbdodh0IxNeXQ?)。我们使用时未对日志进行加密，使用mars提供的python脚本```decode_mars_nocrypt_log_file.py```进行解压即可，详情请参考[mars wiki](https://github.com/Tencent/mars/wiki/Xlog-加密使用指引)
