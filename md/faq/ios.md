@@ -47,3 +47,11 @@ A. 从iphone5s起，架构已经是arm64了。目前iphone5及之前的设备基
 
 #### Q. 国内不允许使用CallKit功能怎么办？
 A. 苹果不允许不使用CallKit功能的应用使用Voip推送，针对这个问题的处理很简单，那就是使用普通推送呗。由于SDK中对CallKit.framework有依赖，所以打包必须带上这个依赖。Appstore上架是没有问题的。
+
+#### Q. iOS扫码登录PC端或者Web端不成功？
+A. 常见的一种可能是应用服务配置有个设置不正确，见下面代码，如果应用服务是https的需要打开这个开关，如果是http的需要关闭这个开关。
+```
+# 是否支持SSL，如果所有客户端调用appserver都支持https，请把下面开关设置为true，否则为false。
+# 如果为false，在Web端和wx端的appserve的群公告等功能将不可用。
+wfc.all_client_support_ssl=false
+```
