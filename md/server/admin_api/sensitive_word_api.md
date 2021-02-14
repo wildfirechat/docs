@@ -73,5 +73,17 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
-## 敏感词的高级处理方法
-内置敏感词过滤功能只能对文本消息进行敏感词匹配。如果您有高级需求，比如对图片消息/语音消息或其它消息进行过滤。请使用消息[转发功能](../event_callback.md#接收消息回调)，把每一条消息都转发过去，异步处理，如果命中敏感词，再调用[撤回](./message_api.md#撤回消息)方法对消息进行撤回。
+## 独立敏感词过滤服务
+内置敏感词过滤功能只能对文本消息进行敏感词匹配。如果您有高级需求，比如对图片消息/语音消息或其它消息进行过滤。就需要独立的敏感词过滤服务了。这时有两种方法可以处理：
+1. 配置敏感词服务器，在IM服务的配置文件```wildfirechat.conf```中，配置如下内容
+```
+## 消息内容审查服务。
+sensitive.remote_server_url http://192.168.3.202:8888/message/censor
+## 需要进行审查的消息类型
+sensitive.remote_sensitive_message_type 1,2,3
+## 是否进行等待审核之后才返回客户端
+sensitive.remote_fail_when_matched false
+```
+注意处理延时，当```remote_fail_when_matched```为true时，如果延时过长会导致客户端发送失败。
+
+2. 使用消息[转发功能](../event_callback.md#接收消息回调)，把需要过滤类型的消息转发过去，异步处理，如果命中敏感词，再调用[撤回](./message_api.md#撤回消息)方法对消息进行撤回。
