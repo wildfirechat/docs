@@ -2,7 +2,7 @@
 #### 体验我们的应用
 您可以直接使用我们提供的应用进行体验
 
-* [点我体验 Android 端](https://static.wildfirechat.cn/chat-release-latest.apk) 或微信扫码下方二维码
+* [点我体验 Android 端](http://static.wildfirechat.cn/chat-release-latest.apk) 或微信扫码下方二维码
 
  ![野火IM](https://static.wildfirechat.cn/download_qrcode.png)
 
