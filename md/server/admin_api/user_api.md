@@ -10,7 +10,7 @@ http://domain:18080/admin/user/get_token
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
 | clientId | string | 是 | 客户端ID |
-| platform | int | 否 | 平台类型iOS 1, Android 2, Windows 3, OSX 4, WEB = 5 |
+| platform | int | 否 | 平台类型iOS 1, Android 2, Windows 3, OSX 4, WEB 5, 小程序 6，linux 7 |
 > clientId为客户端ID，客户端SDK有获取clientId的接口。如果需要开启多端互踢，需要使用正确的platform。
 
 
@@ -71,6 +71,32 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }
 }
 ```
+
+## 更新用户
+#### 地址
+```
+http://domain:18080/admin/user/update
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| flag | int | 是 | 更新用户信息的字段信息，第0bit位为1时更新userInfo中的昵称信息，第1位更新头像，第2位更新性别，第3更新电话，第4位更新email，第5位更新地址，第6位更新公司，第7位更新社交信息，第8位更新extra信息。比如更新用户头像和昵称，flag应该位 0x03 |
+| userInfo | [json](./models.md##UserInfo) | 是 | 要更新的用户信息，与创建用户参数一致，注意必须带有userId参数，其它带上flag指定修改的字段 |
+
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"flag\":1, \"userInfo\":{\"userId\":\"user1\",\"displayName\":\"A\"}}" http://localhost:18080/admin/user/update
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+> 创建用户接口和更新用户接口都可以更新用户信息，区别是创建用户接口会覆盖原有信息，更新接口只更新flag指定的字段。更新接口在社区版0.55版本才支持。
 
 ## 获取用户信息
 #### 地址

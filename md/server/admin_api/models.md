@@ -85,3 +85,22 @@
   "members":[{"member_id":"memberId1","name":"老王的朋友们","owner":"laowang","type":3}]
 }
 ```
+
+## UserInfo
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID，在创建时可以为空，如果传空，系统会自动生成一个用户id。其它情况必须携带用户id。***必须保证唯一性。*** |
+| name | string | 是 | 帐号名，***必须保证唯一性。*** |
+| displayName | string | 是 | 显示名字 |
+| portrait | string | 否 | 用户头像 |
+| mobile | string | 否 | 用户手机号码 |
+| email | string | 否 | 用户邮箱 |
+| address | string | 否 | 用户地址 |
+| company | string | 否 | 用户公司 |
+| social | string | 否 | 社交信息 |
+| extra | string | 否 | 附加信息 |
+
+示例:
+```
+{"userId":"userId1","name":"userId1"，"displayName":"zhangsan"}
+```
