@@ -60,7 +60,7 @@ turnserver -v -r ${公网IP}:3478 -a -o -c /usr/local/etc/turnserver.conf
 ```
 
 #### 测试
-使用[这个链接](https://docs.wildfirechat.cn/webrtc/trickle-ice/)检查turn服务是否部署成功。***注意一定要是turn服务，不能是stun服务，一定要出现下图中红线标注的type***。
+使用[这个链接](https://docs.wildfirechat.net/webrtc/trickle-ice/)检查turn服务是否部署成功。***注意一定要是turn服务，不能是stun服务，一定要出现下图中红线标注的type***。
 ![图片](turn_check.jpeg)
 
 > 当Type为"relay"且后面的地址为您的公网IP时，表明turn服务部署成功，否则为失败。
