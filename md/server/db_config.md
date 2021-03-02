@@ -15,7 +15,7 @@ mysql5.7及以上，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingba
 达梦和金仓需要按照专业版文档来建库建表。
 
 ## 修改服务配置
-进入到config目录下，修改```c3p0-config.xml```，根据您的数据库类型选择正确的配置区域，然后配置 ***db地址***，***用户名*** 和 ***密码***。
+进入到config目录下，修改```c3p0-config.xml```，在这个文件里有所有支持关系型数据库配置的模版，找到您选定数据库的模版，然后配置 ***db地址***，***用户名*** 和 ***密码***。
 ```
         <property name="jdbcUrl">jdbcurlxxxx</property>
         <property name="user">root</property>
@@ -33,7 +33,7 @@ embed.db 0
 野火IM服务器使用大量的内存缓存，一般情况下，数据库的数据仅用来备份以备系统重启。如果数据库出现瓶颈，可以从这几项入手解决，提高野火IM服务器缓存使用减少db的读取次数，db单独部署，提高db服务器的性能，尤其是换SSD，优化默认配置等。
 
 ## 使用mongodb
-专业版本组合使用关系型和mongodb，需要先配置关系型数据库再正确配置mongodb。修改下面开关，改成```true```。在专业版的使用手册里有mongodb的配置方式。
+专业版本可以组合使用关系型和mongodb，需要先配置关系型数据库再正确配置mongodb。修改下面开关，改成```true```。在专业版的使用手册里有mongodb的配置方式。
 ```
 ## 消息是否存储在mongodb中。当embed.db为2时，db.save_message_in_mongodb取true值(兼容历史配置)。
 ## 当save_messages_in_mongodb为true时，必须配置后面的mongodb相关配置。
