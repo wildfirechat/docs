@@ -164,12 +164,12 @@ http://domain:18080/admin/group/modify
 | operator | string | 是 | 操作者用户ID |
 | group_id | string | 是 | 群组ID |
 | type | int | 是 | 修改资料类型, 0 群名, 1 群头像, 2 群extra, 3 群全局禁言, 4 群加入方式, 5 禁止私聊 |
-| value | string | 是 | 群组ID |
+| value | string | 是 | 修改资料的值，**请仔细阅读后面针对value字段的说明** |
 | new_owner | string | 是 | 新群主用户ID |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
 | notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
-Value在不同的type下具有不同的意义。boolean值转化为"0"和"1", int类型转化为字符串，比如“1”/”2“/“3”。
+value在不同的type下具有不同的意义。boolean值转化为"0"和"1", int类型转化为字符串，比如“1”/”2“/“3”。
 
 | type | type含义 | value类型 | value含义 |
 | ------ | ------ | --- | ------ |
