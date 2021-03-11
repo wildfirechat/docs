@@ -20,8 +20,8 @@
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
 | 专业版IM服务 | 专业版IM服务软件包，不包含源码 | 2.9W/套 |
-| PC SDK（Electron版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/pc-chat)，不影响二次开发)(仅包含win/mac平台) | 2.9W/套 |
-| PC SDK（Electron版本 Linux版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/pc-chat)，不影响二次开发)(仅包含linux平台) | 2.9W/套 |
+| PC SDK（Electron版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发)(仅包含win/mac平台) | 2.9W/套 |
+| PC SDK（Electron版本 Linux版本） | PC SDK的费用(功能库闭源，提供[开源Demo](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发)(仅包含linux平台) | 2.9W/套 |
 | PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 2.9W/套 |
 | 单人音视频源码 | 单人音视频源码，如果需要二次开发才需要，sdk可以免费使用 | 5W |
 | Web SDK | Web功能库（发布包，提供[开源Demo](https://github.com/wildfirechat/web-chat)，依赖专业版IM） | 1W/套 |

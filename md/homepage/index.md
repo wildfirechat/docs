@@ -18,7 +18,7 @@
 
 体验Web端，请点击[链接](https://web.wildfirechat.cn)，然后用野火IM移动客户端扫码登录。
 
-体验Windows/Mac/Linux端，请点击[这里](https://github.com/wildfirechat/pc-chat/releases)下载对应的平台客户端，然后用野火IM移动客户端扫码登录。
+体验Windows/Mac/Linux端，请点击[这里](https://github.com/wildfirechat/vue-pc-chat/releases)下载对应的平台客户端，然后用野火IM移动客户端扫码登录。
 
 文档地址：[https://docs.wildfirechat.cn](https://docs.wildfirechat.cn)
 

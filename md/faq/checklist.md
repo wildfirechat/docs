@@ -40,7 +40,7 @@ todo
 4. ```config.js```里面的```WEB_APP_KEY```是否已修改？
 5. ```config.js```里面的```USE_WSS```是否已修改？
 
-## pc-chat
+## vue-pc-chat
 1. ```.node```文件是否已经替换？
 2. 替换了```.node```文件之后，是否执行了```npm run copy-xxx```?
 3. ```config.js```里面的```APP_SERVER```是否已修改？
