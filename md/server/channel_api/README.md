@@ -30,6 +30,9 @@ Channel API是供频道服务器调用的。所有的请求都是POST请求，�
 }
 ```
 
+## 频道属性
+频道是可以开放给第三方使用的，因此有着严格的权限要求。频道的到的权限定义请参考[频道属性](../../base_knowledge/channel##频道属性)。
+
 ## 发送消息
 #### 地址
 ```
@@ -58,7 +61,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
       \"searchableContent\":\"hello\"   \
     }                                   \
   }"                                \
-  http://localhost/robot/channel/send
+  http://localhost/channel/channel/send
 
 {
   "code":0,
@@ -126,7 +129,7 @@ http://domain/channel/get_profile
 | owner | string | 否 | 频道的拥有者 |
 | updateDt | string | 否 | 频道更新日期 |
 | callback | string | 否 | 频道回调地址 |
-| state | int | 是 | [频道状态](../../base_knowledge/channel##频道状态) |
+| state | int | 是 | [频道属性](../../base_knowledge/channel##频道信息) |
 | automatic | string | 否 | 消息是否发给owner，0 发送；1 不发送 |
 
 频道状态
@@ -204,7 +207,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
-## 订阅/取消订阅频道
+## 查询所有订阅者ID
 #### 地址
 ```
 http://domain/channel/subscriber_list
@@ -215,7 +218,7 @@ http://domain/channel/subscriber_list
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| list | list<string> | 是 | 订阅用户列表 |
+| list | list<string> | 是 | 订阅用户ID列表 |
 
 #### 示例
 ```

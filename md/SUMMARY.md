@@ -46,6 +46,7 @@
         * [常用对象](server/admin_api/models.md)
     * [Server SDK](server/sdk.md)
     * [Robot API接口](server/robot_api/README.md)
+    * [Channel API接口](server/channel_api/README.md)
     * [事件回调](server/event_callback.md)
     * [推送说明](server/push_config.md)
     * [对象存储服务](server/oss.md)
