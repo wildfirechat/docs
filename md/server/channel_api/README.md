@@ -1,5 +1,7 @@
 # Channel API接口
-Channel API是供频道服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。***端口使用80端口，不同于Sever API的端口(默认18080)***
+Channel API是供频道服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。***端口使用80端口，不同于Sever API的端口(默认18080)***。
+
+我们提供有Java版本的[SDK](../sdk.md)，建议使用Java语言的客户使用这个SDK，其它语言可以按照本文档对接。
 
 ## 签名规则
 以下参数需要放在Http Request Header中
@@ -132,7 +134,7 @@ http://domain/channel/get_profile
 | state | int | 是 | [频道属性](../../base_knowledge/channel##频道信息) |
 | automatic | string | 否 | 消息是否发给owner，0 发送；1 不发送 |
 
-频道状态
+频道信息
 #### 示例
 ```
 curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1"  http://localhost/channel/get_profile

@@ -1,5 +1,11 @@
 # 服务端SDK
 
+#### SDK简介
+目前只提供有Java语言的服务端SDK，其它语言按照API接口文档来自己对接也很简单。服务器SDK包括Admin SDK、机器人SDK和频道SDK。如果您需要一种或多种功能都可以使用这个SDK。
+1. Admin SDK是IM服务的管理SDK，实现了包括创建用户、发送消息、创建群组、创建机器人、创建频道、管理敏感词、封禁/解封用户等操作，实现了所有的[Server API](./admin_api/)接口。
+2. 机器人SDK作为管理某个具体机器人的SDK，实现了包括查询用户、发送消息、创建群组等操作，实现了所有的[Robot API](./robot_api/)接口。
+3. 频道SDK作为管理某个具体频道的SDK，实现了包括查询用户、广播消息、单发消息、订阅/取消订阅、修改自身信息等操作，实现了所有的[Channel API](./channel_api/)接口。
+
 #### SDK的位置
 源码在```server/sdk```目录，编译打包后在release包中的```server_sdk```目录中。在```server_sdk```目录下有2个jar包和一个说明。
 
@@ -77,7 +83,7 @@
 4. 编译打包，确保能够打包成功。
 
 #### 使用SDK
-1. 首先需要初始化。在```ChatConfig```类里有三个函数，分别初始化Server API接口、Robot API接口和Channel API接口。
+1. 首先需要初始化。在```ChatConfig```类里有三个函数，分别初始化Server API接口、Robot API接口和Channel API接口。如果您只使用部分接口，只需要初始化您使用的功能就行了。
 ```java
 ChatConfig.initAdmin(mIMConfig.admin_url, mIMConfig.admin_secret);
 ChatConfig.initRobot(mRobotConfig.im_url, mRobotConfig.getIm_id(), mRobotConfig.im_secret);

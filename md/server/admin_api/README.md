@@ -1,5 +1,7 @@
 # Server API接口
-Server API是供客户服务器调用的。**所有请求都是POST方式，且请求参数都是以Json格式放到body里面，不是Query参数，直接拼接到url上无效**。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。我们提供了Java语言的Server SDK，建议Java的客户使用[SDK](../sdk.md)。
+Server API是供客户服务器调用的。**所有请求都是POST方式，且请求参数都是以Json格式放到body里面，不是Query参数，直接拼接到url上无效**。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。
+
+我们提供有Java版本的[SDK](../sdk.md)，建议使用Java语言的客户使用这个SDK，其它语言可以按照本文档对接。
 
 ## 签名规则
 以下参数需要放在Http Request Header中，请注意**参数名是小写**
