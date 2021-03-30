@@ -29,3 +29,6 @@ globalShortcut.register('CommandOrControl+G', () => {
     mainWindow.webContents.toggleDevTools();
 })
 ```
+
+## Q. 如何更换icon等
+A. 替换换```public/images```和```src/assets/images```下面的相应图片。
