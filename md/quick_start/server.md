@@ -31,7 +31,7 @@ IM服务社区版软件下载 **（[点这儿去下载编译好的软件包](htt
 
 1. 使用命令行窗口执行```bin\wildfirechat.bat```（双击执行不可用，必须命令行)。
 
-> 在windows下编辑过，可能会保存为windows格式，在放到linux上执行时，有可能会出现错误，处理方法请参考[FAQ](https://docs.wildfirechat.cn/faq/server.html)
+> 在windows下编辑过，可能会保存为windows格式，在放到linux上执行时，有可能会出现错误，处理方法请参考[FAQ](https://docs.wildfirechat.net/faq/server.html)
 
 
 执行相应系统的启动命令之后，等待10秒钟后，在浏览器中输入```http://${服务器的IP}/api/version```，查看版本信息。

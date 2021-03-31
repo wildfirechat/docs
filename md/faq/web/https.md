@@ -10,7 +10,7 @@ static USE_WSS = true;
 static WSS_PORT = 8084;
 
 // APP SERVER的地址。启用https时，APP SERVER必须是https地址
-static APP_SERVER = 'https://app.wildfirechat.cn';
+static APP_SERVER = 'https://app.wildfirechat.net';
 ```
 
 ## 2. 网页站点支持https
@@ -18,8 +18,8 @@ static APP_SERVER = 'https://app.wildfirechat.cn';
 ```
 server{
     listen 80;
-    server_name web.wildfirechat.cn;
-    rewrite ^(.*)$  https://web.wildfirechat.cn permanent;
+    server_name web.wildfirechat.net;
+    rewrite ^(.*)$  https://web.wildfirechat.net permanent;
     location ~ / {
         index index.html index.php index.htm;
     }
@@ -27,7 +27,7 @@ server{
 
 server {
     listen 443;
-    server_name  web.wildfirechat.cn;
+    server_name  web.wildfirechat.net;
 
     root /home/ubuntu/wildfirechat_web/src;
     ssl_certificate /etc/nginx/cert/web.pem;
@@ -44,8 +44,8 @@ appserver开启https支持，部署方法请自行解决，下面是我们appser
 ```
 server {
         listen 80;
-        server_name app.wildfirechat.cn;
-        rewrite ^(.*)$  https://app.wildfirechat.cn permanent;
+        server_name app.wildfirechat.net;
+        rewrite ^(.*)$  https://app.wildfirechat.net permanent;
         location ~ / {
             index index.html index.php index.htm;
         }
@@ -53,7 +53,7 @@ server {
 
 server {
         listen 443 ssl;
-        server_name app.wildfirechat.cn;
+        server_name app.wildfirechat.net;
 
         root html;
         index index.html index.htm;
@@ -84,7 +84,7 @@ server {
 
     server {
         listen 80;
-        server_name  wildfirechat.cn;
+        server_name  wildfirechat.net;
 
         root   html;
         index  index.html index.htm index.php;
@@ -105,7 +105,7 @@ server {
 
     server {
             listen 443;
-            server_name wildfirechat.cn;
+            server_name wildfirechat.net;
             ssl on;
             root html;
             index index.html index.htm;

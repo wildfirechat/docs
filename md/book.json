@@ -5,7 +5,7 @@
 
     "links": {
         "sidebar": {
-            "Home": "https://www.wildfirechat.cn"
+            "Home": "https://www.wildfirechat.net"
         }
     },
 
@@ -105,7 +105,7 @@
            ]
        },
         "tbfed-pagefooter": {
-            "copyright": "2018 © wildfirechat.cn 京ICP备18060403号-1",
+            "copyright": "2018 © wildfirechat.net 京ICP备18060403号-1",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
@@ -117,7 +117,7 @@
             "skipFirstH1": true
         },
         "sitemap-general": {
-            "prefix": "http://wildfirechat.cn"
+            "prefix": "http://wildfirechat.net"
         },
         "anchor-navigation-ex": {
             "isRewritePageTitle": false,

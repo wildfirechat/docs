@@ -14,14 +14,14 @@
 
 体验移动端，请微信扫码：
 
-![扫码下载](https://static.wildfirechat.cn/download_qrcode.png)
+![扫码下载](https://static.wildfirechat.net/download_qrcode.png)
 
-体验Web端，请点击[链接](https://web.wildfirechat.cn)，然后用野火IM移动客户端扫码登录。
+体验Web端，请点击[链接](https://web.wildfirechat.net)，然后用野火IM移动客户端扫码登录。
 
 体验Windows/Mac/Linux端，请点击[这里](https://github.com/wildfirechat/vue-pc-chat/releases)下载对应的平台客户端，然后用野火IM移动客户端扫码登录。
 
-文档地址：[https://docs.wildfirechat.cn](https://docs.wildfirechat.cn)
+文档地址：[https://docs.wildfirechat.net](https://docs.wildfirechat.net)
 
 开源地址：[https://github.com/wildfirechat](https://github.com/wildfirechat)
 
-2018 © wildfirechat.cn 京ICP备18060403号-1 all right reserved
+2018 © wildfirechat.net 京ICP备18060403号-1 all right reserved

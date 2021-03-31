@@ -13,7 +13,7 @@ ATS是可以关掉的，可以根据网上教程，很容易地关掉ATS功能�
 野火IM Demo应用是个演示应用，正常情况下客户应该会使用自己的应用（需要把demo应用中获取token的功能迁移到客户自己的应用服务中），也可以直接使用。目前主要的功能只有登录，手机扫码/扫码确认登录等少数几个接口。客户端使用的都是系统提供的高级API，可以支持HTTPS。处理方法就是直接在服务器端支持HTTPS，然后客户端的APP Server Address换成HTTPS的地址即可。
 ```
 //正式商用时，建议用https，确保token安全
-NSString *APP_SERVER_ADDRESS = @"https://wildfirechat.cn:8888";
+NSString *APP_SERVER_ADDRESS = @"https://wildfirechat.net:8888";
 ```
 
 ### 3.2 野火SDK的网络访问分析
@@ -34,7 +34,7 @@ Kit层在显示媒体消息时，需要访问媒体链接，使用的系统高�
 专业版配置方法：
 ```
 media.bucket_XXX_name media
-media.bucket_XXX_domain https://cdn.wildfirechat.cn/media ## 这里配置为https的schema
+media.bucket_XXX_domain https://cdn.wildfirechat.net/media ## 这里配置为https的schema
 ```
 
 社区版配置方法:
