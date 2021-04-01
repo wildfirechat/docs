@@ -31,4 +31,4 @@ globalShortcut.register('CommandOrControl+G', () => {
 ```
 
 ## Q. 如何更换icon等
-A. 替换换```public/images```和```src/assets/images```下面的相应图片。
+A. 替换```build/icons```目录下的所有文件，此外，也需要替换```public/images```和```src/assets/images```下面的相应图片。
