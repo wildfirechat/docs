@@ -10,13 +10,14 @@
 
  ![野火IM](https://static.wildfirechat.net/download_qrcode.png)
 
-* [点我体验 PC 端](https://github.com/wildfirechat/vue-pc-chat/releases)，从release中下载对应的平台，使用野火IM移动端（不是使用微信扫码）扫码登录。
+* 分别下载对应平台版本，然后使用野火IM移动端（不是使用微信扫码）扫码登录。
+[Windows平台下载](http://static.wildfirechat.net/wildfirechat-0.2.0-win-setup.exe)，[Mac平台下载](http://static.wildfirechat.net/wildfirechat-0.2.0-mac.dmg)，[Linux arm64平台下载](http://static.wildfirechat.net/wildfirechat-0.2.0-linux-x86_64.AppImage)，[Linux arm64平台下载](http://static.wildfirechat.net/wildfirechat-0.2.0-linux-arm64.AppImage)
 
 * [点我体验 Web 端](https://web.wildfirechat.net)，打开页面后，使用野火IM移动端（不是使用微信扫码）扫码登录。
 
 * 微信扫描下方小程序码，体验小程序版
 
-![野火IM](https://static.wildfirechat.net/wx.jpg)
+  ![野火IM](https://static.wildfirechat.net/wx.jpg)
 
 #### 体验您自己的应用
 您也可以自己部署服务器软件和客户端Demo源码打包来体验野火IM功能。
