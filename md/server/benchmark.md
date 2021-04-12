@@ -60,7 +60,7 @@ JAVA_OPTS="$JAVA_OPTS -Xms12G"
 immediateFlush="false"
 ```
 ## DB优化
-单独部署MySQL数据库，选择使用SSD硬盘，另外需要对MySQL数据库进行参数调优，设置较大的缓存，设置异步写等，具体请百度。
+单独部署MySQL数据库，选择使用SSD硬盘，另外需要对MySQL数据库进行参数调优，设置较大的缓存，设置异步写等，请参考[mysql调优](./mysql_tune.md)。也可以自己百度查询解决。
 
 ## IM服务配置
 ```

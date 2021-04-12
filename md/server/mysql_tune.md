@@ -1,15 +1,6 @@
 # MySQL 调优
 
-### 1，所有的表都必须有primary key.
-因为需要用primary key来表示每一行，最好用自增的整形
-
-### 2， 使用in代替or
-SELECT * FROM t WHERE LOC_IN IN (10,20,30);
-
-### 3， 不使用子查询
-使用join
-
-### 4. 足够大的 innodb_buffer_pool_size
+### 1. 足够大的 innodb_buffer_pool_size
 
 最大内存数在总的innoDB内存数据160%就行，比如数据大小5G，buffer size设置为8G就行，有个命令来获取应当设置的大小
 ```
@@ -21,7 +12,7 @@ FROM information_schema.tables WHERE engine='InnoDB') A;
 > 需要注意这个系统刚开始允许，无法计算出实际使用量。一般需要系统实际允许几个月，或者设置成机器物理内存的一半。
 
 ---
-### 5. 配置 innodb_log_file_size
+### 2. 配置 innodb_log_file_size
 使用足够大的写入缓存 innodb_log_file_size
 
 可是须要注意假设用 1G 的 innodb_log_file_size 。假如server当机。须要 10 分钟来恢复。
@@ -29,7 +20,7 @@ FROM information_schema.tables WHERE engine='InnoDB') A;
 推荐 innodb_log_file_size 设置为 0.25 * innodb_buffer_pool_size
 
 ---
-### 6. 配置 innodb_flush_log_at_trx_commit
+### 3. 配置 innodb_flush_log_at_trx_commit
 
 innodb_flush_log_at_trx_commit = 1 则每次改动写入磁盘
 
@@ -38,30 +29,30 @@ innodb_flush_log_at_trx_commit = 0/2 每秒写入磁盘
 假设你的应用不涉及非常高的安全性 (金融系统)，或者基础架构足够安全，或者 事务都非常小，都能够用 0 或者 2 来减少磁盘操作。
 
 ---
-### 7. 避免双写入缓冲
+### 4. 避免双写入缓冲
 
 innodb_flush_method=O_DIRECT
 
 ---
 
-### 8. innodb_write_io_threads
+### 5. innodb_write_io_threads
 
 写IO线程，默认4，最大可设置成64.每个线程可以处理256个pending io request.需要根据您的cpu数和读写比例调整，在当前项目中可设置为物理核数的2倍
 
 ---
 
-### 9. innodb_read_io_threads
+### 6. innodb_read_io_threads
 
 读IO线程，默认4，最大可设置成64.每个线程可以处理256个pending io request.需要根据您的cpu数和读写比例调整，在当前项目中保持4就可以了
 
 ---
 
-### 10. innodb_thread_concurrency
+### 7. innodb_thread_concurrency
 
 线程并发数，0是不限制。如果设置最大是1000，可以设置成cpu核数的8倍
 
 ---
-### 11. 关闭swap
+### 8. 关闭swap
 
 对于单独的数据库服务器，在内存足够大的情况下，可以关闭swap
 ```
@@ -72,14 +63,14 @@ swapoff -a && swapon -a      # 刷新swap空间，即将SWAP里的数据转储�
 ```
 
 ---
-### 12. DB连接数
+### 9. DB连接数
 show global variables like "max_connections"; 显示最大连接数
 SET GLOBAL max_connections = 2000; 设置最大连接数
 
-### 13. c3p0连接池
+### 10. c3p0连接池
 修改最大连接数，注意需要确保DB能撑得起集群的最大连接数
 
-### 14. 示例
+### 11. 示例
 mysqld.cnf配置
 ```
 [mysqld]
