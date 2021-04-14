@@ -1,7 +1,7 @@
 gitbook build
-mv _book wildfirechat_docs
-cp -af ../trickle-ice wildfirechat_docs/webrtc/
-tar -czvf docs.tar.gz wildfirechat_docs
-scp docs.tar.gz dali3:~/
-ssh dali3 'rm -rf wildfirechat_docs; tar -xzvf docs.tar.gz'
-rm -rf wildfirechat_docs docs.tar.gz
+mv _book docs
+cp -af ../trickle-ice docs/webrtc/
+tar -czvf docs.tar.gz docs
+scp docs.tar.gz wfccn:/var/wildfirechat_sites/
+ssh wfccn 'cd /var/wildfirechat_sites; rm -rf docs; tar -xzvf docs.tar.gz; rm -rf docs.tar.gz'
+rm -rf docs docs.tar.gz
