@@ -4,13 +4,13 @@
 ## 支持数据库类型
 社区版只能支持h2 database和MySQL。
 
-专业版目前支持h2 database，MySql，KingbaseV8，Dameng8，SQL Server。如果客户有需求，未来可以支持更多的常见数据库。
+专业版目前支持h2 database，MySql，KingbaseV8，Dameng8，SQL Server，PostgreSql。如果客户有需求，未来可以支持更多的常见数据库。
 
 ## 数据库版本
 mysql5.7及以上，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingbase V8版本及以上；达梦8版本及以上；SQL Server 2014及以上。
 
 ## 建库建表
-除了达梦和金仓外，其它数据库类型使用了flyway管理，不用手动建表建库。运行程序时会自动创建数据库和表结构。
+除了达梦和金仓外，其它数据库类型使用了flyway管理，不用手动建表建库和表。运行程序时会自动创建数据库和表结构。
 
 达梦和金仓需要按照专业版文档来建库建表。
 
@@ -25,7 +25,7 @@ mysql5.7及以上，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingba
 ## 设置数据库类型
 修改```wildfirechat.conf```中的下面属性改为您要使用的数据类型
 ```
-## 数据库类型。0使用mysql；1使用h2db；2使用mysql+mongodb；3使用kingbase-v8；4使用dameng；5使用sql server。社区版只支持0和1，专业版还支持2,3,4,5。专业版集群部署时不能使用1。
+## 是否使用内置DB。0使用mysql；1使用h2db；2使用mysql+mongodb；3使用kingbase-v8；4使用dameng；5使用sql server；6使用postgresql。社区版只支持0和1，专业版还支持2,3,4,5,6。专业版集群部署时不能使用1。
 embed.db 0
 ```
 
