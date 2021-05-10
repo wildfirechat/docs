@@ -17,17 +17,17 @@ Webrtc是目前主流的音视频解决方案，它提供了媒体能力，信�
 2. 部署Turn服务器(音视频高级版不需要Turn服务，可以直接跳到第三步)，建议部署coTurn，部署方法请使用百度查询。部署完毕后，使用[这个链接](https://docs.wildfirechat.net/webrtc/trickle-ice/)检查turn服务是否部署成功。***注意一定要是turn服务，不能是stun服务，一定要出现下图中红线标注的type***。
 ![图片](turn_check.jpeg)
 
-> 当Type为"relay"且后面的地址为您的公网IP时，表明turn服务部署成功，否则为失败。
+  > 当Type为"relay"且后面的地址为您的公网IP时，表明turn服务部署成功，否则为失败。
 
 3. 修改客户端配置
 在客户端的config文件中，修改地址为您部署的turn服务器地址。如果是音视频高级版，可以删除掉对应内容。
 
-```
-NSString *ICE_ADDRESS = @"turn:turn.liyufan.win:3478";
-NSString *ICE_USERNAME = @"wfchat";
-NSString *ICE_PASSWORD = @"wfchat";
-```
-> 注意如果客户分属多区域，可以部署多个turn服务器来提高用户体验。音视频添加turn服务信息的接口可以调用多次，每次增加一个turn服务器。
+  ```
+  NSString *ICE_ADDRESS = @"turn:turn.liyufan.win:3478";
+  NSString *ICE_USERNAME = @"wfchat";
+  NSString *ICE_PASSWORD = @"wfchat";
+  ```
+  > 注意如果客户分属多区域，可以部署多个turn服务器来提高用户体验。音视频添加turn服务信息的接口可以调用多次，每次增加一个turn服务器。
 
 4. 替换音视频库
 如果是多人版音视频或者高级版音视频，需要替换EngineKit库，替换方法在随SDK发布的说明上，免费版请忽略。
