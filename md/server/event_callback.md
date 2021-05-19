@@ -27,7 +27,7 @@
 | payload.expireDuration | long | 否 | 消息过期时间 |
 | payload.mentionedType | int | 否 | 消息提醒类型 |
 | payload.mentionedTarget | string list | 否 | 消息提醒对象列表 |
-| messageUid | long | 是 | 消息唯一ID |
+| messageId | long | 是 | 消息唯一ID |
 | timestamp | long | 是 | 服务器处理时间 |
 
 #### 响应
