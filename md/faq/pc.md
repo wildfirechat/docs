@@ -32,3 +32,6 @@ globalShortcut.register('CommandOrControl+G', () => {
 
 ## Q. 如何更换icon等
 A. 替换```build/icons```目录下的所有文件，此外，也需要替换```public/images```和```src/assets/images```下面的相应图片。
+
+## Q. 如何将登录方式修改为账号密码登录？
+A. IM本身只需要```userId```和```token```即可进行连接，故可以参考移动端的登录逻辑，去获取```userId```和```token```，其中需要注意的是：```token```和```clientId```、```platform```是绑定的，登录获取```token```时，这两个字段不能随便填写，需要分别通过```wfc.getClientId()```和```Config.getWFCPlatform()```获取。
