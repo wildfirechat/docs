@@ -7,3 +7,18 @@
 
 #### 异步调用与回调
 connect函数没有回调函数，只能通过连接回调来判断连接状态。调用connect后，数据库立即可用。连接状态一般情况下只需要展示给用户即可，但有部分状态需要干预，比如token过期或者错误，用户被封禁等。
+
+#### 连接状态
+当协议栈连接状态发生变化时，会通过回调返回给上层，具体连接状态如下:
+
+|  状态码   | 值  | 意义  | 处理方法 |
+|  ----  | ----  | ----  |  ----- |
+| ConnectionStatusSecretKeyMismatch  | -6 | 会话密钥错误 | 一般是clientId没有从SDK中连接，或者有多个IM服务，获取token跟客户端连接的服务不是同一个。 |
+| ConnectionStatusTokenIncorrect  | -5 | token错误 | 需要检查token是否错误 |
+| ConnectionStatusServerDown  | -4 | IM Server服务无法连通 |  需要检查服务器是否当机或者网络出现问题 |
+| ConnectionStatusRejected  | -3 | 连接被服务器拒绝 | 一般是用户被封禁 |
+| ConnectionStatusLogout  | -2 | 退出登录 |        |
+| ConnectionStatusUnconnected  | -1 | 未连接 |    |
+| ConnectionStatusConnecting  | 0 | 连接中 |        |
+| ConnectionStatusConnected  | 1 | 已连接 |  正常状态，所有业务可用 |
+| ConnectionStatusReceiveing  | 2 | 正在同步信息 |  登录以后要先同步消息，可能同步数据量比较大，这时可以选择等待连接状态变为1时来统一更新UI |
