@@ -156,3 +156,31 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }
 }
 ```
+
+## 删除消息(仅专业版支持)
+#### 地址
+```
+http://domain:18080/admin/message/delete
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 消息唯一ID |
+
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"messageUid\":123413241234123       \
+  }"                                \
+  http://localhost:18080/admin/message/broadcast
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
