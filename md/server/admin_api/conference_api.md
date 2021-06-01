@@ -17,8 +17,7 @@ http://domain:18080/admin/conference/create
 | recording | bool | 否 | 是否在服务器端录制 |
 
 #### 响应
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
+N/A
 
 
 #### 示例
@@ -47,9 +46,7 @@ http://domain:18080/admin/conference/destroy
 | roomId | string | 是 | 会议室ID |
 
 #### 响应
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-
+N/A
 
 #### 示例
 ```
