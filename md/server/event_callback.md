@@ -201,6 +201,7 @@ http code 200
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
+| roomId | string | 是 | 会议室Id |
 
 #### 响应
 http code 200
@@ -214,6 +215,7 @@ http code 200
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
+| roomId | string | 是 | 会议室Id |
 
 #### 响应
 http code 200
@@ -228,6 +230,7 @@ http code 200
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
 | video | bool | 是 | 是否开启视频 |
+| roomId | string | 是 | 会议室Id |
 
 #### 响应
 http code 200
@@ -241,6 +244,7 @@ http code 200
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
+| roomId | string | 是 | 会议室Id |
 
 #### 响应
 http code 200
