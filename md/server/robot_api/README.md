@@ -77,6 +77,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }
 }
 ```
+
 ## 获取用户信息
 #### 地址
 ```
@@ -112,6 +113,55 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "result":{
     "userId":"a",
     "name":"usera"
+  }
+}
+```
+
+## 设置回调地址
+#### 地址
+```
+http://domain/robot/set_callback
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| url | string | 否 | 当前机器人消息回调地址 |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"url\":\"http:://localhost:8081/robot/message\"}" http://localhost/robot/set_callback
+
+{
+  "code":0,
+  "msg":"success",
+}
+```
+
+## 获取回调地址
+#### 地址
+```
+http://domain/robot/get_callback
+```
+#### body
+N/A
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| url | string | 否 | 当前机器人消息回调地址 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota"  http://localhost/robot/get_callback
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "url":"http:://localhost:8081/robot/message"
   }
 }
 ```
