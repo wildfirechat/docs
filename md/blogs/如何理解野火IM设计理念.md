@@ -26,7 +26,7 @@
 
 那么那些是组件，那些是demo呢？如下图：
 
-![架构图](https://docs.wildfirechat.net/architecture/wildfire_architecture.png)
+![架构图](https://docs.wildfirechat.cn/architecture/wildfire_architecture.png)
 
 其中绿色的部分属于野火IM即时通讯组件，它***只包含了服务端的IM server和客户端的client及协议栈***，UIKit不能算是核心部分，其他部分也都不是。对于核心组件来说，它的任务就是把Payload无差错地送达到某个用户ID或者某些用户或者某个服务，至于Payload是什么内容，做什么事情，绿色的部分就不关心了。另外附加的一些功能就是把数据同步到客户端，比如群组信息、用户信息等。所有的客户业务都不应该在这里涉及，它只是一个搬运工，不会参与您的业务经营，只能按照您的要求把“包裹”送达目的地。
 
