@@ -85,13 +85,15 @@
 #### 使用SDK
 1. 首先需要初始化。在```ChatConfig```类里有三个函数，分别初始化Server API接口、Robot API接口和Channel API接口。如果您只使用部分接口，只需要初始化您使用的功能就行了。
 ```java
-ChatConfig.initAdmin(mIMConfig.admin_url, mIMConfig.admin_secret);
-ChatConfig.initRobot(mRobotConfig.im_url, mRobotConfig.getIm_id(), mRobotConfig.im_secret);
-ChatConfig.initChannel(mChannelConfig.im_url, mChannelConfig.getIm_id(), mChannelConfig.im_secret);
+AdminConfig.initAdmin(mIMConfig.admin_url, mIMConfig.admin_secret);
+
+RobotService robotService = new RobotService(im_url, robotId, robotSecret);
+
+ChannelServiceApi channelServiceApi = new ChannelServiceApi(im_url, channelId, channelSecret);
 ```
 > Admin URL使用server API端口（默认是18080）， Robot和Channel API使用80端口。
 
-2. 调用不同的接口，来实现功能，比如获取userToken
+2. 调用不同的接口，来实现功能
 ```java
 //使用用户id获取token
   IMResult<OutputGetIMTokenData> tokenResult = UserAdmin.getUserToken(user.getUserId(), clientId);
@@ -100,6 +102,15 @@ ChatConfig.initChannel(mChannelConfig.im_url, mChannelConfig.getIm_id(), mChanne
     return null;
   }
   return tokenResult.getResult().getToken();
+
+	//机器人发送消息给用户
+	IMResult<SendMessageResult> resultRobotSendMessage = robotService.sendMessage("robot1", conversation, payload);
+	if (resultRobotSendMessage != null && resultRobotSendMessage.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS) {
+	    System.out.println("robot send message success");
+	} else {
+	    System.out.println("robot send message failure");
+	    System.exit(-1);
+	}
 ```
 
 3. 使用说明
