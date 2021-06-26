@@ -5,16 +5,21 @@
 2. iOS（iOS9以上）
 3. Windows（windows7以上）
 4. Mac OS（10.10以上）
-5. Linux
+5. Linux（x86_64架构和Arm64架构)
 6. Web
 7. 小程序（微信小程序、百度小程序、QQ小程序、头条小程序、阿里小程序）
 
 > 除了Web和小程序外，其它所有平台公用同一个协议栈，SDK功能和接口定义全部一致。
 
 ## 服务器
-linux/windows/mac 不限制，只要支持jre8就可以。
+linux/windows/mac 系统不限制，CPU也不限制，只要支持jre8就可以。
+
+## 数据库
+MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 
 ## 功能列表
+野火具有灵活的二次开发能力，可以自由定义消息和第三方系统对接，下面是我们已经支持的功能：
+
 <table>
 	<tr>
 	    <th>类别</th>
