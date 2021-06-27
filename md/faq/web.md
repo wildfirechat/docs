@@ -45,5 +45,8 @@ A. ```Web SDK```的依赖如下：
 ### Q. 如何启用https?
 A. [回答](./web/https.md)
 
+### ```npm run serve```之后，页面白屏，什么也不显示
+A. ```APP_SERVER```、```IM_SERVER_HOST```或```WEB_APP_KEY```配置错误，具体请端口控制台，看下控制台提示。
+
 ### Q. 二维码不显示
 A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
