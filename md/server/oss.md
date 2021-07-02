@@ -73,6 +73,8 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 ## 使用阿里云OSS
 野火IM专业版支持，可以参考七牛开通服务并配置。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传。
 
+阿里云OSS的endpoint对应media.server_url（需要前面加上http头），Bucket 域名对应media.bucket_XXXX_domain（需要前面加上https的头）。注意不能用桶内的子目录，只能上传到桶的根目录。如果需要跟已有文件区分开了，可以单独为IM创建桶。另外如果是Web用户需要设置跨域信息，详情请参考[这里](https://help.aliyun.com/document_detail/44199.htm)。
+
 ### 配置HTTPS
 可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
 
