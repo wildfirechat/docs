@@ -38,9 +38,16 @@ A. IM本身只需要```userId```和```token```即可进行连接，故可以参�
 
 ## Q. 登录了，但是连不上
 A. 首先，这并不是一个比较有效的问题，但总有小伙伴这么问。请根据如下步骤进行排查：
+0. 仔细阅读```npm run dev```时的前置提示
 1. PC SDK 是绑定域名或者IP的，也就是说PC SDK和IM Server是绑定的，换域名或IP时，需要同时更换
 2. 确保IM SERVER部署成功，并且配置文件里面配置的```server.ip```就是PC SDK所绑定的域名或者IP
 3. 确保已修改```config.js```里面的```APP_SERVER```地址，并且该APP SERVER配置里面所指向的IM SERVER是PC SDK所绑定的那个
 4. 确保已用邮件里面的```.node```文件替换了```proto```目录下对应的```.node```文件，所有平台的都需要替换，最好一次就把所有的都替换了
 5. 确保重新执行```npm run dev```等
 6. 如果还是有问题，请参考最上面，给我们提供日志
+
+## Q. 纯内网环境，不能显示表情
+A. 表情是采用加载图片的方式实现的，demo里面的表情图片存储在七牛云上，内网不能访问，故内网不能显示表情，解决办法如下：
+  1. 将```src/assets/twemoji```目录上传到一个内网能访问的服务器，比如部署```app serhier```的服务器
+  2. 确保通过```http(s)://base_twemoji_url/72x72/1f1e6.png```能访问到对应表情，此处```1f1e6.png```蓝底白字大写字母A
+  3. 修改```twemoji.js```，将```https://static.wildfirechat.net/twemoji/assets/```替换成新部署的```http(s)://base_twemoji_url/```，需要注意，最后一个```/```不能省略
