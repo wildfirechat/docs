@@ -55,3 +55,8 @@ A. 常见的一种可能是应用服务配置有个设置不正确，见下面�
 # 如果为false，在Web端和wx端的appserve的群公告等功能将不可用。
 wfc.all_client_support_ssl=false
 ```
+
+#### Q. 当有多个App使用同一个IM服务，多个APP之间出现互踢现象？
+A. 当应用在appstore上架后，开发者账户下的所有应用在同一个手机上具有相同的vendor id。详情请参考(IDFV(identifierForVendor)使用陷阱)https://easeapi.com/blog/blog/63-ios-idfv.html。
+
+这样如果同一个IM服务有多个应用，多个应用安装到同一个手机上，这样所有应用将具有相同的clientId，导致互踢现象产生。处理办法就是不使用identifierForVendor，随机生成UUID，然后固定使用这个UUID就行了，请参考 [bcdd957](https://github.com/wildfirechat/ios-chat/commit/bcdd957c7df94f97e223a048e32eb3197c022065)。如果已经上线了，需要注意更新后需要重新获取token。
