@@ -350,6 +350,78 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 设置/修改群组成员昵称
+#### 地址
+```
+http://domain:18080/admin/group/member/set_alias
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| operator | string | 是 | 操作者用户ID |
+| group_id | string | 是 | 群组ID |
+| memberId | string | 是 | 群组成员用户ID |
+| alias | string | 否 | 群昵称 |
+| to_lines | int[] | 否 | 会话线路，默认为0 |
+| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"operator\":\"a\",       \
+    \"group_id\":\"groupId1\",    \
+    \"memberId\":\"memberId1\",   \
+    \"alias\":\"hello\"   \
+    }"                                \
+  http://localhost:18080/admin/group/member/set_alias
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 设置/修改群组成员附加信息
+#### 地址
+```
+http://domain:18080/admin/group/member/set_extra
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| operator | string | 是 | 操作者用户ID |
+| group_id | string | 是 | 群组ID |
+| memberId | string | 是 | 群组成员用户ID |
+| extra | string | 否 | 群成员附加信息 |
+| to_lines | int[] | 否 | 会话线路，默认为0 |
+| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"operator\":\"a\",       \
+    \"group_id\":\"groupId1\",    \
+    \"memberId\":\"memberId1\",   \
+    \"extra\":\"hello extra\"   \
+    }"                                \
+  http://localhost:18080/admin/group/member/set_extra
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
 ## 设置/取消群管理员
 #### 地址
 ```
