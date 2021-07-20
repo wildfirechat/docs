@@ -1,4 +1,7 @@
 # 服务器部署
+
+**包含两个服务：IM服务社区版(简称IM SERVER) 和 Demo应用服务(简称APP SERVER)**
+
 服务器提供[IM服务社区版](https://github.com/wildfirechat/server/releases)和[Demo应用服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登录等功能。
 
 ## 环境需求
