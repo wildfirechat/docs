@@ -44,3 +44,6 @@ A. ```APP_SERVER```、```IM_SERVER_HOST```或```WEB_APP_KEY```配置错误，具
 
 ### Q. 二维码不显示
 A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
+
+### Q. ```pc_session```接口提示跨域
+A. 原因是web端代码和App Server不匹配，请更新App Server
