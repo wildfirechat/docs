@@ -7,4 +7,4 @@
 
 * [iOS编译](iOS.md)
 
-收费的SDK和软件包也可以向我们[申请试用](../tral/README.md)
+收费的SDK和软件包也可以向我们[申请试用](../trial/README.md)
