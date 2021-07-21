@@ -3,10 +3,6 @@
 ## Q. 如何抓取日志
 A. 协议栈会自己抓取最近5M的日志，将会对问题的解决提供非常大的帮助。协议栈日志在不同系统上存在不同的目录。在MAC上的目录是```~/Library/Application Support/{包名}/wildfirechat/{用户Id}/wfchat_{日期}.xlog```；在Linux上的目录是```~/.wildfirechat/data/{用户Id}/wfchat_{日期}.xlog```；在windows上的目录在```C:\Users\{登电脑登录用户名}\AppData\Roaming\wildfirechat\{用户Id}\wfchat_{日期}.xlog```。log是[mars](https://github.com/Tencent/mars)的```xlog```格式，没有密码。用户可以自己解压后分析，也可以发给我们分析问题。
 
-## Q. 如何删掉截图依赖的QT
-A. 有些客户自己有截图工具或者使用electron上的截图插件，就需要把官方PC版本所带的Qt依赖去掉。解决办法就是在pc工程目录下有{platform}-qt-denpendency，把其中除了```QtCore```以外的所有内容全部删掉。然后PC UI上截图按钮唤起自有的截图插件即可。
-> ```QtCore```在不同平台有着不同的文件形式，windows下为```Qt5Core.dll```，mac下为```QtCore.framework```，linux下为```libQt5Core.so.5```。删除其他内容是需要保留```QtCore```的目录结构。
-
 ## Q. 手机端扫码提示会话不存在或者已过期？
 A. 只有手机端和PC端所对应的APP、IM Server都相同时，才能扫码登录PC端。
 
@@ -51,3 +47,6 @@ A. 表情是采用加载图片的方式实现的，demo里面的表情图片存�
   1. 将```src/assets/twemoji```目录上传到一个内网能访问的服务器，比如部署```app serhier```的服务器
   2. 确保通过```http(s)://base_twemoji_url/72x72/1f1e6.png```能访问到对应表情，此处```1f1e6.png```蓝底白字大写字母A
   3. 修改```twemoji.js```，将```https://static.wildfirechat.net/twemoji/assets/```替换成新部署的```http(s)://base_twemoji_url/```，需要注意，最后一个```/```不能省略
+
+## Q. 在Windows系统缓存目录，存在wildfirechat目录，如何去掉？
+A. 有2处需要修改，在```package.json```中把```name```属性改为您的应用英文名；还有一处在```PROJECT_HOME/src/wfc/proto/proto.min.js```文件中，把```proto.setAppName('mychat');```注释打开，名字改为您的应用英文名。
