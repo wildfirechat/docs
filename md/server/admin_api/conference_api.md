@@ -44,6 +44,7 @@ http://domain:18080/admin/conference/destroy
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | roomId | string | 是 | 会议室ID |
+| advance | bool | 否 | 是否是超级会议 |
 
 #### 响应
 N/A
@@ -114,6 +115,7 @@ http://domain:18080/admin/conference/list_participant
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | roomId | string | 是 | 会议室ID |
+| advance | bool | 否 | 是否是超级会议 |
 
 #### 响应
 响应
