@@ -188,3 +188,16 @@ wfc.all_client_support_ssl=false
 
 #### Q. iOS客户端扫码登录PC或者web功能失败
 A. 同上个问题
+
+#### Q. IM服务的配置文件中，如何对特殊字符做转义
+A. 配置文件是java Properity对象读取的，因此需要满足它对特殊字符转义的需求，常见的字符比如#，\，=等都需要转义。一个简单的办法就是执行下面语句，输出即为正确的配置:
+```
+java.util.Properties props = new java.util.Properties();
+props.setProperty("http.admin.secret_key", "#*@\\x.=:");
+try {
+  props.store(System.out, null);
+} catch (IOException e) {
+  e.printStackTrace();
+}
+```
+此外配置文件中如果有URI，比如mongdb地址或对象存储地址，也需要做urlencode。
