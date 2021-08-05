@@ -91,7 +91,6 @@
     * [通用问题](faq/general.md)
       * [购买流程](./faq/buy.md)
     * [服务器问题](faq/server.md)
-      * [如何导入到IDE中](faq/server/q1.md)
       * [如何解决等登录但一直连接中的问题](faq/server/q2.md)
     * [安卓问题](faq/android.md)
       * [如何导入到Android Studio中](faq/android/q1.md)
