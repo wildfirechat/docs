@@ -190,14 +190,12 @@ wfc.all_client_support_ssl=false
 A. 同上个问题
 
 #### Q. IM服务的配置文件中，如何对特殊字符做转义
-A. 配置文件是java Properity对象读取的，因此需要满足它对特殊字符转义的需求，常见的字符比如#，\，=等都需要转义。一个简单的办法就是执行下面语句，输出即为正确的配置:
+A. 2021.8.5日以后的版本，配置文件中可以使用任何特殊字符，但注意 ***配置内容跟注释不能放到一行*** ，比如下面就是不合法的：
 ```
-java.util.Properties props = new java.util.Properties();
-props.setProperty("http.admin.secret_key", "#*@\\x.=:");
-try {
-  props.store(System.out, null);
-} catch (IOException e) {
-  e.printStackTrace();
-}
+http_port 80 #端口80，这是一个错误的写法，不能配置和注释放到同一行.
+
+#端口80 这是一个合法的写法
+http_port 80
 ```
-此外配置文件中如果有URI，比如mongdb地址或对象存储地址，也需要做urlencode。
+
+2021.8.5日以前的版本，不支持配置参数内有```#```符号，避免使用此符号就可以了。
