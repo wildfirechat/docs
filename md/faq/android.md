@@ -61,8 +61,11 @@ A. 继承```MessageContent```自定义消息时，一定要确保自定义消息
 
 #### Q. 点击消息推送通知，如何根据消息类型，跳转到不同的界面？
 
-A. [回答](./android/q5.md) 
+A. [回答](./android/q5.md)
 
 #### Q. 无法收到推送
 
-A. [回答](./android/q6.md) 
+A. [回答](./android/q6.md)
+
+#### Q. 如果改大AS的终端缓存区大小以便抓取更多的日志
+A. 先使用快捷键 ```Ctrl + Shift + A```(Mac下```Ctrl```换成```Cmd```)，然后输入```registry```，选中之后弹出一个界面，向下滚动到```terminal.buffer.max.lines.count```，默认值应该是5000，可以改成50000，然后重启。
