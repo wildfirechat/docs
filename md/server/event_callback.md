@@ -96,7 +96,7 @@ http code 200
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
 | targetId | string | 是 | client ID |
-| type | int | 是 | 0是好友关系，1是昵称，2是黑名单 |
+| type | int | 是 | 0是好友关系，1是昵称，2是黑名单，3是extra信息 |
 | value | string | 是 | type为0时，“0”是非好友；“1”是好友。type为1时值为昵称。type2时，“0”非黑名单，“1”拉黑 |
 
 
