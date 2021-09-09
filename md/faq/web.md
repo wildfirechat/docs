@@ -1,8 +1,9 @@
 # Web FAQ
 
 ## 前置说明
-1. 仔细阅读[web二次开发](./../web/integration.md)
-2. 请打开浏览器的控制台，查看网络请求和日志。
+1. Web 版，依赖于专业版IM Server，请确保已正确部署专业版IM Server，可通过[这个在线工具](http://wstool.jackxiang.com/)测试专业版 IM Server 是否成功监听 WebSocket 请求。注意，测试时，服务器地址，需要带上端口。
+2. 仔细阅读[web二次开发](./../web/integration.md)
+3. 请打开浏览器的控制台，查看网络请求和日志。
 
 #### Q. Web SDK有UI吗？
 A. Web SDK是功能库，是Web端的client，不包含UI。[web-chat](https://github.com/wildfirechat/web-chat)项目是基于Web SDK开发的，提供UI，客户可以进行体验、二次开发等。
