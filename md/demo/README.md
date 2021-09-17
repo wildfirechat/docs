@@ -5,7 +5,7 @@
 
  ![野火IM](https://static.wildfirechat.net/download_qrcode.png)
 
-* [Windows平台下载](https://static.wildfirechat.cn/wildfirechat-0.3.0-win-setup.exe)，[Mac平台下载](https://static.wildfirechat.cn/wildfirechat-0.3.0-mac.dmg)，[Linux amd64平台下载](http://static.wildfirechat.net/wildfirechat-0.3.0-linux-x86_64.AppImage)，[Linux arm64平台下载](http://static.wildfirechat.net/wildfirechat-0.3.0-linux-arm64.AppImage)。然后使用野火IM移动端（不是使用微信扫码）扫码登录。
+* [Windows平台下载](https://static.wildfirechat.cn/wildfirechat-0.3.0-win-setup.exe)，[Mac平台下载](https://static.wildfirechat.cn/wildfirechat-0.3.0-mac.dmg)，[Linux amd64平台下载](http://static.wildfirechat.net/wildfirechat-0.3.0-linux-x86_64.AppImage)，[Linux arm64平台下载](http://static.wildfirechat.net/wildfirechat-0.3.0-linux-arm64.AppImage)。使用野火IM移动端（不是使用微信扫码）扫码登录。
 
 * [点我体验 Web 端](https://web.wildfirechat.net)，打开页面后，使用野火IM移动端（不是使用微信扫码）扫码登录。
 
