@@ -1,5 +1,5 @@
 # 快速开始
-#### 体验我们的Demo
+#### 体验即时通讯Demo
 
 * [Android 客户端下载](http://static.wildfirechat.net/chat-release-latest.apk)、[iOS  客户端下载](itms-apps://itunes.apple.com/us/app/野火IM/id1450256455?ls=1&mt=8) 或微信扫码下方二维码
 
@@ -12,3 +12,10 @@
 * 微信扫描下方小程序码，体验小程序版
 
  ![野火IM](https://static.wildfirechat.net/wx.jpg)
+
+#### 体验会议Demo
+* [iOS  客户端下载](itms-apps://itunes.apple.com/cn/app/野火会议/id1585168992?ls=1&mt=8) 或微信扫码下方二维码
+
+ ![野火会议](https://static.wildfirechat.net/download_conference_qrcode.png)
+
+* 其他端敬请期待！
