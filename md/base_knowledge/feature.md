@@ -267,7 +267,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td >支持</td>
   </tr>
   <tr >
-	    <td rowspan="4" bgcolor="white">设置</td>
+	    <td rowspan="5" bgcolor="white">设置</td>
 	    <td>个人头像设置</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -279,6 +279,11 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 	</tr>
 	<tr>
 	    <td >全局静音设置</td>
+	    <td >支持</td>
+	    <td >支持</td>
+	</tr>
+	<tr>
+	    <td >全局Voip静音设置</td>
 	    <td >支持</td>
 	    <td >支持</td>
 	</tr>
@@ -325,7 +330,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 	    <td >支持</td>
 	</tr>
   <tr >
-	    <td rowspan="7" bgcolor="white">推送</td>
+	    <td rowspan="8" bgcolor="white">推送</td>
 	    <td>苹果推送</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -352,6 +357,11 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
   </tr>
   <tr >
       <td>VIVO推送</td>
+      <td>支持</td>
+      <td>支持</td>
+  </tr>
+	<tr >
+      <td>谷歌推送</td>
       <td>支持</td>
       <td>支持</td>
   </tr>
@@ -467,7 +477,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
   </tr>
 	<tr >
 			<td>音视频会议</td>
-			<td>不支持</td>
+			<td>N/A</td>
 			<td>不支持</td>
 	</tr>
   <tr >
@@ -513,10 +523,9 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 	</tr>
 	<tr >
 			<td>音视频会议</td>
-			<td>不支持</td>
+			<td>N/A</td>
 			<td>不支持</td>
 	</tr>
-	
 	<tr >
 			<td rowspan="9" bgcolor="white">音视频高级版（收费）</td>
 			<td>单人音频</td>
@@ -560,8 +569,8 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 	</tr>
 	<tr >
 			<td>音视频会议</td>
-			<td>不支持</td>
-			<td>不支持</td>
+			<td>N/A</td>
+			<td>支持</td>
 	</tr>
   <tr >
       <td rowspan="1" bgcolor="white">Web（收费）</td>
@@ -593,7 +602,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="12" bgcolor="white">朋友圈（收费）</td>
+      <td rowspan="9" bgcolor="white">朋友圈（收费）</td>
       <td>朋友圈主页</td>
       <td>不支持</td>
       <td>支持</td>
@@ -638,6 +647,47 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>不支持</td>
       <td>支持</td>
   </tr>
+	<tr >
+			<td rowspan="8" bgcolor="white">管理后台（收费、源码）</td>
+			<td>统计</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>用户管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>敏感词管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>群组管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>消息管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>机器人管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>频道管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>用户管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
 </table>
 
 > PC的SDK是与移动端完全一致，但UI的功能相对于移动端有部分没有实现，客户可以自己来实现。
