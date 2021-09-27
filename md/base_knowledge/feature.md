@@ -425,7 +425,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>支持</td>
   </tr>
   <tr >
-      <td rowspan="6" bgcolor="white">单人音视频</td>
+      <td rowspan="9" bgcolor="white">单人音视频</td>
       <td>单人音频</td>
       <td>支持</td>
       <td>支持</td>
@@ -447,16 +447,31 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
   </tr>
   <tr >
       <td>PC单人音视频</td>
-      <td>支持（稳定性不高）</td>
-      <td>支持（稳定性不高）</td>
+      <td>支持</td>
+      <td>支持</td>
   </tr>
   <tr >
       <td>PC多人音视频</td>
       <td>不支持</td>
       <td>不支持</td>
   </tr>
+	<tr >
+      <td>Web单人音视频</td>
+      <td>N/A</td>
+      <td>支持</td>
+  </tr>
   <tr >
-      <td rowspan="6" bgcolor="white">多人音视频（收费）</td>
+      <td>Web多人音视频</td>
+      <td>N/A</td>
+      <td>不支持</td>
+  </tr>
+	<tr >
+			<td>音视频会议</td>
+			<td>不支持</td>
+			<td>不支持</td>
+	</tr>
+  <tr >
+      <td rowspan="9" bgcolor="white">多人音视频（收费）</td>
       <td>单人音频</td>
       <td>支持</td>
       <td>支持</td>
@@ -478,14 +493,76 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
   </tr>
   <tr >
       <td>PC单人音视频</td>
-      <td>支持（稳定性不高）</td>
-      <td>支持（稳定性不高）</td>
+      <td>支持</td>
+      <td>支持</td>
   </tr>
   <tr >
       <td>PC多人音视频</td>
-      <td>支持（稳定性不高）</td>
-      <td>支持（稳定性不高）</td>
+      <td>支持</td>
+      <td>支持</td>
   </tr>
+	<tr >
+			<td>Web单人音视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>Web多人音视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>音视频会议</td>
+			<td>不支持</td>
+			<td>不支持</td>
+	</tr>
+	
+	<tr >
+			<td rowspan="9" bgcolor="white">音视频高级版（收费）</td>
+			<td>单人音频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>单人视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>多人音频（最多16路）</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>多人视频（最多9路）</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>PC单人音视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>PC多人音视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>Web单人音视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>Web多人音视频</td>
+			<td>N/A</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td>音视频会议</td>
+			<td>不支持</td>
+			<td>不支持</td>
+	</tr>
   <tr >
       <td rowspan="1" bgcolor="white">Web（收费）</td>
       <td>-</td>
