@@ -15,7 +15,7 @@
 在所有的客户端内都能找到其它消息的参考代码，请找到对应的代码，直接添加到工程中。
 
 #### Step 3 服务器端使用
-使用Server API发送消息是与客户端不同的，在Server API发送的是```Encode```之后的```MessagePayload```。所以如果您想要在服务器端发送某个消息（自定义和内置消息都是一样的），就必须使用跟客户端一样的规则```Encode```生成```MessagePayload```。
+使用Server API发送消息是与客户端不同的，在Server API发送的是```Encode```之后的```MessagePayload```。所以如果您想要在服务器端发送某个消息（自定义和内置消息都是一样的），就必须使用跟客户端一样的规则```Encode```生成```MessagePayload```，并且```MessagePayload```里的二进制数据是经过base64转码的。
 
 #### 最后
 对于IM服务来说，所有收到的内容都是```MessagePayload```，发出去的也是```MessagePayload```，所以自定义消息对于IM服务是完全透明的，IM服务器完全不用修改，这也是野火IM的强大扩展能力的表现。
