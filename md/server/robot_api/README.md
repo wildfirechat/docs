@@ -165,3 +165,90 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }
 }
 ```
+
+## 删除回调地址
+注意不能使用设置回调地址为空的方式删除回调地址，必须调用删除回调地址接口。
+#### 地址
+```
+http://domain/robot/delete_callback
+```
+#### body
+N/A
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" http://localhost/robot/delete_callback
+
+{
+  "code":0,
+  "msg":"success",
+}
+```
+
+## 获取用户信息
+#### 地址
+```
+http://localhost/robot/get_info
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 否（三个参数必须且只能存在一个） | 用户ID |
+| name | string | 否（三个参数必须且只能存在一个）  | 登录名 |
+| mobile | string | 否（三个参数必须且只能存在一个）  | 用户手机号码 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| name | string | 是 | 登录名 |
+| displayName | string | 是 | 显示名字 |
+| portrait | string | 否 | 用户头像 |
+| mobile | string | 否 | 用户手机号码 |
+| email | string | 否 | 用户邮箱 |
+| address | string | 否 | 用户地址 |
+| company | string | 否 | 用户公司 |
+| extra | string | 否 | 附加信息 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"userId\":\"a\"}" http://localhost/robot/get_info
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userId":"a",
+    "name":"usera"
+  }
+}
+```
+
+## 更新自己的信息
+#### 地址
+```
+http://localhost/robot/update_profile
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| type | int | 是 | 更新那个字段。0，昵称；1，头像；2，性别；4，邮箱；5，地址；6，公司；7，社交账户；8，附加信息。如果要更新电话号码，需要使用admin api更新机器人信息 |
+| value | string | 是  | 字段的新值 |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"type\":1,\"value\":\"awsome robot\"}" http://localhost/robot/update_profile
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+## 群操作
+[机器人群操作](./group_api.md)

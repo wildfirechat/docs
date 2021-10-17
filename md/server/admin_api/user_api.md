@@ -73,6 +73,52 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 注册/更新机器人
+机器人是一种特殊的用户角色，跟普通用户在用一个空间中，需要避免机器人用户id跟普通用户id冲突的可能。使用Server API来创建机器人，然后机器人服务使用robot api来发送消息。
+#### 地址
+```
+http://domain:18080/admin/robot/create
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 否 | 用户ID，如果传空，系统会自动生成一个用户id |
+| name | string | 是 | 登录名 |
+| displayName | string | 是 | 显示名字 |
+| portrait | string | 否 | 用户头像 |
+| mobile | string | 否 | 用户手机号码 |
+| email | string | 否 | 用户邮箱 |
+| address | string | 否 | 用户地址 |
+| company | string | 否 | 用户公司 |
+| extra | string | 否 | 附加信息 |
+| owner | string | 是 | 机器人拥有者 |
+| secret | string | 否 | 机器人密钥 |
+| callback | string | 否 | 机器人消息回掉地址 |
+| robotExtra | string | 否 | 机器人附加信息 |
+
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 机器人用户ID |
+| secret | string | 是 | 机器人密钥 |
+> 如果创建时不填写secret，会自动生成一个
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"name\":\"a\",\"displayName\":\"A\",\"callback\":\"http://localhost/robot\",\"owner\":\"b\"}" http://localhost:18080/admin/robot/create
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userId":"a",
+    "secret":"xxxxx"
+  }
+}
+```
+
+
 ## 更新用户
 #### 地址
 ```
