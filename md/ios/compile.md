@@ -2,8 +2,7 @@
 由于服务器是私有部署，因此必须修改服务器地址然后编译。下载[源码](https://github.com/wildfirechat/ios-chat)，然后用xcode打开```ios-chat.xcworkspace```
 
 #### 修改服务器地址
-如下图，修改IM服务host和port，修改app服务host和port。测试体验时可以使用我们提供的turn服务，上线时，请务必使用自己部署的turn服务。
-![配置](./ios-client-config.png)
+打开```WFCConfig.m```文件，修改IM服务host，修改app服务host和port。注意IM服务host为域名或ip，不能带有http头或者端口号，SDK强制使用80端口无法修改端口。测试体验时可以使用我们提供的turn服务，上线时，请务必使用自己部署的turn服务。
 
 #### 工程说明
 如上图所示，有3个工程。
