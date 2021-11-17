@@ -52,7 +52,7 @@ server_url对应不同的七牛存储区域，选择下表中对应区域的服�
 ![bucket和domain](./assert/qiniu_bucket_domain.jpeg)
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照七牛网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照七牛网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
 
 然后修改配置，domain改成https地址
 ```
@@ -63,7 +63,7 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 野火IM专业版支持野火IM私有存储，按照[说明](https://github.com/wildfirechat/WF-minio)进行部署。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传（数据经过加密上传的）。
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
 
 然后修改配置，domain改成https地址
 ```
@@ -116,7 +116,7 @@ media.bucket_favorite_domain http://wfcstatic.oss-cn-beijing.aliyuncs.com
 Web用户需要设置跨域信息，详情请参考[这里](https://help.aliyun.com/document_detail/44199.htm)。
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
 
 然后修改配置，domain改成https地址
 ```
