@@ -122,6 +122,10 @@ Web用户需要设置跨域信息，详情请参考[这里](https://help.aliyun.
 ```
 media.bucket_XXXX_domain https://wfcim.oss-cn-beijing.aliyuncs.com
 ```
+
+## 使用野火对象存储网关
+专业版IM服务还可以使用野火对象存储网关来对接其它任意类型的存储服务，比较常见的FastDFS，HDFS或者其它云服务等等。实现的方法是上传时上传到网关，网关再对接到客户选定的存储服务。具体使用方法请按照[野火对象存储网关](https://github.com/wildfirechat/wf-oss-gateway)说明部署对接。
+
 ## 对象存储的安全性
 请参考[文件存储的安全性问题](../blogs/文件存储的安全性问题.html)
 
