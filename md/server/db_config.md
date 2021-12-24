@@ -9,6 +9,12 @@
 ## 数据库版本
 mysql5.7及以上，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingbase V8版本及以上；达梦8版本及以上；SQL Server 2014及以上。
 
+## 修改事物隔离级别
+大多数的数据库系统的默认事务隔离级别都是 ```Read committed```，但MySQL默认事务隔离级别是：```Repeatable read```。需要把Mysql的默认等级修改成 ```Read committed```，不然高压力情况下容易出现事务超时的问题，修改方法如下：
+```
+set global transaction_isolation='read-committed';
+```
+
 ## 建库建表
 除了达梦和金仓外，其它数据库类型使用了flyway管理，不用手动建表建库和表。运行程序时会自动创建数据库和表结构。
 
