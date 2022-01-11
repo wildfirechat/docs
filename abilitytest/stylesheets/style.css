@@ -1,0 +1,149 @@
+body {
+    /* padding: 50px; */
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.box{width:100%;}
+.test-box {
+    display: flex;
+    max-width: 640px;
+    width:100%;
+    margin:auto;
+    height: 70px;
+    background: #E2E2E2;
+    margin-top: 20px;
+    font-size: 26px;
+    align-items: center;
+    padding-left: 20px;
+
+}
+
+.detail-box {
+    max-width: 640px;
+    width:100%;
+    height: auto;
+    background: #E2E2E2;
+    margin-top: 2px;
+    font-family: Consolas;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin:auto;
+
+}
+
+#test-content {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    width: 600px;
+    height: 70px;
+    color: white;
+    align-items: center;
+    display: flex;
+    padding-left: 20px;
+}
+.container{padding:0!important;}
+.header {
+    display: flex;
+    flex-direction: row;
+    background: #4f7dc9;
+    max-width: 700px;
+    margin-bottom: 20px;
+    align-items: center;
+    width:100%;
+    margin:auto;
+    padding:0 10px;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
+
+#start-btn {
+    display: flex;
+    font-size: 20px;
+    color: black;
+    background: #99dd99;
+}
+
+#detail-info {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+}
+
+.title {
+    color: black;
+    font-size: 20px;
+}
+
+#stunserver {
+
+}
+
+div#meters{
+    padding:10px;
+}
+
+div#meters > div {
+    margin: 0 0 0 0;
+  }
+  
+  div#meters div.label {
+    display: inline-block;
+    font-weight: 400;
+    margin: 0 0.5em 0 0;
+    width: 5em;
+    color:#000
+  }
+  
+  div#meters div.value {
+    display: inline-block;
+  }
+  
+  meter {
+    width: 50%;
+  }
+  
+  meter#clip {
+    color: #db4437;
+  }
+  
+  meter#slow {
+  color: #f4b400;
+  }
+  
+  meter#instant {
+  color: #0f9d58;
+  }

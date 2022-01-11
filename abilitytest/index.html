@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBRTC</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <link rel='stylesheet' href='./stylesheets/style.css'/>
+    <link rel='stylesheet' href='./stylesheets/bootstrap.css'/>
+    <link rel='stylesheet' href='./stylesheets/bootstrap-theme.css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+<body>
+<div id="test-content" class="container">
+    <div class="header">
+        <h2 class="title">WEBRTC 能力测试</h2>
+        <button id="start-btn" type="button" class="btn btn-info btn-circle btn-xl">
+            开始
+        </button>
+    </div>
+    <div class="box">
+        <p id="browser-title" class="test-box">浏览器</p>
+        <div id="browser-detail" class="detail-box"></div>
+    </div>
+    <div class="box">
+        <p id="mic-title" class="test-box">麦克风</p>
+        <div id="mic-detail" class="detail-box"></div>
+        <div id="meters" style="max-width: 640px;width: 100%;margin:auto;display: none">
+            <div id="instant">
+              <div class="label">实时音量: </div>
+              <meter high="0.25" max="1" value="0"></meter>
+              <div class="value"></div>
+            </div>
+            <div id="slow" style="display: none">
+              <div class="label">Slow: </div>
+              <meter high="0.25" max="1" value="0"></meter>
+              <div class="value"></div>
+            </div>
+            <div id="clip" style="display: none">
+              <div class="label">Clip: </div>
+              <meter max="1" value="0"></meter>
+              <div class="value"></div>
+            </div>
+          </div>
+    </div>
+    <div class="box">
+        <p class="test-box">音频输出</p>
+        <div class="detail-box">
+            <audio src="voice.mp3" controls></audio>
+        </div>
+    </div>
+    <div class="box">
+        <p id="camera-title" class="test-box">摄像头</p>
+        <div id="camera-detail" class="detail-box"></div>
+    </div>
+    <div class="box">
+        <p id="support-title" class="test-box">分辨率</p>
+        <div id="support-detail" class="detail-box"></div>
+    </div>
+    <div class="box">
+        <p id="connection-title" class="test-box">连通性</p>
+        <div id="connection-detail" class="detail-box"></div>
+    </div>
+    <div class="box">
+    <!-- <div class="detail-info">
+        <div class="form-group">
+            <label for="usr">StunServer</label>
+            <input type="text" class="form-control" id="stunserver">
+        </div>
+        <p class="title">浏览器详情</p>
+        <p class="title" id="us">ua</p>
+    </div> -->
+    </div>
+</div>
+</body>
+<script src="https://sqimg.qq.com/expert_qq/webrtc/vconsole.min.js"></script>
+<script type="text/javascript" src="./javascripts/libs/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./javascripts/libs/bootstrap.js"></script>
+<script type="text/javascript" src="./javascripts/libs/adapter.js"></script>
+<script type="text/javascript" src="./javascripts/libs/soundmeter.js"></script>
+<!--
+<script type="text/javascript" src="./javascripts/abilityTest.js?v=1"></script>
+<script type="text/javascript" src="./javascripts/index.js?v=1"></script> -->
+
+<script>
+    document.write('<script type="text/javascript" src="./javascripts/abilityTest.js?v='+new Date()+'"><\/script>');
+    document.write('<script type="text/javascript" src="./javascripts/index.js?v='+new Date()+'"><\/script>');
+
+
+</script>
+    <script>
+        var _mtac = {"senseHash":0};
+        (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500538821");
+            mta.setAttribute("cid", "500538834");
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+</html>
