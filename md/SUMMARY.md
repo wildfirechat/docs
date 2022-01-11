@@ -80,6 +80,7 @@
 * [音视频](webrtc/README.md)
     * [TURN服务](webrtc/turn_server.md)
     * [UDP端口连通性检查](webrtc/udp_connectivity.md)
+* [朋友圈](moments/README.md)
 * [code状态码](server/error_code.md)
 * [维护说明](base_knowledge/maintain.md)
 * [野火技术支持](base_knowledge/support.md)
