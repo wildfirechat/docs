@@ -66,7 +66,7 @@ http://domain:18080/admin/blacklist/status
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID|
 | targetUid | string | 是 | 对方ID |
-| status | int | 是 | 双方关系，0为取消黑名单，1为设置为黑名单 |
+| status | int | 是 | 双方关系，1为取消黑名单，2为设置为黑名单 |
 
 
 #### 响应
