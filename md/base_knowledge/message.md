@@ -18,14 +18,15 @@
 
 #### status
 消息状态，分为如下值
-    * Sending
-    * Sent
-    * Send_Failure
-    * Mentioned
-    * AllMentioned
-    * Unread
-    * Readed
-    * Played
+    * Sending 0，正在发送中。
+    * Sent 1，已发送。
+    * Send_Failure 2，发送失败。
+    * Mentioned 3，提醒。
+    * AllMentioned 4，提醒所有人。
+    * Unread 5，未读。
+    * Readed 6，已读。
+    * Played 7，已播放。
+> 其中提醒和提醒所有人是一种特殊的未读状态，当清理未读状态时，这两种状态也会被清掉。
 
 #### serverTime
 消息在服务器处理的时间戳
