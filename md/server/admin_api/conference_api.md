@@ -12,7 +12,7 @@ http://domain:18080/admin/conference/create
 | description | string | 是 | 房间描述 |
 | pin | string | 是 | 房间密码 |
 | max_publishers | int | 否 | 最大交互成员人数 |
-| bitrate | int | 否 | 但路音视频码率 |
+| bitrate | int | 否 |  单路音视频最大码率 |
 | advance | bool | 否 | 是否是超级会议 |
 | recording | bool | 否 | 是否在服务器端录制 |
 
@@ -85,7 +85,7 @@ N/A
 | description | string | 是 | 房间描述 |
 | max_publishers | int | 是 | 最大交互成员人数 |
 | num_publishers | int | 是 | 会议参会人数 |
-| bitrate | int | 是 | 但路音视频码率 |
+| bitrate | int | 是 | 单音视频最大码率 |
 | advance | bool | 否 | 是否是超级会议 |
 | recording | bool | 否 | 是否在服务器端录制 |
 
