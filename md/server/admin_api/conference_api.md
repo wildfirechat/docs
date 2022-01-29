@@ -15,6 +15,7 @@ http://domain:18080/admin/conference/create
 | bitrate | int | 否 |  单路音视频最大码率 |
 | advance | bool | 否 | 是否是超级会议 |
 | recording | bool | 否 | 是否在服务器端录制 |
+| permanent | bool | 否 | 是否持久化会议，如果使用持久化注意使用后销毁，避免保存的会议无限增长 |
 
 #### 响应
 N/A
