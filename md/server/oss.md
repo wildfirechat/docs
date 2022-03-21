@@ -113,7 +113,8 @@ media.bucket_favorite_domain http://wfcstatic.oss-cn-beijing.aliyuncs.com
 ![权限管理](./assert/aliyun_oss_bucket_privacy.png)
 
 ### Web用户
-Web用户需要设置跨域信息，详情请参考[这里](https://help.aliyun.com/document_detail/44199.htm)。
+Web用户需要设置跨域信息，从下图进入设置
+![CORS](./assert/aliyun_oss_cors.png)
 
 ### 配置HTTPS
 可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
@@ -122,6 +123,55 @@ Web用户需要设置跨域信息，详情请参考[这里](https://help.aliyun.
 ```
 media.bucket_XXXX_domain https://wfcim.oss-cn-beijing.aliyuncs.com
 ```
+
+## 使用使用腾讯云COS
+野火IM专业版支持腾讯云对象存储，先去腾讯云官网控制台开通对象存储服务。然后在同一个区域内创建至少2个桶（bucket）（一个用来保存头像/收藏等需要长期保存的桶，另外一个用来保存会话内发送的图片、文件、语音、视频等可以定期清除的桶。所有的桶都要在同一个区域内，不能分散在不同的区域。建议为每种媒体类型都创建一个桶，这里示例就只创建2个桶，可以参考示例为每个类型创建一个桶）。如下图所示：
+![bucket list](./assert/tencent_oss_bucket_list.png)
+
+点击第一个bucket，按照下图进行配置。注意 server_url 要配置为访问域名去掉https头和桶名的部分。
+![endpont&domain](./assert/aliyun_oss_endpoint_bucket_domain.png)
+同样配置另外个一个桶的名称和域名到头像和收藏类型。完整配置完如下：
+```
+media.server_host cos.ap-nanjing.myqcloud.com
+media.server_port 80
+media.server_ssl_port 443
+media.access_key 0M7YVO70QPKBPWBZW5FWM7YVO70QPK
+media.secret_key 1Qjap+Nfs3P2BujHCHDuqrsrYi0zNn8
+
+## bucket名字及Domain
+media.bucket_general_name wfim-1256xxxxxx
+media.bucket_general_domain https://wfim-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_image_name wfim-1256xxxxxx
+media.bucket_image_domain https://wfim-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_voice_name wfim-1256xxxxxx
+media.bucket_voice_domain https://wfim-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_video_name wfim-1256xxxxxx
+media.bucket_video_domain https://wfim-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_file_name wfim-1256xxxxxx
+media.bucket_file_domain https://wfim-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_sticker_name wfim-1256xxxxxx
+media.bucket_sticker_domain https://wfim-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_moments_name wfstatic-1256xxxxxx
+media.bucket_moments_domain https://wfstatic-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_portrait_name wfstatic-1256xxxxxx
+media.bucket_portrait_domain https://wfstatic-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+media.bucket_favorite_name wfstatic-1256xxxxxx
+media.bucket_favorite_domain https://wfstatic-1256xxxxxx.cos.ap-nanjing.myqcloud.com
+```
+到这里您会发现，```media.access_key```和```media.secret_key```还没有配置，这个是您的账户的API密钥。点击您账户的头像，如下图，找到对应的AK和SK：
+![AKSK](./assert/tencent_oss_aksk.png)
+可以使用子用户的AccessKey，需要注意为该子用户赋予对象存储权限。
+
+### 设置访问权限
+点开每个桶的设置，选择权限管理标签页，然后设置读写权限为公共读，如下图所示：
+![权限管理](./assert/tencent_oss_bucket_privacy.png)
+
+### Web用户
+Web用户需要设置跨域信息，从下图进入设置
+![CORS](./assert/tencent_oss_cors.png)
+
+### 使用HTTPS
+腾讯云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS。
 
 ## 使用野火对象存储网关
 专业版IM服务还可以使用野火对象存储网关来对接其它任意类型的存储服务，比较常见的FastDFS，HDFS或者其它云服务等等。实现的方法是上传时上传到网关，网关再对接到客户选定的存储服务。具体使用方法请按照[野火对象存储网关](https://github.com/wildfirechat/wf-oss-gateway)说明部署对接。
