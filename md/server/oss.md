@@ -129,7 +129,7 @@ media.bucket_XXXX_domain https://wfcim.oss-cn-beijing.aliyuncs.com
 ![bucket list](./assert/tencent_oss_bucket_list.png)
 
 点击第一个bucket，按照下图进行配置。注意 server_url 要配置为访问域名去掉https头和桶名的部分。
-![endpont&domain](./assert/aliyun_oss_endpoint_bucket_domain.png)
+![endpont&domain](./assert/tencent_oss_endpoint_bucket_domain.png)
 同样配置另外个一个桶的名称和域名到头像和收藏类型。完整配置完如下：
 ```
 media.server_host cos.ap-nanjing.myqcloud.com
