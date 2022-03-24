@@ -85,7 +85,7 @@
 * [维护说明](base_knowledge/maintain.md)
 * [野火技术支持](base_knowledge/support.md)
 * [管理后台](admin/README.md)
-* [应用服务](https://github.com/wildfirechat/im-app_server/blob/master/README.md)
+* [应用服务](https://github.com/wildfirechat/app-server/blob/master/README.md)
 * [推送服务](https://github.com/wildfirechat/push_server/blob/master/README.md)
 * [机器人服务](https://github.com/wildfirechat/robot_server/blob/master/README.md)
 * [常见问题](faq/README.md)
