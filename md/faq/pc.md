@@ -57,4 +57,4 @@ A. 请按如下流程排查：
 1. 确认电脑支持音视频通话，[点这儿](https://docs.wildfirechat.cn/webrtc/abilitytest/)开始测试
 2. 在 Local Storage 中添加一条音视频调试控制项: ```key: enable_voip_debug```，```value: 1```，添加之后，音视频通话时，会自动打开音视频通话窗口的调试窗口。
 3. 确定所用音视频SDK版本，必现都使用一样的版本，才能互通。 音视频通话界面调试窗口的控制台，如果输出```wfc avengine-multi```字样，则说明所用的 SDK  是多人版；如果输出```wfc avengine-conference```字样，则说明所用的 SDK 是高级版。 具体的版本说明，请参考[这儿](https://github.com/wildfirechat/vue-pc-chat/tree/master/src/wfc/av/internal)
-4. 将音视频发起方和接听方的音视频窗口的控制台的日志发给我们
+4. 将音视频发起方和接听方音视频窗口控制台日志发给我们
