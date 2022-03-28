@@ -60,3 +60,6 @@ wfc.all_client_support_ssl=false
 A. 当应用在appstore上架后，开发者账户下的所有应用在同一个手机上具有相同的vendor id。详情请参考(IDFV(identifierForVendor)使用陷阱)https://easeapi.com/blog/blog/63-ios-idfv.html。
 
 这样如果同一个IM服务有多个应用，多个应用安装到同一个手机上，这样所有应用将具有相同的clientId，导致互踢现象产生。处理办法就是不使用identifierForVendor，随机生成UUID，然后固定使用这个UUID就行了，请参考 [bcdd957](https://github.com/wildfirechat/ios-chat/commit/bcdd957c7df94f97e223a048e32eb3197c022065)。如果已经上线了，需要注意更新后需要重新获取token。
+
+#### Q. 如何打包野火SDK供其它项目使用？
+A. 可以有2中方式在其它项目中使用野火SDK。第一种方式是主应用项目引入野火的SDK项目，注意还需要修改wfuikit目录下的```xcodescript.sh```脚本，把所需要的资源也一起拷贝到主应用项目下，并添加资源的依赖。第二种方式是打包野火的SDK，以库的形式加入到主应用项目中，打开野火的工程空间```ios-chat.xcworkspace```，选中```Release```Scheme，然后点击运行，就会编译野火SDK（可能会有个错误提示：```Could not delete `/codepath/ios-chat/wfclient/build` because it was not created by the build system.```，忽略掉这个提示），等待编译完成，就会打开生成SDK的访达窗口，把资源和SDK都引入到主项目中，注意SDK都是动态库，需要```Embed & Sign```。
