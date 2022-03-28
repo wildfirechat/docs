@@ -50,3 +50,11 @@ A. 表情是采用加载图片的方式实现的，demo里面的表情图片存�
 
 ## Q. 在Windows系统缓存目录，存在wildfirechat目录，如何去掉？
 A. 有2处需要修改，在```package.json```中把```name```属性改为您的应用英文名；还有一处在```PROJECT_HOME/src/wfc/proto/proto.min.js```文件中，把```proto.setAppName('mychat');```注释打开，名字改为您的应用英文名。
+
+## Q. 音视频通话无法接通
+A. 请按如下流程排查：
+0. 确保手机端已调通音视频功能
+1. 确认电脑支持音视频通话，[点这儿](https://docs.wildfirechat.cn/webrtc/abilitytest/)开始测试
+2. 在 Local Storage 中添加一条音视频调试控制项: ```key: enable_voip_debug```，```value: 1```，添加之后，音视频通话时，会自动打开音视频通话窗口的调试窗口。
+3. 确定所用音视频SDK版本，必现都使用一样的版本，才能互通。 音视频通话界面调试窗口的控制台，如果输出```wfc avengine-multi```字样，则说明所用的 SDK  是多人版；如果输出```wfc avengine-conference```字样，则说明所用的 SDK 是高级版。 具体的版本说明，请参考[这儿](https://github.com/wildfirechat/vue-pc-chat/tree/master/src/wfc/av/internal)
+4. 将音视频发起方和接听方的音视频窗口的控制台的日志发给我们
