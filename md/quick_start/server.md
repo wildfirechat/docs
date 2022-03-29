@@ -50,7 +50,8 @@ ps -ef | grep wildfirechat
 ## Demo应用服务器的部署
 #### 配置修改
 Demo应用服务软件[点这儿去下载](https://github.com/wildfirechat/app_server/releases)，下载解压后，修改```/config/application.properties```文件，设置```superCode```为```66666```
->> 发送短信需要购买短信服务，在没有短信服务的情况下，使用superCode作为验证码来登录。
+>> 发送短信需要购买短信服务，在没有短信服务的情况下，使用superCode作为验证码来登录，***但是上线运行的时候，一定要关闭```superCode```功能，否则有严重安全隐患。***
+
 >> 下载地址在本文的最开头处，同样需要使用软件包，如果是源码需要先编译。
 
 #### 运行
