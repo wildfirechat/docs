@@ -3,7 +3,6 @@
 
 ## 基于```vue-chat```二次开发
 1. 修改```config.js```中的配置信息，修改是请仔细阅读所修改字段的相关注释，如果不进行修改或修改错误，将不能正确连接IM：
-   * ```IM_SERVER_HOST```：```IM SERVER```所绑定的域名或者ip，一定要正确填写，对应邮件中的```Host```。
    * ```USE_WSS```：是否使用WSS进行连接，```IM SERVER```默认没有开启WSS，需要手动配置。
    * ```ROUTE_PORT```：http route请求的端口，默认是80；当配置https之后，需要修改为对应端口，如443等
    * ```APP_SERVER```：应用服务器地址，需要指向自行部署的```app-server```，注意端口不能省略、http/https需要严格区分。
@@ -17,7 +16,6 @@
 
 1. 将```src/js/wfc```和```src/js/config.js```拷贝到自己项目，并且```wfc```目录和```config.js```处于同级目录。
 2. 修改```config.js```中的配置信息，如果不进行修改或修改错误，将不能正确连接IM：
-   * ```IM_SERVER_HOST```：```IM SERVER```所绑定的域名或者ip，一定要正确填写，对应邮件中的```Host```。
    * ```USE_WSS```：是否使用WSS进行连接，```IM SERVER```默认没有开启WSS，需要手动配置。
    * ```ROUTE_PORT```：http route请求的端口，默认是80；当配置https之后，需要修改为对应端口，如443等
    * ```APP_SERVER```：应用服务器地址，需要指向自行部署的```app-server```，注意端口不能省略。
@@ -36,6 +34,3 @@
    * 获取token和连接的流程，可参考```web-chat```
    * 连接结果，会通过事件(```EventType#ConnectionStatusChanged```)通知回调，需要关注进行并进行处理。
 8. 连接成功之后，就可以进行其他操作了，具体参考```wfc.js```
-
-
-
