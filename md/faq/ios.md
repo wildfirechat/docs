@@ -18,7 +18,7 @@ A. 在野火IM Demo应用的AppDelegate.m文件中，有对全局navi的设置�
 ```
 
 #### Q. 如何打包上架
-A. 野火IM中使用了动态库，包含了x86_64架构（模拟器需要这种架构），因此上线前需要移除这种架构。以野火IM的demo为例，首先在ios-chat项目空间运行到真机运行，然后关掉空间。命令行到```$ProjectPath/ios-chat/wfchat```目录下，执行```sh removex86.sh```进行依赖库瘦身。然后打开```WildFireChat.xcodeproj```进行打包（注意一定不要打开```ios-chat```空间打包，在这个空间打包会从新把一些依赖去拷贝过去，导致有x86架构打包失败)。
+A. 野火IM所有库都使用了xcframework格式，因此不用瘦身直接Archive就行了。
 
 #### Q. 崩溃在协议栈中
 A. 这种问题一般是使用不当造成的，请确保不要改动chatclient和协议栈的任何代码，然后在使用chatclient之前必须做如下初始化：
