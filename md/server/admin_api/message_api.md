@@ -11,6 +11,7 @@ http://domain:18080/admin/message/send
 | sender | string | 是 | 发送者ID |
 | conv | [json](./models.md##Conversation) | 是 | 会话 |
 | payload | [json](./models.md##MessagePayload) | 是 | 消息负载 |
+| toUsers | string[] | 否 | 群组或者频道中发给指定用户 |
 
 
 #### 响应
