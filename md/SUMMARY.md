@@ -53,6 +53,7 @@
     * [事件回调](server/event_callback.md)
     * [推送说明](server/push_config.md)
     * [对象存储服务](server/oss.md)
+        * [对象存储配置示例](server/oss_config_sample.md)
     * [服务的维护](server/server_clean.md)
     * [MySQL调优](server/mysql_tune.md)
     * [硬件要求](server/hardware_requirement.md)
