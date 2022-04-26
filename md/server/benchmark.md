@@ -34,12 +34,6 @@ sysctl -w net.core.netdev_max_backlog=16384
 ```
 sysctl -w net.ipv4.ip_local_port_range='1025 65535'
 ```
-TCP 连接追踪设置:
-```
-sysctl -w net.nf_conntrack_max=1000000
-sysctl -w net.netfilter.nf_conntrack_max=1000000
-sysctl -w net.netfilter.nf_conntrack_tcp_timeout_time_wait=30
-```
 TIME-WAIT Socket 最大数量、回收与重用设置:
 ```
 sysctl -w net.ipv4.tcp_max_tw_buckets=1000000

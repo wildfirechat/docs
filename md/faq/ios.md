@@ -63,3 +63,25 @@ A. 当应用在appstore上架后，开发者账户下的所有应用在同一个
 
 #### Q. 如何打包野火SDK供其它项目使用？
 A. 可以有2中方式在其它项目中使用野火SDK。第一种方式是主应用项目引入野火的SDK项目，注意还需要修改wfuikit目录下的```xcodescript.sh```脚本，把所需要的资源也一起拷贝到主应用项目下，并添加资源的依赖。第二种方式是打包野火的SDK，以库的形式加入到主应用项目中，打开野火的工程空间```ios-chat.xcworkspace```，选中```Release```Scheme，然后点击运行，就会编译野火SDK（可能会有个错误提示：```Could not delete `/codepath/ios-chat/wfclient/build` because it was not created by the build system.```，忽略掉这个提示），等待编译完成，就会打开生成SDK的访达窗口，把资源和SDK都引入到主项目中，注意SDK都是动态库，需要```Embed & Sign```。
+
+#### Q. 如何用野火的demo连上客户私有部署的IM服务？
+A. 野火IM连接只需要3个要素：野火用户ID，野火token和clientId。可以先用客户自己的手机连上xcode debug，登陆找到这3个信息。然后下载野火IM最新demo，进行如下修改：
+
+修改```AppDelegate.m```文件
+```
+//在中，找到方法中的下面两句，改成你抓获的用户id和token
+
+//NSString *savedToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"savedToken"];
+//NSString *savedUserId = [[NSUserDefaults standardUserDefaults] stringForKey:@"savedUserId"];
+
+NSString *savedToken = @"你抓取的野火的token";
+NSString *savedUserId = @"你抓取的野火用户id";
+```
+修改```WFCCNetworkService.mm```文件
+```
+- (NSString *)getClientId {
+    //这个方法中的代码全删掉，返回您在登陆手机上的clientid
+    return @"您登陆的那个手机上的用户id";
+}
+```
+注意默认IM服务不支持多端的，因此不要在抓取登陆信息的手机上再打开客户的应用，否则会登陆失效。
