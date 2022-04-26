@@ -42,6 +42,12 @@ FIN-WAIT-2 Socket 超时设置:
 ```
 sysctl -w net.ipv4.tcp_fin_timeout=15
 ```
+设置端口回收的策略（压测客户端设置，服务器不用设置）
+```
+sysctl -w net.ipv4.tcp_tw_recycle=1
+sysctl -w net.ipv4.tcp_tw_reuse=1
+sysctl -w net.ipv4.tcp_timestamps=1
+```
 ## JVM参数调优
 修改野火启动脚本/bin/wildjfirechat.sh，设置最大内存/最小内存为野火预留的内存，建议使用大内存。
 ```
