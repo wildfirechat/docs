@@ -1,5 +1,5 @@
 # 群组
-群组的所有写操作都有可选```line```和```payload```参数。因为写操作会触发通知消息，如果系统默认通知消息不符合您的需求，可以使用这两个参数来自定义通知消息，详情请参考[常见问题](../../faq/gneral.md##15. 我不想收到某人退出群组消息该怎么处理？（让某些消息不显示该怎么处理？）)
+群组的所有写操作都有可选```line```和```payload```参数。因为写操作会触发通知消息，如果系统默认通知消息不符合您的需求，可以使用这两个参数来自定义通知消息，详情请参考[常见问题](../../faq/gneral.md#15. 我不想收到某人退出群组消息该怎么处理？（让某些消息不显示该怎么处理？）)
 
 ## 自定义群通知
 所有的写操作都会触发群通知。群通知有两个作用，一个是用来告知用户状态改变；另外一个作用是触发客户端协议栈从服务器更新群信息。协议栈需要解析群通知内容来决定是否更新本地群信息，所以当需要自定义群通知时，一定要确保通知消息的内容和格式和消息类型保持不变，可以扩展jsoin的内容，或者使用extra，否则就会出现群信息更新不及时的问题。
@@ -13,9 +13,9 @@ http://domain:18080/admin/group/create
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | operator | string | 是 | 操作者用户ID |
-| group | [json](./models.md##Group) | 是 | 群参数，建议不填写群ID，由系统自动生成 |
+| group | [json](./models.md#Group) | 是 | 群参数，建议不填写群ID，由系统自动生成 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -65,7 +65,7 @@ http://domain:18080/admin/group/del
 | operator | string | 是 | 操作者用户ID |
 | group_id | string | 是 | 群组ID |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -100,7 +100,7 @@ http://domain:18080/admin/group/get_info
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| GroupInfo | [json](./models.md##GroupInfo) | 是 | 群资料 |
+| GroupInfo | [json](./models.md#GroupInfo) | 是 | 群资料 |
 
 #### 示例
 ```
@@ -134,7 +134,7 @@ http://domain:18080/admin/group/transfer
 | group_id | string | 是 | 群组ID |
 | new_owner | string | 是 | 新群主用户ID |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -170,7 +170,7 @@ http://domain:18080/admin/group/modify
 | value | string | 是 | 修改资料的值，**请仔细阅读后面针对value字段的说明** |
 | new_owner | string | 是 | 新群主用户ID |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 value在不同的type下具有不同的意义。boolean值转化为"0"和"1", int类型转化为字符串，比如“1”/”2“/“3”。
 
@@ -218,7 +218,7 @@ http://domain:18080/admin/group/member/list
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| GroupMember | list<[json](./models.md##GroupMember)> | 是 | 群成员 |
+| GroupMember | list<[json](./models.md#GroupMember)> | 是 | 群成员 |
 
 #### 示例
 ```
@@ -254,9 +254,9 @@ http://domain:18080/admin/group/member/add
 | ------ | ------ | --- | ------ |
 | operator | string | 是 | 操作者用户ID |
 | group_id | string | 是 | 群组ID |
-| members | list<[json](./models.md##GroupMember)> | 是 | 群成员，成员类型只能为0/1 |
+| members | list<[json](./models.md#GroupMember)> | 是 | 群成员，成员类型只能为0/1 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -296,7 +296,7 @@ http://domain:18080/admin/group/member/del
 | group_id | string | 是 | 群组ID |
 | members | list<string> | 是 | 群成员id，不能包含群主。 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -332,7 +332,7 @@ http://domain:18080/admin/group/member/quit
 | operator | string | 是 | 退群用户ID |
 | group_id | string | 是 | 群组ID |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -366,7 +366,7 @@ http://domain:18080/admin/group/member/set_alias
 | memberId | string | 是 | 群组成员用户ID |
 | alias | string | 否 | 群昵称 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -402,7 +402,7 @@ http://domain:18080/admin/group/member/set_extra
 | memberId | string | 是 | 群组成员用户ID |
 | extra | string | 否 | 群成员附加信息 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应
@@ -438,7 +438,7 @@ http://domain:18080/admin/group/manager/set
 | members | list<string> | 是 | 群成员ID |
 | is_manager | boolean | 是 | true 设置为群管理；false 取消群管理员。 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
-| notify_message | [json](./models.md##MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
 #### 响应

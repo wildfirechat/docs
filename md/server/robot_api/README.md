@@ -41,8 +41,8 @@ http://domain/robot/message/send
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | sender | string | 是 | 发送者ID |
-| conv | [json](../admin_api/models.md##Conversation) | 是 | 会话 |
-| payload | [json](../admin_api/models.md##MessagePayload) | 是 | 消息负载 |
+| conv | [json](../admin_api/models.md#Conversation) | 是 | 会话 |
+| payload | [json](../admin_api/models.md#MessagePayload) | 是 | 消息负载 |
 
 
 #### 响应

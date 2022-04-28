@@ -45,7 +45,7 @@ http://domain/channel/message/send
 | ------ | ------ | --- | ------ |
 | line | int | 否 | 会话线路，默认为0 |
 | targets | list<string> | 否 | 指定发送对象，如果为空，将广播所有关注者。如果不为空将发送给指定对象，注意如果目标用户不在关注者列表中将被抛弃 |
-| payload | [json](../admin_api/models.md##MessagePayload) | 是 | 消息负载 |
+| payload | [json](../admin_api/models.md#MessagePayload) | 是 | 消息负载 |
 
 
 #### 响应

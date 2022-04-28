@@ -4,7 +4,7 @@
 
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| type | int | 是 | [消息内容类型](../../base_knowledge/message_payload.md#####contentType) |
+| type | int | 是 | [消息内容类型](../../base_knowledge/message_payload.md#contentType) |
 | searchableContent | string | 否 | 消息可搜索内容 |
 | pushContent | string | 否 | 消息推送内容 |
 | pushData | string | 否 | 消息推送数据 |
@@ -25,7 +25,7 @@
 
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| type | int | 是 | [会话类型](../../base_knowledge/conversation.md#####会话类型) |
+| type | int | 是 | [会话类型](../../base_knowledge/conversation.md#会话类型) |
 | target | string | 是 | 会话目标 |
 | line | int | 否 | 会话线路，缺省为0 |
 
@@ -74,8 +74,8 @@
 
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| group_info | [json](./models.md##GroupInfo) | 是 | 群组ID |
-| members | list<[json](./models.md##GroupMember)> | 否 | 群组成员列表 |
+| group_info | [json](./models.md#GroupInfo) | 是 | 群组ID |
+| members | list<[json](./models.md#GroupMember)> | 否 | 群组成员列表 |
 
 
 示例:
