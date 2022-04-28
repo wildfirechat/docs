@@ -16,7 +16,7 @@ http://domain:18080/admin/channel/create
 | portrait | string | 否 | 频道头像 |
 | auto | int | 否 | 0，owner会接收到消息，如果配置callback同时会转发消息；1，owner不会接收消息，如果配置callback会转发消息到callback |
 | desc | string | 否 | 描述信息 |
-| state | int | 否 | [频道权限](../../base_knowledge/channel.md##频道属性) |
+| state | int | 否 | [频道权限](../../base_knowledge/channel.md#频道属性) |
 | secret | string | 否 | 频道密钥，如果为空系统会自动生成 |
 | extra | string | 否 | 附加信息 |
 
