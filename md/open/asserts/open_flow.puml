@@ -1,0 +1,12 @@
+@startuml
+  work_page -> IM_SDK : getAuthCode
+  IM_SDK -> IM_Server : getAuthCode
+  IM_Server --> IM_SDK : response
+  IM_SDK --> work_page : response
+  work_page -> open_server : login
+  open_server -> IM_Server : verifyAuthCode
+  IM_Server --> open_server : success
+  open_server --> work_page : login success
+  open_server <-> work_page : getApplications/favApplication etc.
+@enduml
+

@@ -1,0 +1,16 @@
+@startuml
+  application_page -> IM_SDK : getAuthCode
+  IM_SDK -> IM_Server : getAuthCode
+  IM_Server --> IM_SDK : response
+  IM_SDK --> application_page : response
+  application_page -> application_server : login
+  application_server -> IM_Server : verifyAuthCode
+  IM_Server --> application_server : success
+  application_server --> application_page : login success
+  application_page -> application_server : getConfigInfo
+  application_server --> application_page : response configInfo
+  application_page -> IM_SDK : config
+  IM_SDK --> application_page : ready
+  application_server <-> application_page : application business operation etc.
+@enduml
+
