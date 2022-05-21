@@ -317,3 +317,36 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }]
 }
 ```
+
+## 验证用户
+此方法是用于开放平台验证用户身份的，详情请参考[开放平台](../../open/README.md).
+#### 地址
+```
+http://domain:18080/admin/user/app_get_user_info
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| authCode | string | 是  | 验证码（前端页面通过jssdk调用im sdk获取得到） |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| displayName | string | 否(如果存在用户信息则一定存在) | 用户昵称 |
+| portraitUrl | string | 否(如果存在用户信息则一定存在) | 用户头像 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"authCode\":\"authCode1\"}" http://domain:18080/admin/user/app_get_user_info
+
+{
+  "code":0,
+  "msg":"success"
+  "result":{
+    "userId":"userid1",
+    "dispalyName":"name1",
+    "portraitUrl":"url"
+  }
+}
+```

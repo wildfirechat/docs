@@ -252,3 +252,45 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 ```
 ## 群操作
 [机器人群操作](./group_api.md)
+
+
+## 验证用户
+此方法是用于开放平台应用验证用户身份的，详情请参考[开放平台](../../open/README.md).
+#### 地址
+```
+http://domain/robot/application/get_user_info
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| authCode | string | 是  | 验证码（前端页面通过jssdk调用im sdk获取得到） |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| displayName | string | 否(如果存在用户信息则一定存在) | 用户昵称 |
+| portraitUrl | string | 否(如果存在用户信息则一定存在) | 用户头像 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robotId1" -d "{\"authCode\":\"auth_code\"}" http://localhost/robot/application/get_user_info
+
+{
+  "code":0,
+  "msg":"success"
+  "result":{
+    "userId":"userid1",
+    "dispalyName":"name1",
+    "portraitUrl":"url"
+  }
+}
+```
+
+## config签名
+此方法是用于签名当前应用，应用前端页面调用jssdc来认证应用，详情请参考[开放平台](../../open/README.md).
+
+#### 签名方法
+此功能不涉及与IM服务交互，在本地按照规则签名，然后再经JSSDK调用IMSDK，最终在IM服务使用同样的规则验证。
+
+签名的计算方法： ```sign = sha1(nonce + "|" + robotId + "|" + timestamp + "|" + robotSecret)```。其中robotSecret为机器人的密钥。客户端调用jssdk的config方法的参数appid、apptype、timestamp、signature分别对应channelId、0、签名的时间戳、签名。
