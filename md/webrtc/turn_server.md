@@ -15,11 +15,11 @@ sudo yum install -y openssl-devel libevent libevent-devel
 
 #### 安装 libEvent 组件
 ```
-wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 
-tar -xvzf libevent-2.0.21-stable.tar.gz
+tar -xvzf libevent-2.1.12-stable.tar.gz
 
-cd libevent-2.0.21-stable && ./configure
+cd libevent-2.1.12-stable && ./configure
 
 make
 
@@ -30,11 +30,11 @@ cd ..
 
 #### 安装TURN服务
 ```
-wget http://turnserver.open-sys.org/downloads/v4.5.1.2/turnserver-4.5.1.2.tar.gz
+wget http://turnserver.open-sys.org/downloads/v4.5.2/turnserver-4.5.2.tar.gz
 
-tar -xvzf turnserver-4.5.1.2.tar.gz
+tar -xvzf turnserver-4.5.2.tar.gz
 
-cd turnserver-4.5.1.2 && ./configure
+cd turnserver-4.5.2 && ./configure
 
 make
 
@@ -42,7 +42,7 @@ sudo make install
 ```
 
 #### 配置
-使用vi 编辑 ```/usr/local/etc/turnserver.conf```文件，修改如下部分:
+默认有个配置模版在```/usr/local/etc/turnserver.conf.default```，需要复制一个名称为```/usr/local/etc/turnserver.conf```。然后使用vi 编辑 ```/usr/local/etc/turnserver.conf```文件，修改如下部分:
 ```
 listening-ip=${内网IP}
 relay-ip=${内网IP}
@@ -69,6 +69,9 @@ turnserver -v -r ${公网IP}:3478 -a -o -c /usr/local/etc/turnserver.conf
 
 #### 进阶设置
 启用TLS，生成证书并配置证书，这个就从网上自己找吧。
+
+#### 版本升级
+以上libEvent和turnserver的版本都是写文档时最新的版本，以后可能会有更新的版本发布，请自行替换成最新的或者自己喜欢的版本。
 
 #### 最后
 为了方便大家学习部署，我们录制了视频，点击[TURN部署部署](https://www.bilibili.com/video/BV1ok4y167b9/)观看。
