@@ -67,7 +67,7 @@
 
 示例:
 ```
-{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":3}  
+{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":2}  
 ```
 
 ## Group
@@ -81,8 +81,8 @@
 示例:
 ```
 {
-  "group_info":{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":3},
-  "members":[{"member_id":"memberId1","name":"老王的朋友们","owner":"laowang","type":3}]
+  "group_info":{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":2},
+  "members":[{"member_id":"memberId1","name":"老张","type":0}, {"member_id":"memberId2","name":"老王","type":2}, {"member_id":"memberId1","name":"老赵","type":0}]
 }
 ```
 

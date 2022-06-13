@@ -8,7 +8,7 @@
 iOS SDK包括client和avenginekit都需要更新到2022.4.26日以后的版本就可以了。SDK内部的修改主要是把部分音视频消息从avenginekit移动到client，然后这些消息的encode方法把部分信息放到pushData中。
 
 ### iOS Demo
-iOS Demo也就是iOS应用了，需要在appdelegate.m中处理callkit。把代码更新到2022.4.26以后的代码，在代码中搜索```USE_CALL_KIT```，把开关打开。目前跑通了基本功能，可能还有细节需要进一步优化。
+iOS Demo也就是iOS应用了，需要在appdelegate.m中处理callkit。把代码更新到2022.4.26以后的代码，在代码中搜索```USE_CALL_KIT```，把开关打开。目前跑通了基本功能，可能还有细节需要进一步优化。此外还需要把callkit和pushkit系统库添加依赖。
 
 ### 其他端
 如果您有其他端，也需要同步修改，因为其他端打来的信息也需要带上足够的信息。请把其他端的client和avenginekit都更新到2022.4.26以后的版本。
