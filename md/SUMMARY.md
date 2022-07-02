@@ -14,6 +14,7 @@
     * [多人音视频](trial/voip.md)
     * [朋友圈](trial/moments.md)
     * [管理后台](trial/management_server.md)
+* [性能测试](performance_test/README.md)
 * [系统架构](architecture/README.md)
 * [基础知识](base_knowledge/README.md)
     * [功能特性](base_knowledge/feature.md)
