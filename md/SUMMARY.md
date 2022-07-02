@@ -35,7 +35,7 @@
     * [服务器端口说明](server/server_port.md)
     * [数据库配置](server/db_config.md)
     * [机器内存的选择](server/server_memory.md)
-    * [性能测试](server/benchmark.md)
+    * [系统调优](server/system_tune.md)
     * [服务器配置](server/server_config.md)
     * [Server API接口](server/admin_api/README.md)
         * [用户](server/admin_api/user_api.md)
