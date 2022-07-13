@@ -3,11 +3,12 @@
 ## 客户端
 1. Android（Android6.0以上）
 2. iOS（iOS9以上）
-3. Windows（windows7以上）
-4. Mac OS（10.10以上）
-5. Linux（x86_64架构和Arm64架构)
-6. Web
-7. 小程序（微信小程序、百度小程序、QQ小程序、头条小程序、阿里小程序）
+3. UniApp (ios/android)
+4. Windows（windows7以上）
+5. Mac OS（10.10以上）
+6. Linux（x86_64架构和Arm64架构)
+7. Web
+8. 小程序（微信小程序、百度小程序、QQ小程序、头条小程序、阿里小程序）
 
 > 除了Web和小程序外，其它所有平台公用同一个协议栈，SDK功能和接口定义全部一致。
 
