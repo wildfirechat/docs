@@ -94,7 +94,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>支持</td>
 	</tr>
   <tr>
-      <td rowspan="25" bgcolor="white">群聊</td>
+      <td rowspan="27" bgcolor="white">群聊</td>
       <td>语音消息</td>
       <td>支持</td>
       <td>支持</td>
@@ -181,7 +181,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
   </tr>
   <tr>
       <td>群管理员设置</td>
-      <td>支持</td>
+      <td>不支持</td>
       <td>支持</td>
   </tr>
   <tr>
@@ -217,6 +217,16 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 	<tr>
 	    <td >群成员昵称</td>
       <td>支持</td>
+      <td>支持</td>
+	</tr>
+	<tr>
+	    <td >指定群成员禁言</td>
+      <td>不支持</td>
+      <td>支持</td>
+	</tr>
+	<tr>
+	    <td >群禁言白名单</td>
+      <td>不支持</td>
       <td>支持</td>
 	</tr>
   <tr >
@@ -392,7 +402,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>支持</td>
   </tr>
   <tr >
-	    <td rowspan="4" bgcolor="white">媒体存储</td>
+	    <td rowspan="6" bgcolor="white">媒体存储</td>
 	    <td>测试存储服务</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -407,6 +417,16 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>不支持</td>
       <td>支持</td>
   </tr>
+	<tr >
+      <td>腾讯云OSS</td>
+      <td>不支持</td>
+      <td>支持</td>
+  </tr>
+	<tr >
+			<td>野火对象存储网关</td>
+			<td>不支持</td>
+			<td>支持</td>
+	</tr>
   <tr >
       <td>私有OSS（Minio）</td>
       <td>不支持</td>
@@ -685,6 +705,12 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
 	</tr>
 	<tr >
 			<td>用户管理</td>
+			<td>支持</td>
+			<td>支持</td>
+	</tr>
+	<tr >
+			<td rowspan="1" bgcolor="white">开放平台</td>
+			<td>开放平台</td>
 			<td>支持</td>
 			<td>支持</td>
 	</tr>
