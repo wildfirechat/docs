@@ -2,9 +2,8 @@
 野火客户端是分层的，客户可以只集成[ChatClient](chatclient.md)，然后自己实现所有的UI和交互，难度和工作量都比较大；也可以集成[ChatClient](chatclient.md)和[ChatUIKit](chatuikit.md)，省掉大部分的UI开发。
 
 ## 集成ChatUIKit
-1. 编译ios-chat空间的每个项目，真机和模拟器都编译一遍。
-2. 把项目wfchat目录下的FrameWorks拖拽到新工程中。
-3. 找到```wfuikit/WFChatUIKit/Vendor/ZLPhotoBrowser/ZLPhotoBrowser.framework```和```wfchat/WildFireChat/SDWebImage/SDWebImage.framework```这两个库，也拖拽到新工程中。
+1. 运行ios-chat空间目录下的```release_libs.sh```脚本，编译成功后会自动打开release目录。
+2. 把release目录下的所有framework都拖拽到新工程中。
 3. 把野火的库都改成Embed & Sign
 4. 添加库 CallKit.framework, UserNotifications.framework.
 5. Build Settings -> Allow Non-modular Includes In Framework Modules 设置为YES
