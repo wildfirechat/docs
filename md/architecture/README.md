@@ -28,10 +28,16 @@ SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文�
 ## 实时音视频服务
 野火系统支持实时音视频（voip通话），支持多人的语音和视频通话，需要部署Turn服务或者野火音视频服务。
 
+## 开放平台服务
+提供h5应用的管理功能，第三方服务可以以h5应用的方式接入开放平台。
+
+## 日报服务
+开放平台上的demo应用服务，演示如何接入开发平台。
+
 ## 管理后台
 一个可选的支撑服务，有简单的统计数据，可以管理用户（封禁/解封/修改），可以管理敏感词，可以管理群组，可以管理机器人和频道等。
 
-## 频道服务（未完成)
+## 频道服务
 频道是有点类似与微信中的公众号功能，用户可以订阅，然后频道主可以发送消息给所有订阅用户。可以部署频道服务来处理类似微信公众号的功能。
 
 ## 流程图
@@ -49,14 +55,19 @@ SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文�
   注册时不用同步用户信息到野火IM服务器，获取token不依赖必须存在用户信息。
 
 ## 开源代码列表
-  * [im-server](https://github.com/wildfirechat/im-server)  IM服务源码
-  * [android-chat](https://github.com/wildfirechat/android-chat) Android SDK及demo应用源码
-  * [ios-chat](https://github.com/wildfirechat/ios-chat) iOS SDK及demo应用源码
-  * [pc-chat](https://github.com/wildfirechat/vue-pc-chat) PC客户端源码
-  * [app-server](https://github.com/wildfirechat/app-server) 应用服务源码
-  * [push_server](https://github.com/wildfirechat/push_server) 推送服务源码
-  * [robot_server](https://github.com/wildfirechat/robot_server) 机器人服务源码
-  * [docs](https://github.com/wildfirechat/docs/tree/master/md) 文档源码
+  * im-server IM服务源码 [Github](https://github.com/wildfirechat/im-server) [码云](https://gitee.com/wfchat/im-server)
+  * android-chat Android SDK及demo应用源码 [Github](https://github.com/wildfirechat/android-chat) [码云](https://gitee.com/wfchat/android-chat)
+  * ios-chat iOS SDK及demo应用源码 [Github](https://github.com/wildfirechat/ios-chat) [码云](https://gitee.com/wfchat/ios-chat)
+  * pc-chat PC客户端源码 [Github](https://github.com/wildfirechat/vue-pc-chat) [码云](https://gitee.com/wfchat/vue-pc-chat)
+  * web-chat Web客户端源码 [Github](https://github.com/wildfirechat/vue-chat) [码云](https://gitee.com/wfchat/vue-chat)
+  * uni-chat Uniapp平台客户端源码 [Github](https://github.com/wildfirechat/uni-chat) [码云](https://gitee.com/wfchat/uni-chat)
+  * app-server 应用服务源码 [Github](https://github.com/wildfirechat/app-server) [码云](https://gitee.com/wfchat/app_server)
+  * push_server 推送服务源码 [Github](https://github.com/wildfirechat/push_server) [码云](https://gitee.com/wfchat/push_server)
+  * robot_server 机器人服务源码 [Github](https://github.com/wildfirechat/robot_server) [码云](https://gitee.com/wfchat/robot_server)
+  * open-platform 开放平台源码 [Github](https://github.com/wildfirechat/open-platform) [码云](https://gitee.com/wfchat/open-platform)
+  * daily-report 日报demo服务 [Github](https://github.com/wildfirechat/daily-report) [码云](https://gitee.com/wfchat/daily-report)
+  * Perfromance_Test 性能测试 [Github](https://github.com/wildfirechat/Performance_Test) [码云](https://gitee.com/wfchat/Performance_Test)
+  * docs 文档源码 [Github](https://github.com/wildfirechat/docs/tree/master/md) [码云](https://gitee.com/wfchat/docs)
 > 其中IM服务成熟稳定，是可用于商业化的，如果有问题，请提issue或者PR。push需要集成更多的手机厂商的推送服务。其它的两个服务app/robot是配合IM服务的，往往跟您的业务关系比较大，所以是demo级别的，你可以参考来集成您的业务。
 > 客户端中sdk（imclient/imuikit）稳定性比较高，建议您直接使用，有问题提issue或PR。应用部分往往跟您的业务密切相关，因此应用是demo级别的，您可以参考demo进行集成。
 
