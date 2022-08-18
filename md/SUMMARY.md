@@ -11,7 +11,7 @@
     * [Web试用](trial/web.md)
     * [小程序试用](trial/wx.md)
     * [试用专业版和Web/小程序](trial/trial.md)
-    * [多人音视频](trial/voip.md)
+    * [音视频高级版](trial/voip.md)
     * [朋友圈](trial/moments.md)
     * [管理后台](trial/management_server.md)
 * [性能测试报告](performance_test/README.md)
