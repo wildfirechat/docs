@@ -2,7 +2,7 @@
 音视频高级版功能是收费的，我们提供体验服务，可以使用你们自己部署的服务器进行体验，用于原型验证，给领导汇报或者给自己的客户演示。
 
 ## 下载代码
-多人音视频依赖于[android-chat](https://github.com/wildfirechat/android-chat)和[ios-chat](https://github.com/wildfirechat/ios-chat)，请先下载相关代码，并编译通过。
+音视频依赖于[android-chat](https://github.com/wildfirechat/android-chat)和[ios-chat](https://github.com/wildfirechat/ios-chat)，请先下载相关代码，并编译通过。
 
 ## 申请体验SDK
 请参考[专业版、Web和小程序体验申请](trial.md)
