@@ -17,7 +17,7 @@
 在需要调用JS接口的页面引入JS文件，地址在：https://github.com/wildfirechat/open/tree/main/open-work/src/jssdk
 
 ### 步骤三：通过getAuthCode接口获取认证Code
-获取到认证code后就可以去后台登陆，后台再去IM服务验证Code，从而获知到当前用户信息。
+获取到认证code后就可以去后台登录，后台再去IM服务验证Code，从而获知到当前用户信息。
 
 
 ### 步骤四：通过config接口注入权限验证配置

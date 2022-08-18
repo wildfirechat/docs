@@ -12,11 +12,11 @@ config时，IM SDK会把当前页面的host和签名信息一起传到IM服务�
 1. 页面通过JSSDK调用IM SDK的getAuthCode接口。
 2. IM SDK调用IM服务的getAuthCode，调用成功返回authCode。
 3. SDK回调AuthCode给前端页面。
-4. 前端页面调用登陆接口，登陆信息中包含AuthCode。
-5. 应用后端在登陆方法中拿到AuthCode，调用IM服务验证AuthCode。
+4. 前端页面调用登录接口，登录信息中包含AuthCode。
+5. 应用后端在登录方法中拿到AuthCode，调用IM服务验证AuthCode。
 6. IM服务验证AuthCode成功后，返回该用户的用户ID。
-7. 应用服务获取用户ID，确认登陆成功，返回用户信息给前端页面。
-8. 前端页面登陆成功，得到了当前用户的用户信息。
+7. 应用服务获取用户ID，确认登录成功，返回用户信息给前端页面。
+8. 前端页面登录成功，得到了当前用户的用户信息。
 > authCode的有效期是5分钟，所以拿到authCode后请尽快验证，另外确保所有服务的时间同步。
 
 ## config
