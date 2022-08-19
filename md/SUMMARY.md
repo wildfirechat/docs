@@ -3,6 +3,7 @@
 * [产品介绍](README.md)
 * [体验野火](demo/README.md)
 * [开源项目](opensource/README.md)
+* [收费项目](price/README.md)
 * [快速开始](quick_start/README.md)
     * [服务器部署](quick_start/server.md)
     * [安卓编译](quick_start/android.md)
