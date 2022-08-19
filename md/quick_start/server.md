@@ -1,8 +1,8 @@
 # 服务器部署
 
-**包含两个服务：IM服务社区版(简称IM SERVER) 和 Demo应用服务(简称APP SERVER)**
+**包含两个服务：社区版IM服务(简称IM SERVER) 和 Demo应用服务(简称APP SERVER)**
 
-服务器提供[IM服务社区版](https://github.com/wildfirechat/im-server/releases)和[Demo应用服务](https://github.com/wildfirechat/app_server/releases)软件。社区版是IM通讯服务器，负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登录等功能。
+服务器需要部署社区版IM服务和Demo应用服务。IM服务负责发送消息等IM业务；Demo服务是模拟客户的应用服务，提供登录等功能。
 
 ## 环境需求
 1. 系统要求
@@ -16,8 +16,9 @@
 ## 野火IM服务器的部署
 #### 准备软件版本
 IM服务社区版可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。
->> 这里有个限制IM服务要使用80端口，因为客户端强制绑定的是80端口。在云服务器上运行必须经过备案才能和域名一起使用80端口。另外还需要使用1883端口，请确保80/1883 TCP端口畅通。
->> 需要注意软件包和源码的区别，这里操作的是软件包不是源码，如果您下载的是源码，请按照说明编译出软件包来运行。
+> 这里有个限制IM服务要使用80端口，因为客户端强制绑定的是80端口。在云服务器上运行必须经过备案才能和域名一起使用80端口。另外还需要使用1883端口，请确保80/1883 TCP端口畅通。
+
+> 如果您下载的是源码，请按照说明编译出软件包来运行。
 
 #### 运行
 
@@ -49,7 +50,7 @@ ps -ef | grep wildfirechat
 
 ## Demo应用服务器的部署
 #### 下载软件
-Demo应用服务软件可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/app-server-release-latest.tar.gz)，也可以下载源码自己编译。下载的软件包解压后得到一个jar包和一个config文件，如果是自己编译，需要把源码中的config文件拷贝到jar包的同目录下。
+Demo应用服务软件可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/app-server-release-latest.tar.gz)，也可以从[Github](https://github.com/wildfirechat/app_server)或者[码云](https://gitee.com/wfchat/app_server)下载源码编译。下载的软件包解压后得到一个jar包和一个config文件，如果是自己编译，需要把源码中的config文件拷贝到jar包的同目录下。
 
 #### 运行
 执行```java -jar app-0.xx.jar```。
