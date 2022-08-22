@@ -14,7 +14,7 @@ local.media.storage.root ../fs
 ```
 #专业版的开关名称是media.server.media_type，社区版的是media.server.use_qiniu
 media.server.use_qiniu 1
-media.server_url  http://up.qbox.me
+media.server_url  up.qbox.me
 media.access_key tU3vdBK5BL5j4N7jI5N5uZgq_HQDo170w5C9Amnn
 media.secret_key YfQIJdgp5YGhwEw14vGpaD2HJZsuJldWtqens7i5
 
@@ -78,7 +78,7 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 ![endpont&domain](./assert/aliyun_oss_endpoint_bucket_domain.png)
 同样配置另外个一个桶的名称和域名到头像和收藏类型。完整配置完如下：
 ```
-media.server_url  http://oss-cn-beijing.aliyuncs.com
+media.server_url  oss-cn-beijing.aliyuncs.com
 media.server_port 80
 media.server_ssl_port 443
 media.access_key 0M7YVO70QPKBPWBZW5FW
