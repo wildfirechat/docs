@@ -12,10 +12,9 @@
 
    JRE：1.8
 
-
 ## 野火IM服务器的部署
 #### 准备软件版本
-IM服务可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。
+IM服务可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。解压后，修改```/config/wildfirechat.conf```文件，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1、0.0.0.0或者localhost***。
 > 这里有个限制IM服务要使用80端口，因为客户端强制绑定的是80端口。在云服务器上运行必须经过备案才能和域名一起使用80端口。另外还需要使用1883端口，请确保80/1883 TCP端口畅通。
 
 > 如果您下载的是源码，请按照说明编译出软件包来运行。
