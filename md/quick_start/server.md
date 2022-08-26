@@ -14,7 +14,7 @@
 
 ## 野火IM服务器的部署
 #### 准备软件版本
-IM服务可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。解压后，修改```/config/wildfirechat.conf```文件，修改```server.ip```为服务器ip地址。***注意一定要改成客户端可以访问的地址，不能用127.0.0.1、0.0.0.0或者localhost***。
+IM服务可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。
 > 这里有个限制IM服务要使用80端口，因为客户端强制绑定的是80端口。在云服务器上运行必须经过备案才能和域名一起使用80端口。另外还需要使用1883端口，请确保80/1883 TCP端口畅通。
 
 > 如果您下载的是源码，请按照说明编译出软件包来运行。
@@ -59,7 +59,7 @@ ps -ef | grep wildfirechat
 等待10秒钟，在浏览器中输入```http://${服务器的IP}:8888/```，查看是否返回OK。
 
 ## 问题排查
-如果部署后客户端无法连接，请按照[这里](../faq/server/q2.md)说明来排查。
+如果部署后客户端无法连接，请按照[这里](../faq/server/q1.md)说明来排查。
 
 ## 更多
 快速开始只是为了让客户更快更方便地体验到野火IM地功能，上线前需要仔细阅读整个文档（全部读下来只需要2～4个小时，但会有很大地帮助，强烈建议全部读一遍），然后按照[上线检查事项](../blogs/上线检查事项.md)，核对每一条是否完成。
