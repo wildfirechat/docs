@@ -114,4 +114,4 @@ ChannelServiceApi channelServiceApi = new ChannelServiceApi(im_url, channelId, c
 ```
 
 3. 使用说明
-请参考源码```${ProjectPath}/sdk/src/main/java/cn.wildfirechat.sdk.Main.java```。如果有问题或者缺失，请提issue。
+请参考源码```${ProjectPath}/sdk/src/main/java/cn/wildfirechat/sdk/Main.java```。如果有问题或者缺失，请提issue。
