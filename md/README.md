@@ -6,7 +6,23 @@
 一直以来给自己的产品加上即时通讯和实时音视频能力都是一件比较困难的事情，要么是架构落后性能不好（XMPP），要么是费用贵业务受制于人安全有隐忧（云通讯公司），要么功能不全二次开发困难。我们的目标是提供一个**安全可控高效易用低成本**的IM和RTC组件，让拥有IM和RTC能力不再是一种奢望，让沟通不再是难事。
 
 ## 我们提供的产品
-野火IM提开源的社区版服务，移动客户端开源全部源码（音视频SDK和协议栈不开源）。客户需要把服务器软件部署到自己服务器，然后集成SDK到客户APP。当然我们提供的应用也可以直接使用。另外提供功能更为强大的专业版服务，还有Web客户端、PC客户端和小程序客户端，实时音视频也提供有高级版本。
+野火IM提供完整的即时通讯和实时音视频解决方案，以及丰富的周边生态系统，主要包括：
+
+1. 即时通讯服务(IM Server)，点击 [GitHub](https://github.com/wildfirechat/im-server) 或 [码云](https://gitee.com/wfchat/im-server)，查看源码
+2. Android 客户端，点击 [GitHub](https://github.com/wildfirechat/android-chat) 或 [码云](https://gitee.com/wfchat/android-chat)，查看源码
+3. iOS 客户端，点击 [GitHub](https://github.com/wildfirechat/ios-chat) 或 [码云](https://gitee.com/wfchat/ios-chat)，查看源码
+4. PC 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-pc-chat) 或 [码云](https://gitee.com/wfchat/vue-pc-chat)，查看源码
+5. Web 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-chat) 或 [码云](https://gitee.com/wfchat/vue-chat)，查看源码
+6. 小程序 Demo，点击 [GitHub](https://github.com/wildfirechat/wx-chat) 或 [码云](https://gitee.com/wfchat/wx-chat)，查看源码
+7. uni-app Demo，点击 [GitHub](https://github.com/wildfirechat/uni-chat) 或 [码云](https://gitee.com/wfchat/uni-chat)，查看源码
+8. 应用服务，点击 [GitHub](https://github.com/wildfirechat/app-server) 或 [码云](https://gitee.com/wfchat/app-server)，查看源码
+9. 机器人服务，点击 [GitHub](https://github.com/wildfirechat/robot_server) 或 [码云](https://gitee.com/wfchat/robot_server)，查看源码
+10. 开发平台，点击 [GitHub](https://github.com/wildfirechat/open-platform) 或 [码云](https://gitee.com/wfchat/open-platform)，查看源码
+11. 频道（公众号）管理系统，点击 [GitHub](https://github.com/wildfirechat/channel-platform) 或 [码云](https://gitee.com/wfchat/channel-platform)，查看源码
+12. IM 管理后台系统
+13. 更多内容，请点击 [Github](https://github.com/wildfirechat) 或 [码云](https://gitee.com/wfchat) 查看
+
+请点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看产品截图展示
 
 ## 野火IM的技术特点
 * 极致地硬件利用率，IM服务最低128M内存即可运行，上不封顶。
