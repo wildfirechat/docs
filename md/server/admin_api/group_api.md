@@ -37,8 +37,8 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 	      \"members\": [                  \
           {                              \
 		         \"member_id\": \"memberId1\",  \
-		         \"name\": \"老王的朋友们\",       \
-		         \"owner\": \"laowang\"        \
+		         \"alias\": \"老王的朋友\",       \
+		         \"type\": \"0\"        \
 	        }                            \
         ]                            \
       }                             \
