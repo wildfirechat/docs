@@ -71,6 +71,9 @@ iOS：
 @end
 ```
 
+## Server API
+通过server api发送/获取消息和IM消息回调，没有包含的消息内容，包含的是消息负载，详情请参考[消息负载](./message_payload.md)。
+
 ## 消息类型
 消息分成2大类
 1. 普通消息

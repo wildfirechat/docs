@@ -29,8 +29,11 @@ public class MessagePayload {
 }
 ```
 
+#### Server API
+通过server api发送/获取消息及IM服务回调消息时，消息内容都是MessagePayload，MessagePayload与客户端完全一致（客户端的payload有个二进制属性，api使用的是经过base64编码的）。服务处理时需要注意跟客户端保持一致，比如服务器想发送图片消息，则需要检查一下客户端中图片消息encode的payload格式：设置payload的消息类型为3，remoteUrl为图片的地址（图片需要先上传到对象存储服务得到这个链接），mediaType为图片类型，basedBinaryContent为图片缩略图数据的base64编码。这样发送这个payload到客户端就能正确转化为图片消息。其他消息以此类推。
+
 #### contentType
-消息内容类型，根据该类型decode成对应的消息内容。系统内置了如下消息类型
+消息内容类型，根据该类型decode成对应的消息内容。系统内置了如下消息类型，也可以添加自定义消息：
 
 | 内容类型 | 值 | 说明 |
 | ------- | --------- | ----------- |
@@ -73,11 +76,17 @@ public class MessagePayload {
 #### pushData
 对于自定义消息，如果需要推送需要encode此字段。推送内容会使用此字段。此字段不显示在推送内容中，但可以作为推送点击之后的数据。比如内容为订单号，点击打开对应订单。
 
+#### binaryContent;
+二进制内容。
+
 #### mentionedType
 提醒类型（就是@某人或@全体）。0 不提醒；1 对mentionedTargets里的user进行提醒；2 对群内所有人提醒。
 
 #### mediaType
 媒体类型，媒体消息内容使用，用来区别在服务器端文件对应的bucket。
+
+#### remoteMediaUrl
+媒体类消息的远程地址。
 
 #### local****
 本地使用内容，不会在网络发送。比如媒体文件下载下来需要记录路径，或者本地处理过需要标记一些内容等。
