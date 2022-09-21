@@ -40,7 +40,6 @@ http://domain/robot/message/send
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| sender | string | 是 | 发送者ID |
 | conv | [json](../admin_api/models.md#Conversation) | 是 | 会话 |
 | payload | [json](../admin_api/models.md#MessagePayload) | 是 | 消息负载 |
 
@@ -55,7 +54,6 @@ http://domain/robot/message/send
 ```
 curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
   "{                       \
-    \"sender\":\"robota\",       \
     \"conv\": {              \
       \"type\":1,            \
       \"target\":\"a\",      \
