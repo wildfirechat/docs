@@ -169,3 +169,6 @@ A：野火对高校及IT类培训机构提供有教育优惠计划，在不以�
 
 ## 如果避免消息乱序？
 野火消息发送是并发的，如果快速发送消息，就有可能后发先到。如果想要保持消息的顺序，需要修改一下SDK，让消息发送改成顺序发送，只有前一条发送成功后再发送后一条。存储类消息，可以先保存到协议栈，等到要发送时再调用sendSavedMessage方法发送。
+
+## 野火Demo上的隐私协议和用户协议源文件在哪里？
+可以参加借鉴野火的隐私协议和用户协议，注意修改为自己的信息。源文件已开源，请点击[码云](https://gitee.com/wfchat/docs/tree/master/md/agreement_privacy)和[Github](https://github.com/wildfirechat/docs/tree/master/md/agreement_privacy)下载。
