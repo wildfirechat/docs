@@ -110,6 +110,6 @@ ChatUIKit包含以下页面：
    1. 继承```SearchableModule```，并实现其方法，参考```GroupSearchViewModule```
    2. 参考```SearchPortalActivity#initSearchModule```配置当前想进行的搜索项，参考```SearchPortalActivity#search```开始搜索
 
-8. 推送继承
+8. 推送集成
 
-   todo
+   参考[push-server](https://github.com/wildfirechat/push_server)

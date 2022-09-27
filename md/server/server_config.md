@@ -33,7 +33,7 @@ token.key hellomyimsecret
 请参考[对象存储服务器选择](./oss.md)
 
 #### 推送配置
-请参考[推送说明](.push_config.md)
+请参考[推送说明](https://github.com/wildfirechat/push_server)
 
 #### 敏感词配置
 ```
