@@ -81,6 +81,7 @@
 * [PC开发](pc/README.md)
     * [二次开发](pc/dev.md)
 * [Web开发](web/README.md)
+    * [IM服务配置](web/im_server_config.md)
     * [二次开发](web/integration.md)
 * [音视频](webrtc/README.md)
     * [TURN服务](webrtc/turn_server.md)
