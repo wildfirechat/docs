@@ -318,6 +318,100 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+
+## 获取用户在线状态
+#### 地址
+```
+http://domain:18080/admin/user/kickoff_client
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| first | string | 是 | 用户ID |
+| second | string | 否 | clientId。当clientId存在会踢掉对应用户对应客户端；当clientId为空时，踢掉用户的所有客户端 |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"first\":\"a\"}" http://localhost:18080/admin/user/kickoff_client
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 获取机器人信息
+#### 地址
+```
+http://domain:18080/admin/user/get_robot_info
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| robotId | string | 是 | 机器人ID |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| name | string | 是 | 登录名 |
+| displayName | string | 是 | 显示名字 |
+| portrait | string | 否 | 用户头像 |
+| mobile | string | 否 | 用户手机号码 |
+| email | string | 否 | 用户邮箱 |
+| address | string | 否 | 用户地址 |
+| company | string | 否 | 用户公司 |
+| extra | string | 否 | 附加信息 |
+| updateDt | long | 否 | 最后更新时间 |
+| owner | string | 否 | 机器人拥有者id |
+| secret | string | 否 | 机器人密钥 |
+| callback | string | 否 | 回调地址 |
+| robotExtra | string | 否 | 机器人附加信息 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"robotId\":\"a\"}" http://localhost:18080/admin/user/get_robot_info
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userId":"a",
+    "name":"usera",
+    "owner":"userId2"
+    "secret":"123456"
+  }
+}
+```
+
+## 销毁用户或者机器人
+#### 地址
+```
+http://domain:18080/admin/user/destroy
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是  | 被删除的用户ID或者机器人ID |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"userId1\"}" http://domain:18080/admin/user/destroy
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+
+
 ## 验证用户
 此方法是用于开放平台验证用户身份的，详情请参考[开放平台](../../open/README.md).
 #### 地址
