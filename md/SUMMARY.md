@@ -171,3 +171,4 @@
   * [野火端到端及阅后即焚功能介绍](blogs/野火端到端及阅后即焚功能介绍.md)
   * [多人音视频的主动加入功能](blogs/多人音视频的主动加入功能.md)
   * [野火IM使用方式](blogs/野火IM使用方式.md)
+  * [Systemd Service部署](blogs/systemd.md)
