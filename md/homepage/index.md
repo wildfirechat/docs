@@ -14,7 +14,7 @@
 
 体验移动端，请微信扫码：
 
-![扫码下载](https://static.wildfirechat.net/download_qrcode.png)
+![扫码下载](http://static.wildfirechat.net/download_qrcode.png)
 
 体验Web端，请点击[链接](https://web.wildfirechat.net)，然后用野火IM移动客户端扫码登录。
 

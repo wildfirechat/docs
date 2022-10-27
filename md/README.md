@@ -23,7 +23,7 @@
 13. IM 管理后台系统
 14. 更多内容，请点击 [Github](https://github.com/wildfirechat) 或 [码云](https://gitee.com/wfchat) 查看
 
-请点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看产品截图展示
+请点击 [这儿](http://static.wildfirechat.cn/wf-gallery.html) 查看产品截图展示
 
 ## 野火IM的技术特点
 * 极致地硬件利用率，IM服务最低128M内存即可运行，上不封顶。
