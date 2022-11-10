@@ -5,3 +5,6 @@
 ## 如何使用
 
 下载后打开 wstool.html 即可使用
+
+## 说明
+本目录下的代码拷贝自[wstool](https://github.com/easy-swoole/wstool)
