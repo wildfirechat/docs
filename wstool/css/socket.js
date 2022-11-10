@@ -9,7 +9,7 @@ var Vm = new Vue({
         consoleData: [], // 控制台日志
         messageData: [], // 消息记录
         instance: WebSocket, // ws instance
-        address: 'ws://127.0.0.1:9501', // 链接地址
+        address: 'ws://im-server-host:8083', // 链接地址
         alert: {
             class: 'success',
             state: false,

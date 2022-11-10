@@ -56,10 +56,16 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">服务地址</div>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="输入不带前缀的服务器地址" v-model="address">
+                                                <input type="text" class="form-control" placeholder="ws://im-server-host:8083" v-model="address">
                                                 <div class="input-group-append">
                                                     <button type="button" class="btn btn-block" :class="connected ? 'btn-danger' : 'btn-success'" @click="autoWsConnect">{{ connected ? '关闭连接' : '开启连接' }}</button>
                                                 </div>
+                                            </div>
+                                            <div class="wf-tip">
+                                                说明：
+                                                <div>1. im-server-host 填节点域名</div>
+                                                <div>2. websocket(ws) 端口默认是 8083</div>
+                                                <div>3. secure websocket(wss) 端口默认是 8084</div>
                                             </div>
                                         </div>
                                     </div>

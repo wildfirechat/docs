@@ -35,3 +35,5 @@ pre {font-family: monospace}
 .console-box, .message-box {display: block;overflow: auto;padding: 1rem}
 
 .console-box {max-height: calc(100vh - 485px)}
+
+.wf-tip {margin-top: 10px; color: #6c757d;}
