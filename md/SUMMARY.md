@@ -114,8 +114,6 @@
       * [小米手机没有音视频推送](faq/android/q4.md)
       * [点击消息推送通知，如何根据消息类型，跳转到不同的界面？](faq/android/q5.md)
       * [收不到推送](https://github.com/wildfirechat/push_server)
-    * [web问题](faq/web.md)
-      * [如何启用https](faq/web/https.md)
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
     * [PC问题](faq/pc.md)
