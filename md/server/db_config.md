@@ -9,6 +9,12 @@
 ## 数据库版本
 mysql5.7及以上，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingbase V8版本及以上；达梦8版本及以上；SQL Server 2014及以上。
 
+## 支持长索引
+mysql5.7默认不支持长索引，其他数据库都没有问题。如果是mysql5.7，请执行如下命令:
+```
+set global innodb_large_prefix=on;
+```
+
 ## 修改事物隔离级别
 大多数的数据库系统的默认事务隔离级别都是 ```Read committed```，但MySQL默认事务隔离级别是：```Repeatable read```。需要把Mysql的默认等级修改成 ```Read committed```，不然高压力情况下容易出现事务超时的问题，修改方法如下：
 ```
