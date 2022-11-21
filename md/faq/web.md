@@ -1,7 +1,7 @@
 # Web FAQ
 
 ## 前置说明
-1. Web 版，依赖于专业版IM Server，请确保已正确部署专业版IM Server，可通过[这个在线工具](https://docs.wildfirechat.cn/web/wstool/)测试专业版 IM Server 是否成功监听 WebSocket 请求。注意，测试时，服务器地址，需要带上端口。
+1. Web 版，依赖于专业版IM Server，请确保已正确部署专业版IM Server，可通过[这个在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)测试专业版 IM Server 是否成功监听 WebSocket 请求。注意，测试时，服务器地址，需要带上端口。
 2. 仔细阅读[web二次开发](./../web/integration.md)
 3. 请打开浏览器的控制台，查看网络请求和日志。
 
