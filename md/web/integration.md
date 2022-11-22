@@ -7,7 +7,6 @@
    * ```ROUTE_PORT```：http route请求的端口，默认是80；当配置https之后，需要修改为对应端口，如443等
    * ```APP_SERVER```：应用服务器地址，需要指向自行部署的```app-server```，注意端口不能省略、http/https需要严格区分。
    * ```ICE_ADDRESS```、```ICE_USERNAME```、```ICE_PASSWORD```：音视频通话相关的turn服务信息，开发测试的时候，可以直接使用现有配置，上线时，请修改了指向自行部署的turn服务。
-   * ```WEB_APP_ID```、```WEB_APP_KEY```：对应的```appId```和```appKey```，这些信息在邮件中提供，请仔细查阅相关邮件。
 2. 根据邮件的说明，替换```proto.min.js```
 3. 没有其他配置了，执行```npm run dev```，浏览器访问```localhost:3000```即可访问，然后用野火IM移动端扫码登录。
 
@@ -20,7 +19,6 @@
    * ```ROUTE_PORT```：http route请求的端口，默认是80；当配置https之后，需要修改为对应端口，如443等
    * ```APP_SERVER```：应用服务器地址，需要指向自行部署的```app-server```，注意端口不能省略。
    * ```ICE_ADDRESS```、```ICE_USERNAME```、```ICE_PASSWORD```：音视频通话相关的turn服务信息，开发测试的时候，可以直接使用现有配置，上线时，请修改了指向自行部署的turn服务。
-   * ```WEB_APP_ID```、```WEB_APP_KEY```：对应的```appId```和```appKey```，这些信息在邮件中提供，请仔细查阅相关邮件。
 3. 根据邮件的说明，替换```proto.min.js```
 4. 初始化
    调用```wfc.init()```进行初始化，全局只需调用一次，需要在应用启动的时候调用。

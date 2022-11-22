@@ -17,11 +17,9 @@ A. Web SDK必须跟专业版配合使用。因为Web SDK的同步机制与移动
 ### Q. route返回22
 A. 错误码22，表示未授权，请确认
 
-    1. ```config.js```里面```WEB_APP_ID```和```WEB_APP_KEY```是否正确修改
-    2. ```proto.min.js```是否正确替换
-    3. ```config.js```里面是否正确修改```APP_SERVER```
-
-> ```WEB_APP_ID```，```WEB_APP_KEY```，```proto.min.js```由邮件提供，请查阅相关邮件
+    1. ```proto.min.js```是否正确替换
+    2. ```config.js```里面是否正确修改```APP_SERVER```
+    3. 是否已正确部署专业版```im-server```
 
 ### Q. 扫码之后，无法进入主页，连接状态返回-1
 A. 参考上一个问题
@@ -41,7 +39,7 @@ A. ```Web SDK```的依赖如下：
 A. [回答](./web/https.md)
 
 ### ```npm run serve```之后，页面白屏，什么也不显示
-A. ```APP_SERVER```、```IM_SERVER_HOST```或```WEB_APP_KEY```配置错误，具体请端口控制台，看下控制台提示。
+A. ```APP_SERVER```配置错误，具体请端口控制台，看下控制台提示。
 
 ### Q. 二维码不显示
 A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)

@@ -36,9 +36,7 @@ todo
 ## web-chat
 1. ```proto.min.js```是否已替换?
 2. ```config.js```里面的```APP_SERVER```是否已修改？
-3. ```config.js```里面的```WEB_APP_ID```是否已修改？
-4. ```config.js```里面的```WEB_APP_KEY```是否已修改？
-5. ```config.js```里面的```USE_WSS```是否已修改？
+3. ```config.js```里面的```USE_WSS```是否已修改？
 
 ## vue-pc-chat
 1. ```.node```文件是否已经替换？
@@ -48,10 +46,8 @@ todo
 ## wx-chat
 1. ```proto.min.js```是否已替换?
 2. ```config.js```里面的```APP_SERVER```是否已修改？
-3. ```config.js```里面的```WEB_APP_ID```是否已修改？
-4. ```config.js```里面的```WEB_APP_KEY```是否已修改？
-5. ```config.js```里面的```USE_WSS```是否已修改？
-6. 是否参考```wx-chat```的```README```进行了开发工具的配置？
+3. ```config.js```里面的```USE_WSS```是否已修改？
+4. 是否参考```wx-chat```的```README```进行了开发工具的配置？
 
 ---------
 **完成上面的检查之后**，如果还存在问题，请给我们提供客户端日志。
