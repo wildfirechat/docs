@@ -48,3 +48,6 @@ A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制�
 
 ### Q. ```pc_session```接口提示跨域
 A. 原因是web端代码和App Server不匹配，请更新App Server
+
+### Q. 如何修改快捷键
+ A. ```background.js```中搜索```regShortcut```
