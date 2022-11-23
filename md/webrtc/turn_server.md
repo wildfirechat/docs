@@ -67,6 +67,12 @@ turnserver -v -r ${公网IP}:3478 -a -o -c /usr/local/etc/turnserver.conf
 
 > 当Type为"relay"且后面的地址为您的公网IP时，表明turn服务部署成功，否则为失败。
 
+#### 关掉日志
+当turn服务正常工作后，可以考虑关掉日志，避免生成大量的日志文件占满磁盘空间。在配置文件中，添加如下这句话：
+```
+log-file=/dev/null
+```
+
 #### 进阶设置
 启用TLS，生成证书并配置证书，这个就从网上自己找吧。
 
