@@ -1,5 +1,5 @@
 # 对象存储服务
-野火IM的消息分为普通消息和媒体消息。媒体消息一般比较大，发送时需要先上传媒体文件到对象存储服务器，得到一个url地址，然后再把包含这个url地址的消息发出去。野火IM社区版支持内置对象存储服务器和七牛对象存储服务器，专业版还可以选择阿里云对象存储和野火私有对象存储。客户端对使用的对象存储服务透明，不用做任何修改和配置。
+野火IM的消息分为普通消息和媒体消息。媒体消息一般比较大，发送时需要先上传媒体文件到对象存储服务器，得到一个url地址，然后再把包含这个url地址的消息发出去。野火IM社区版支持内置对象存储服务器和七牛对象存储服务器，专业版还可以选择阿里云对象存储、腾讯云对象存储、华为云对象存储和野火私有对象存储，专业版还可以使用野火对象存储网关来对接任意对象存储服务。客户端对使用的对象存储服务透明，不用做任何修改和配置。
 
 ## 使用内置对象存储服务器。
 修改如下配置，```media.server.use_qiniu```(在专业版的配置项为```media.server.media_type```)配置为0，这样所有媒体文件都将上传到fs目录，按照日期和类型存放。
@@ -7,7 +7,7 @@
 media.server.use_qiniu 0
 local.media.storage.root ../fs
 ```
-特别提示：内置对象存储不是一个商业级别的对象存储服务，很多基本的对象存储功能都不支持，仅用来做快速验证和开发测试使用，特别是不支持HTTPS，这样Web的HTTPS站点就无法使用。建议使用七牛云存储，专业版客户也可以使用阿里云云存储和野火私有对象存储。
+特别提示：内置对象存储不是一个商业级别的对象存储服务，很多基本的对象存储功能都不支持，仅用来做快速验证和开发测试使用，特别是不支持HTTPS，这样Web的HTTPS站点就无法使用。建议使用七牛云存储，专业版客户也可以使用野火私有对象存储和其他支持的专业级别的对象存储服务。
 
 ## 七牛服务器
 去七牛官网申请存储服务，然后在同一个区域内创建至少2个桶（bucket）（一个用来保存头像/收藏等需要长期保存的桶，另外一个用来保存会话内发送的图片、文件、语音、视频等可以定期清除的桶。建议为每种媒体类型都创建一个桶，这里示例就只创建2个桶，可以参考示例为每个类型创建一个桶。另外bucket的权限要选择公开）。修改如下配置，```media.server.use_qiniu```配置为1，填写```access_key```和```secret_key```，```server_url```为上传地址，跟您选择的区有关，请选择正确的地址（下面有地址列表）。然后为不同类型的媒体文件创建不同的bucket，并配置正确。
@@ -78,6 +78,7 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 ![endpont&domain](./assert/aliyun_oss_endpoint_bucket_domain.png)
 同样配置另外个一个桶的名称和域名到头像和收藏类型。完整配置完如下：
 ```
+media.server.media_type 2
 media.server_url  oss-cn-beijing.aliyuncs.com
 media.server_port 80
 media.server_ssl_port 443
@@ -132,6 +133,7 @@ media.bucket_XXXX_domain https://wfcim.oss-cn-beijing.aliyuncs.com
 ![endpont&domain](./assert/tencent_oss_endpoint_bucket_domain.png)
 同样配置另外个一个桶的名称和域名到头像和收藏类型。完整配置完如下：
 ```
+media.server.media_type 5
 media.server_host cos.ap-nanjing.myqcloud.com
 media.server_port 80
 media.server_ssl_port 443
@@ -173,8 +175,59 @@ Web用户需要设置跨域信息，从下图进入设置
 ### 使用HTTPS
 腾讯云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS。
 
+## 使用使用华为云OBS
+野火IM专业版支持华为云对象存储，在同一个区域内创建至少2个桶（bucket）（一个用来保存头像/收藏等需要长期保存的桶，另外一个用来保存会话内发送的图片、文件、语音、视频等可以定期清除的桶。所有的桶都要在同一个区域内，不能分散在不同的区域。建议为每种媒体类型都创建一个桶，这里示例就只创建2个桶，可以参考示例为每个类型创建一个桶）。如下图所示：
+![bucket list](./assert/huawei_oss_bucket_list.png)
+
+点击第一个bucket，按照下图进行配置。
+![endpont&domain](./assert/huawei_oss_endpoint_bucket_domain.png)
+同样配置另外个一个桶的名称和域名到头像和收藏类型。完整配置完如下：
+```
+media.server.media_type 6
+media.server_host obs.cn-north-4.myhuaweicloud.com
+media.server_port 80
+media.server_ssl_port 443
+media.access_key 0M7YVO70QPKBPWBZW5FWM7YVO70QPK
+media.secret_key 1Qjap+Nfs3P2BujHCHDuqrsrYi0zNn8
+
+## bucket名字及Domain
+media.bucket_general_name wfc-media
+media.bucket_general_domain https://wfc-media.obs.cn-north-4.myhuaweicloud.com
+media.bucket_image_name wfc-media
+media.bucket_image_domain https://wfc-media.obs.cn-north-4.myhuaweicloud.com
+media.bucket_voice_name wfc-media
+media.bucket_voice_domain https://wfc-media.obs.cn-north-4.myhuaweicloud.com
+media.bucket_video_name wfc-media
+media.bucket_video_domain https://wfc-media.obs.cn-north-4.myhuaweicloud.com
+media.bucket_file_name wfc-media
+media.bucket_file_domain https://wfc-media.obs.cn-north-4.myhuaweicloud.com
+media.bucket_sticker_name wfc-media
+media.bucket_sticker_domain https://wfc-media.obs.cn-north-4.myhuaweicloud.com
+media.bucket_moments_name wfc-static
+media.bucket_moments_domain https://wfc-static.obs.cn-north-4.myhuaweicloud.com
+media.bucket_portrait_name wfc-static
+media.bucket_portrait_domain https://wfc-static.obs.cn-north-4.myhuaweicloud.com
+media.bucket_favorite_name wfc-static
+media.bucket_favorite_domain https://wfc-static.obs.cn-north-4.myhuaweicloud.com
+```
+到这里您会发现，```media.access_key```和```media.secret_key```还没有配置，这个是您的账户的API密钥。点击您账户的头像，选择我的凭证，点访问密钥，新增访问密钥
+![AKSK](./assert/huawei_oss_aksk.png)
+
+
+### 设置访问权限
+点开每个桶的设置，选择权限管理标签页，然后设置读写权限为公共读，如下图所示。也可以再创建桶时选择公开读：
+![权限管理](./assert/huawei_oss_bucket_privacy.png)
+
+### Web用户
+Web用户需要设置跨域信息，从下图进入设置
+![CORS](./assert/huawei_oss_cors.png)
+
+### 使用HTTPS
+华为云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS。
+
 ## 使用野火对象存储网关
 专业版IM服务还可以使用野火对象存储网关来对接其它任意类型的存储服务，比较常见的FastDFS，HDFS或者其它云服务等等。实现的方法是上传时上传到网关，网关再对接到客户选定的存储服务。具体使用方法请按照[野火对象存储网关](https://github.com/wildfirechat/wf-oss-gateway)说明部署对接。
+
 
 ## 对象存储的安全性
 请参考[文件存储的安全性问题](../blogs/文件存储的安全性问题.html)
