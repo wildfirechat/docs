@@ -6,8 +6,8 @@
 ```
 // 开启WSS
 static USE_WSS = true;
-// WSS 端口
-static WSS_PORT = 8084;
+// HTTPS 端口
+static ROUTE_PORT = 443;
 
 // APP SERVER的地址。启用https时，APP SERVER必须是https地址
 static APP_SERVER = 'https://app.wildfirechat.net';
