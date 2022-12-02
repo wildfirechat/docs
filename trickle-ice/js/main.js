@@ -42,8 +42,8 @@ const allServersKey = 'servers';
 
 function setDefaultServer(serversSelect) {
   const o = document.createElement('option');
-  o.value = '{"urls":["turn:turn.wildfirechat.cn:3478"],"username":"wfchat","credential":"wfchat"}';
-  o.text = 'turn:turn:wildfirechat.cn:3478 [wfchat:wfchat]';
+  o.value = '{"urls":["turn:turn.wildfirechat.net:3478"],"username":"wfchat","credential":"wfchat1"}';
+  o.text = 'turn:turn:wildfirechat.cn:3478 [wfchat:wfchat1]';
   serversSelect.add(o);
 }
 
