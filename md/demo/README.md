@@ -1,4 +1,5 @@
 # 体验即时通讯Demo
+> 野火IM 产品截图展示，可以点击 [这儿](http://static.wildfirechat.cn/wf-gallery.html) 查看
 
 ## 移动端
 
