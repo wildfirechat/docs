@@ -15,7 +15,7 @@ connect函数没有回调函数，只能通过连接回调来判断连接状态�
 |  ----  | ----  | ----  |  ----- |
 | ConnectionStatusSecretKeyMismatch  | -6 | 会话密钥错误 | 一般是clientId没有从SDK中连接，或者有多个IM服务，获取token跟客户端连接的服务不是同一个。 |
 | ConnectionStatusTokenIncorrect  | -5 | token错误 | 需要检查token是否错误 |
-| ConnectionStatusServerDown  | -4 | IM Server服务无法连通 |  需要检查服务器是否当机或者网络出现问题 |
+| ConnectionStatusServerDown  | -4 | IM Server服务无法连通 |  需要检查服务器是否宕机或者网络出现问题 |
 | ConnectionStatusRejected  | -3 | 连接被服务器拒绝 | 一般是用户被封禁 |
 | ConnectionStatusLogout  | -2 | 退出登录 |        |
 | ConnectionStatusUnconnected  | -1 | 未连接 |    |

@@ -15,7 +15,7 @@ FROM information_schema.tables WHERE engine='InnoDB') A;
 ### 2. 配置 innodb_log_file_size
 使用足够大的写入缓存 innodb_log_file_size
 
-可是须要注意假设用 1G 的 innodb_log_file_size 。假如server当机。须要 10 分钟来恢复。
+可是须要注意假设用 1G 的 innodb_log_file_size 。假如server宕机。须要 10 分钟来恢复。
 
 推荐 innodb_log_file_size 设置为 0.25 * innodb_buffer_pool_size
 
