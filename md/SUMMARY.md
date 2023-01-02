@@ -117,6 +117,7 @@
       * [收不到推送](https://github.com/wildfirechat/push_server)
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
+      * [https](faq/web/https.md)
     * [PC问题](faq/pc.md)
     * [小程序问题](faq/wx.md)
     * [音视频问题](faq/webrtc.md)
