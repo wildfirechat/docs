@@ -203,6 +203,8 @@ http_port 80
 #### Q. Server API如何发某种消息？如何处理消息回调来的消息？
 A. 服务和协议栈传输的只有一种类型的数据---消息负载（MessagePayload），在客户端的Client层会实现消息内容与消息负载的互相转换。因此在客户端发送/接收的是消息，而服务接口都是消息负载。如果要想通过Server API发送某种消息，需要去找客户端找到消息内容与消息负载的转换方式，发送正确的消息负载，客户端就会转换为对应的消息。同理服务端收到消息回调也是消息负载，需要与客户端参考对应关系，转为实际的消息。需要有一点注意的是Server API和回调的消息负载binaryContent是经过base64编码的。关于消息/消息内容/消息负载相关知识，请参考[基础知识](../base_knowledge/README.md)相关部分.
 
+如果从数据库读取消息，也是一样的，先参考 https://gitee.com/wfchat/im-server/blob/wildfirechat/broker/src/main/java/io/moquette/persistence/DatabaseStore.java  文件中的```MessageBundle getMessage(long messageId)```方法，把数据库中的内容转换成Payload，然后再参考客户端的Client的转换方法来转换成具体的消息类型。
+
 #### Q. 如何转存历史消息
 A.
 1. 为什么转存消息：野火默认（最长）保存历史消息是3年，在此之前的消息将被自动清除。在某些特殊用途下，可能需要保存更长的时间，因此需要将消息进行转存。也有可能数据库无法支持保存3年的消息，当数据库能力显著下降又无法对数据库配置升级时，也需要把消息进行转储来降低数据库的压力。
