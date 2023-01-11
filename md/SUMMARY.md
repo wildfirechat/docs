@@ -95,6 +95,7 @@
     * [JSSDK](open/jssdk.md)
     * [Server SDK](open/serversdk.md)
     * [Demo应用](open/application_demo.md)
+* [接口说明](api/README.md)
 * [code状态码](server/error_code.md)
 * [维护说明](base_knowledge/maintain.md)
 * [野火技术支持](base_knowledge/support.md)
