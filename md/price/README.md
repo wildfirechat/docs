@@ -46,7 +46,7 @@ IM相关，有如下收费项目
 | PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 2.9W/套 |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
 | 对讲SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
-| 管理后台 | 包括数据统计，用户管理，敏感词管理，群组管理，消息查看，消息撤回，机器人管理，频道管理。现有截图参考[后台管理](https://github.com/wildfirechat/admin/blob/master/README.md) | 3W（源码） |
+| 管理后台源码 | 包括数据统计，用户管理，敏感词管理，群组管理，消息查看，消息撤回，机器人管理，频道管理。现有截图参考[后台管理](https://github.com/wildfirechat/admin/blob/master/README.md)。可用于多个项目。 | 3W |
 
 > 专业版及各个SDK闭源绑定域名或IP，以上是每套的价格；音视频源码和管理后台源码以源码形式提供，可以用于多个项目。
 
