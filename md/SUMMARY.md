@@ -122,6 +122,7 @@
     * [PC问题](faq/pc.md)
     * [小程序问题](faq/wx.md)
     * [音视频问题](faq/webrtc.md)
+    * [Uniapp问题](faq/uniapp.md)
     * [最佳实践](faq/practicality.md)
       * [小表情大世界](faq/practicality/stickers.md)
 * [文章](blogs/README.md)
