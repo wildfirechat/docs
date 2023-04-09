@@ -48,4 +48,4 @@
 * [野火IM使用方式](野火IM使用方式.md)
 * [Systemd Service部署](systemd.md)
 * [签名验证](签名验证.md)
-* [野火协议栈支持TCP短链接](野火协议栈支持TCP短链接.md)
+* [基于TCP的短链接](基于TCP的短链接.md)
