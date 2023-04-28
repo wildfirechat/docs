@@ -9,7 +9,7 @@
 5. tt，头条小程序
 
 ## 下载代码
-目前 ，我们提供微信小程序Demo，需要自己打包，从[这里](https://github.com/wildfirechat/wx-chat)下载最新的源码。
+目前 ，我们提供微信小程序Demo，需要自己打包，从[Github](https://github.com/wildfirechat/wx-chat)或者[码云](https://gitee.com/wfchat/wx-chat)下载最新的源码。
 
 ## 编译
 需要使用微信开发者工具进行编译。

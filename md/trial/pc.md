@@ -5,7 +5,7 @@
 满足[前提条件](./README.md)要求.
 
 ## 下载代码
-PC需要自己打包，从[这里](https://github.com/wildfirechat/vue-pc-chat)下载最新的源码。
+PC需要自己打包，从[Github](https://github.com/wildfirechat/vue-pc-chat)或者[码云](https://gitee.com/wfchat/vue-pc-chat)下载最新的源码。
 
 ## 编译打包
 PC是使用的electron跨平台技术，打包时需要严格按照工程中的readme要求配置环境和打包步骤，否则非常可能打包出错。

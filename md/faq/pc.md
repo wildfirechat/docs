@@ -16,7 +16,7 @@ A. 请参考上一问题。
 A. 控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
 
 ## Q. 手机扫码，提示未登录或者错误
-A. AppServer从0.40版本起引入了shiro，所有移动端的请求都需要进行认证，您需要把移动端升级到最新版本另外退出重新登录一下，具体原因请参考[这里](https://github.com/wildfirechat/app-server/blob/master/README.md#版本兼容)。如果还是无法解决问题，请自行DEBUG一下，相关部分所有代码都是开源的。
+A. AppServer从0.40版本起引入了shiro，所有移动端的请求都需要进行认证，您需要把移动端升级到最新版本另外退出重新登录一下，具体原因请参考[这里](https://gitee.com/wfchat/app-server/blob/master/README.md#版本兼容)。如果还是无法解决问题，请自行DEBUG一下，相关部分所有代码都是开源的。
 
 ## Q. 开发者模式如何打开？发布版本如何关闭
 A. 我们默认的快捷键Ctrl(mac下CMD)+G，可以在代码中搜索```toggleDevTools```找到如下代码，可以修改或者注释掉这个功能。但我们还是建议客户保留这个功能，如果出现问题可以进行调试。可以设置一个比较复杂的组合键防止客户误触。
