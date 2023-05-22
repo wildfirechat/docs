@@ -30,11 +30,11 @@ cd ..
 
 #### 安装TURN服务
 ```
-wget http://turnserver.open-sys.org/downloads/v4.5.2/turnserver-4.5.2.tar.gz
+wget http://turnserver.open-sys.org/downloads/v4.5.1.3/turnserver-4.5.1.3.tar.gz
 
-tar -xvzf turnserver-4.5.2.tar.gz
+tar -xvzf turnserver-4.5.1.3.tar.gz
 
-cd turnserver-4.5.2 && ./configure
+cd turnserver-4.5.1.3 && ./configure
 
 make
 
@@ -75,6 +75,9 @@ log-file=/dev/null
 
 #### 进阶设置
 启用TLS，生成证书并配置证书，这个就从网上自己找吧。
+
+#### 已知问题
+turn服务4.5.2版本与OpenSSL1.1.1之前版本不兼容，所以要用4.5.1.3才行。
 
 #### 版本升级
 以上libEvent和turnserver的版本都是写文档时最新的版本，以后可能会有更新的版本发布，请自行替换成最新的或者自己喜欢的版本。
