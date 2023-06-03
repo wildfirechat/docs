@@ -28,7 +28,7 @@
 
 请使用微信扫描下方小程序码，体验野火IM小程序端
 
- ![野火IM](https://static.wildfirechat.net/wx.jpg)
+ ![野火IM](https://static.wildfirechat.net/qx.jpeg)
 
 ## uni-app
 请用HBuilder X 导入以下项目进行体验
