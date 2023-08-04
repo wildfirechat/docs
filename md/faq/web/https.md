@@ -1,8 +1,8 @@
-# ```web-chat```如何启用https？
+# ```vue-chat```如何启用https？
 为了提高网站的安全性，建议启用HTTPS支持。启用https支持需要下面五步，注意必须全部实现缺一不可。
 
-## 1. 修改```web-chat```代码，启用https
-修改```web-chat```项目```config.js```文件，开启```WSS```，设定端口，并修改```appserver```为HTTPS地址：
+## 1. 修改```vue-chat```代码，启用https
+修改```vue-chat```项目```config.js```文件，开启```WSS```，设定端口，并修改```appserver```为HTTPS地址：
 ```
 // 开启WSS
 static USE_WSS = true;

@@ -33,7 +33,7 @@ todo
 1. ```config.m```里面的```IM_HOST```是否修改？
 2. ```config.m```里面的```APP_SERVER_ADDRESS```是否修改？
 
-## web-chat
+## vue-chat
 1. ```proto.min.js```是否已替换?
 2. ```config.js```里面的```APP_SERVER```是否已修改？
 3. ```config.js```里面的```USE_WSS```是否已修改？

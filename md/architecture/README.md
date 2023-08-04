@@ -62,7 +62,7 @@ SDK分为2部分，一部分是功能SDK，负责所有能力的实现，后文�
   * android-chat Android SDK及demo应用源码 [Github](https://github.com/wildfirechat/android-chat) [码云](https://gitee.com/wfchat/android-chat)
   * ios-chat iOS SDK及demo应用源码 [Github](https://github.com/wildfirechat/ios-chat) [码云](https://gitee.com/wfchat/ios-chat)
   * pc-chat PC客户端源码 [Github](https://github.com/wildfirechat/vue-pc-chat) [码云](https://gitee.com/wfchat/vue-pc-chat)
-  * web-chat Web客户端源码 [Github](https://github.com/wildfirechat/vue-chat) [码云](https://gitee.com/wfchat/vue-chat)
+  * vue-chat Web客户端源码 [Github](https://github.com/wildfirechat/vue-chat) [码云](https://gitee.com/wfchat/vue-chat)
   * uni-chat Uniapp平台客户端源码 [Github](https://github.com/wildfirechat/uni-chat) [码云](https://gitee.com/wfchat/uni-chat)
   * app-server 应用服务源码 [Github](https://github.com/wildfirechat/app-server) [码云](https://gitee.com/wfchat/app_server)
   * push_server 推送服务源码 [Github](https://github.com/wildfirechat/push_server) [码云](https://gitee.com/wfchat/push_server)

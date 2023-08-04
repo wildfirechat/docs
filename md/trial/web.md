@@ -2,7 +2,7 @@
 Web功能库是收费的，我们提供体验服务，可以使用你们自己部署的服务器进行体验，用于原型验证，给领导汇报或者给自己的客户演示。
 
 ## 下载代码
-Web需要自己打包，从[Github](https://github.com/wildfirechat/web-chat)或者[码云](https://gitee.com/wfchat/web-chat)下载最新的源码。
+Web需要自己打包，从[Github](https://github.com/wildfirechat/vue-chat)或者[码云](https://gitee.com/wfchat/vue-chat)下载最新的源码。
 
 ## 编译打包
 Web基于vue技术开发，打包时需要严格按照工程中的readme要求配置环境和打包步骤，否则非常可能打包出错。
@@ -14,7 +14,7 @@ Web基于vue技术开发，打包时需要严格按照工程中的readme要求�
 体验库一般是通过邮件发送，邮件正文会带有替换说明。请按照我们提供的说明更换功能库。
 
 ## 修改配置
-修改```web-chat/src/config.js```文件，修改```APP_SERVER```为你的应用服务器地址，比如```http://192.168.1.100:8888```。
+修改```vue-chat/src/config.js```文件，修改```APP_SERVER```为你的应用服务器地址，比如```http://192.168.1.100:8888```。
 > APP服务配置host与端口组成的完整http地址。
 
 ## 打包运行

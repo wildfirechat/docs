@@ -1,5 +1,5 @@
 # 二次开发
-[web-chat](https://github.com/wildfirechat/web-chat)是一个可以直接使用的demo，推荐参考```web-chat```进行二次开发，如果不想基于```web-chat```进行二次开发
+[vue-chat](https://github.com/wildfirechat/vue-chat)是一个可以直接使用的demo，推荐参考```vue-chat```进行二次开发，如果不想基于```vue-chat```进行二次开发
 
 ## 基于```vue-chat```二次开发
 1. 修改```config.js```中的配置信息，修改是请仔细阅读所修改字段的相关注释，如果不进行修改或修改错误，将不能正确连接IM：
@@ -26,9 +26,9 @@
    * 调用```wfc.eventEmitter.on```注册事件监听，支持的事件及每个事件的通知信息，请参考```wfc/client/wfcEvent.js```。事件监听一般在需要关心对应事件的页面注册；页面关闭，或者不在关心事件时，必须取消注册，否则会发生泄漏。
 6. 获取```token```
    * 调用```wfc.getClientId```获取```clientId```
-   * 调用```APP SERVER```的```pc_session```接口获取```token```，可参考```web-chat```的login过程
+   * 调用```APP SERVER```的```pc_session```接口获取```token```，可参考```vue-chat```的login过程
 7. 连接
    * 调用```wfc.connect```进行连接
-   * 获取token和连接的流程，可参考```web-chat```
+   * 获取token和连接的流程，可参考```vue-chat```
    * 连接结果，会通过事件(```EventType#ConnectionStatusChanged```)通知回调，需要关注进行并进行处理。
 8. 连接成功之后，就可以进行其他操作了，具体参考```wfc.js```
