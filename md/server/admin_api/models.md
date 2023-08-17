@@ -18,7 +18,7 @@
 
 示例:
 ```
-{"type":1,"searchableContent":"hello"}  
+{"type":1,"searchableContent":"hello"}
 ```
 
 ## [Conversation](../../base_knowledge/conversation.md)
@@ -31,7 +31,7 @@
 
 示例:
 ```
-{"type":0,"target":"userId"}  
+{"type":0,"target":"userId"}
 ```
 
 ## GroupMember
@@ -44,7 +44,7 @@
 
 示例:
 ```
-{"member_id":"userId1","alias":"老王"}  
+{"member_id":"userId1","alias":"老王"}
 ```
 
 ## GroupInfo
@@ -67,7 +67,7 @@
 
 示例:
 ```
-{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":2}  
+{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":2}
 ```
 
 ## Group
@@ -103,4 +103,23 @@
 示例:
 ```
 {"userId":"userId1","name":"userId1"，"displayName":"zhangsan"}
+```
+
+## UpdateUserInfoMask
+```
+// 更新用户信息的字段信息，第0bit位为1时更新userInfo中的昵称信息，第1位更新头像，第2位更新性别，第3更新电话，第4位更新email，第5位更新地址，第6位更新公司，第7位更新社交信息，第8位更新extra信息，第9位更新name信息。比如更新用户头像和昵称，flag应该位 0x03
+
+public interface UpdateUserInfoMask {
+    int Update_User_DisplayName = 0x01;
+    int Update_User_Portrait = 0x02;
+    int Update_User_Gender = 0x04;
+    int Update_User_Mobile = 0x08;
+    int Update_User_Email = 0x10;
+    int Update_User_Address = 0x20;
+    int Update_User_Company = 0x40;
+    int Update_User_Social = 0x80;
+    int Update_User_Extra = 0x100;
+    int Update_User_Name = 0x200;
+}
+
 ```
