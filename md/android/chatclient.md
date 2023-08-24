@@ -44,7 +44,7 @@ ChatClient是协议栈在Android平台的wrapper和平台实现，只加上了�
    chatManager.startLog();
    chatManager.addOnReceiveMessageListener(OnReceiveMessageListener listener);
    chatManager.addRecallMessageListener(OnReceiveMessageListener listener)
-   // ... 设置其他时间回调监听，更多请参考ChatManger
+   // ... 设置其他时间回调监听，更多请参考ChatManager
    ```
 
 3. 初始化音视频
