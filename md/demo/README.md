@@ -18,10 +18,16 @@
 * [Linux mips64el平台下载](https://static.wildfirechat.net/wf-pc-chat_0.6.2_mips64el.deb)
 
 
-## Web 端
+## PC Web 端
 
 请点击下方链接，打开页面后，使用野火IM移动端（不是使用微信扫码）扫码登录。
 * [野火IM Web 端](https://web.wildfirechat.cn)
+
+## 手机Web/H5 端
+
+请使用微信扫描下方二维码，体验野火IM 手机Web/H5 端
+
+ ![野火IM](https://static.wildfirechat.cn/mobile-web.png?imageView2/1/w/260/h/260)
 
 
 ## 小程序端
