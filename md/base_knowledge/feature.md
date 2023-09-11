@@ -403,7 +403,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>支持</td>
   </tr>
   <tr >
-	    <td rowspan="6" bgcolor="white">媒体存储</td>
+	    <td rowspan="8" bgcolor="white">媒体存储</td>
 	    <td>测试存储服务</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -423,6 +423,16 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
       <td>不支持</td>
       <td>支持</td>
   </tr>
+	<tr >
+      <td>华为云OSS</td>
+      <td>不支持</td>
+      <td>支持</td>
+  </tr>
+	<tr >
+			<td>亚马逊S3</td>
+			<td>不支持</td>
+			<td>支持</td>
+	</tr>
 	<tr >
 			<td>野火对象存储网关</td>
 			<td>不支持</td>
