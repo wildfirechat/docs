@@ -54,3 +54,10 @@
 
 ## 体验
 可以体验野火发布的应用，请点击[这里](demo/README.md)。也可以按照[quick_start](quick_start/README.md)说明来部署使用，快速配置可能十分钟就能互通消息和实时音视频。
+
+## 微信公众号
+请关注我们的公众号。我们有新版本发布或者有重大更新会通过公众号通知大家，另外我们也会不定期的发布一些关于野火IM的技术介绍。
+![野火IM](http://static.wildfirechat.cn/wx_wfc_qrcode.jpg)
+
+## 联系我们
+商务咨询请微信联系 wildfirechat 和 wfchat。技术问题请到[github](https://github.com/wildfirechat)或[码云](https://gitee.com/wfchat)提issue，使用咨询请到野火论坛提问，我们有技术人员值班回复问题。
