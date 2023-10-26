@@ -6,7 +6,7 @@
 3. UniApp (ios/android)
 4. Windows（windows7以上）
 5. Mac OS（10.10以上）
-6. Linux（x86_64/Arm64/LoongArch64/SW64架构)
+6. Linux（x86_64/Arm64/LoongArch64/Mips64el/SW64架构)
 7. Web
 8. 小程序（微信小程序、百度小程序、QQ小程序、头条小程序、阿里小程序）
 
