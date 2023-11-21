@@ -15,6 +15,6 @@ Web和小程序依赖于专业版，如果需要使用web和小程序，必须�
 ## 申请体验Web和小程序
 1. 从GitHub下载[vub-chat](https://github.com/wildfirechat/vue-chat)或[wx-chat](https://github.com/wildfirechat/wx-chat)，根据说明文档进行编译，并体验。
 
-   > 此时，vue-chat和wx-chat连的是官方服务器，web端需要用官方Android或iOS扫码登录，微信小程序需要使用手机号登录。
+   > 默认vue-chat和wx-chat连的是官方服务器，先确保能够连上野火的服务器并正常使用。
 
 2. 申请体验专业版时，同时注明想体验web版、或小程序版。
