@@ -4,7 +4,7 @@ IM SDK分为ChatClient和ChatUIKit，其中ChatClient提供IM能力，另外附�
 
 音视频SDK包括WebRTC库和AVEngineKit库。WebRTC是标准的库，我们没有做任何修改，您可以从WebRTC官方找到对应源码；AVEngineKit是我们提供的音视频封装，是闭源的。野火的音视频有3个版本，具体信息请参考[野火音视频简介](../blogs/野火音视频简介.md)。音视频库仅为功能库，音视频相关UI在ChatUIKit库中，是开源的，可以进行而开。
 
-其他还包括有朋友圈SDK和对接SDK等，也都是功能库闭源收费，UI开源。
+其他还包括有朋友圈SDK和对讲SDK等，也都是功能库闭源收费，UI开源。
 
 ## Demo
 Demo是使用了野火SDK的应该应用。演示如何集成我们的SDK
