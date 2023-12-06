@@ -13,6 +13,7 @@
 ## 修改```vue-chat```代码，启用https
 1. 替换`proto.min.js`，用通过邮件获取的，绑定`im.example.com`域名的`proto.min.js`替换项目里面对应的原始文件
 2. 修改`vue-chat`项目`config.js`文件，开启`WSS`，设定端口，并修改`appserver`为HTTPS地址：
+
 ```
 // 开启WSS
 static USE_WSS = true;
@@ -22,6 +23,7 @@ static ROUTE_PORT = 443;
 // APP SERVER的地址。启用https时，APP SERVER必须是https地址
 static APP_SERVER = 'https://app.example.com';
 ```
+
 3. 执行`npm run build` 打包`vue-chat`项目
 
 ## 网页站点支持https
@@ -119,7 +121,8 @@ websocket_proxy_secure_port 8084
 > 2. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `ws:im.example.com:8083` 是否工作正常
 
 ### nginx 配置
-1. 在nginx.conf的http区域添加下面map块
+#### 在nginx.conf的http区域添加下面map块
+
 ```
 http {
     map $http_upgrade $connection_upgrade {
@@ -133,7 +136,7 @@ http {
 
 ```
 
-2. route接口支持https
+#### route接口支持https
 
 ```
 # im-http.conf
@@ -205,7 +208,7 @@ server {
 > 2. 访问`http://im.example.com/api/version`，看是否返回一个 json 文本
 > 3. 前面两项都必须正确返回才行
 
-2. 配置wss
+#### 配置wss
 ```
 # im-wss.conf
 upstream ws_node1  {
