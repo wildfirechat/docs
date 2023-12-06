@@ -29,7 +29,7 @@ server {
     listen 443;
     server_name  web.wildfirechat.net;
 
-    root /home/ubuntu/wildfirechat_web/src;
+    root /home/ubuntu/wildfirechat_web/src; #将 vue-chat 打包出来的 dist 目录下的所有内容放到这儿
     ssl_certificate /etc/nginx/cert/web.pem;
     ssl_certificate_key /etc/nginx/cert/web.key;
 
@@ -83,7 +83,7 @@ server {
 ## 4. imserver支持https
 1. route接口支持https
 
-    请查阅相关邮件，确定真实的```ROUTE_PORT```，通过```nginx```等手段，将访问该端口的```route```请求转到 im server，下面是我们的配置，可以参考:
+  请查阅相关邮件，确定真实的```ROUTE_PORT```，通过```nginx```等手段，将访问该端口的```route```请求转到 im server，下面是我们的配置，可以参考:
 
 ```
 upstream imserver_cluster  {
@@ -137,10 +137,12 @@ server {
         }
 }
 ```
-
 2. 配置wss
 
     请参考专业版IM的配置中关于 ***secret websocket*** 部分
 
 ## 5. 文件存储支持https
 请参考[对象存储服务章节](../../server/oss.md)
+
+## ALL IN ONE
+针对一些客户想快速体验，对性能等没要求，希望所有组件都部署在一台服务器上时，请参考[all in one](./all_in_one_https.md)
