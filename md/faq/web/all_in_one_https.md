@@ -51,6 +51,9 @@ server {
 }
 ```
 
+> 检查项：
+> 1. 浏览器访问`https://web.example.com`，看是否返回`vue-chat`前端页面
+
 ## app-server支持https
 下面是app-server nginx 参考配置
 ```
@@ -93,6 +96,9 @@ server {
 }
 ```
 
+> 检查项：
+> 1. 访问`https://app.example.com`，确认是否返回`OK`两个字符
+
 ## im-server支持https
 
 ### 修改 im-server 配置
@@ -107,6 +113,10 @@ websocket_proxy_secure_port 8084
 #https_port、secure_websocket_port 等不用配置，保持被注释掉的状态
 
 ```
+
+> 检查项
+> 1. 访问`http://im.example.com/api/version`，看是否返回一个 json 文本
+> 2. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `ws:im.example.com:8083` 是否工作正常
 
 ### nginx 配置
 1. 在nginx.conf的http区域添加下面map块
@@ -190,6 +200,11 @@ server {
         }
 }
 ```
+> 检查项
+> 1. 访问`https://im.example.com/api/version`，看是否返回一个 json 文本
+> 2. 访问`http://im.example.com/api/version`，看是否返回一个 json 文本
+> 3. 前面两项都必须正确返回才行
+
 2. 配置wss
 ```
 # im-wss.conf
@@ -225,3 +240,6 @@ server {
 }
 
 ```
+
+> 检查项
+> 1. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss:im.example.com:8084` 是否工作正常
