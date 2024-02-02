@@ -39,7 +39,8 @@ IM相关，有如下收费项目
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
 | 专业版IM服务 | [专业版IM服务](../commercial_server/README.md)的软件包，不包含源码 | 2.9W/套 |
-| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发(仅包含win/mac平台) | 2.9W/套 |
+| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
+| 鸿蒙原生SDK | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机、鸿蒙Pad和鸿蒙PC上。 | 2.9W/套 |
 | Web SDK | Web功能库（发布包，提供[开源Demo](https://github.com/wildfirechat/vue-chat)，依赖专业版IM） | 1W/套 |
 | 小程序SDK | 小程序功能库（发布包，支持微信、QQ、支付宝、百度、今日头条，提供开源的[微信小程序Demo](https://github.com/wildfirechat/wx-chat)，依赖专业版IM) | 1W/套 |
 

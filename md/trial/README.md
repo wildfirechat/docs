@@ -36,3 +36,4 @@
 * [高级版视频](voip.md)
 * [朋友圈](moments.md)
 * [管理后台](management_server.md)
+* [鸿蒙SDK试用](harmony.md)
