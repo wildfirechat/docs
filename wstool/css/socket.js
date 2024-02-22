@@ -63,6 +63,10 @@ var Vm = new Vue({
             }, 3000);
         },
         autoWsConnect: function () {
+            if(this.address.startsWith('ws://') && location.href.startsWith('https://')){
+                alert('开启连接失败。仅当当前网页是 http 方式加载时，才能测试 ws 连接，请手动用 http 方式加载本页面')
+                return;
+            }
             try {
                 if (this.connected === false){
                     localStorage.setItem('address', this.address)
