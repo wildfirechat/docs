@@ -106,11 +106,12 @@ server {
 ### 修改 im-server 配置
 ```
 server.ip             im.example.com
-http_port             80
-websocket_port        8083
-local_port            8080
+http_port             80 # 这个端口不能修改，除非使用自定义端口的 SDK，否则修复后客户端将连不上 im-server
+websocket_port        8083 # ws 端口
+local_port            8080 # 和 nginx 配置文件里面的 8080 对应
+# 使用代理的方式处理 secure websocket
 websocket_proxy_host im.example.com
-websocket_proxy_secure_port 8084
+websocket_proxy_secure_port 8084 # wss 端口
 
 #https_port、secure_websocket_port 等不用配置，保持被注释掉的状态
 
@@ -136,7 +137,7 @@ http {
 
 ```
 
-#### route接口支持https
+#### im-server route等接口支持https
 
 ```
 # im-http.conf
