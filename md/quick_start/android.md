@@ -15,6 +15,7 @@
 编译运行，填入您的手机号码，验证码填写服务器部署时指定的```superCode```，默认是 ```66666```（五个6）。
 
 ## 在线编译
+> 推荐搭建本地开发环境，如果想快速看到效果的话，可以选择在线编译
 1. Fork [android-chat](https://github.com/wildfirechat/android-chat)
 2. 参考上面的 [修改配置](#修改配置) 部分修改相关配置，并提交、推送修改到 Github
 3. 在自己 Fork 的 `android-chat`仓库下，依次点击`Actions` -> `Workflows` -> `Android CI`  -> `Run workflow`
