@@ -19,4 +19,4 @@
 1. Fork [android-chat](https://github.com/wildfirechat/android-chat)
 2. 参考上面的 [修改配置](#修改配置) 部分修改相关配置，并提交、推送修改到 Github
 3. 在自己 Fork 的 `android-chat`仓库下，依次点击`Actions` -> `Workflows` -> `Android CI`  -> `Run workflow`
-4. 编译成功之后，生成的 apk 位于`/chat/build/outputs/apk/debug/chat-debug.apk`
+4. 稍等片刻，待编译成功之后，刷新页面，即可从`Artifacts`处下载
