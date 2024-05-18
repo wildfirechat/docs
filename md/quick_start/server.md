@@ -14,7 +14,7 @@
 
 ## 野火IM服务器的部署
 #### 准备软件版本
-IM服务可以直接下载我们发布的[最新版本](https://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。
+IM服务可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/distribution-latest-bundle-tar.tar.gz)，也可以从[Github](https://github.com/wildfirechat/im-server)或者[码云](https://gitee.com/wfchat/im-server)下载源码编译。得到软件包后解压。
 > 这里有个限制IM服务要使用80端口，因为客户端强制绑定的是80端口。在云服务器上运行必须经过备案才能和域名一起使用80端口。另外还需要使用1883端口，请确保80/1883 TCP端口畅通。
 
 > 如果您下载的是源码，请按照说明编译出软件包来运行。
@@ -49,7 +49,7 @@ ps -ef | grep wildfirechat
 
 ## 应用服务器的部署
 #### 下载软件
-应用服务软件可以直接下载我们发布的[最新版本](https://static.wildfirechat.cn/app-server-release-latest.tar.gz)，也可以从[Github](https://github.com/wildfirechat/app_server)或者[码云](https://gitee.com/wfchat/app_server)下载源码编译。下载的软件包解压后得到一个jar包和一个config文件，如果是自己编译，需要把源码中的config文件拷贝到jar包的同目录下。
+应用服务软件可以直接下载我们发布的[最新版本](http://static.wildfirechat.cn/app-server-release-latest.tar.gz)，也可以从[Github](https://github.com/wildfirechat/app_server)或者[码云](https://gitee.com/wfchat/app_server)下载源码编译。下载的软件包解压后得到一个jar包和一个config文件，如果是自己编译，需要把源码中的config文件拷贝到jar包的同目录下。
 
 #### 运行
 执行```java -jar app-0.xx.jar```。

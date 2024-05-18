@@ -2,30 +2,30 @@
 一直想要给[野火IM](https://github.com/wildfirechat)做国产化系统适配，但一直苦于无法购买到国产化主机。最近正好有个客户需要做国产化项目，系统中的IM子系统是使用我们的，就跟他们商量借用一段时间。本周二客户邮寄的国产化主机收到了，拆箱的那一刻，我的心里复现出一个念头，这是我们公司及我个人历史性的一刻，我们有幸参与了国产化这一伟大而又艰巨的任务。国产化是国家强大过程中的必经之路，国产化能够避免被他国技术限制，摆脱让他国不断讹诈威胁和限制的困境。虽然我们公司很渺小，但还有无数其它或伟大或渺小的公司和个人共同参与，汇流成河、聚沙成塔，这件事情一定会做成功的。
 
 废话不多说了，开箱吧。打开箱子，拿出来主机，主机如下图所示，机箱比较小，还是很漂亮的，各种接口也都比较丰富。
-![thtf_pc1](https://static.wildfirechat.net/uos_11_thtf_pc.png)
+![thtf_pc1](http://static.wildfirechat.cn/uos_11_thtf_pc.png)
 
 再拍一下铭牌
-![thtf_pc2](https://static.wildfirechat.net/uos_12_thtf_pc.png)
+![thtf_pc2](http://static.wildfirechat.cn/uos_12_thtf_pc.png)
 
 开机看一下吧。开机的一刹那风扇“嗡”的一声吓我一跳，之后风扇运作平稳，听不到任何噪声，因为没有专业仪器，没有办法测试到分贝数。在执行重度编译任务时，风扇没有发现任何变化，完全没有觉察到声音，这可能就是arm架构的优势，能耗比较低，而且PC又不像手机那样空间狭窄，拥有了足够的空间，散热不是问题，所以风扇的压力就很小。
 
 进入到系统以后，第一感觉可谓是惊艳。笔者重度使用MacOS和Ubuntu，UOS的界面非常漂亮，可以甩Ubuntu 几条街，个人感觉比mac os也要漂亮一些。当然这是个人的直观感受，没有量化指标，可能不同的人有不同的感觉，但Deepin的漂亮还是在网上比较公认的。
-![Desktop](https://static.wildfirechat.net/uos_1_desktop.png)
+![Desktop](http://static.wildfirechat.cn/uos_1_desktop.png)
 
 下面是系统信息，可以看到UOS的版本及CPU信息
-![Info](https://static.wildfirechat.net/uos_2_info.png)
+![Info](http://static.wildfirechat.cn/uos_2_info.png)
 
 软件方面，系统附带有应用商店，各种常用的软件也是一应俱全，对付一般的办公应该绰绰有余，搜索到自己需要的软件点击安装就自动安装了，十分方便。但也仅限于此，目前生态还不完善，很多专业的软件都比较匮乏。生态和用户数量就是个先有鸡还是先有蛋的问题，随着国家推进国产化系统，用户数量就会上升，软件厂商也会跟进，这样就能形成良性循环。也真心希望系统厂商能够目光长远，降低使用门槛，让更多的用户用上国产操作系统，只有这样才能真正的依靠自己活下去，壮大起来。
-![Store1](https://static.wildfirechat.net/uos_3_store.png)
+![Store1](http://static.wildfirechat.cn/uos_3_store.png)
 
 下载排行，可以看到平台上软件排行状态
-![Store2](https://static.wildfirechat.net/uos_4_store.png)
+![Store2](http://static.wildfirechat.cn/uos_4_store.png)
 
 由于职业病的原因，特意研究了一下商店里的微信。微信不能直接使用，还必须要发送邮寄到UOS去申请开通，猜测可能是使用了Web或者以前旧有的协议，需要联系微信打开这些开关。如果您的微信在浏览器上无法登录，我猜测在UOS登录成功后，应该就可以在WEB登录了。没有实际验证，如果谁验证了，可以告诉我结果。
-![wechat](https://static.wildfirechat.net/uos_5_wechat.png)
+![wechat](http://static.wildfirechat.cn/uos_5_wechat.png)
 
 另外一些其它常用的聊天软件和企业协同版本软件也都没有。但居然还有电报，能登录上去吗？由于时间关系，没有去验证，登录不上去是大概率事件。
-![IM](https://static.wildfirechat.net/uos_10_im.png)
+![IM](http://static.wildfirechat.cn/uos_10_im.png)
 
 由上图可见社交沟通类的软件非常少，这就是我们公司此次工作目的了，完成野火IM在UOS上的适配，让客户可以在国产化系统上使用完全私有部署的沟通软件。
 
@@ -37,7 +37,7 @@
 UOS我重装了几回（因为要测试没有开发环境的软件运行情况，查找软件依赖），安装非常简单，X86的可以在UOS官网下载，国产CPU版本的操作系统通过客服就可以要到。下载ISO镜像后，用官方提供的工具在windows系统下制作一个安装U盘，然后插上去，点几下就完成了安装。大家有兴趣可以安装看一下。
 
 检查一下Web的兼容性，用UOS自带的浏览器打开web地址，扫码登录，功能一切正常。商店里还有火狐，应该也都没有问题。界面如下图所示。
-![web-chat](https://static.wildfirechat.net/uos_7_web_wildfirechat.png)
+![web-chat](http://static.wildfirechat.cn/uos_7_web_wildfirechat.png)
 
 下面正式开始适配。适配分成两部分，一部分是PC客户端pc-chat的适配；另外一部分是server的适配，server需要使用到国产数据库。由于篇幅的问题，本文只讲适配PC客户端吧，server的适配等到有空再写。
 
@@ -69,11 +69,11 @@ mars的编译：对比linux_x86的编译脚本，创建arm64的编译脚本pytho
 
 ## 截图插件的编译
 pc-chat的截图插件是QT的，好处是跨平台，可以在各个平台上运行，只需要在对应的平台上编译一次就可以了。商店里有QT Csreator，直接安装，但发现无法编译，因为没有装QT，在QT官方的download页面也无法找到arm版本，而在网上找到的UOS安装QT都是针对x86平台的，正当一筹莫展的时候突然想到是不是可以试试命令行模式，通过```apt install qt5-default```命令，顺利地编译出了截图插件。
-![QT](https://static.wildfirechat.net/uos_8_qt.png)
+![QT](http://static.wildfirechat.cn/uos_8_qt.png)
 
 ## 打包Electron软件包
 下面就是编译Electron了，修改一下打包的脚本，electron-builder添加```--arm64```参数，然后执行```npm install```, ```npm run package-linux-arm64```，编译打包失败，原来还依赖fpm，fpm最新版本还有问题，还需要回退到上一个版本，折腾一番后，顺利打包成功。运行起来以后，所有功能都是正常的，非常地成功。
-![pc-chat](https://static.wildfirechat.net/uos_9_pc_wildfirechat.png)
+![pc-chat](http://static.wildfirechat.cn/uos_9_pc_wildfirechat.png)
 
 我们还录制了一个简单的视频，放到了B站上，可以点击[这里](https://www.bilibili.com/video/BV14f4y1R7gd?from=search&seid=15341063283696866854)观看。
 

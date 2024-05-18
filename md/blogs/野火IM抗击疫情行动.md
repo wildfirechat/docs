@@ -7,7 +7,7 @@
 介绍一下野火IM，野火IM是私有化部署的，社区版和移动版原本都是免费的，大家可以用来远程沟通。聊天的基本功能够具备，支持群聊，图片，语音，文件等功能，支持1对1音视频通话，消息客户端加密存储和加密传输。野火IM提供有API接口，可以方便地与业务系统对接，也可以方便的二次包装开发，部署运维也特别简单，按照文档很容易的部署起来，配置好各个端就能够使用起来了，对于拥有软件开发能力的公司来说非常容易。
 
 当然我们也要设置一个小门槛，每个试用原本是需要提供100元的费用了，这里我们就不收了，给我们提供一个捐献武汉疫情的截图就行，任何渠道捐赠都可以。建议直接捐给医院吧，我们自己也捐助了一点（由于我们是才成立3个月的公司，还没有多少收入，所以捐一点表示心意）。
-![截图](https://static.wildfirechat.net/donate.png)
+![截图](http://static.wildfirechat.cn/donate.png)
 
 野火IM的代码在 [https://github.com/wildfirechat](https://github.com/wildfirechat)，使用前请详细阅读文档 [https://docs.wildfirechat.cn](https://docs.wildfirechat.cn)。申请办法参考[PC试用流程](https://docs.wildfirechat.cn/quick_start/pc.html)（把微信支付体验费用换成捐助就行）。
 
