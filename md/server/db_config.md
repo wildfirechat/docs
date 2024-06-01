@@ -4,10 +4,10 @@
 ## 支持数据库类型
 社区版只能支持h2 database和MySQL。
 
-专业版目前支持h2 database，MySql，KingbaseV8，Dameng8，SQL Server，PostgreSql。如果客户有需求，未来可以支持更多的常见数据库。
+专业版目前支持h2 database，MySql，KingbaseV8，Dameng8，Shentong7，PostgreSql。如果客户有需求，未来可以支持更多的常见数据库。
 
 ## 数据库版本
-mysql5.7及以上，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingbase V8版本及以上；达梦8版本及以上；SQL Server 2014及以上。
+mysql5.7及以上(建议选用8，5.7太旧了)，支持utf8mb4.（对表情的支持需要utf8mb4）；Kingbase V8版本及以上；达梦8版本及以上；神通7及以上。
 
 ## 支持长索引
 mysql5.7默认不支持长索引，其他数据库都没有问题。如果是mysql5.7，请执行如下命令:
@@ -37,7 +37,7 @@ set global transaction_isolation='read-committed';
 ## 设置数据库类型
 修改```wildfirechat.conf```中的下面属性改为您要使用的数据类型
 ```
-## 是否使用内置DB。0使用mysql；1使用h2db；2使用mysql+mongodb；3使用kingbase-v8；4使用dameng；5使用sql server；6使用postgresql。社区版只支持0和1，专业版还支持2,3,4,5,6。专业版集群部署时不能使用1。
+## 是否使用内置DB。0使用mysql；1使用h2db；2使用mysql+mongodb；3使用kingbase-v8；4使用dameng；5使用sql server；6使用postgresql；7使用神通数据库。社区版只支持0和1，专业版还支持2,3,4,5,6,7。专业版集群部署时不能使用1。
 embed.db 0
 ```
 

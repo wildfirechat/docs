@@ -36,13 +36,13 @@ sudo apt install ./im-server.deb
 sudo yum install ./im-server.rpm
 ```
 
-注意在上述两个命令中，都使用的是本地安装，注意安装包名前的```./```路径。如果使用```dpkg -i ./im-server.deb```命令将不会安装依赖。 
+注意在上述两个命令中，都使用的是本地安装，注意安装包名前的```./```路径。如果使用```dpkg -i ./im-server.deb```命令将不会安装依赖。
 
 ### 目录结构
 * /etc/im-server/config     配置文件目录
 * /opt/im-server            程序目录
 * /var/log/im-server        日志目录
-* /var/lib/im-server/h2db   H2数据库目录，如果使用mysql则不会使用
+* /var/lib/im-server/h2db   H2数据库目录，如果使用mysql或其他数据库则不会使用
 * /var/lib/im-server/media  内置对象存储数据目录，如果使用非内置，则目录不会使用。
 
 
@@ -69,4 +69,3 @@ sudo yum install ./im-server.rpm
 手动部署的日志文件在```/opt/im-server/logs```目录下，安装部署的日志在```/var/log/im-server```目录下。如果需要提供日志给野火官方，请把这个目录下的日志和制台日志(```journalctl -f -u im-server```)一起发给野火。
 
 手动部署也可以修改目录，可以修改配置文件目录下的```config/log4j2.xml```修改日志的路径。
-

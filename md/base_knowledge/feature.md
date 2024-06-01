@@ -16,7 +16,7 @@
 linux/windows/mac 系统不限制，CPU也不限制，只要支持jre8就可以。
 
 ## 数据库
-MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，h2db，MongoDB。
+MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，Shentong7，h2db，MongoDB。
 
 ## 功能列表
 野火具有灵活的二次开发能力，可以自由定义消息和第三方系统对接，下面是我们已经支持的功能：
