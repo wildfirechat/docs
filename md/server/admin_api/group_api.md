@@ -464,6 +464,43 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 设置/取消群白名单成员
+#### 地址
+```
+http://domain:18080/admin/group/manager/allow
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| operator | string | 是 | 操作者用户ID |
+| group_id | string | 是 | 群组ID |
+| members | list<string> | 是 | 群成员ID |
+| is_manager | boolean | 是 | true 设置为群白名单成员；false 取消群白名单成员。 |
+| to_lines | int[] | 否 | 会话线路，默认为0 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"operator\":\"a\",       \
+    \"group_id\":\"groupId1\",    \
+    \"members\": [                  \
+        \"memberId1\",  \
+      ]                            \
+    }"                                \
+  http://localhost:18080/admin/group/manager/allow
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
 ## 获取用户的群列表（不建议高频使用，以防止有性能问题）
 #### 地址
 ```
