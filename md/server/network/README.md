@@ -41,7 +41,7 @@ NG的地址为授权地址，NG需要负载每个节点的80端口，可以参�
 
 每个节点的防火墙放开80，1883的入访权限。如果有web客户端，需要放开8083的入访权限。
 
-如果需要支持HTTPS的JS客户端，上面提到的***专业版IM服务软件包下nginx目录下的imserver.conf文件***里的SSL配置需要保留，443处理SSL后转到各个节点的80端口。另外还需要对每个节点增加websocket ssl的配置。首先需要为每个节点分配一个WS和WSS的端口，比如节点1为5017&5020，节点2为5018&5021，节点3为5019&5022依次类推（此处为举例，可以更换为其他端口，不能端口重复）。然后把每个节点IM服务配置文件中的websocket_proxy_host打开，配置为授权地址，每个节点的websocket_proxy_port和websocket_proxy_secure_port分别配置为对应地址。
+如果需要支持HTTPS的JS客户端，上面提到的***专业版IM服务软件包下nginx目录下的imserver.conf文件***里的SSL配置需要保留，443处理SSL后转到各个节点的80端口。另外还需要对每个节点增加websocket ssl的配置。首先需要为每个节点分配一个WS和WSS的端口，比如节点1为5017&5020，节点2为5018&5021，节点3为5019&5022依次类推（此处为举例，可以更换为其他端口，不能端口重复）。然后把每个节点IM服务配置文件中的websocket_proxy_host打开，配置为授权地址，每个节点的websocket_proxy_port和websocket_proxy_secure_port分别配置为对应端口。
 
 NG需要添加对每个节点的wss代理，可以参考专业版IM服务软件包下nginx目录下的proxy目录，里面有个readme.txt。
 
