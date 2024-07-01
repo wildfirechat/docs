@@ -108,7 +108,7 @@ http://domain:18080/admin/chatroom/set_black_status
 | chatroomId | string | 是 | 聊天室ID |
 | userId | string | 是 | 目标用户Id |
 | status | int | 是 | 0，取消拉黑；1，禁言；2，禁止进入 |
-| expiredTime | long | 否 | 当拉黑或禁止进入时，生效的时间，0为不限时 |
+| expiredTime | long | 否 | 当拉黑或禁止进入时，过期的时间戳，0为不限时。 |
 
 #### 响应
 无
@@ -141,11 +141,12 @@ http://domain:18080/admin/chatroom/get_black_status
 
 
 ChatroomBlackInfo
+
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 目标用户Id |
-| status | int | 是 | 0，取消拉黑；1，禁言；2，禁止进入 |
-| expiredTime | long | 否 | 当拉黑或禁止进入时，生效的时间，0为不限时 |
+| state | int | 是 | 0，取消拉黑；1，禁言；2，禁止进入 |
+| expiredTime | long | 否 | 当拉黑或禁止进入时，过期的时间戳，0为不限时 |
 
 #### 示例
 ```
@@ -156,8 +157,8 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "msg":"success",
   "result":{
     infos:[
-      {"userId":"user1","status":1,expiredTime:0},
-      {"userId":"user2","status":2,expiredTime:365400}
+      {"userId":"user1","state":1,expiredTime:0},
+      {"userId":"user2","state":2,expiredTime:365400}
     ]
   }
 
