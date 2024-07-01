@@ -9,8 +9,13 @@
 
 ## PC 端
 
-可以下载源码编译，也可以联系我们获取编译好的版本。
-
+请点击下方链接进行下载，安装完成之后，使用野火IM移动端（不是使用微信扫码）扫码登录。
+* [Windows平台64位下载](http://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.3-win-x64-setup.exe)
+* [Windows平台32位下载](http://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.3-win-ia32-setup.exe)
+* [Mac平台下载](http://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.3-mac-universal.dmg)
+* [Linux amd64平台下载](http://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.3-linux-x86_64.AppImage)
+* [Linux arm64平台下载](http://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.3-linux-arm64.AppImage)
+> 龙芯和申威平台可以自己下载源码编译或者联系我们获取。
 
 ## PC Web 端
 
