@@ -248,8 +248,7 @@ N/A
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
-| imToken | string | 是 | 用户token |
+| result | [user status] | 是 | 用户状态列表，用户状态1为禁言，2为封禁，不包含正常状态的用户 |
 
 #### 示例
 ```
@@ -269,7 +268,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
     },
     {
       "userId":"c",
-      "status":3,
+      "status":1,
     },
   ]
 }
