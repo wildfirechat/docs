@@ -243,9 +243,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 http://domain:18080/admin/user/get_blocked_list
 ```
 #### body
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
+N/A
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
@@ -255,7 +253,7 @@ http://domain:18080/admin/user/get_blocked_list
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"a\"}" http://localhost:18080/admin/user/get_blocked_list
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" http://localhost:18080/admin/user/get_blocked_list
 
 {
   "code":0,
