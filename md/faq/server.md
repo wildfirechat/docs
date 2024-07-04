@@ -260,6 +260,9 @@ A. 野火支持内置文件存储和独立对象存储服务。内置文件存�
 ## Q. 开启HTTPS和WSS时，IM服务出现错误，错误提示：Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 with currently installed providers
 A. 这是因为JDK8不支持证书的这种加密方式，可以给JDK8打个补丁。可以搜索这个错误提示，找到补丁的修补方法。
 
+## Q. 服务没有响应，提示错误“Hazelcast instance is not active!”？
+A. 这种是缓存没有足够可用的内存导致缓存崩掉。有种可能是IM服务没有正确设置Xmx参数导致实际占用内存太小，可以参考[一次IM服务崩溃问题分析总结](https://mp.weixin.qq.com/s/k_BpDtMw1-LVO_q1khApAA)。如果已经正确设置过Xmx大小，也可以考虑缩小配置文件中```hazelcast.xml```缓存配置文件中所有的缓存大小，也可以考虑升级服务器硬件配置使用更大的内存。也有可能是集群中有个节点非正常结束，比如用kill -9结束其中一个节点，如果这个错误之前有节点关掉或者重启的情况，可以把所有节点都重启一遍。
+
 ## Q. 日志怎么改成同步写？怎么样才能高效地抓取问题日志？
 A. 野火IM服务都是使用log4j2日志组件的，默认日志是异步写的，这样上线后效率更高，缺点就是日志不是实时写入的，往往要等待一段时间才会写入，这样给查找问题带来了不变。解决这个问题很简单，修改```config/log4j2.xml```文件，把下面这个```immediateFlush```属性的值从```false```改成```true```。
 ```xml
