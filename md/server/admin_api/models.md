@@ -44,7 +44,7 @@
 
 示例:
 ```
-{"member_id":"userId1","alias":"老王"}
+{"member_id":"userId1","alias":"老王","type":0}
 ```
 
 ## GroupInfo
@@ -93,6 +93,7 @@
 | name | string | 是 | 帐号名，***必须保证唯一性。*** |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
+| gender | int | 否 | 用户性别 |
 | mobile | string | 否 | 用户手机号码 |
 | email | string | 否 | 用户邮箱 |
 | address | string | 否 | 用户地址 |

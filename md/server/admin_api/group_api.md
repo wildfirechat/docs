@@ -30,14 +30,14 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
     \"operator\":\"a\",       \
     \"group\":{                 \
         \"group_info\":{              \
-		       \"name\": \"老王的朋友们\",     \
+		       \"name\": \"老王和他的朋友们\",     \
 		       \"owner\": \"laowang\",      \
 	         \"type\": 3                  \
 	      },                              \
 	      \"members\": [                  \
           {                              \
 		         \"member_id\": \"memberId1\",  \
-		         \"alias\": \"老王的朋友\",       \
+		         \"alias\": \"老王的朋友1\",       \
 		         \"type\": \"0\"        \
 	        }                            \
         ]                            \
@@ -115,7 +115,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "msg":"success",
   "result":{
     "target_id":"groupId1",
-    "name":"老王的朋友们",
+    "name":"老王和他的朋友们",
     "owner":"laowang",
     "type":3
   }
@@ -273,7 +273,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
     \"members\": [                  \
         {                              \
           \"member_id\": \"memberId1\",  \
-          \"name\": \"老王的朋友们\",       \
+          \"alias\": \"老王的朋友2\",       \
           \"type\": \"0\"        \
         }                            \
       ]                            \

@@ -47,10 +47,12 @@ http://domain:18080/admin/user/create
 | name | string | 是 | 帐号名，***必须保证唯一性。*** |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
+| gender | int | 否 | 用户性别 |
 | mobile | string | 否 | 用户手机号码 |
 | email | string | 否 | 用户邮箱 |
 | address | string | 否 | 用户地址 |
 | company | string | 否 | 用户公司 |
+| social | string | 否 | 用户社交账号 |
 | extra | string | 否 | 附加信息 |
 
 > userId是用户在系统中的唯一ID，会一直保持不变，一般是对用户不可见的。name是用户的可见账户ID，可以是登录名，特殊情况下可以修改，但要保持唯一性。以微信为例，微信号就是我们的“name”，可以看见，可以用来登录使用，可以查找用户，也可以修改；另外微信还给每个用户分配一个UUID，这个是不可见的，也会是一直保持不变的，这个就对应我们的”userId“。
@@ -87,9 +89,11 @@ http://domain:18080/admin/robot/create
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
 | mobile | string | 否 | 用户手机号码 |
+| gender | int | 否 | 用户性别 |
 | email | string | 否 | 用户邮箱 |
 | address | string | 否 | 用户地址 |
 | company | string | 否 | 用户公司 |
+| social | string | 否 | 用户社交账号 |
 | extra | string | 否 | 附加信息 |
 | owner | string | 是 | 机器人拥有者 |
 | secret | string | 否 | 机器人密钥 |
@@ -164,10 +168,12 @@ http://domain:18080/admin/user/get_info
 | name | string | 是 | 登录名 |
 | displayName | string | 是 | 显示名字 |
 | portrait | string | 否 | 用户头像 |
+| gender | int | 否 | 用户性别 |
 | mobile | string | 否 | 用户手机号码 |
 | email | string | 否 | 用户邮箱 |
 | address | string | 否 | 用户地址 |
 | company | string | 否 | 用户公司 |
+| social | string | 否 | 用户社交账号 |
 | extra | string | 否 | 附加信息 |
 
 #### 示例
@@ -316,7 +322,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 ```
 
 
-## 获取用户在线状态
+## 强迫用户或客户端下线
 #### 地址
 ```
 http://domain:18080/admin/user/kickoff_client
