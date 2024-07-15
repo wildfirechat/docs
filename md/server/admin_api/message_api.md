@@ -13,6 +13,7 @@ http://domain:18080/admin/message/send
 | payload | [json](./models.md#MessagePayload) | 是 | 消息负载 |
 | toUsers | string[] | 否 | 群组或者频道中发给指定用户 |
 
+> 消息内容对应的json格式payload请参考[内置消息](../predefined_message_content.md)
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
