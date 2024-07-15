@@ -95,7 +95,7 @@ u为消息的uid，i为发送着的用户id，n为发送者的昵称，d为消�
 }
 ```
 
-```remoteMediaUrl```存放语音文件的链接，```content```是个json格式字符串，里面存储语音消息的时长。
+remoteMediaUrl存放语音文件的链接，content是个json格式字符串，里面存储语音消息的时长。
 
 ## 图片消息
 ```
@@ -110,7 +110,7 @@ u为消息的uid，i为发送着的用户id，n为发送者的昵称，d为消�
 }
 ```
 
-```remoteMediaUrl```存放图片消息的链接，```base64edData```为图片的缩略图。缩略图的生成规则是，把图片压缩到120X120大小的方框内，45%的质量压缩为JPG格式，再把二进制做base64编码得到字符串。
+remoteMediaUrl存放图片消息的链接，base64edData为图片的缩略图。缩略图的生成规则是，把图片压缩到120X120大小的方框内，45%的质量压缩为JPG格式，再把二进制做base64编码得到字符串。
 
 ## 位置消息
 ```
@@ -131,7 +131,7 @@ content是一个json字符串，包含经纬度：
 }
 ```
 
-```searchableContent```为地理位置的文本描述，content为一个json字符串，包含经纬度，```base64edData```为位置的缩略图。缩略图的生成规则是，把图片压缩到120X120大小的方框内，45%的质量压缩为JPG格式，再把二进制做base64编码得到字符串。
+searchableContent为地理位置的文本描述，content为一个json字符串，包含经纬度，base64edData为位置的缩略图。缩略图的生成规则是，把图片压缩到120X120大小的方框内，45%的质量压缩为JPG格式，再把二进制做base64编码得到字符串。
 
 ## 文件消息
 ```
@@ -144,7 +144,7 @@ content是一个json字符串，包含经纬度：
   "remoteMediaUrl":"https:\/\/media.wfcoss.cn\/media\/Y2djOGM4VlY-3D-4-1721008897-zJfgQC6AoZ3f.key"
 }
 ```
-```content```存放的为文件大小，```searchableContent```存放文件名。
+content存放的为文件大小，searchableContent存放文件名。
 
 ## 视频消息
 ```
@@ -157,7 +157,7 @@ content是一个json字符串，包含经纬度：
   "base64edData":"\/9j\/4AAQSkZJRgABAQAASABIAAD\/4QCMRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAABIAAAAAQAAAEgAAAABAAOgAQADAAAAAQABAACgAgAEAAAAAQAAAESgAwAEAAAAAQAAAHgAAAAA\/8AAEQgAeABEAwEiAAIRAQMRAf\/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC\/\/EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29\/j5+v\/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC\/\/EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29\/j5+v\/bAEMABwcHBwcHDAcHDBIMDAwSGBISEhIYHhgYGBgYHiQeHh4eHh4kJCQkJCQkJCwsLCwsLDMzMzMzOTk5OTk5OTk5Of\/bAEMBCQkJDw4PGQ4OGTwpISk8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PP\/dAAQABf\/aAAwDAQACEQMRAD8Ab\/wjfiDRJLuGK4g\/0qFH8tS4LGPIwpXHIH8684vLq8ijktHBjcqVbqCcg\/0r0PUo\/NSy03cvmyKQ7uoXGRlRuyeB04pdW0HT4oWZ2NyjIkjbUwdpOfkbgZ7cc8GnuTY89sbu4l0xbdU3IVXocHKnGfrUV5aG6tnv0ZVmj5kTpuA7n3qnbyT+R5S\/NHC+Adoz7e\/StnUAzRRXEMYQOCCBn5vf0\/KptqIyY3M0aEjBIAG0c\/U4q7CDav58TKwKkYbjPqCK63R9HhuLhVtVMe+BXD8hA4z7Y5xitOPwp9p0qS8mBjlwCgYjB\/2s8mnyhY8z+1AnZImAx6DjI9K257a50y1hitym53EiPGwLfMMYyPSruteGZdLtRI+DKMZAxgA\/StDR7lYLuMX0ZEKYxsUFs9sfWhIDotEfUpLeR78M7mTgsMErtXFbOJP7h\/IV0sMqXBkk8lfvY+Zueg681PiP\/njH\/wB9\/wD16odj\/9CK3jmaRL2Z40KyFRAqZViSOOhIzjPI4rZ1HTjdXsgMEayrH5zIpZ1LnjaDwAGznjkE1y8c1\/FeGaNdsRbarKTgAnIXPr06Y9+9dde6xNb+HZjBGq3kTkkELkKMkNxnjjsaEScRoulylb+Zk3iGQAx5IyrnY+AOThuDg9q6u78K20a7NMdZpgwURHIQBiPmAPH1OcVT03R73SraLWplzDB5ZcHDCRJGy5b6cHFdxqGkTwpPqNhPsaTB3OSQFXsB04GcfWrA57SrSSNLq22iGaEArsZgGB+9kr1x6V29noVu0DsG2pcKCFUDC5Azg47motEhtElaZMMq5Eci8Ixb7+OfUd66Tzk42\/yP6UAeeX+mWWmSSQy7bkzRkv52VRVQZGDzycetebrd3WmWyyLJsdsbR\/Ft6gj2r2e9hvZ3kkuU3QK42oeSR7Y9feuQv9B0XT3dE3PcStuXJGEz228cfyoYEujWVxf28l40WDK+7o3PyjnrWv8A2NN\/zz\/8db\/Gm6BfXt3YkyuqmNynT0A9a2\/Muf8Anqv\/AHyKQz\/\/0b1zYsl5JHb3ZlwjSorqeCueOflyTz71gXh1y+Kx3Kr5lzgMMjPlgAnIHIGB1xirmk+KoLDZPbEtKqhJAUAyB2B\/mT1xmuy8OWg1yW81yVfszTARIq8FQDk5xjqcfhimhG9o1rc3WlfYNTwrJ8pAxyuOPbGKtjw9AFMKTzLbnP7oMNo5zxkEgD0HFXbKxjtxyNzL\/F+A6fiK0iaoDBtbafSwIConhGBG4AUr6hgB+oH1rZjJcbzx7U7NMOVJYdD1FADbhwifdLHPAHc1w96VtL6S7vjE7LHvKgY2nsMn\/Gu9ODyaz73T7a+ieK5Xcrdun8qAM3QX1a4sjcC4OJHLYVeBkDgcVtbdW\/5+G\/75H+FZOjXMltaG1t7MskLlAQfT681q\/b7v\/nyb9P8AGgD\/0syDwu0sctxbkCOMDiXClj3U84Iz3zycjtXp3hZpE0eK0mV0O3zAyAlSM8DPr6iuP0DSri9Z5bqEwqu1\/MLEKCxyMDk5GSRk\/X1r1jTraa0tzFNJ5nJIPPA7DnmmIuIW3MW74Ip5NNzTSaYCk01j8poNJ1FMB+ahmRpYyisUJ7in0ZoETQuqJtbk\/hUvmp\/nFRRRRMpLAZz6VJ5MP90flSGf\/9P0Xw417JLdS3SL5YYCKQDaWHOcj8sGuqzXH6RqWi2FjHaw3OQvPzbifXnrituLWNOmTzEuEx05OD+RpiNTNJmsW513TbU7XlDH\/Y+b+VTQatp9xtEU6kt0BOD+RoC5pE0ZrPudSsrZS00oGOCByfyFFtqNndpuhcH2PB\/I0wuX80maz5NUsIpPKkmUN6VaeaKNd7uoHqTQIvw\/c\/GpqzbS\/s5YtyyjGTVn7Va\/89V\/OgZ\/\/9TDjmwfmrVtrK6vF3wKCAcZLAfzNUI0kZtwAH4f\/Wrb09HiiIA6tVNmaRQkL2zNDIcFTyB0oW5IOetW7m3kM5l6Emnx2lxIevWgmxAbot1qY3LBVb1qZtNuFGdvT3qhcX1tazJY3ThWbnOen1pNjSbJTcsetL9oY9ya1JLG5jQFuFUZzU39lTyASDB3c565qtBWNLQZs2bnn\/WH+Qrb8361U0WxmS1ZT\/fP8hWx9jmqR2P\/1eui023AG1MVejsoQuAtWVBHBxxUoyBTJKj2cRbO2rMVrGDnFSZGOetSqcc0CK13GI7eSRVB2qW59RzXzDLqiXV3DLdqeHzKVPLZbPHpgcV9QX2Xs5xnrG38q+Qm\/wBcF9TVRQmz6luNY0v+wzq6fvLYrwO\/pj61V8Iaomr6WzKhRInKKCckL1Az7dK52+Wy0nRE8O2+XR03sScnLHP4Vq+AYYYNMmEXTzOn4ClYo9J06JfJbj+L+grQ8pfSqVj\/AKo\/739BVykI\/9b0IPx6GnhmHNQHrU\/8NMgeGNSBgO+ahFC0ATz4aF19VI\/SvkC5Hl3Deoavr6T7jfQ\/yr5Dv\/8Aj6f\/AHquImfR15JDP4WhvZdit5Me5247Acmuf8Da3DJfXGmIQwI3Aj1GAcVb1T\/knv8A2xj\/AKVwnw4\/5GFv91v6UlsUz6W05\/3Lf739BV\/dWZpv+pb\/AHv6CtCkI\/\/Z",
   "remoteMediaUrl":"https:\/\/media.wfcoss.cn\/media\/Y2djOGM4VlY-3D-3-1721009625-3ECrMyipSf2B.mov"}
 ```
-```content```是个json字符串，里面存放视频的时长，注意里面为了兼容某些版本，有2个字段是视频时长；```base64edData```为视频的缩略图。缩略图的生成规则是，选取视频首帧图片，图片压缩到120X120大小的方框内，45%的质量压缩为JPG格式，再把二进制做base64编码得到字符串。
+content是个json字符串，里面存放视频的时长，注意里面为了兼容某些版本，有2个字段是视频时长；base64edData为视频的缩略图。缩略图的生成规则是，选取视频首帧图片，图片压缩到120X120大小的方框内，45%的质量压缩为JPG格式，再把二进制做base64编码得到字符串。
 
 ## 动态表情消息
 ```
@@ -169,7 +169,7 @@ content是一个json字符串，包含经纬度：
   "base64edData":"eyJ4Ijo3NTMsInkiOjk2MH0=",
   "remoteMediaUrl":"https:\/\/media.wfcoss.cn\/sticker\/SmNnbUxtNTU-3D-7-1721012109-Ks3DNbSkon3b.jpg"}
 ```
-```base64edData```是一个json字符串的字节做base64编码得到的字符串。json的格式如下，是表情的尺寸。
+base64edData是一个json字符串的字节做base64编码得到的字符串。json的格式如下，是表情的尺寸。
 ```
 {
   "x":width,
@@ -186,7 +186,7 @@ content是一个json字符串，包含经纬度：
   "base64edData":"eyJ1IjoiaHR0cHM6XC9cL2RvY3Mud2lsZGZpcmVjaGF0LmNuXC8iLCJ0IjoiaHR0cHM6XC9cL2RvY3Mud2lsZGZpcmVjaGF0LmNuXC9mYXZpY29uLmljbyJ9"
 }
 ```
-```base64edData```是一个json字符串的字节做base64编码得到的字符串。json的格式为:
+base64edData是一个json字符串的字节做base64编码得到的字符串。json的格式为:
 ```
 {
   "d":"链接的摘要",
@@ -204,7 +204,7 @@ content是一个json字符串，包含经纬度：
   "base64edData":"eyJkIjoi5aSn6ZuoIiwicCI6Imh0dHBzOlwvXC9tZWRpYS53ZmNvc3MuY25cL3N0YXRpY1wvWTJkak9HTTRWbFktM0QtNS0xNjY2NDI5OTY4LUdwTTE5VzNINjQ4MC5wbmciLCJuIjoiMTY4OCIsImYiOiJKY2dtTG01NSJ9"
 }
 ```
-```content```是目标ID（可能是用户id，群组id，频道ID等，根据t决定）。```base64edData```是一个json字符串的字节做base64编码得到的字符串。json的格式为:
+content是目标ID（可能是用户id，群组id，频道ID等，根据t决定）。base64edData是一个json字符串的字节做base64编码得到的字符串。json的格式为:
 ```
 {
   "t":0,
@@ -228,7 +228,7 @@ t是名片的类型，0是用户，1是群组，2是频道。当是用户名片�
   "remoteMediaUrl":""
 }
 ```
-```base64edData```是一个json字符串的字节做base64编码得到的字符串，json包含消息列表。json的格式为:
+base64edData是一个json字符串的字节做base64编码得到的字符串，json包含消息列表。json的格式为:
 ```
 {
 "ms":[
