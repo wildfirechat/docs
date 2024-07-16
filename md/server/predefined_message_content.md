@@ -38,6 +38,8 @@
 
 服务器端的MessagePayload和客户端的MessagePayload大致相同，只有部分表达方式不一样。
 
+本章节只能给出部分消息的说明，如果本说明没有提到的消息，可以找到客户端源代码中消息内容的```encode```或者```decode```方法，找到客户端消息与客户端MessagePayload的转换规则，从而得到服务器端的MessagePayload。
+
 ## 文本消息
 ```
 {
@@ -314,3 +316,129 @@ base64edData是一个json字符串的字节做base64编码得到的字符串，j
 17. "serverTime":消息的时间
 
 如果消息内容太多，base64edData太大，超过消息最大的大小限制（50KB），那么base64edData只存放前面3条消息内容，remoteMediaUrl存放整个消息列表json的内容。
+
+## 富通知消息
+```
+{
+  "type":12,
+  "persistFlag":3,
+  "pushContent":"产品审核通知",
+  "content":"您好，您的SSL证书以审核通过并成功办理，请关注",
+  "base64edData":"ewogICJyZW1hcmsiOiLosKLosKLmg6Dpob4iLAogICJleE5hbWUiOiLor4HkuablsI/liqnmiYsiLAogICJleFBvcnRyYWl0IjoiIiwKICAiZXhVcmwiOiJodHRwczovL3d3dy5iYWlkdS5jb20iLAogICJhcHBJZCI6IjEyMzQ1Njc4OTAiLAogICJkYXRhcyI6WwogICAgewogICAgICAia2V5Ijoi55m76ZmG6LSm5oi3IiwKICAgICAgInZhbHVlIjoi6YeO54GrSU0iLAogICAgICAiY29sb3IiOiIjMTczMTc3IgogICAgfSwKICAgIHsKICAgICAgImtleSI6IuS6p+WTgeWQjeensCIsCiAgICAgICJ2YWx1ZSI6IuWfn+WQjXdpbGRpZnJlY2hhdC5jbueUs+ivt+eahOWFjei0uVNTTOivgeS5piIsCiAgICAgICJjb2xvciI6IiMxNzMxNzciCiAgICB9LAogICAgewogICAgICAia2V5Ijoi5a6h5qC46YCa6L+HIiwKICAgICAgInZhbHVlIjoi6YCa6L+HIiwKICAgICAgImNvbG9yIjoiIzE3MzE3NyIKICAgIH0sCiAgICB7CiAgICAgICJrZXkiOiLor7TmmI4iLAogICAgICAidmFsdWUiOiLor7fnmbvpmYbotKbmiLfmn6XnnIvlpITnkIYiLAogICAgICAiY29sb3IiOiIjMTczMTc3IgogICAgfQogIF0KfQ=="
+}
+```
+
+base64edData是一个json字符串的字节做base64编码得到的字符串。json的格式为:
+
+```
+{
+  "remark":"谢谢惠顾",
+  "exName":"证书小助手",
+  "exPortrait":"",
+  "exUrl":"https://www.baidu.com",
+  "appId":"1234567890",
+  "datas":[
+    {
+      "key":"登陆账户",
+      "value":"野火IM",
+      "color":"#173177"
+    },
+    {
+      "key":"产品名称",
+      "value":"域名wildifrechat.cn申请的免费SSL证书",
+      "color":"#173177"
+    },
+    {
+      "key":"审核通过",
+      "value":"通过",
+      "color":"#173177"
+    },
+    {
+      "key":"说明",
+      "value":"请登陆账户查看处理",
+      "color":"#173177"
+    }
+  ]
+}
+```
+
+## 文章消息
+```
+{
+  "type":13,
+  "persistFlag":3,
+  "searchableContent":"文章头条的标题",
+  "base64edData":"ewogICJ0b3AiOnsKICAgICJpZCI6IuaWh+eroElEIiwKICAgICJjb3ZlciI6IuaWh+eroOWwgemdouWbvueJh3VybCIsCiAgICAidGl0bGUiOiLmlofnq6DnmoTmoIfpopgiLAogICAgImRpZ2VzdCI6IuaWh+eroOeahOaRmOimgSIsCiAgICAidXJsIjoi5paH56ug55qE5Zyw5Z2AIiwKICAgICJyciI6dHJ1ZQogIH0sCiAgc3ViQXJ0aWNsZXM6WwogICAgewogICAgICAiaWQiOiLmlofnq6BJRCIsCiAgICAgICJjb3ZlciI6IuaWh+eroOWwgemdouWbvueJh3VybCIsCiAgICAgICJ0aXRsZSI6IuaWh+eroOeahOagh+mimCIsCiAgICAgICJkaWdlc3QiOiLmlofnq6DnmoTmkZjopoEiLAogICAgICAidXJsIjoi5paH56ug55qE5Zyw5Z2AIiwKICAgICAgInJyIjp0cnVlCiAgICB9LAogICAgewogICAgICAiaWQiOiLmlofnq6BJRCIsCiAgICAgICJjb3ZlciI6IuaWh+eroOWwgemdouWbvueJh3VybCIsCiAgICAgICJ0aXRsZSI6IuaWh+eroOeahOagh+mimCIsCiAgICAgICJkaWdlc3QiOiLmlofnq6DnmoTmkZjopoEiLAogICAgICAidXJsIjoi5paH56ug55qE5Zyw5Z2AIiwKICAgICAgInJyIjp0cnVlCiAgICB9LAogICAgewogICAgICAiaWQiOiLmlofnq6BJRCIsCiAgICAgICJjb3ZlciI6IuaWh+eroOWwgemdouWbvueJh3VybCIsCiAgICAgICJ0aXRsZSI6IuaWh+eroOeahOagh+mimCIsCiAgICAgICJkaWdlc3QiOiLmlofnq6DnmoTmkZjopoEiLAogICAgICAidXJsIjoi5paH56ug55qE5Zyw5Z2AIiwKICAgICAgInJyIjp0cnVlCiAgICB9CiAgXQp9"
+}
+```
+
+base64edData是一个json字符串的字节做base64编码得到的字符串。json的格式为:
+
+```
+{
+  "top":{
+    "id":"文章ID",
+    "cover":"文章封面图片url",
+    "title":"文章的标题",
+    "digest":"文章的摘要",
+    "url":"文章的地址",
+    "rr":true
+  },
+  subArticles:[
+    {
+      "id":"文章ID",
+      "cover":"文章封面图片url",
+      "title":"文章的标题",
+      "digest":"文章的摘要",
+      "url":"文章的地址",
+      "rr":true
+    },
+    {
+      "id":"文章ID",
+      "cover":"文章封面图片url",
+      "title":"文章的标题",
+      "digest":"文章的摘要",
+      "url":"文章的地址",
+      "rr":true
+    },
+    {
+      "id":"文章ID",
+      "cover":"文章封面图片url",
+      "title":"文章的标题",
+      "digest":"文章的摘要",
+      "url":"文章的地址",
+      "rr":true
+    }
+  ]
+}
+```
+json中的rr是readreport的缩写，当为true时，客户端在用户打开文章时，需要上报阅读信息。
+
+## 流式内容正在生成消息
+```
+{
+  "type":14,
+  "persistFlag":4,
+  "searchableContent":"正在生成的全量文本内容。。。",
+  "content":"流的ID"
+}
+```
+persistFlag为4，说明是透传消息，与其他消息不同。
+
+## 流式内容生成完成消息
+```
+{
+  "type":15,
+  "persistFlag":4,
+  "searchableContent":"生成的全量文本内容",
+  "content":"流的ID"
+}
+```
+persistFlag为3。
+
+## 提醒消息（小灰条）
+```
+"type":90,
+"persistFlag":4,
+"content":"最近诈骗活动猖獗，请注意防范各种诈骗活动。",
+```
