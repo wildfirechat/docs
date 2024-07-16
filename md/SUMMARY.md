@@ -36,7 +36,7 @@
     * [频道](base_knowledge/channel.md)
     * [自定义消息内容](base_knowledge/custom_message_content.md)
 * [专业版IM服务](commercial_server/README.md)
-* [服务器说明](server/README.md)
+* [服务器开发和运维](server/README.md)
     * [服务器端口说明](server/server_port.md)
     * [数据库配置](server/db_config.md)
     * [机器内存的选择](server/server_memory.md)

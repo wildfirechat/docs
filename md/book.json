@@ -61,6 +61,9 @@
             "shortName": "gitbookuse"
         },
         "prism": {
+            "lang": {
+              "shell": "bash"
+            },
             "css": [
                 "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
             ]
