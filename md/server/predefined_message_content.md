@@ -149,7 +149,7 @@ searchableContent为地理位置的文本描述，content为一个json字符串�
 {
   "type":5,
   "persistFlag":3,
-  "searchableContent":"演讲.key",
+  "searchableContent":"野火产品简介.key",
   "mediaType":4,
   "content":"38394",
   "remoteMediaUrl":"https://media.wfcoss.cn/firechat/file_message_sample.pptx"
@@ -178,7 +178,7 @@ content是个json字符串，里面存放视频的时长，注意里面为了兼
   "searchableContent":"[动态表情]",
   "mediaType":7,
   "base64edData":"eyJ4Ijo3NTMsInkiOjk2MH0=",
-  "remoteMediaUrl":"https://media.wfcoss.cn/sticker/SmNnbUxtNTU-3D-7-1721012109-Ks3DNbSkon3b.jpg"}
+  "remoteMediaUrl":"https://media.wfcoss.cn/firechat/sticker_message_sample.jpg"}
 ```
 base64edData是一个json字符串的字节做base64编码得到的字符串。json的格式如下，是表情的尺寸。
 ```
