@@ -76,6 +76,67 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 更新消息
+#### 地址
+```
+http://domain/robot/message/update
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 消息唯一ID |
+| payload | [json](./models.md#MessagePayload) | 是 | 消息负载 |
+| distribute | int | 是 | 是否重新分发给用户，0不重新分发，1重新分发，建议用1 |
+
+> 消息内容对应的json格式payload请参考[内置消息](../predefined_message_content.md)
+> 机器人只有普通用户的权限，不是所有消息都可以更新。可以更新的消息类型在IM服务配置文件中的message.allow_client_update_types列表中。
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
+  "{                       \
+    \"messageUid\":5323423532,       \
+    \"distribute\":1,            \
+    \"payload\":{                 \
+      \"type\":1,                       \
+      \"searchableContent\":\"world\"   \
+    }                                   \
+  }"                                \
+  http://domain/robot/message/update
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 撤回消息
+#### 地址
+```
+http://domain/robot/message/recall
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 消息唯一ID |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"operator\":\"a\",\"messageUid\":5323423532}" http://domain/robot/message/recall
+
+{
+  "code":0,
+  "msg":"success",
+
+}
+```
+
 ## 获取用户信息
 #### 地址
 ```
