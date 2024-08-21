@@ -246,6 +246,43 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 获取群组成员
+#### 地址
+```
+http://domain:18080/admin/group/member/get
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| groupId | string | 是 | 群组ID |
+| memberId | string | 是 | 成员用户ID |
+
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| GroupMember | [json](./models.md#GroupMember) | 是 | 群成员 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"groupId\":\"groupId1\",    \
+    \"memberId\":\"userId1\"    \
+    }"                                \
+  http://domain:18080/admin/group/member/get
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "member_id":"userId1",
+    "alias":"laoda",
+    "type":2
+  }
+}
+```
+
 ## 添加群组成员
 #### 地址
 ```
