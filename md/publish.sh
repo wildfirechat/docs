@@ -3,6 +3,7 @@ mv _book docs
 cp -af ../trickle-ice docs/webrtc/
 cp -af ../abilitytest docs/webrtc/
 cp -af ../wstool docs/web/
+cp -af ../pricing-calculator docs/price/
 
 system=`uname`
 if [ "$system" == "Darwin" ]; then
