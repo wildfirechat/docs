@@ -66,4 +66,4 @@
 ![野火IM](http://static.wildfirechat.cn/wx_wfc_qrcode.jpg)
 
 ## 联系我们
-商务咨询请微信联系 wildfirechat 和 wfchat。技术问题请到[github](https://github.com/wildfirechat)或[码云](https://gitee.com/wfchat)提issue，使用咨询请到野火论坛提问，我们有技术人员值班回复问题。
+商务咨询请微信联系 wfchat。技术问题请到[github](https://github.com/wildfirechat)或[码云](https://gitee.com/wfchat)提issue，使用咨询请到野火论坛提问，我们有技术人员值班回复问题。
