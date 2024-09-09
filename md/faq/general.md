@@ -53,7 +53,11 @@ A: 野火IM的产品都是跟野火IM官方没有任何依赖的，也没有任�
 A: 首先连接状态-6对应的值是```kConnectionStatusSecretKeyMismatch```，根据常见问题8，是需要跳到登录界面的，需要用户重新登录。其次是-6出现的原因要检查，-6是在服务器无法找到客户端的session而返回的错误。每个用户在```getToken```时都会带上clientId，platform。服务器会为每个用户的每个设备创建一个session，客户端和服务器使用session中的密钥进行加密通讯，找不到session的原因有如下几种：
 1. 客户端登录时使用的clientid不正确（客户端去应用服务器登录，应用服务器使用这个clientid去gettoken，然后IM服务器生成或更新session），这个clientid必须调用imclient去获取，不然就会找不到session。
 2. 客户端disconnect时，参数传的是1，这个时候IM服务器会完全销毁掉这个session，当用户下次再用旧的token登录时就无法解码。如果主动断开后期望保存session，参数传0.
-3. 客户端连接的IM服务和获取token的IM服务不是同一个，这个是最常见的原因之一。
+3. **客户端连接的IM服务和获取token的IM服务不是同一个，这个是最常见的原因之一。** 可以这么确认：
+
+   1. 本地浏览器访问`http://{im-server-host}/api/version`
+   2. `ssh`登录到部署`app-server`的服务器，在终端里面执行 `curl http://{im.properties 配置文件里面的 im.admin_url的 ip 部分}/api/version`，如：`curl http://192.168.2.131/api/version`
+   3. 确保 1 和 2 中返回的`label`字段完全相同，如果不相同，则表示不是同一个 IM 服务
 4. 服务器做迁移的时候，没迁移数据库，也就没有用户之前保存的session。
 5. 客户端被踢，系统设计每个平台只能有一个设备登录，当另外一个手机登录同一个账户时，之前的session会被标记为deleted状态。
 6. 客户端卸载重装，cid会变化，如果某个环境缓存了token，则登录时就找不到对应的session。
