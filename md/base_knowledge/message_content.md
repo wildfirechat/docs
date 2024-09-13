@@ -1,6 +1,9 @@
 # 消息内容
 消息内容(Message Content)是消息中最重要的部分，在网络传输中，消息内容会转化为消息负载(Message Payload)，接收到消息负载后会转化为消息内容。消息内容有一个共同的抽象基类MessageContent。各种消息类型都派生与此基类。此外客户也可以自定义消息内容，继承基类，然后调用sdk的注册消息函数即可（注意必须在连接之前注册）。
 
+![消息流程](./message_flow.png)
+在SDK中，会处理消息内容和消息负载的转换。在SDK之上都是使用具体的消息内容，比如文本消息内容、图片消息内容等；在SDK之下，包括协议栈和IM服务都是使用MessagePayload，并不知道具体属于那个消息内容。
+
 Android：
 ```
 public abstract class MessageContent implements Parcelable {

@@ -7,11 +7,11 @@
 3. 频道SDK是频道SDK，可以管理某个频道，实现了包括查询用户、广播消息、单发消息、订阅/取消订阅、修改自身信息等操作，实现了所有的[Channel API](./channel_api/)接口。
 
 #### SDK的位置
-源码在```server/sdk```目录，编译打包后在release包中的```server_sdk```目录中。在```server_sdk```目录下有2个jar包和一个说明。
+源码在```server/sdk```目录，编译打包后在release包中的```server_sdk```目录中。在```server_sdk```目录下有2个jar包和一个说明。也可以下载我们编译好的，从[这里](https://gitee.com/wfchat/im-server/releases)下载我们发布的最新软件包，解压```distribution-1.2.9-bundle-tar.tar.gz```文件，找到```server_sdk```。
 
 
 #### 引入SDK
-1. 把release包中的两个jar包```common-0.xx.jar```和```sdk-0.xx.jar```放到工程目录下，比如```${ProjectPath}/src/lib```目录下。
+1. 把release包中的两个jar包```common-1.xx.jar```和```sdk-1.xx.jar```放到工程目录下，比如```${ProjectPath}/src/lib```目录下。
 2. 修改pom文件，在pom文件中加入如下依赖，注意修改jar包的路径
 ```xml
 <dependencies>
@@ -51,7 +51,7 @@
 			<artifactId>sdk</artifactId>
 			<version>0.20</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/lib/sdk-0.20.jar</systemPath>
+			<systemPath>${project.basedir}/src/lib/sdk-1.xx.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -59,7 +59,7 @@
 			<artifactId>common</artifactId>
 			<version>0.20</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/lib/common-0.20.jar</systemPath>
+			<systemPath>${project.basedir}/src/lib/common-1.xx.jar</systemPath>
 		</dependency>
 	</dependencies>
 ```
@@ -84,14 +84,17 @@
 
 #### 使用SDK
 1. 首先需要初始化。在```ChatConfig```类里有三个函数，分别初始化Server API接口、Robot API接口和Channel API接口。如果您只使用部分接口，只需要初始化您使用的功能就行了。
-```java
-AdminConfig.initAdmin(mIMConfig.admin_url, mIMConfig.admin_secret);
+
+```
+AdminConfig.initAdmin(admin_url, admin_secret);
 
 RobotService robotService = new RobotService(im_url, robotId, robotSecret);
 
 ChannelServiceApi channelServiceApi = new ChannelServiceApi(im_url, channelId, channelSecret);
 ```
-> Admin URL使用server API端口（默认是18080）， Robot和Channel API使用80端口。
+> Admin URL使用server API端口（默认是18080）， 一般是内网使用，强烈不建议对外网开放这个端口，所以应该是内网地址，比如 http://192.168.2.5:18080 。
+
+> Robot和Channel API使用80端口。可以外网使用，也可以内网使用。外网地址比如是 https://im.wildfirechat.cn 。内网地址比如 http://192.168.2.5 。
 
 2. 调用不同的接口，来实现功能
 ```java
@@ -113,5 +116,8 @@ ChannelServiceApi channelServiceApi = new ChannelServiceApi(im_url, channelId, c
 	}
 ```
 
-3. 使用说明
-请参考源码```${ProjectPath}/sdk/src/main/java/cn/wildfirechat/sdk/Main.java```。如果有问题或者缺失，请提issue。
+3. 发送消息的示例
+请参考源码```https://gitee.com/wfchat/im-server/blob/wildfirechat/sdk/src/main/java/cn/wildfirechat/sdk/Main.java```中的```void testMessageContent()```函数，里面有发送各种类型消息的示例。如果是未提供示例或者自定义下消息，需要跟客户端共同确认MessagePayload的格式。
+
+4. 其他接口使用说明
+请参考源码```https://gitee.com/wfchat/im-server/blob/wildfirechat/sdk/src/main/java/cn/wildfirechat/sdk/Main.java```。如果有问题或者缺失，请提issue。

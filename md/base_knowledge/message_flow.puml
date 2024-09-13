@@ -1,0 +1,8 @@
+@startuml
+  UI -> SDK : 发送消息（TextMessageConent）
+  SDK -> 协议栈 : 发送消息（MessagePayload）
+  协议栈 -> IM服务 : 发送消息(MessagePayload)
+  IM服务 -> 接收端协议栈 : 推送消息（MessagePayload）
+  接收端协议栈 -> 接收端SDK : 收到消息事件（MessagePayload）
+  接收端SDK --> 接收端UI层 : 收到消息事件（TextMessageContent）
+@enduml

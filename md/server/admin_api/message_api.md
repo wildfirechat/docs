@@ -1,4 +1,5 @@
 # 消息
+本文讲述消息相关的接口。我们提供有Java版本的[SDK](../sdk.md)，建议使用Java语言的客户使用这个SDK，其它语言可以按照本文档对接。
 
 ## 发送消息
 #### 地址
@@ -48,7 +49,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
-## 更新消息
+## 更新消息(仅专业版支持)
 #### 地址
 ```
 http://domain:18080/admin/message/update
