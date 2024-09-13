@@ -4,7 +4,7 @@
 ```
 public class MessagePayload {
 
-    public int contentType;
+    public int type;//ios平台上是contentType
 
     public String searchableContent;
     public String pushContent;
@@ -32,7 +32,7 @@ public class MessagePayload {
 #### Server API
 通过server api发送/获取消息及IM服务回调消息时，消息内容都是MessagePayload，MessagePayload与客户端完全一致（客户端的payload有个二进制属性，api使用的是经过base64编码的）。服务处理时需要注意跟客户端保持一致，比如服务器想发送图片消息，则需要检查一下客户端中图片消息encode的payload格式：设置payload的消息类型为3，remoteUrl为图片的地址（图片需要先上传到对象存储服务得到这个链接），mediaType为图片类型，basedBinaryContent为图片缩略图数据的base64编码。这样发送这个payload到客户端就能正确转化为图片消息。其他消息以此类推。
 
-#### contentType
+#### type(contentType)
 消息内容类型，根据该类型decode成对应的消息内容。系统内置了如下消息类型，也可以添加自定义消息：
 
 | 内容类型 | 值 | 说明 |
