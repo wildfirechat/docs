@@ -5,7 +5,7 @@
 
 ## 1. 先看一下效果
 我们开启了github的webhook功能，所有github的事件都会回调到机器人服务，机器人服务解析事件，然后把事件以可以阅读的内容发送给需要的人。
-![截图](http://static.wildfirechat.cn/githubwebhook.jpeg)
+![截图](https://static.wildfirechat.cn/githubwebhook.jpeg)
 
 这样我们就可以看到客户提交回复issue的情况，就可以看到客户star和fork我们的情况，就可以看到团队成员提交代码的情况。非常的方便。
 

@@ -3,47 +3,47 @@
 
 #### 欢迎首页
 欢迎首页展示系统的统计信息
-![欢迎首页](http://static.wildfirechat.cn/home2.png)
+![欢迎首页](https://static.wildfirechat.cn/home2.png)
 
 #### 用户管理
 可以显示用户信息，新建用户，修改用户信息，查看用户的消息，给该用户发送消息，封禁/解封用户。
-![用户列表](http://static.wildfirechat.cn/user-list.png)
+![用户列表](https://static.wildfirechat.cn/user-list.png)
 
 #### 封禁用户列表
-![封禁用户列表](http://static.wildfirechat.cn/blocked-user-list.png)
+![封禁用户列表](https://static.wildfirechat.cn/blocked-user-list.png)
 
 #### 敏感词管理
 可以添加/删除敏感词
-![敏感词管理](http://static.wildfirechat.cn/sensitive-word-list-2.png)
+![敏感词管理](https://static.wildfirechat.cn/sensitive-word-list-2.png)
 
 #### 敏感词消息
 可以查看谁命中了敏感词
-![敏感词消息](http://static.wildfirechat.cn/sensitive-word-match-2.png)
+![敏感词消息](https://static.wildfirechat.cn/sensitive-word-match-2.png)
 
 #### 群组管理
 可以新建群组，添加/移除群成员，修改管理员状态，转移群主，解散群组，禁言群组，禁止私聊群组等群组操作
-![群组管理](http://static.wildfirechat.cn/group-list-2.png)
+![群组管理](https://static.wildfirechat.cn/group-list-2.png)
 
 #### 消息管理
 消息列表：可以列出所有消息，可以按照会话查看消息，可以撤回消息
-![消息列表](http://static.wildfirechat.cn/message-list-2.png)
+![消息列表](https://static.wildfirechat.cn/message-list-2.png)
 
 用户消息列表：可以列出该用户的所有收发消息
-![用户消息列表](http://static.wildfirechat.cn/user-message-list-2.png)
+![用户消息列表](https://static.wildfirechat.cn/user-message-list-2.png)
 
 广播消息：只有专业版才能支持，可以发送消息给所有人
-![广播](http://static.wildfirechat.cn/broadcast-2.png)
+![广播](https://static.wildfirechat.cn/broadcast-2.png)
 
 多播消息：可以选取100个目标用户，发送文本消息
-![多播](http://static.wildfirechat.cn/multicast-2.png)
+![多播](https://static.wildfirechat.cn/multicast-2.png)
 
 #### 机器人管理
 可以查看，新建，修改和禁用机器人
-![机器人管理](http://static.wildfirechat.cn/robot-list-2.png)
+![机器人管理](https://static.wildfirechat.cn/robot-list-2.png)
 
 #### 频道管理
 可以查看，新建，修改和禁用频道
-![频道列表](http://static.wildfirechat.cn/channel-list-2.png)
+![频道列表](https://static.wildfirechat.cn/channel-list-2.png)
 
 #### 修改密码
-![修改密码](http://static.wildfirechat.cn/update-pwd-2.png)
+![修改密码](https://static.wildfirechat.cn/update-pwd-2.png)

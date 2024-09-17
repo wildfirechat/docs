@@ -46,7 +46,7 @@ A. 首先，这并不是一个比较有效的问题，但总有小伙伴这么�
 A. 表情是采用加载图片的方式实现的，demo里面的表情图片存储在七牛云上，内网不能访问，故内网不能显示表情，解决办法如下：
   1. 将```src/assets/twemoji```目录上传到一个内网能访问的服务器，比如部署```app serhier```的服务器
   2. 确保通过```http(s)://base_twemoji_url/72x72/1f1e6.png```能访问到对应表情，此处```1f1e6.png```蓝底白字大写字母A
-  3. 修改```twemoji.js```，将```http://static.wildfirechat.cn/twemoji/assets/```替换成新部署的```http(s)://base_twemoji_url/```，需要注意，最后一个```/```不能省略
+  3. 修改```twemoji.js```，将```https://static.wildfirechat.cn/twemoji/assets/```替换成新部署的```http(s)://base_twemoji_url/```，需要注意，最后一个```/```不能省略
   4. 修改```MessageInput.vue```中```message = message.replace(/<img class="emoji" draggable="false" alt="/g, '').replace(/" src="https:\/\/static\.wildfirechat\.net\/twemoji\/assets\/72x72\/[0-9a-z-]+\.png">/g, '')```，将链接地址替换成新部署的。
 
 ## Q. 在Windows系统缓存目录，存在wildfirechat目录，如何去掉？

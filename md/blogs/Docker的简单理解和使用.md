@@ -36,7 +36,7 @@ sudo docker rmi <image_id>
 
 除了从网上下载镜像，也可以把镜像直接导入。野火就是用这种方式，先从网上下载野火音视频服务的镜像:
 ```
-curl -O http://static.wildfirechat.cn/wildfire_janus_amd64.tar
+curl -O https://static.wildfirechat.cn/wildfire_janus_amd64.tar
 ```
 
 下载下来镜像以后，然后用下面命令导入镜像:
