@@ -7,11 +7,11 @@ cp -af ../pricing-calculator docs/price/
 
 system=`uname`
 if [ "$system" == "Darwin" ]; then
-  find docs/ -type f -name "*.html" -exec sed -i '' 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css|g' {} \;
-  find docs/ -type f -name "*.html" -exec sed -i '' 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js|https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js|g' {} \;
+  find docs/ -type f -name "*.html" -exec sed -i '' 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|https://static.wildfirechat.cn/bootstrap-3.3.7.min.css|g' {} \;
+  find docs/ -type f -name "*.html" -exec sed -i '' 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js|https://static.wildfirechat.cn/bootstrap-3.3.7.min.js|g' {} \;
 else
-  find docs/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css|g' {} \;
-  find docs/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js|https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js|g' {} \;
+  find docs/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|https://static.wildfirechat.cn/bootstrap-3.3.7.min.css|g' {} \;
+  find docs/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js|https://static.wildfirechat.cn/bootstrap-3.3.7.min.js|g' {} \;
 fi
 
 tar -czvf docs.tar.gz docs
