@@ -8,7 +8,7 @@
     * [服务器部署](quick_start/server.md)
     * [安卓编译](quick_start/android.md)
     * [iOS编译](quick_start/iOS.md)
-* [试用](trial/README.md)
+* [收费组件试用](trial/README.md)
     * [PC试用](trial/pc.md)
     * [Web试用](trial/web.md)
     * [小程序试用](trial/wx.md)
