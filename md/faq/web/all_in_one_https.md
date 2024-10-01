@@ -113,7 +113,7 @@ local_port            8080 # 和 nginx 配置文件里面的 8080 对应
 websocket_proxy_host im.example.com
 websocket_proxy_secure_port 8084 # wss 端口
 
-#https_port、secure_websocket_port 等不用配置，保持被注释掉的状态
+# 使用代理的方式处理 secure websocket 时，https_port、secure_websocket_port 等不用配置，保持被注释掉的状态
 
 ```
 
