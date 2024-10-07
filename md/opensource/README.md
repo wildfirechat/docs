@@ -6,6 +6,7 @@
 | [app_server](https://github.com/wildfirechat/app_server)     | [app_server](https://gitee.com/wfchat/app_server)     | Demo应用服务，模拟客户的应用服登录处理逻辑及部分二次开发示例。                                                                                |
 | [robot_server](https://github.com/wildfirechat/robot_server) | [robot_server](https://gitee.com/wfchat/robot_server) | 机器人服务，演示野火机器人对接其它系统的方法。                                                                              |
 | [push_server](https://github.com/wildfirechat/push_server)   | [push_server](https://gitee.com/wfchat/push_server)   | 推送服务器，可以对接所有的系统厂商推送服务或者第三方推送服务。                                                                                |
+| [mesh-bridge](https://github.com/wildfirechat/mesh-bridge)   | [mesh-bridge](https://gitee.com/wfchat/mesh-bridge)   | 野火IM桥接服务。使用野火IM桥接服务，可联通不同的IM服务，让隶属于不同IM服务的用户直接互通，包括发送各种消息和拨打音视频电话。|
 | [wf-minio](https://github.com/wildfirechat/WF-minio)   | [wf-minio](https://gitee.com/wfchat/WF-minio)   | 私有对象存储服务，用来支持野火IM专业版的文件存储。                                                                                |
 | [wf-janus](https://github.com/wildfirechat/wf-janus  )   | [wf-janus](https://gitee.com/wfchat/wf-janus  )   | 高级音视频媒体服务。                                                                                |
 | [open-platform](https://github.com/wildfirechat/open-platform)   | [open-platform](https://gitee.com/wfchat/open-platform)   | 野火开放平台服务。                                                                                |

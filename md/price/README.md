@@ -19,6 +19,7 @@
 | 推送服务 | 处理推送业务 | [码云](https://gitee.com/wfchat/push_server)/[Github](https://github.com/wildfirechat/push_server) |
 | 机器人服务 | 演示自动应答功能 | [码云](https://gitee.com/wfchat/robot_server)/[Github](https://github.com/wildfirechat/robot_server) |
 | 开放平台服务 | 开放平台，第三方系统可以通过开放平台对接 | [码云](https://gitee.com/wfchat/open-platform)/[Github](https://github.com/wildfirechat/open-platform) |
+| 野火IM桥接服务 | 使用野火IM桥接服务，可联通不同的IM服务，让隶属于不同IM服务的用户直接互通，包括发送各种消息和拨打音视频电话。 | [码云](https://gitee.com/wfchat/mesh-bridge)/[Github](https://github.com/wildfirechat/mesh-bridge) |
 | Demo日报服务 | 第三方系统对接的Demo | [码云](https://gitee.com/wfchat/daily-report)/[Github](https://github.com/wildfirechat/daily-report) |
 | 频道（公众号）服务 | 处理频道相关业务，实现类似于微信公众号的功能 | [码云](https://gitee.com/wfchat/channel-platform)/[Github](https://github.com/wildfirechat/channel-platform) |
 | 组织通讯录服务 | 展现组织架构和员工信息 | [码云](https://gitee.com/wfchat/organization-platform)/[Github](https://github.com/wildfirechat/organization-platform) |
