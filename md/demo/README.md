@@ -7,7 +7,7 @@
 
  ![野火IM](https://static.wildfirechat.cn/download_qrcode.png)
 
-> 首次登录时需要使用手机号码接收短信验证码登录，有时可能短信会被屏蔽，如果收不到验证短信，可以微信联系 wfchat 索要验证码。
+> 首次登录时需要使用手机号码接收短信验证码登录，有时可能短信会被屏蔽，如果收不到验证短信，可以微信联系 wildfirechat 或 wfchat 索要验证码。
 
 ## PC 端
 
