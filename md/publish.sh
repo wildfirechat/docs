@@ -1,3 +1,5 @@
+set -e
+
 gitbook build
 mv _book docs
 cp -af ../trickle-ice docs/webrtc/
