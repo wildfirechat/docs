@@ -1,5 +1,5 @@
 # TURN服务安装说明
-TURN服务是开源服务，不属于野火IM维护，这里给大家一个部署参考，如果遇到问题，请在网上查找解决方案。
+TURN服务是开源服务，不属于野火IM维护，这里给大家一个部署参考，如果遇到问题，请在网上查找解决方案。这里给出的示例是使用源码编译安装运行的，网上有很多docker的方案也是可以的，也可以考虑用docker的方法，都是可以的。
 
 ## 系统选择
 这里使用CentOS作为范例，如果您是其它系统，本文档就无法解决问题了，可以做一下参考。CentOS版本在7.0以上，具有公网IP（如果是大局域网，需要具备大局域网的“公网IP”地址，也就是说可以被系统网络内的所有设备直接访问到）。需要开通 ***3478 (同时开通UDP和TCP端口)*** 和配置文件中指定范围的UDP端口(如果没有指定需要开通所有UDP端口，建议指定范围)的入访和出访权限。
@@ -12,6 +12,8 @@ sudo yum install -y make gcc cc gcc-c++ wget
 
 sudo yum install -y openssl-devel libevent libevent-devel
 ```
+
+> OpenSSL需要是1.0.2或者1.x。下面编译的coturn4.5.1.3与OpenSSL3.x有兼容问题。
 
 #### 安装 libEvent 组件
 ```
@@ -30,16 +32,19 @@ cd ..
 
 #### 安装TURN服务
 ```
-wget http://turnserver.open-sys.org/downloads/v4.5.1.3/turnserver-4.5.1.3.tar.gz
+wget https://github.com/coturn/coturn/archive/4.5.1.3.tar.gz
 
-tar -xvzf turnserver-4.5.1.3.tar.gz
+tar -xvzf 4.5.1.3.tar.gz
 
-cd turnserver-4.5.1.3 && ./configure
+cd coturn-4.5.1.3 && ./configure
 
 make
 
 sudo make install
 ```
+
+> 地址可能会无法访问，如果无法访问可以从网上找找这个版本。
+> 如果编译失败，可以是OPENSSL版本不兼容，请确保OPENSSL版本为1.0.2或者1.X。已知OPENSSL 3.X有问题。
 
 #### 配置
 默认有个配置模版在```/usr/local/etc/turnserver.conf.default```，需要复制一个名称为```/usr/local/etc/turnserver.conf```。然后使用vi 编辑 ```/usr/local/etc/turnserver.conf```文件，修改如下部分:
