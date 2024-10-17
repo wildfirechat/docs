@@ -88,3 +88,6 @@ NSString *savedUserId = @"你抓取的野火用户id";
 
 #### Q. 应用做了特殊处理，可以支持后台长时间运行，为什么后台后很快会断开？
 A. 因为sdk中做了特殊处理，在进入到后台后，如果没有任务进行，3秒钟后会断开连接，如果有新消息，应该走APNS来通知。如果您的应用可以后台保活，可以去掉相关逻辑。在```WFCCNetworkService.mm```文件中搜索```onAppSuspend```和```onAppResume```，把这两个函数及所有调用这个函数的语句都去掉就可以了.
+
+#### Q. 如何把iOS设备的类型从手机改成Pad？
+A. 默认iOS设备都会被认为是手机，可以修改类型改成Pad，这样手机可以和pad共存。在```app_callback.mm```的```GetDeviceInfo```方法中，把```DeviceInfo```的```platform```改成8。另外在登录时，需要把```platform```也改成8。同理Android也可以改成Pad，请参考Android常见问题。
