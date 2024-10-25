@@ -57,7 +57,8 @@ A: 首先连接状态-6对应的值是```kConnectionStatusSecretKeyMismatch```�
 
    1. 本地浏览器访问`http://{im-server-host}/api/version`
    2. `ssh`登录到部署`app-server`的服务器，在终端里面执行 `curl http://{im.properties 配置文件里面的 im.admin_url的 ip 部分}/api/version`，如：`curl http://192.168.2.131/api/version`
-   3. 确保 1 和 2 中返回的`label`字段完全相同，如果不相同，则表示不是同一个 IM 服务
+   3. 确保 1 和 2 中返回的`label`字段完全相同，如果不相同，则表示不是同一个 IM 服务。
+   4. 确认客户端代码里的应用服务地址和IM服务地址都是正确的地址（如果是PC或者Web SDK，IM服务地址是打包到SDK内的，确认这个地址就是自己环境地址；如果没有用野火的应用服务，那就确认连接的客户的业务服务地址是否正确）。
 4. 服务器做迁移的时候，没迁移数据库，也就没有用户之前保存的session。
 5. 客户端被踢，系统设计每个平台只能有一个设备登录，当另外一个手机登录同一个账户时，之前的session会被标记为deleted状态。
 6. 客户端卸载重装，cid会变化，如果某个环境缓存了token，则登录时就找不到对应的session。
