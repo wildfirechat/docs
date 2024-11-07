@@ -61,6 +61,7 @@
     * [推送说明](https://github.com/wildfirechat/push_server)
     * [对象存储服务](server/oss.md)
         * [对象存储配置示例](server/oss_config_sample.md)
+        * [对象存储桶](server/oss_bucket.md)
     * [服务的维护](server/server_clean.md)
     * [MySQL调优](server/mysql_tune.md)
     * [硬件要求](server/hardware_requirement.md)
