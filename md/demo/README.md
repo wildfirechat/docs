@@ -1,13 +1,18 @@
 # 体验即时通讯Demo
 > 野火IM 产品截图展示，可以点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看
 
-## 移动端
+## 移动端(Android、iOS)
 
 请使用微信扫码下方二维码
 
  ![野火IM](https://static.wildfirechat.cn/download_qrcode.png)
 
 > 首次登录时需要使用手机号码接收短信验证码登录，有时可能短信会被屏蔽，如果收不到验证短信，可以微信联系 wildfirechat 或 wfchat 索要验证码。
+
+##  移动端(鸿蒙NEXT)
+请用 DevEco Studio 导入以下项目进行体验
+
+[hm-chat](https://github.com/wildfirechat/hm-chat)
 
 ## PC 端
 
