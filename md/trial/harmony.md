@@ -17,7 +17,7 @@
 体验库一般是通过邮件发送，邮件正文会带有替换说明。请按照我们提供的说明更换功能库。
 
 ## 修改配置
-修改```vue-pc-chat/entry/src/main/ets/config.ets```文件，修改```APP_SERVER```为你的应用服务器地址，比如```http://192.168.1.100:8888```。
+修改```hm-chat/client/src/main/ets/config.ets```文件，修改```APP_SERVER```为你的应用服务器地址，比如```http://192.168.1.100:8888```。
 > APP服务配置host与端口组成的完整http地址。
 
 ## 测试验证
