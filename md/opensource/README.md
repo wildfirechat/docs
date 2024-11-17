@@ -15,10 +15,13 @@
 | [organization-platform](https://github.com/wildfirechat/organization-platform)   | [organization-platform](https://gitee.com/wfchat/organization-platform)   | 野火组织通讯录服务。  |                                                                           |
 | [android-chat](https://github.com/wildfirechat/android-chat) | [android-chat](https://gitee.com/wfchat/android-chat) | 野火IM Android SDK源码和App源码。
 | [ios-chat](https://github.com/wildfirechat/ios-chat)         | [ios-chat](https://gitee.com/wfchat/ios-chat)         | 野火IM iOS SDK源码和App源码。
-| [pc-chat](https://github.com/wildfirechat/vue-pc-chat)       | [pc-chat](https://gitee.com/wfchat/vue-pc-chat)       | 基于[Electron](https://electronjs.org/)的PC 端，支持Windows、Mac、Linux（包括国产化linux系统和CPU）。                                       |
+| [hm-chat](https://github.com/wildfirechat/hm-chat)         | [hm-chat](https://gitee.com/wfchat/hm-chat)         | 野火IM 鸿蒙NEXT Demo App源码。
+| [vue-pc-chat](https://github.com/wildfirechat/vue-pc-chat)       | [vue-pc-chat](https://gitee.com/wfchat/vue-pc-chat)       | 基于[Electron](https://electronjs.org/)的PC 端，支持Windows、Mac、Linux（包括国产化linux系统和CPU）。                                       |
 | [vue-chat](https://github.com/wildfirechat/vue-chat)         | [vue-chat](https://gitee.com/wfchat/vue-chat)         | 野火IM Web 端, [体验地址](https://web.wildfirechat.cn)                                     |
 | [wx-chat](https://github.com/wildfirechat/wx-chat)           | [wx-chat](https://gitee.com/wfchat/wx-chat)           | 小程序平台的Demo(支持微信、百度、阿里、字节、QQ 等小程序平台)                             |
-| [uni-chat](https://github.com/wildfirechat/uni-chat)           | [uni-chat](https://gitee.com/wfchat/uni-chat)           | UniApp平台移动端应用(使用原生插件)                           |
+| [uni-chat](https://github.com/wildfirechat/uni-chat)           | [uni-chat](https://gitee.com/wfchat/uni-chat)           | UniApp平台移动端应用(使用原生插件，支持 Android、iOS)                           |
+| [uni-chat-uts](https://github.com/wildfirechat/uni-chat-uts)           | [uni-chat-uts](https://gitee.com/wfchat/uni-chat-uts)           | UniApp平台移动端应用(试用 UTS 插件，支持 Android、iOS、鸿蒙NEXT)                           |
+| [uni-h5-chat](https://github.com/wildfirechat/uni-h5-chat)           | [uni-h5-chat](https://gitee.com/wfchat/uni-h5-chat)           | 基于 uniapp 开发的，适配手机浏览器的 h5 端                           |
 | [uni-wfc-client](https://github.com/wildfirechat/uni-wfc-client)           | [uni-wfc-client](https://gitee.com/wfchat/uni-wfc-client)           | UniApp平台原生插件                           |
 | [flutter_imclient](https://github.com/wildfirechat/flutter_imclient)           | [flutter_imclient](https://gitee.com/wfchat/flutter_imclient)           | Flutter平台原生插件                           |
 | [docs](https://github.com/wildfirechat/docs)                 | [docs](https://gitee.com/wfchat/docs)                 | 野火IM相关文档，包含设计、概念、开发、使用说明，[在线查看](https://docs.wildfirechat.cn/) |
