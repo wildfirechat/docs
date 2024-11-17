@@ -42,7 +42,13 @@
 
  ![野火IM](https://static.wildfirechat.cn/qx.jpeg)
 
-## uni-app
+## uni-app(原生插件，支持 Android、iOS)
 请用HBuilder X 导入以下项目进行体验
 
 [uni-chat](https://github.com/wildfirechat/uni-chat)
+
+## uni-app(uts 插件，支持 Android、iOS、鸿蒙NEXT)
+请用HBuilder X 导入以下项目进行体验
+
+[uni-chat-uts](https://github.com/wildfirechat/uni-chat-uts)
+
