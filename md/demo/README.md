@@ -1,6 +1,8 @@
 # 体验即时通讯Demo
 > 野火IM 产品截图展示，可以点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看
 
+> 以下是官方发布的版本，开发者可以直接体验。需要自行私有化部署的话，请参考[快速开始](https://docs.wildfirechat.cn/quick_start/)
+
 ## 移动端(Android、iOS)
 
 请使用微信扫码下方二维码
