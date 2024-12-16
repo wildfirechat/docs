@@ -82,7 +82,7 @@
 ```
 {
   "group_info":{"target_id":"groupId1","name":"老王的朋友们","owner":"laowang","type":2},
-  "members":[{"member_id":"memberId1","name":"老张","type":0}, {"member_id":"memberId2","name":"老王","type":2}, {"member_id":"memberId1","name":"老赵","type":0}]
+  "members":[{"member_id":"memberId1","alias":"数学张老师","type":0}, {"member_id":"memberId2","alias":"班主任王老师","type":2}, {"member_id":"memberId1","alias":"赵同学家长","type":0}]
 }
 ```
 
