@@ -123,6 +123,7 @@
     * [iOS问题](faq/ios.md)
     * [Web问题](faq/web.md)
       * [https](faq/web/https.md)
+      * [快速体验 Web 端](faq/web/all_in_one_http.md)
       * [all-in-one](faq/web/all_in_one_https.md)
     * [PC问题](faq/pc.md)
     * [小程序问题](faq/wx.md)
