@@ -246,4 +246,4 @@ server {
 ```
 
 > 检查项
-> 1. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss:im.example.com:8084` 是否工作正常
+> 1. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss://im.example.com:8084` 是否工作正常
