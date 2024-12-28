@@ -13,7 +13,7 @@
 ## 集成到自己的项目
 > 集成过程，请随时参考```vue-chat```
 
-1. 将```src/wfc```、```src/platform.js```、`src/windowEmitter.js` 和 ```src/config.js```拷贝到自己项目，并且```wfc```目录、```platform.js```、`src/windowEmitter.js` 和```config.js```处于同级目录。
+1. 将```src/wfc```、```src/platform.js``` 和 ```src/config.js```拷贝到自己项目，并且```wfc```目录、```platform.js``` 和```config.js```处于同级目录。
 2. 安装额外的依赖
 
    ```npm install --save long detectrtc base64-arraybuffer```
