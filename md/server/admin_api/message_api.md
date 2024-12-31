@@ -97,6 +97,8 @@ http://domain:18080/admin/message/recall
 | operator | string | 是 | 撤回者 |
 | messageUid | long | 是 | 消息唯一ID |
 
+> Server API撤回不受时间限制，可以撤回任意时间内的消息。
+
 #### 响应
 N/A
 
