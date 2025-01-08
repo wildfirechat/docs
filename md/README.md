@@ -67,3 +67,6 @@
 
 ## 联系我们
 商务咨询请微信联系 wildfirechat 或 wfchat。技术问题请到[github](https://github.com/wildfirechat)或[码云](https://gitee.com/wfchat)提issue，使用咨询请到野火论坛提问，我们有技术人员值班回复问题。
+
+## 下载此文档
+请右键点击[这里](https://docs.wildfirechat.cn/pdf/野火IM开发文档.pdf)，选择```下载链接文件```。

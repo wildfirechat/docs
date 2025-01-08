@@ -2,6 +2,9 @@ set -e
 
 gitbook build
 mv _book docs
+gitbook pdf .  野火IM开发文档.pdf
+mkdir -p docs/pdf
+mv 野火IM开发文档.pdf docs/pdf
 cp -af ../trickle-ice docs/webrtc/
 cp -af ../abilitytest docs/webrtc/
 cp -af ../wstool docs/web/
