@@ -59,3 +59,10 @@ A. 请按如下流程排查：
 3. 确定所用音视频SDK版本，必现都使用一样的版本，才能互通。 音视频通话界面调试窗口的控制台，如果输出```wfc avengine-multi```字样，则说明所用的 SDK  是免费版；如果输出```wfc avengine-conference```字样，则说明所用的 SDK 是高级版。 具体的版本说明，请参考[这儿](https://github.com/wildfirechat/vue-pc-chat/tree/master/src/wfc/av/internal)
 4. 如果使用的音视频 sdk 是高级版的话，还需要部署[wf-janus](https://github.com/wildfirechat/wf-janus)
 5. 将音视频发起方和接听方音视频窗口控制台日志发给我们
+
+## Q. win7的虚拟机几台设备共用同一个帐号，会导致clientId是重复的，导致被踢下线
+A. 问题的原因是野火PC客户端默认每个账户生成一个UUID作为clientId，如果用同一个账户登录，那么就有相同的clientId，在IM服务端，根据clientId来判别客户端，从而认为是换用户登录，导致之前登录的账户被踢下来。解决办法如下：
+1. 修改登录方法，把登录分成2部分，第一步登录不上传clientId和平台，登录成功后，不获取token，只返回客户端当前用户的用户ID。
+2. 调用SDK的```setAppDataPath```方法为此用户设置唯一的路径，建议系统账户用户目录下+用户ID拼接路径。
+3. 调用sdk获取clientId（一定要在第二步之后才调用，之前不要调用），调用登录的第二部分，参数包括clientId和平台，获取IMtoken，得到token之后调用connect。
+4. 如果是记录token自动登录，需要同时记录用户id和token，在调用connect之前要执行步骤2设置数据存储路径。
