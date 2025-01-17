@@ -42,6 +42,7 @@ http://domain/robot/message/send
 | ------ | ------ | --- | ------ |
 | conv | [json](../admin_api/models.md#Conversation) | 是 | 会话 |
 | payload | [json](../admin_api/models.md#MessagePayload) | 是 | 消息负载 |
+| toUsers | string[]	| 否	 | 群组或者频道中发给指定用户 |
 
 
 #### 响应
