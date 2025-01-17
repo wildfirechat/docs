@@ -13,15 +13,17 @@
 3. 推送服务，点击 [GitHub](https://github.com/wildfirechat/push_server) 或 [码云](https://gitee.com/wfchat/push_server)，查看源码
 4. Android 客户端，点击 [GitHub](https://github.com/wildfirechat/android-chat) 或 [码云](https://gitee.com/wfchat/android-chat)，查看源码
 5. iOS 客户端，点击 [GitHub](https://github.com/wildfirechat/ios-chat) 或 [码云](https://gitee.com/wfchat/ios-chat)，查看源码
-6. PC 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-pc-chat) 或 [码云](https://gitee.com/wfchat/vue-pc-chat)，查看源码
-7. Web 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-chat) 或 [码云](https://gitee.com/wfchat/vue-chat)，查看源码
-8. 小程序 Demo，点击 [GitHub](https://github.com/wildfirechat/wx-chat) 或 [码云](https://gitee.com/wfchat/wx-chat)，查看源码
-9. uni-app Demo，点击 [GitHub](https://github.com/wildfirechat/uni-chat) 或 [码云](https://gitee.com/wfchat/uni-chat)，查看源码
-10. 机器人服务，点击 [GitHub](https://github.com/wildfirechat/robot_server) 或 [码云](https://gitee.com/wfchat/robot_server)，查看源码
-11. 开发平台，点击 [GitHub](https://github.com/wildfirechat/open-platform) 或 [码云](https://gitee.com/wfchat/open-platform)，查看源码
-12. 频道（公众号）管理系统，点击 [GitHub](https://github.com/wildfirechat/channel-platform) 或 [码云](https://gitee.com/wfchat/channel-platform)，查看源码
-13. IM 管理后台系统
-14. 更多内容，请点击 [Github](https://github.com/wildfirechat) 或 [码云](https://gitee.com/wfchat) 查看
+6. 鸿蒙 客户端，点击 [GitHub](https://github.com/wildfirechat/hm-chat) 或 [码云](https://gitee.com/wfchat/hm-chat)，查看源码
+7. PC 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-pc-chat) 或 [码云](https://gitee.com/wfchat/vue-pc-chat)，查看源码
+8. Web 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-chat) 或 [码云](https://gitee.com/wfchat/vue-chat)，查看源码
+9. 小程序 Demo，点击 [GitHub](https://github.com/wildfirechat/wx-chat) 或 [码云](https://gitee.com/wfchat/wx-chat)，查看源码
+10. uni-app Demo，点击 [GitHub](https://github.com/wildfirechat/uni-chat) 或 [码云](https://gitee.com/wfchat/uni-chat)，查看源码
+11. flutter Demo，点击 [GitHub](https://github.com/wildfirechat/wfc_flutter_plugins) 或 [码云](https://gitee.com/wfchat/wfc_flutter_plugins)，查看源码
+12. 机器人服务，点击 [GitHub](https://github.com/wildfirechat/robot_server) 或 [码云](https://gitee.com/wfchat/robot_server)，查看源码
+13. 开发平台，点击 [GitHub](https://github.com/wildfirechat/open-platform) 或 [码云](https://gitee.com/wfchat/open-platform)，查看源码
+14. 频道（公众号）管理系统，点击 [GitHub](https://github.com/wildfirechat/channel-platform) 或 [码云](https://gitee.com/wfchat/channel-platform)，查看源码
+15. IM 管理后台系统，点击[这里](https://docs.wildfirechat.cn/admin/)查看截图。
+16. 更多内容，请点击 [Github](https://github.com/wildfirechat) 或 [码云](https://gitee.com/wfchat) 查看
 
 请点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看产品截图展示
 
