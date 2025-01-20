@@ -160,6 +160,20 @@ server {
         proxy_pass  http://imserver_cluster;
     }
 
+    location /im {
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Allow-Methods 'POST, OPTIONS';
+        add_header Access-Control-Allow-Headers 'p,cid,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+        proxy_set_header  Host  $host;
+        proxy_set_header  X-real-ip $remote_addr;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass  http://imserver_cluster;
+        if ($request_method = 'OPTIONS') {
+             return 204;
+        }
+    }
+
     location /fs {
         proxy_set_header  Host  $host;
         proxy_set_header  X-real-ip $remote_addr;
@@ -186,10 +200,24 @@ server {
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;
         location /route {
-                proxy_set_header  Host  $host;
-                proxy_set_header  X-real-ip $remote_addr;
-                proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_pass  http://imserver_cluster;
+            proxy_set_header  Host  $host;
+            proxy_set_header  X-real-ip $remote_addr;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass  http://imserver_cluster;
+        }
+
+        location /im {
+            add_header Access-Control-Allow-Origin *;
+            add_header Access-Control-Allow-Methods 'POST, OPTIONS';
+            add_header Access-Control-Allow-Headers 'p,cid,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+            proxy_set_header  Host  $host;
+            proxy_set_header  X-real-ip $remote_addr;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass  http://imserver_cluster;
+            if ($request_method = 'OPTIONS') {
+                 return 204;
+            }
         }
 
         location /fs {
