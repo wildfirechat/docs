@@ -1,7 +1,7 @@
 # PC 常见问题
 
 ## Q. 如何抓取日志
-A. 协议栈会自己抓取最近5M的日志，将会对问题的解决提供非常大的帮助。协议栈日志在不同系统上存在不同的目录。在MAC上的目录是```~/Library/Application Support/{包名}/wildfirechat/{用户Id}/wfchat_{日期}.xlog```；在Linux上的目录是```~/.wildfirechat/data/{用户Id}/wfchat_{日期}.xlog```；在windows上的目录在```C:\Users\{登电脑登录用户名}\AppData\Roaming\wildfirechat\{用户Id}\wfchat_{日期}.xlog```。log是[mars](https://github.com/Tencent/mars)的```xlog```格式，没有密码。用户可以自己解压后分析，也可以发给我们分析问题。
+A. 协议栈会自己抓取最近5M的日志，将会对问题的解决提供非常大的帮助。协议栈日志在不同系统上存在不同的目录。在MAC上的目录是```~/Library/Application Support/{包名， 也就是package.json 里面的 appId}/wildfirechat/{用户Id}/wfchat_{日期}.xlog```；在Linux上的目录是```~/.wildfirechat/data/{用户Id}/wfchat_{日期}.xlog```；在windows上的目录在```C:\Users\{登电脑登录用户名}\AppData\Roaming\wildfirechat\{用户Id}\wfchat_{日期}.xlog```。log是[mars](https://github.com/Tencent/mars)的```xlog```格式，没有密码。用户可以自己解压后分析，也可以发给我们分析问题。
 
 ## Q. 手机端扫码提示会话不存在或者已过期？
 A. 只有手机端和PC端所对应的APP、IM Server都相同时，才能扫码登录PC端。
@@ -66,3 +66,6 @@ A. 问题的原因是野火PC客户端默认每个账户生成一个UUID作为cl
 2. 调用SDK的```setAppDataPath```方法为此用户设置唯一的路径，建议系统账户用户目录下+用户ID拼接路径。
 3. 调用sdk获取clientId（一定要在第二步之后才调用，之前不要调用），调用登录的第二部分，参数包括clientId和平台，获取IMtoken，得到token之后调用connect。
 4. 如果是记录token自动登录，需要同时记录用户id和token，在调用connect之前要执行步骤2设置数据存储路径。
+
+## Q. 如何修改数据/日志目录名称？
+A. PC 端默认的数据/日志文件路径包含`wildfirechat`字样，如：`/Users/wf/Library/Application Support/cn.wildfire.chat/wildfirechat/uiuJuJcc`。如果客户不希望看到`wildfirechat`字样时，可通过修改`appName`实现，具体请参考`wfc.setAppName`方法，需要注意的是，`setAppName`方法必需需要在`getClientId` 和 `connect` 之前调用
