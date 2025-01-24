@@ -60,7 +60,7 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 ```
 
 ## 使用野火IM私有存储
-野火IM专业版支持野火IM私有存储，按照[说明](https://github.com/wildfirechat/WF-minio)进行部署。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传（数据经过加密上传的）。
+野火IM专业版支持野火IM私有存储，请[点击这里](https://gitee.com/wfchat/WF-minio)查看说明。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传（数据经过加密上传的）。
 
 ### 配置HTTPS
 可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
