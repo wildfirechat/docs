@@ -13,6 +13,9 @@ connect函数没有回调函数，只能通过连接回调来判断连接状态�
 
 |  状态码   | 值  | 意义  | 处理方法 |
 |  ----  | ----  | ----  |  ----- |
+| ConnectionStatusTimeInconsistent  | -9 | 客户端和IM 服务端时间不同步| 当客户端和 IM-Server 时间差超过两个小时时，会出现此错误，请进行时钟同步。 |
+| ConnectionStatusNotLicensed  | -8 | IM 服务未授权或已过期 | 专业版IM-Server 是绑定域名或者 ip 的，只能通过所绑定的域名去连接，并且是有有效期的。当未授权或授权过期时，提示此错误 |
+| ConnectionStatusKickedOff  | -7 | 被踢下线 | 同一用户，被其他端踢下载时 |
 | ConnectionStatusSecretKeyMismatch  | -6 | 会话密钥错误 | 一般是clientId没有从SDK中连接，或者有多个IM服务，获取token跟客户端连接的服务不是同一个。 |
 | ConnectionStatusTokenIncorrect  | -5 | token错误 | 需要检查token是否错误 |
 | ConnectionStatusServerDown  | -4 | IM Server服务无法连通 |  需要检查服务器是否宕机或者网络出现问题 |
