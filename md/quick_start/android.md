@@ -16,6 +16,8 @@
 
 ## 在线编译
 > 推荐搭建本地开发环境，如果想快速看到效果的话，可以选择在线编译
+
+**非常重要，在线编译，打包的产物是 debug 版本 apk，不支持音视频通话，原因请参考项目 README 上的说明。**
 1. Fork [android-chat](https://github.com/wildfirechat/android-chat)
 2. 参考上面的 [修改配置](#修改配置) 部分修改相关配置，并提交、推送修改到 Github
 3. 在自己 Fork 的 `android-chat`仓库下，依次点击`Actions` -> `Workflows` -> `Android CI`  -> `Run workflow`
