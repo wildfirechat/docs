@@ -3,7 +3,7 @@
 
 > 以下是官方发布的版本，开发者可以直接体验。需要自行私有化部署的话，请参考[快速开始](https://docs.wildfirechat.cn/quick_start/)
 
-## 移动端(Android、iOS)
+## 移动端(Android、iOS、鸿蒙)
 
 请使用微信扫码下方二维码
 > 关于安装野火IM 之后，可能会接到反诈中心电话的说明：
@@ -15,11 +15,6 @@
  ![野火IM](https://static.wildfirechat.cn/download_qrcode.png)
 
 > 首次登录时需要使用手机号码接收短信验证码登录，有时可能短信会被屏蔽，如果收不到验证短信，可以微信联系 wildfirechat 或 wfchat 索要验证码。
-
-##  移动端(鸿蒙NEXT)
-请用 DevEco Studio 导入以下项目进行体验
-
-[hm-chat](https://github.com/wildfirechat/hm-chat)
 
 ## PC 端
 
@@ -59,4 +54,3 @@
 请用HBuilder X 导入以下项目进行体验
 
 [uni-chat-uts](https://github.com/wildfirechat/uni-chat-uts)
-
