@@ -1,0 +1,12 @@
+@startuml
+  应用 -> 认证中心 : 登录
+  认证中心 -> 应用 : 登录成功（返回认证token）
+  应用 -> 应用服务 : 登录(带上认证token/clientId/platform)
+  应用服务 -> 认证中心 : 核验认证token
+  认证中心 -> 应用服务 : 核验成功返回用户ID
+  应用服务 -> 野火IM服务 : 获取IM token（userId/clientId/platform）
+  野火IM服务 -> 应用服务 : 获取IM token成功
+  应用服务 -> 应用 : 登录成功（IM token）
+  应用 -> IM_SDK : connect(userId/IM token)
+  IM_SDK <-> 野火IM服务 : 建立长链接
+@enduml
