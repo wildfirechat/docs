@@ -8,22 +8,17 @@
 ## 我们提供的产品
 野火IM提供完整的即时通讯和实时音视频解决方案，以及丰富的周边生态系统，主要包括：
 
-1. 即时通讯服务(IM Server)，点击 [GitHub](https://github.com/wildfirechat/im-server) 或 [码云](https://gitee.com/wfchat/im-server)，查看源码
-2. 应用服务，点击 [GitHub](https://github.com/wildfirechat/app-server) 或 [码云](https://gitee.com/wfchat/app-server)，查看源码
-3. 推送服务，点击 [GitHub](https://github.com/wildfirechat/push_server) 或 [码云](https://gitee.com/wfchat/push_server)，查看源码
-4. Android 客户端，点击 [GitHub](https://github.com/wildfirechat/android-chat) 或 [码云](https://gitee.com/wfchat/android-chat)，查看源码
-5. iOS 客户端，点击 [GitHub](https://github.com/wildfirechat/ios-chat) 或 [码云](https://gitee.com/wfchat/ios-chat)，查看源码
-6. 鸿蒙 客户端，点击 [GitHub](https://github.com/wildfirechat/hm-chat) 或 [码云](https://gitee.com/wfchat/hm-chat)，查看源码
-7. PC 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-pc-chat) 或 [码云](https://gitee.com/wfchat/vue-pc-chat)，查看源码
-8. Web 客户端，点击 [GitHub](https://github.com/wildfirechat/vue-chat) 或 [码云](https://gitee.com/wfchat/vue-chat)，查看源码
-9. 小程序 Demo，点击 [GitHub](https://github.com/wildfirechat/wx-chat) 或 [码云](https://gitee.com/wfchat/wx-chat)，查看源码
-10. uni-app Demo，点击 [GitHub](https://github.com/wildfirechat/uni-chat) 或 [码云](https://gitee.com/wfchat/uni-chat)，查看源码
-11. flutter Demo，点击 [GitHub](https://github.com/wildfirechat/wfc_flutter_plugins) 或 [码云](https://gitee.com/wfchat/wfc_flutter_plugins)，查看源码
-12. 机器人服务，点击 [GitHub](https://github.com/wildfirechat/robot_server) 或 [码云](https://gitee.com/wfchat/robot_server)，查看源码
-13. 开发平台，点击 [GitHub](https://github.com/wildfirechat/open-platform) 或 [码云](https://gitee.com/wfchat/open-platform)，查看源码
-14. 频道（公众号）管理系统，点击 [GitHub](https://github.com/wildfirechat/channel-platform) 或 [码云](https://gitee.com/wfchat/channel-platform)，查看源码
-15. IM 管理后台系统，点击[这里](https://docs.wildfirechat.cn/admin/)查看截图。
-16. 更多内容，请点击 [Github](https://github.com/wildfirechat) 或 [码云](https://gitee.com/wfchat) 查看
+1. 即时通讯
+2. 音视频通话
+3. 会议
+4. 朋友圈
+5. 对讲
+6. 远程协助
+7. 组织通讯录
+8. 频道（公众号）系统
+9. 开放平台（工作台）
+
+支持所有常见平台，支持国产化。
 
 请点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看产品截图展示
 
