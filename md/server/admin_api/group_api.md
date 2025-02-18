@@ -103,7 +103,7 @@ http://domain:18080/admin/group/get_info
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
-| GroupInfo | [json](./models.md#GroupInfo) | 是 | 群资料 |
+| GroupInfo | [json](./models.md#GroupInfo) | 是 | 群信息 |
 
 #### 示例
 ```
@@ -121,6 +121,58 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
     "name":"老王和他的朋友们",
     "owner":"laowang",
     "type":3
+  }
+}
+```
+
+## 批量获取群组信息
+#### 地址
+```
+http://domain:18080/admin/group/batch_infos
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| groupIds | string[] | 是 | 群组ID数组 |
+
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| groupInfoList | [json](./models.md#GroupInfo)[] | 是 | 群信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "[                       \
+    \"groupId1\",\"groupId2\",\"groupId3\"    \
+    ]"                                \
+  http://localhost:18080/admin/group/batch_infos
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "groupInfoList":[
+      {
+        "target_id":"groupId1",
+        "name":"老王和他的朋友们",
+        "owner":"laowang",
+        "type":3  
+      },
+      {
+        "target_id":"groupId2",
+        "name":"老王和他的朋友们",
+        "owner":"laowang",
+        "type":3  
+      },
+      {
+        "target_id":"groupId3",
+        "name":"老王和他的朋友们",
+        "owner":"laowang",
+        "type":3  
+      },
+    ]
   }
 }
 ```
@@ -565,6 +617,41 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
     \"userId\":\"userId1\"    \
     }"                                \
   http://localhost:18080/admin/group/of_user
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "groupIds":["groupId1", "groupId2", "groupId3"]
+  }
+}
+```
+
+## 获取2个用户的共同群列表（不建议高频使用，以防止有性能问题）
+#### 地址
+```
+http://domain:18080/admin/group/common_group
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| first | string | 是 | 用户ID |
+| second | string | 是 | 用户ID |
+
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| groupIds | list<string> | 是 | 群id列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"first\":\"userId1\",    \
+    \"second\":\"userId2\",    \
+    }"                                \
+  http://localhost:18080/admin/group/common_group
 
 {
   "code":0,

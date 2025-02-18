@@ -124,7 +124,7 @@ public class MessagePayload {
 对于自定义消息，如果需要推送需要encode此字段。推送内容会使用此字段。此字段不显示在推送内容中，但可以作为推送点击之后的数据。比如内容为订单号，点击打开对应订单。
 
 #### binaryContent;
-二进制内容。
+二进制内容。在server api或者server sdk中，这个字段是做base64编码传输的，字段名为base64edData。
 
 #### mentionedType
 提醒类型（就是@某人或@全体）。0 不提醒；1 对mentionedTargets里的user进行提醒；2 对群内所有人提醒。
