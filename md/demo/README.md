@@ -19,12 +19,12 @@
 ## PC 端
 
 请点击下方链接进行下载，安装完成之后，使用野火IM移动端（不是使用微信扫码）扫码登录。
-* [Windows平台64位下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.6-win-x64-setup.exe)
-* [Windows平台32位下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.6-win-ia32-setup.exe)
-* [Mac平台下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.6-mac-universal.dmg)
+* [Windows平台64位下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.9-win-x64-setup.exe)
+* [Windows平台32位下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.9-win-ia32-setup.exe)
+* [Mac平台下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.9-mac-universal.dmg)
 > 安装时，如果提示文件已损坏，这是因为 app 未上架市场，解决办法请参考[这儿](https://blog.csdn.net/Jeremy321321/article/details/136156228)
-* [Linux amd64平台下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.6-linux-x86_64.AppImage)
-* [Linux arm64平台下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.6-linux-arm64.AppImage)
+* [Linux amd64平台下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.9-linux-x86_64.AppImage)
+* [Linux arm64平台下载](https://static.wildfirechat.cn/%E9%87%8E%E7%81%ABIM-1.0.9-linux-arm64.AppImage)
 > 龙芯和申威平台可以自己下载源码编译或者联系我们获取。
 
 ## PC Web 端
