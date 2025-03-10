@@ -52,7 +52,7 @@
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | target_id | string | 否 | 群组ID，创建群组时为可选参数，获取群组信息时是必填项 |
-| name | string | 否 | 群组名称 |
+| name | string | 是 | 群组名称 |
 | portrait | string | 否 | 群组头像 |
 | owner | string | 是 | 群主用户ID |
 | type | int | 是 | 群类型，0 weixin 风格群组；2 qq 风格群组。移动端demo使用的是2，建议使用2. |

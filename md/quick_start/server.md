@@ -27,7 +27,7 @@ IM服务可以直接下载我们发布的[最新版本](https://static.wildfirec
 
   1. 命令行到解压目录
 
-  2. **使用root用户**，执行``` sh ./wildfirechat.sh```
+  2. **使用root用户**，执行``` sh ./wildfirechat.sh```，**请注意本命令为前台运行，退出终端后，程序将停止运行。**
 > 后台执行可以使用命令```nohup sh ./wildfirechat.sh 2>&1 &```，确保退出终端时程序能够继续运行
 
 ##### windows系统
@@ -52,7 +52,7 @@ ps -ef | grep wildfirechat
 应用服务软件可以直接下载我们发布的[最新版本](https://static.wildfirechat.cn/app-server-release-latest.tar.gz)，也可以从[Github](https://github.com/wildfirechat/app_server)或者[码云](https://gitee.com/wfchat/app_server)下载源码编译。下载的软件包解压后得到一个jar包和一个config文件，如果是自己编译，需要把源码中的config文件拷贝到jar包的同目录下。
 
 #### 运行
-执行```java -jar app-0.xx.jar```。
+执行```java -jar app-0.xx.jar```，**请注意本命令为前台运行，退出终端后，程序将停止运行。**
 > 后台执行可以使用命令```nohup java -jar app-0.xx.jar 2>&1 &```，确保退出终端时程序能够继续运行
 
 #### 检查程序可用性
