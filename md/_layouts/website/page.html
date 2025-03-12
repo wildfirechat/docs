@@ -1,0 +1,61 @@
+{% extends template.self %}
+
+{% block javascript %}
+    {{ super() }}
+    <script>
+    require(['gitbook', 'jquery'], function(gitbook, $) {
+        gitbook.events.bind('page.change', function() {
+            setTimeout(function() {
+                console.log('GitBook page changed, applying custom button behavior');
+                
+                // 使用正确的ID选择器查找滚动到顶部按钮
+                var $scrollToTop = $('#anchors-navbar');
+		$('#anchors-navbar ul').remove()
+                
+                // 找到左上角菜单按钮
+                var $menuButton = $('a.btn.pull-left.js-toolbar-action');
+                
+                // 调试日志
+                console.log('Found scroll to top button:', $scrollToTop.length > 0);
+                console.log('Found menu button:', $menuButton.length > 0);
+
+                
+                // 如果找到了按钮
+                if ($scrollToTop.length > 0 && $menuButton.length > 0) {
+                    // 移除原始的点击事件处理器
+                    $scrollToTop.off('click');
+                    $scrollToTop.off('mouseup');
+                    
+                    // 添加新的点击事件，用于触发菜单按钮
+                    $scrollToTop.on('click', function(e) {
+                        e.preventDefault();
+                        console.log('Custom scroll button clicked, triggering menu button');
+                        
+			$('.book-body').animate({ scrollTop: 0 }, 'fast');
+                        // 触发左上角菜单按钮的点击事件
+                        $menuButton[0].click();
+                        return false;
+                    });
+                    
+                    // 更改按钮图标（如果有的话）
+                    if ($scrollToTop.find('i').length > 0) {
+                        $scrollToTop.find('i')
+                            .removeClass('fa-anchor')
+                            .addClass('fa-align-justify');
+                        console.log('Button icon changed to bars');
+                    }
+                    
+                    // 更新提示文本
+                    $scrollToTop.attr('title', '展开目录');
+                    console.log('Button title updated');
+                }
+            }, 100); // 给予页面充分的加载时间
+        });
+    });
+    </script>
+    <style>
+    /* 可选：调整按钮样式 */
+    #goTop {
+    }
+    </style>
+{% endblock %}
