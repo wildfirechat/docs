@@ -9,6 +9,7 @@
    1. web.example.com 用来访问 web 前端页面
    2. app.example.com 用来访问 app-server
    3. im.example.com 用来访问 im-server
+4. 安全组/防火墙需要放行以下端口：80、443、1883、8084
 
 ## 修改```vue-chat```代码，启用https
 1. 替换`proto.min.js`，用通过邮件获取的，绑定`im.example.com`域名的`proto.min.js`替换项目里面对应的原始文件
@@ -147,7 +148,7 @@ upstream imserver_cluster  {
 
 server {
     listen 80;
-    server_name  im.example.com;
+    server_name  im.example.com; #记得改成自己的域名
 
     root   html;
     index  index.html index.htm index.php;
@@ -189,7 +190,7 @@ server {
 
 server {
         listen 443;
-        server_name im.example.com;
+        server_name im.example.com; # 记得改成自己的域名
         ssl on;
         root html;
         index index.html index.htm;
@@ -246,7 +247,7 @@ upstream ws_node1  {
 
 server {
     listen 8084 ssl; # 8084 对应 im-server 配置文件里面的 websocket_proxy_secure_port
-    server_name im.example.com;
+    server_name im.example.com; # 记得改成你们自己的域名
 
     root html;
     index index.html index.htm;
