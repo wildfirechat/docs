@@ -4,7 +4,7 @@
 
 ## 集成ChatUIKit
 1. 将`uikit`作为一个`module`引入到目标项目
-   > 引入方法是：将`uikit`目录拷贝到目标项目，然后在目标项目`setting.gradle`里面添加`include ':uikit'`，引入其他`module`也是一样的办法
+   > 引入方法是：将`uikit`目录拷贝到目标项目，然后在目标项目`setting.gradle`里面添加`include ':uikit'`，同时在目标项目`app module`里面添加` implementation project(':uikit')`，引入其他`module`也是一样的办法
 2. 将`uikit`所依赖的`modeule`引入目标项目，目前依赖于`client`、`avenginekit`、`badgeview`、`menu`、`uikit-aar-dep`等，具体可以参考`uikit/build.gradle`
 3. 在项目`Application`子类里面初始化`UIKit`。初始化操作，只需要再主进程进行即可。可以参考`android-chat`里面的`MyApp.java`
     ```
