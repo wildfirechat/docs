@@ -74,6 +74,7 @@
     * [ChatClient简介](android/chatclient.md)
     * [ChatUIKit简介](android/chatuikit.md)
     * [WildfireChat简介](android/wildfirechat.md)
+    * [集成说明](android/android_integration.md)
     * [推送集成](https://github.com/wildfirechat/push_server)
 * [iOS开发](ios/README.md)
     * [代码编译与工程说明](ios/compile.md)
