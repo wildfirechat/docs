@@ -79,4 +79,4 @@
 如果您对于此个人信息保护政策或相关事宜有任何问题，请通过 support@wildfirechat.cn 与我们联系。
 
 
-Fengyun Sun
+北京野火无限网络科技有限公司
