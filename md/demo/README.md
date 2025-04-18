@@ -12,7 +12,9 @@
 
 > 开发者自行部署时，没有上述问题，但务必要修改包名，不能直接使用 demo 的包名。
 
- ![野火IM](https://static.wildfirechat.cn/download_qrcode.png)
+ <a href="https://static.wildfirechat.cn/download-demo.html" target="_blank">
+  <img src="https://static.wildfirechat.cn/download_qrcode.png" alt="下载二维码" />
+</a>
 
 > 首次登录时需要使用手机号码接收短信验证码登录，有时可能短信会被屏蔽，如果收不到验证短信，可以微信联系 wildfirechat 或 wfchat 索要验证码。
 
