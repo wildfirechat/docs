@@ -351,6 +351,7 @@ http://domain:18080/admin/group/member/add
 | group_id | string | 是 | 群组ID |
 | members | list<[json](./models.md#GroupMember)> | 是 | 群成员，成员类型只能为0/1 |
 | to_lines | int[] | 否 | 会话线路，默认为0 |
+| member_extra | string | 否 | 群成员的extra信息 |
 | notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
 
 
