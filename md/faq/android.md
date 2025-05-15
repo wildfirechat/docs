@@ -75,3 +75,6 @@ A.
 
 #### Q. 如何把android设备的类型从android手机改成android Pad？
 A. 默认android设备都会被认为是手机，可以修改类型改成pad，这样手机可以和pad共存。在```ClientService.java```的```getDeviceType```方法中，把```DeviceInfo```的```platform```改成9。另外在登录时，需要把```platform```也改成9。同理iOS也可以改成Pad，请参考iOS常见问题。
+
+#### Q. 如何替换动态表情？
+A. 野火默认的动态表情包，存储在`uikit/src/main/assets/sticker` 目录下，添加新表情包时，需要添加一个表情包目录及封面图片，类似默认的`B数`目录及`B数.png`
