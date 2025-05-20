@@ -21,6 +21,22 @@ http://domain:18080/admin/channel/create
 | extra | string | 否 | 附加信息 |
 | menus | [menu] | 否 | 频道菜单 |
 
+菜单
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| menuId | string | 是 | 频道拥有者 |
+| name | string | 是 | 频道名称 |
+| targetId | string | 否 | 频道ID，如果传空，系统会自动生成一个用户id |
+| callback | string | 否 | 频道消息回调地址 |
+| portrait | string | 否 | 频道头像 |
+| auto | int | 否 | 0，owner会接收到消息，如果配置callback同时会转发消息；1，owner不会接收消息，如果配置callback会转发消息到callback |
+| desc | string | 否 | 描述信息 |
+| state | int | 否 | [频道权限](../../base_knowledge/channel.md#频道属性) |
+| secret | string | 否 | 频道密钥，如果为空系统会自动生成 |
+| extra | string | 否 | 附加信息 |
+| menus | [menu] | 否 | 频道菜单 |
+
+
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
