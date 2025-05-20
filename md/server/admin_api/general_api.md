@@ -19,6 +19,7 @@ http://domain:18080/admin/channel/create
 | state | int | 否 | [频道权限](../../base_knowledge/channel.md#频道属性) |
 | secret | string | 否 | 频道密钥，如果为空系统会自动生成 |
 | extra | string | 否 | 附加信息 |
+| menus | [menu] | 否 | 频道菜单 |
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
