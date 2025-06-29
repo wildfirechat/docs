@@ -1,4 +1,4 @@
-# PC体验
+# PC Electron版本体验
 可以体验electron版本，包括windows/mac/linux平台。
 
 ## 前提条件

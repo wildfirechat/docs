@@ -7,7 +7,7 @@
 * [安卓问题](android.md)
 * [iOS问题](ios.md)
 * [Web问题](web.md)
-* [PC问题](pc.md)
+* [PC Electron版本问题](pc_electron.md)
 * [小程序问题](wx.md)
 * [音视频问题](webrtc.md)
 * [最佳实践](practicality.md)
