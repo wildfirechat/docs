@@ -40,7 +40,7 @@ IM相关，有如下收费项目
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
 | 专业版IM服务 | [专业版IM服务](../commercial_server/README.md)的软件包，不包含源码 | 2.9W/套 |
-| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
+| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[开源Electron Demo](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
 | PC SDK（C语言风格版本 Win/Mac平台） | 功能库闭源，提供[开源Qt Demo](https://github.com/wildfirechat/qt-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
 | 鸿蒙原生SDK | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机、鸿蒙Pad和鸿蒙PC上。 | 2.9W/套 |
 | Web SDK | Web功能库（发布包，提供[开源Demo](https://github.com/wildfirechat/vue-chat)，依赖专业版IM） | 1W/套 |
@@ -57,7 +57,7 @@ IM相关，有如下收费项目
 
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
-| 国产化Linux PC SDK（Electron版本 Linux平台） | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
+| 国产化Linux PC SDK（Electron版本 Linux平台） | 功能库闭源，提供[开源Electron Demo](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
 | 国产化Linux PC SDK（C语言风格版本 Linux平台） | 功能库闭源，提供[开源Qt Demo](https://github.com/wildfirechat/qt-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
 | PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 2.9W/套 |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
