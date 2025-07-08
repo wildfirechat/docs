@@ -10,9 +10,28 @@ http://domain:18080/admin/user/get_token
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
 | clientId | string | 是 | 客户端ID |
-| platform | int | 是 | 平台类型iOS 1, Android 2, Windows 3, OSX 4, WEB 5, 小程序 6，linux 7 |
+| platform | int | 是 | 平台，见下面 |
 > clientId为客户端ID，客户端SDK有获取clientId的接口。
 > platform为客户端类型标识，必须正确填写，否则connect的时候，会失败或者多端互踢等功能失效。
+
+
+#### 平台
+|平台 | 值 | 平台类型|
+| ------ | ----- | ----- |
+| iOS | 1 | 移动端 |
+| Android | 2 | 移动端 |
+| Windows | 3 | PC端 |
+| OSX | 4 | PC端 |
+| Web | 5 | 网页端 |
+| WX(小程序) | 6 | 小程序端 |
+| Linux | 7 | PC端 |
+| iPad | 8 | Pad端 |
+| APad | 9 | Pad端 |
+| Harmony | 10 | 移动端 |
+| Harmony_Pad | 11 | Pad端 |
+| Harmony_PC | 12 | PC端 |
+> 一共有移动端、PC端、Web端、小程序端、Pad端，共5个端。
+> 平台类型是用来做多端互踢的，当关闭多端时，每个端只能登录一个设备，不同端可以同时登录。当打开多端时，任意端都可以登录一个或多个设备。
 
 
 #### 响应
