@@ -131,7 +131,7 @@ http://domain/channel/get_profile
 | owner | string | 否 | 频道的拥有者 |
 | updateDt | string | 否 | 频道更新日期 |
 | callback | string | 否 | 频道回调地址 |
-| state | int | 是 | [频道属性](../../base_knowledge/channel##频道信息) |
+| state | int | 是 | [频道属性](../../base_knowledge/channel#频道信息) |
 | automatic | string | 否 | 消息是否发给owner，0 发送；1 不发送 |
 
 频道信息
