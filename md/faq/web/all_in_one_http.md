@@ -46,7 +46,7 @@ local_port            80 # 一定要保证和 http_port 一致
 ```
 // 关闭WSS
 static USE_WSS = false;
-// HTTP 端口
+// HTTP 端口，y 一定和 im-server 配置里面的 http_port 保持一致
 static ROUTE_PORT = 80;
 
 // APP SERVER的地址。启用https时，APP SERVER必须是https地址
