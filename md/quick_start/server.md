@@ -25,14 +25,16 @@ IM服务可以直接下载我们发布的[最新版本](https://static.wildfirec
 
 ##### mac/linux系统
 
-  1. 命令行到解压目录
+1. 命令行到解压目录，注意目录不要有空格和中文。
 
-  2. **使用root用户**，执行``` sh ./wildfirechat.sh```，**请注意本命令为前台运行，退出终端后，程序将停止运行。**
-> 后台执行可以使用命令```nohup sh ./wildfirechat.sh 2>&1 &```，确保退出终端时程序能够继续运行
+2. **使用root用户**，执行``` bash ./wildfirechat.sh```，**请注意本命令为前台运行，退出终端后，程序将停止运行。**
+> 后台执行可以使用命令```nohup bash ./wildfirechat.sh 2>&1 &```，确保退出终端时程序能够继续运行
 
 ##### windows系统
 
-1. 使用命令行窗口执行```wildfirechat.bat```（双击执行不可用，必须命令行)。
+1. 命令行到解压目录，注意目录不要有空格和中文。
+
+2. 执行命令 ```wildfirechat.bat```（双击执行不可用，必须命令行)。
 
 > 在windows下编辑过，可能会保存为windows格式，在放到linux上执行时，有可能会出现错误，处理方法请参考[FAQ](https://docs.wildfirechat.cn/faq/server.html)
 
