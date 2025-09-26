@@ -120,7 +120,7 @@ websocket_proxy_secure_port 8084 # wss 端口
 
 > 检查项
 > 1. 访问`http://im.example.com/api/version`，看是否返回一个 json 文本
-> 2. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `ws:im.example.com:8083` 是否工作正常
+> 2. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `ws://im.example.com:8083` 是否工作正常
 
 ### nginx 配置
 #### 在nginx.conf的http区域添加下面map块
