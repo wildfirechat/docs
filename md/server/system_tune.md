@@ -54,7 +54,7 @@ sysctl -w net.ipv4.tcp_timestamps=1
 JAVA_OPTS="$JAVA_OPTS -Xmx12G"
 JAVA_OPTS="$JAVA_OPTS -Xms12G"
 ```
-## 修改日志登记
+## 修改日志实时写入
 专业版修改野火日志配置文件/config/log4j2.xml，修改直接写入为false
 ```
 immediateFlush="false"
