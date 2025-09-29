@@ -41,7 +41,7 @@ server{
 }
 
 server {
-    listen 443;
+    listen 443 ssl;
     server_name  web.example.com;
 
     root /var/www/wildfirechat_web/dist; #将 vue-chat 打包出来的 dist 目录下的所有内容放到这儿，不是 dist 目录
@@ -189,9 +189,8 @@ server {
 }
 
 server {
-        listen 443;
+        listen 443 ssl;
         server_name im.example.com; # 记得改成自己的域名
-        ssl on;
         root html;
         index index.html index.htm;
         ssl_certificate   cert/im.example.com.pem; #配置证书，可使用域名证书，或者通配符证书
