@@ -274,5 +274,6 @@ server {
 ```
 
 > 检查项
-> 1. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss://im.example.com:8084` 是否工作正常
-> 2. 如果内网使用，不能用在线监测工具时，可以下载[离线测试工具](https://static.wildfirechat.cn/wstool-offline.zip)
+> 1. 执行`nginx -t`进行 nginx 配置测试，确保配置正确
+> 2. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss://im.example.com:8084` 是否工作正常
+> 3. 如果内网使用，不能用在线监测工具时，可以下载[离线测试工具](https://static.wildfirechat.cn/wstool-offline.zip)
