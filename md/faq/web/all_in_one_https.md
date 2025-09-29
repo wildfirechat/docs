@@ -5,7 +5,7 @@
 ## 前置说明
 1. 生产环境，不建议采用这种方式部署，此种方式仅限于快速体验
 2. 使用 nginx 来处理 https 和 wss
-3. 需要准备准备三个域名，都解析到目标服务器
+3. 需要准备准备三个域名，都解析到目标服务器，并准备各个域名对应的证书，或者用通配符证书
    1. web.example.com 用来访问 web 前端页面
    2. app.example.com 用来访问 app-server
    3. im.example.com 用来访问 im-server
@@ -45,8 +45,8 @@ server {
     server_name  web.example.com;
 
     root /var/www/wildfirechat_web/dist; #将 vue-chat 打包出来的 dist 目录下的所有内容放到这儿，不是 dist 目录
-    ssl_certificate /etc/nginx/cert/web.example.com.pem; # 配置通配符证书，或者域名证书
-    ssl_certificate_key /etc/nginx/cert/web.example.com.key;
+    ssl_certificate /etc/nginx/certs/web.example.com.pem; # 配置通配符证书，或者域名证书
+    ssl_certificate_key /etc/nginx/certs/web.example.com.key;
 
     location / {
         index  index.html;
@@ -77,8 +77,8 @@ server {
         root html;
         index index.html index.htm;
         client_max_body_size  10m; #文件最大大小
-        ssl_certificate   cert/app.example.com.pem; #配置证书，可使用域名证书，或通配符证书
-        ssl_certificate_key  cert/app.example.com.key;
+        ssl_certificate   certs/app.example.com.pem; #配置证书，可使用域名证书，或通配符证书
+        ssl_certificate_key  certs/app.example.com.key;
         ssl_session_timeout 5m;
         ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -193,8 +193,8 @@ server {
         server_name im.example.com; # 记得改成自己的域名
         root html;
         index index.html index.htm;
-        ssl_certificate   cert/im.example.com.pem; #配置证书，可使用域名证书，或者通配符证书
-        ssl_certificate_key  cert/im.example.com.key;
+        ssl_certificate   certs/im.example.com.pem; #配置证书，可使用域名证书，或者通配符证书
+        ssl_certificate_key  certs/im.example.com.key;
         ssl_session_timeout 5m;
         ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -250,8 +250,8 @@ server {
 
     root html;
     index index.html index.htm;
-    ssl_certificate   cert/im.example.com.pem; # 配置证书
-    ssl_certificate_key  cert/im.example.com.key;
+    ssl_certificate   certs/im.example.com.pem; # 配置证书
+    ssl_certificate_key  certs/im.example.com.key;
     ssl_session_timeout 5m;
     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
@@ -275,3 +275,4 @@ server {
 
 > 检查项
 > 1. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss://im.example.com:8084` 是否工作正常
+> 2. 如果内网使用，不能用在线监测工具时，可以下载[离线测试工具](https://static.wildfirechat.cn/wstool-offline.zip)
