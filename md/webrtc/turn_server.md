@@ -78,6 +78,21 @@ turnserver -v -r ${公网IP}:3478 -a -o -c /usr/local/etc/turnserver.conf
 log-file=/dev/null
 ```
 
+#### 客户端配置
+> 此处以 Android 端为例，其他端也是类似的
+
+```
+    // Config.java
+    public static String[][] ICE_SERVERS/*请仔细阅读上面的注释*/ = new String[][]{
+        // 如果是高级版，请删除掉下面的配置项目，保持ICE_SERVERS为空数组就行。
+        // 数组元素定义
+        /*{"turn server uri", "userName", "password"}*/
+        // 请根据部署情况修改下面的配置
+        {"turn:turn.wildfirechat.net:3478", "wfchat", "wfchatpwd"} // 请根据部署情况，修改下面的配置
+    };
+
+```
+
 #### 进阶设置
 启用TLS，生成证书并配置证书，这个就从网上自己找吧。
 
