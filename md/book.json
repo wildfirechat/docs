@@ -1,8 +1,7 @@
 {
-    "title": "野火IM开发手册",
-    "description": "野火IM开发手册",
+    "title": "野火技术白皮书",
+    "description": "野火技术白皮书",
     "author": "野火IM",
-
     "language": "zh-hans",
     "links": {
         "sidebar": {
@@ -14,6 +13,7 @@
         "website": "styles/website.css",
         "ebook": "styles/ebook.css"
     },
+
 
     "pdf": {
       "fontSize": 9,
