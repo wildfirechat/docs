@@ -127,16 +127,18 @@ http://domain/robot/message/recall
 > 机器人只有普通用户的权限，一般情况下只能撤回自己发送的消息，且时限在IM服务配置的允许撤回的时间内。在群组中，如果机器人是群主或者群管理员，可以根据群主或者群管理员的权限来撤回其他人的消息。
 
 #### 响应
-N/A
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | string | 是 | 撤回结果 |
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"operator\":\"a\",\"messageUid\":5323423532}" http://domain/robot/message/recall
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"messageUid\":5323423532}" http://localhost/robot/message/recall
 
 {
   "code":0,
   "msg":"success",
-
+  "result":"success"
 }
 ```
 
@@ -175,6 +177,51 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "result":{
     "userId":"a",
     "name":"usera"
+  }
+}
+```
+
+## 回复消息
+回复指定消息，用于机器人的自动回复功能。
+
+#### 地址
+```
+http://domain/robot/message/reply
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 被回复的消息UID |
+| payload | [json](./models.md#MessagePayload) | 是 | 回复消息负载 |
+| only2Sender | bool | 否 | 是否只发送给原发送者，默认false |
+
+> 消息内容对应的json格式payload请参考[内置消息](../predefined_message_content.md)
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 消息唯一ID |
+| timestamp | long | 是 | 服务器处理时间 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
+  "{                       \
+    \"messageUid\":5323423532,       \
+    \"only2Sender\":false,            \
+    \"payload\":{                 \
+      \"type\":1,                       \
+      \"searchableContent\":\"收到\"   \
+    }                                   \
+  }"                                \
+  http://localhost/robot/message/reply
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "messageUid":5323423533,
+    "timestamp":13123423234324,
   }
 }
 ```
@@ -312,6 +359,93 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "msg":"success"
 }
 ```
+
+## 获取机器人资料
+获取机器人自己的资料信息。
+
+#### 地址
+```
+http://domain/robot/profile
+```
+#### body
+N/A
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 机器人用户ID |
+| name | string | 是 | 登录名 |
+| displayName | string | 是 | 显示名字 |
+| portrait | string | 否 | 机器人头像 |
+| mobile | string | 否 | 手机号码 |
+| email | string | 否 | 邮箱 |
+| address | string | 否 | 地址 |
+| company | string | 否 | 公司 |
+| extra | string | 否 | 附加信息 |
+| owner | string | 是 | 机器人拥有者 |
+| secret | string | 是 | 机器人密钥 |
+| callback | string | 否 | 回调地址 |
+| robotExtra | string | 否 | 机器人附加信息 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" http://localhost/robot/profile
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userId":"robot1",
+    "name":"robot1",
+    "owner":"user1",
+    "secret":"secret123"
+  }
+}
+```
+
+## 发送会议请求
+机器人发送会议相关请求。
+
+#### 地址
+```
+http://domain/robot/conference/request
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| robotId | string | 是 | 机器人ID |
+| clientId | string | 是 | 客户端ID |
+| request | string | 是 | 请求类型 |
+| sessionId | long | 是 | 会话ID |
+| roomId | string | 否 | 房间ID |
+| data | string | 否 | 附加数据 |
+| advance | bool | 否 | 是否高级会议 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | string | 是 | 请求结果 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
+  "{                       \
+    \"robotId\":\"robot1\",       \
+    \"clientId\":\"client1\",                        \
+    \"request\":\"join\",                        \
+    \"sessionId\":123456,                        \
+    \"roomId\":\"room1\",                        \
+    \"advance\":false                        \
+  }"                                \
+  http://localhost/robot/conference/request
+
+{
+  "code":0,
+  "msg":"success",
+  "result":"request_processed"
+}
+```
+
 ## 群操作
 [机器人群操作](./group_api.md)
 

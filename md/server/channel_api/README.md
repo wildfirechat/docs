@@ -63,7 +63,7 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
       \"searchableContent\":\"hello\"   \
     }                                   \
   }"                                \
-  http://localhost/channel/channel/send
+  http://localhost/channel/message/send
 
 {
   "code":0,
@@ -149,6 +149,37 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 修改频道菜单
+修改频道的菜单信息。此接口是修改频道信息的特例，type=1，value为菜单的JSON字符串。
+
+#### 地址
+```
+http://domain/channel/update_profile
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| type | int | 是 | 固定为1（频道菜单） |
+| value | string | 是 | 菜单JSON字符串 |
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1" -d   \
+  "{                       \
+    \"type\":1,                        \
+    \"value\":\"[{\\\"menuId\\\":\\\"menu1\\\",\\\"name\\\":\\\"菜单1\\\"}]\"                        \
+  }"                                \
+  http://localhost/channel/update_profile
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
 ## 修改频道组信息
 #### 地址
 ```
@@ -201,7 +232,7 @@ http://domain/channel/subscribe
 
 #### 示例
 ```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1" -d "{\"type\":0,\"value\":\"野火官方频道\"}" http://localhost/channel/subscribe
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1" -d "{\"target\":\"user1\",\"subscribe\":1}" http://localhost/channel/subscribe
 
 {
   "code":0,
@@ -232,6 +263,93 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "result":{
     "list":["a","b"]
   }
+}
+```
+
+## 检查是否为订阅者
+检查指定用户是否订阅了当前频道。
+
+#### 地址
+```
+http://domain/channel/is_subscriber
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | bool | 是 | 是否为订阅者 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1" -d "{\"userId\":\"user1\"}" http://localhost/channel/is_subscriber
+
+{
+  "code":0,
+  "msg":"success",
+  "result":true
+}
+```
+
+## 撤回消息
+撤回已发送的消息。
+
+#### 地址
+```
+http://domain/channel/message/recall
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 消息唯一ID |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | string | 是 | 撤回结果 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1" -d "{\"messageUid\":123456}" http://localhost/channel/message/recall
+
+{
+  "code":0,
+  "msg":"success",
+  "result":"success"
+}
+```
+
+## 重新发布消息
+将已发送的消息重新发布给指定用户。
+
+#### 地址
+```
+http://domain/channel/message/republish
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageId | long | 是 | 消息唯一ID |
+| targets | list<string> | 是 | 目标用户ID列表 |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "cid":"channelId1" -d   \
+  "{                       \
+    \"messageId\":123456,                        \
+    \"targets\":[\"user1\",\"user2\"]                        \
+  }"                                \
+  http://localhost/channel/message/republish
+
+{
+  "code":0,
+  "msg":"success"
 }
 ```
 

@@ -60,6 +60,7 @@
     * [Server SDK](server/sdk.md)
     * [Robot API接口](server/robot_api/README.md)
       * [机器人群操作](server/robot_api/group_api.md)
+      * [机器人朋友圈操作](server/robot_api/moments_api.md)
     * [Channel API接口](server/channel_api/README.md)
     * [内置消息内容](server/predefined_message_content.md)
     * [事件回调](server/event_callback.md)

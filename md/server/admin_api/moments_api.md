@@ -69,23 +69,3 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }
 }
 ```
-
-## 更多朋友圈功能
-
-管理员端只提供基础的朋友圈发布功能。更多的朋友圈管理功能（如获取动态列表、评论管理、用户资料管理等）主要通过 **Robot 服务** 提供，主要包括：
-
-### Robot 服务朋友圈API
-
-1. **发布朋友圈动态** - `/robot/moments/feed/post`
-2. **获取朋友圈动态列表** - `/robot/moments/feed/pull`
-3. **获取单条动态** - `/robot/moments/feed/pull_one`
-4. **更新朋友圈动态** - `/robot/moments/feed/update`
-5. **撤回朋友圈动态** - `/robot/moments/feed/recall`
-6. **发布评论** - `/robot/moments/comment/post`
-7. **获取评论列表** - `/robot/moments/comment/pull`
-8. **撤回评论** - `/robot/moments/comment/recall`
-9. **获取用户朋友圈资料** - `/robot/moments/profiles/pull`
-10. **更新朋友圈背景** - `/robot/moments/profiles/value/push`
-11. **更新陌生人可见数量** - `/robot/moments/profiles/list/push`
-
-详细的使用方法请参考 [Robot 服务文档](./robot_service_api.md)。
