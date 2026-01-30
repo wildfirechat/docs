@@ -662,3 +662,243 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   }
 }
 ```
+
+## 按成员类型获取用户群组列表
+根据成员类型获取用户的群组列表（不建议高频使用，以防止有性能问题）。
+
+#### 地址
+```
+http://domain:18080/admin/group/of_user_by_type
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| groupMemberType | int[] | 是 | 成员类型列表(0普通成员, 1管理员, 2群主) |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| groupIds | list<string> | 是 | 群id列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"userId1\",    \
+    \"groupMemberType\":[0, 2]    \
+    }"                                \
+  http://localhost:18080/admin/group/of_user_by_type
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "groupIds":["groupId1", "groupId2"]
+  }
+}
+```
+
+## 禁言群成员
+设置或取消群成员的禁言状态。
+
+#### 地址
+```
+http://domain:18080/admin/group/manager/mute
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| operator | string | 是 | 操作者用户ID |
+| group_id | string | 是 | 群组ID |
+| members | list<string> | 是 | 群成员ID列表 |
+| is_manager | boolean | 是 | true 设置为禁言；false 取消禁言 |
+| to_lines | int[] | 否 | 会话线路，默认为0 |
+| notify_message | [json](./models.md#MessagePayload) | 否 | 消息负载，如果不填写，系统会发出内置通知消息，如果填写，覆盖系统通知消息 |
+
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"operator\":\"admin\",       \
+    \"group_id\":\"groupId1\",    \
+    \"members\": [                  \
+        \"memberId1\"  \
+      ],                            \
+    \"is_manager\": true                            \
+    }"                                \
+  http://localhost:18080/admin/group/manager/mute
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 设置群备注
+为用户设置群组的备注信息。
+
+#### 地址
+```
+http://domain:18080/admin/user/put_setting
+```
+> 此接口复用用户设置接口，设置scope=6, key=groupId
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| scope | int | 是 | 范围，设置为6 |
+| key | string | 是 | 群组ID |
+| value | string | 是 | 备注内容 |
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"user1\",       \
+    \"scope\": 6,    \
+    \"key\": \"groupId1\",   \
+    \"value\": \"重要群组\"   \
+    }"                                \
+  http://localhost:18080/admin/user/put_setting
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 获取群备注
+获取用户对群组的备注信息。
+
+#### 地址
+```
+http://domain:18080/admin/user/get_setting
+```
+> 此接口复用用户设置接口，获取scope=6, key=groupId
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| scope | int | 是 | 范围，设置为6 |
+| key | string | 是 | 群组ID |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| scope | int | 是 | 范围 |
+| key | string | 是 | 键 |
+| value | string | 是 | 备注内容 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"user1\",       \
+    \"scope\": 6,    \
+    \"key\": \"groupId1\"   \
+    }"                                \
+  http://localhost:18080/admin/user/get_setting
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "scope":6,
+    "key":"groupId1",
+    "value":"重要群组"
+  }
+}
+```
+
+## 收藏群组
+为用户设置群组的收藏状态。
+
+#### 地址
+```
+http://domain:18080/admin/user/put_setting
+```
+> 此接口复用用户设置接口，设置scope=26, key=groupId, value为"1"表示收藏，"0"表示取消收藏
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| scope | int | 是 | 范围，设置为26 |
+| key | string | 是 | 群组ID |
+| value | string | 是 | "1"收藏，"0"取消收藏 |
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"user1\",       \
+    \"scope\": 26,    \
+    \"key\": \"groupId1\",   \
+    \"value\": \"1\"   \
+    }"                                \
+  http://localhost:18080/admin/user/put_setting
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 是否收藏群组
+获取用户是否收藏了指定群组。
+
+#### 地址
+```
+http://domain:18080/admin/user/get_setting
+```
+> 此接口复用用户设置接口，获取scope=26, key=groupId
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| scope | int | 是 | 范围，设置为26 |
+| key | string | 是 | 群组ID |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| scope | int | 是 | 范围 |
+| key | string | 是 | 键 |
+| value | string | 是 | "1"已收藏，"0"未收藏 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"user1\",       \
+    \"scope\": 26,    \
+    \"key\": \"groupId1\"   \
+    }"                                \
+  http://localhost:18080/admin/user/get_setting
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "scope":26,
+    "key":"groupId1",
+    "value":"1"
+  }
+}
+```

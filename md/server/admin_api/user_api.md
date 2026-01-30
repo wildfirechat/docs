@@ -209,6 +209,111 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 通过邮箱获取用户
+通过邮箱地址获取用户信息列表（可能有多个用户使用同一邮箱）。
+
+#### 地址
+```
+http://domain:18080/admin/user/get_info_by_email
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| email | string | 是 | 用户邮箱 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | Object[] | 是 | 用户信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "\"user1@example.com\"" http://localhost:18080/admin/user/get_info_by_email
+
+{
+  "code":0,
+  "msg":"success",
+  "result":[
+    {
+      "userId":"user1",
+      "name":"name1",
+      "email":"user1@example.com"
+    }
+  ]
+}
+```
+
+## 获取所有用户(分页)
+分页获取系统中的所有用户。
+
+#### 地址
+```
+http://domain:18080/admin/user/all
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| count | int | 是 | 每页数量 |
+| offset | int | 是 | 偏移量 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | Object[] | 是 | 用户信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"count\":10,\"offset\":0}" http://localhost:18080/admin/user/all
+
+{
+  "code":0,
+  "msg":"success",
+  "result":[
+    {
+      "userId":"user1",
+      "name":"name1"
+    }
+  ]
+}
+```
+
+## 批量获取用户信息
+根据用户ID列表批量获取用户信息。
+
+#### 地址
+```
+http://domain:18080/admin/user/batch_get_infos
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| list | string[] | 是 | 用户ID列表 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | Object[] | 是 | 用户信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"list\":[\"user1\",\"user2\"]}" http://localhost:18080/admin/user/batch_get_infos
+
+{
+  "code":0,
+  "msg":"success",
+  "result":[
+    {
+      "userId":"user1",
+      "name":"name1"
+    },
+    {
+      "userId":"user2",
+      "name":"name2"
+    }
+  ]
+}
+```
+
 ## 更新用户状态
 封禁/禁言用户
 #### 地址
@@ -463,6 +568,268 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
     "userId":"userid1",
     "dispalyName":"name1",
     "portraitUrl":"url"
+  }
+}
+```
+
+## 创建或更新设备(仅专业版支持)
+创建或更新设备信息。
+
+#### 地址
+```
+http://domain:18080/admin/device/create_or_update
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| deviceId | string | 否 | 设备ID |
+| owners | string[] | 否 | 设备拥有者用户ID列表 |
+| extra | string | 否 | 附加信息 |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| deviceId | string | 是 | 设备ID |
+| token | string | 是 | 设备token |
+| secret | string | 是 | 设备密钥 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"deviceId\":\"device1\",       \
+    \"owners\":[\"user1\",\"user2\"],                        \
+    \"extra\":\"extra info\"                        \
+  }"                                \
+  http://localhost:18080/admin/device/create_or_update
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "deviceId":"device1",
+    "token":"token123",
+    "secret":"secret456"
+  }
+}
+```
+
+## 获取设备信息(仅专业版支持)
+获取设备详细信息。
+
+#### 地址
+```
+http://domain:18080/admin/device/get
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| deviceId | string | 是 | 设备ID |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| deviceId | string | 是 | 设备ID |
+| token | string | 是 | 设备token |
+| secret | string | 是 | 设备密钥 |
+| state | int | 是 | 设备状态 |
+| owners | string[] | 否 | 设备拥有者列表 |
+| extra | string | 否 | 附加信息 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"deviceId\":\"device1\"}" http://localhost:18080/admin/device/get
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "deviceId":"device1",
+    "token":"token123",
+    "secret":"secret456",
+    "state":1,
+    "owners":["user1"]
+  }
+}
+```
+
+## 获取用户设备列表
+获取指定用户的所有设备。
+
+#### 地址
+```
+http://domain:18080/admin/device/user_devices
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| devices | Object[] | 是 | 设备列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"user1\"}" http://localhost:18080/admin/device/user_devices
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "devices":[{
+      "deviceId":"device1",
+      "token":"token123",
+      "state":1
+    }]
+  }
+}
+```
+
+## 获取在线用户数量
+获取系统中各个节点的在线用户数量。
+
+#### 地址
+```
+http://domain:18080/admin/user/online_count
+```
+#### body
+N/A
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| result | Object[] | 是 | 节点在线用户统计 |
+
+节点信息
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| node | int | 是 | 节点ID |
+| count | int | 是 | 在线用户数量 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" http://localhost:18080/admin/user/online_count
+
+{
+  "code":0,
+  "msg":"success",
+  "result":[
+    {
+      "node":0,
+      "count":1523
+    },
+    {
+      "node":1,
+      "count":876
+    }
+  ]
+}
+```
+
+## 获取在线用户列表
+获取指定节点的在线用户列表。
+
+#### 地址
+```
+http://domain:18080/admin/user/online_list
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| nodeId | int | 是 | 节点ID |
+| offset | int | 是 | 偏移量 |
+| count | int | 是 | 数量 |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userClients | Object[] | 是 | 在线用户客户端列表 |
+| totalCount | int | 是 | 总数量 |
+| offset | int | 是 | 偏移量 |
+
+用户客户端信息
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| clientId | string | 是 | 客户端ID |
+| platform | int | 是 | 平台类型 |
+| ip | string | 是 | IP地址 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"nodeId\":0,\"offset\":0,\"count\":10}" http://localhost:18080/admin/user/online_list
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userClients":[{
+      "userId":"user1",
+      "clientId":"client1",
+      "platform":1,
+      "ip":"192.168.1.100"
+    }],
+    "totalCount":1523,
+    "offset":0
+  }
+}
+```
+
+## 获取用户会话
+获取指定用户的所有会话信息。
+
+#### 地址
+```
+http://domain:18080/admin/user/session_list
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userSessions | Object[] | 是 | 用户会话列表 |
+
+用户会话信息
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| clientId | string | 是 | 客户端ID |
+| platform | int | 是 | 平台类型 |
+| pushType | int | 是 | 推送类型 |
+| deviceToken | string | 否 | 设备token |
+| deviceVoipToken | string | 否 | VoIP token |
+| isOnline | bool | 是 | 是否在线 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"user1\"}" http://localhost:18080/admin/user/session_list
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userSessions":[{
+      "userId":"user1",
+      "clientId":"client1",
+      "platform":1,
+      "pushType":0,
+      "deviceToken":"token123",
+      "isOnline":true
+    }]
   }
 }
 ```

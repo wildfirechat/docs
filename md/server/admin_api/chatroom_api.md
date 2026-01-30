@@ -244,3 +244,72 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "msg":"success"
 }
 ```
+
+## 获取聊天室成员列表
+获取指定聊天室的成员列表。
+
+#### 地址
+```
+http://domain:18080/admin/chatroom/members
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| chatroomId | string | 是 | 聊天室ID |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| list | string[] | 是 | 成员用户ID列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"chatroomId\":\"aaaa\"}" http://localhost:18080/admin/chatroom/members
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "list":["user1","user2","user3"]
+  }
+}
+```
+
+## 获取用户的聊天室
+获取指定用户所在的聊天室信息。
+
+#### 地址
+```
+http://domain:18080/admin/chatroom/user_chatroom
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| chatroomId | string | 否 | 聊天室ID |
+| title | string | 是 | 聊天室名称 |
+| desc | string | 否 | 聊天室的详情描述 |
+| portrait | string | 否 | 聊天室的头像 |
+| extra | string | 否 | 附加信息 |
+| memberCount | int | 否 | 当前用户数 |
+| createDt | long | 否 | 创建的时间戳 |
+| updateDt | long | 否 | 更新的时间戳 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"userId\":\"user1\"}" http://localhost:18080/admin/chatroom/user_chatroom
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "chatroomId":"aaaa",
+    "title":"火热聊天室",
+    "memberCount":100
+  }
+}
+```
