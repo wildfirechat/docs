@@ -96,7 +96,7 @@ media.bucket_favorite_name static
 media.bucket_favorite_domain http://47.58.66.148/static
 ```
 
-## 火对象存储网关配置示例
+## 野火对象存储网关配置示例
 ```
 ## 野火对象存储网关，注意下面的server_host和bucket_XXX_domain都应该是公网地址
 ## server_host与社区版不同，不能带http头和port。port配置在media.server_port和media.server_ssl_port属性。
