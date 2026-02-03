@@ -179,6 +179,7 @@ http://domain:18080/admin/user/get_info
 | userId | string | 否（三个参数必须且只能存在一个） | 用户ID |
 | name | string | 否（三个参数必须且只能存在一个）  | 登录名 |
 | mobile | string | 否（三个参数必须且只能存在一个）  | 用户手机号码 |
+| includeDeleted | boolean | 否 | 是否包含已删除用户，默认为false |
 
 #### 响应
 | 参数 | 类型 | 必需 | 描述 |
