@@ -1,13 +1,27 @@
 # 服务端SDK
 
 #### SDK简介
-目前只提供有Java语言的服务端SDK，其它语言按照API接口文档来自己对接也很简单。服务器SDK包括Admin SDK、机器人SDK和频道SDK。如果您需要一种或多种功能都可以使用这个SDK。
+目前提供有Java、Golang和Node.js语言的服务端SDK，其它语言按照API接口文档来自己对接也很简单。服务器SDK包括Admin SDK、机器人SDK和频道SDK。如果您需要一种或多种功能都可以使用这个SDK。
 1. Admin SDK是IM服务的管理SDK，实现了包括创建用户、发送消息、创建群组、创建机器人、创建频道、管理敏感词、封禁/解封用户、消息回调等操作，实现了所有的[Server API](./admin_api/)接口。
 2. 机器人SDK是机器人管理SDK，可以管理某个机器人，实现了包括查询用户、发送消息、创建群组等操作，实现了所有的[Robot API](./robot_api/)接口。
 3. 频道SDK是频道SDK，可以管理某个频道，实现了包括查询用户、广播消息、单发消息、订阅/取消订阅、修改自身信息等操作，实现了所有的[Channel API](./channel_api/)接口。
 
 #### SDK的位置
 源码在```server/sdk```目录，编译打包后在release包中的```server_sdk```目录中。在```server_sdk```目录下有2个jar包和一个说明。也可以下载我们编译好的，从[这里](https://gitee.com/wfchat/im-server/releases)下载我们发布的最新软件包，解压```distribution-1.2.9-bundle-tar.tar.gz```文件，找到```server_sdk```。
+
+#### 其他语言SDK
+
+**Golang SDK**
+- GitHub: https://github.com/wildfirechat/server-sdk-go
+- 码云: https://gitee.com/wfchat/server-sdk-go
+
+详情请参考开源项目。
+
+**Node.js SDK**
+- GitHub: https://github.com/wildfirechat/server-sdk.js
+- 码云: https://gitee.com/wfchat/server-sdk.js
+
+详情请参考开源项目。
 
 
 #### 引入SDK
