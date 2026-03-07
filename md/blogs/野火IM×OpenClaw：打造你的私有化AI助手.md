@@ -125,7 +125,7 @@ openclaw gateway --port 18789 --verbose
 
    如下图所示：
 
-   ![机器人工厂创建机器人](./create_robot.PNG)
+   ![机器人工厂创建机器人](./create_robot.png)
 
 3. 使用 `/update name <名称>` 可以修改机器人的显示名称，例如：
    ```
@@ -331,7 +331,7 @@ curl http://localhost:8080/health
 
 ### 与其他IM平台的对比
 
-目前国内主流的 OpenClaw 接入方式主要有飞书、钉钉、企业微信等。但这些平台普遍存在一定的使用限制，而野火IM的方案则在灵活性、安全性和可控性方面展现出独特优势。
+目前国内主流的 OpenClaw 接入方式主要有飞书、钉钉、企业微信等。但这些平台普遍存在一定的使用限制，而野火IM的方案则在灵活性、安全性和可控性方面展现出独特优势（下面的数据都是从公开信息里查到的，如果有误，请以官方信息为准）。
 
 #### 飞书的限制
 
@@ -398,6 +398,7 @@ curl http://localhost:8080/health
 - Robot Gateway 开源（https://gitee.com/wfchat/robot-gateway）
 - OpenClaw 适配器开源（npm: @wildfirechat/openclaw-adapter）
 - 野火IM社区版开源
+- 野火Android/iOS客户端开源
 
 你可以：
 - 自定义消息处理逻辑
