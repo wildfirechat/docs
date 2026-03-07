@@ -200,3 +200,4 @@
   * [野火IM互通方案](blogs/野火IM互通方案.md)
   * [野火远程协助功能简介](blogs/野火远程协助功能简介.md)
   * [野火IM如何做单点登录](blogs/野火IM如何做单点登录.md)
+  * [野火IM x OpenClaw打造你的私有化AI助手](blogs/野火IM×OpenClaw：打造你的私有化AI助手.md)
