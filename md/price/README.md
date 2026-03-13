@@ -23,6 +23,7 @@
 | Demo日报服务 | 第三方系统对接的Demo | [码云](https://gitee.com/wfchat/daily-report)/[Github](https://github.com/wildfirechat/daily-report) |
 | 频道（公众号）服务 | 处理频道相关业务，实现类似于微信公众号的功能 | [码云](https://gitee.com/wfchat/channel-platform)/[Github](https://github.com/wildfirechat/channel-platform) |
 | 组织通讯录服务 | 展现组织架构和员工信息 | [码云](https://gitee.com/wfchat/organization-platform)/[Github](https://github.com/wildfirechat/organization-platform) |
+| 归档服务 | 旧消息归档 | [码云](https://gitee.com/wfchat/archive-server)/[Github](https://github.com/wildfirechat/archive-server) |
 | Android原生客户端 | Android平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/android-chat)/[Github](https://github.com/wildfirechat/android-chat) |
 | iOS原生客户端 | iOS平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/ios-chat)/[Github](https://github.com/wildfirechat/ios-chat) |
 | UniApp插件SDK | UniApp平台的插件，支持IM和实时音视频功能，基于原生客户端SDK封装而来，支持iOS和Android平台 | [码云](https://gitee.com/wfchat/uni-wfc-client)/[Github](https://github.com/wildfirechat/uni-wfc-client) |
