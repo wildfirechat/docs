@@ -55,24 +55,7 @@ openclaw onboard --install-daemon
 - 选择模型提供商（推荐 Minimax M2.1 或 Claude）
 - 输入 API Key
 - 配置网关端口（默认 18789）
-- 生成网关 Token（后面会用到，也可在 `~/.openclaw/openclaw.json` 中查看）
 
-**3. 获取网关 Token**
-
-OpenClaw 配置完成后，Token 会保存在 `~/.openclaw/openclaw.json` 文件中：
-
-```bash
-cat ~/.openclaw/openclaw.json | grep token
-```
-
-或者在 JSON 文件中查看：
-```json
-{
-  "gateway": {
-    "token": "你的网关Token"
-  }
-}
-```
 
 **4. 启动网关服务**
 
@@ -140,76 +123,71 @@ openclaw gateway --port 18789 --verbose
 - 密钥: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
-### 步骤四：部署 Robot Gateway（网关服务）
-
-野火IM的机器人通常需要部署在服务器上接收回调，但为了让大家能在本地电脑上运行，野火团队开发了**内网穿透机器人SDK**。
-
-你需要部署一个 `robot-gateway` 服务作为中转：
-- 野火IM服务 ←→ HTTP → Robot Gateway ←→ WebSocket → 本地 Adapter
-
-> 🔗 **Robot Gateway 源码及部署文档**：https://gitee.com/wfchat/robot-gateway
-
-默认会启动在 `8884` 端口。部署完成后，你的 OpenClaw 就能跑在本地电脑、家用NAS，甚至是内网服务器上了。
-
 ---
 
-## 第三部分：运行野火IM OpenClaw 插件
+## 第三部分： 安装野火IM OpenClaw 插件
 
-现在我们进入核心环节——启动桥接适配器，让野火IM和OpenClaw能够"对话"。
+现在我们进入核心环节——安装野火IM OpenClaw 插件，让野火IM和OpenClaw能够"对话"。
 
 ### 安装适配器
 
 ```bash
-npm install -g @wildfirechat/openclaw-adapter
+openclaw plugins install @wildfirechat/openclaw-plugin
 ```
 
 ### 配置参数
 
-首次运行会自动创建配置目录 `~/.wf-openclaw-adapter/`，你需要编辑 `config.json`：
+编辑 `OpenClaw`的配置文件`~/.openclaw/openclaw.json`：
+
 
 ```json
 {
-  "wildfire": {
-    "gateway": {
-      "url": "ws://localhost:8884/robot/gateway",
-      "robotId": "你的机器人ID",
-      "robotSecret": "你的机器人密钥"
-    }
-  },
-  "openclaw": {
-    "gateway": {
-      "url": "ws://127.0.0.1:18789",
-      "token": "你的OpenClaw Token",
-      "scope": "wildfire-im",
-      "reconnectInterval": 5000,
-      "heartbeatInterval": 30000
-    },
-    "whitelist": {
-      "enabled": true,
-      "allowedUsers": ["your_user_id"],
-      "allowedGroups": []
-    },
-    "group": {
-      "enabled": true,
-      "respondOnMention": true,
-      "respondOnQuestion": true,
-      "helpKeywords": "帮,请,分析,总结,怎么,如何",
-      "allowedIds": []
-    }
-  },
-  "server": {
-    "port": 8080
+  "channels": {
+      "wildfire": {
+          "enabled": true,
+          "accounts": {
+              "default": {
+                  "enabled": true,
+                  "gatewayUrl": "ws://your_gateway_host:8884/robot/gateway",
+                  "robotId": "your robot id",
+                  "robotSecret": "your robot secret",
+                  "requireMention": true,
+                  "helpKeywords": "帮,请,分析,总结",
+                  "whiteList": {
+                      "enabled": false,
+                      "allowedUsers": ["user001", "user002"],
+                      "allowedGroups": ["group001"],
+                      "deniedMessage": "未授权，不允许使用"
+                  }
+              }
+          }
+      },
   }
 }
 ```
 
 **配置说明：**
 
-| 配置项 | 说明 | 获取方式 |
-|--------|------|----------|
-| `wildfire.gateway.robotId` | 野火机器人ID | 机器人工厂创建时返回 |
-| `wildfire.gateway.robotSecret` | 野火机器人密钥 | 机器人工厂创建时返回 |
-| `openclaw.gateway.token` | OpenClaw网关Token | `~/.openclaw/openclaw.json` 中查看 |
+| 配置项 | 必填 | 说明 |
+|--------|------|------|
+| `enabled` | 否 | 是否启用，默认 `true` |
+| `gatewayUrl` | 是 | 野火网关 WebSocket 地址 |
+| `robotId` | 是 | 机器人 ID |
+| `robotSecret` | 是 | 机器人密钥 |
+| `requireMention` | 否 | 群聊是否需要@机器人才回复，默认 `true` |
+| `helpKeywords` | 否 | 触发回复的关键词，逗号分隔 |
+| `whiteList.enabled` | 否 | 是否启用白名单，默认 `false` |
+| `whiteList.allowedUsers` | 否 | 允许访问的用户 ID 列表 |
+| `whiteList.allowedGroups` | 否 | 允许访问的群组 ID 列表 |
+| `whiteList.deniedMessage` | 否 | 不在白名单时的回复文案，默认 `不允许使用` |
+
+### 白名单说明
+
+- `whiteList.enabled = false` 时，不做白名单校验，所有消息正常处理。
+- `whiteList.enabled = true` 时，命中 `allowedUsers` 或 `allowedGroups` 任一条件即可继续处理。
+- 未命中白名单时，插件会直接回复 `whiteList.deniedMessage`，然后结束本次处理。
+- 私聊主要匹配 `allowedUsers`；群聊会额外匹配 `allowedGroups`。
+
 
 #### 获取你的用户ID并配置白名单
 
@@ -221,87 +199,16 @@ npm install -g @wildfirechat/openclaw-adapter
 1. 在机器人工厂中发送 `/info` 查看机器人信息
 2. 从机器人ID中提取 `ownerId` 部分
 
-**配置到白名单：**
-
-将获取到的用户ID填入配置文件的 `allowedUsers` 列表中：
-
-```json
-{
-  "openclaw": {
-    "whitelist": {
-      "enabled": true,
-      "allowedUsers": ["cgc8c8VV"],
-      "allowedGroups": []
-    }
-  }
-}
-```
 
 > 💡 **提示**：
 > - 可以添加多个用户ID，让亲友也能使用你的AI助手
 > - 也可以添加群组ID到 `allowedGroups`，让整个群组都能使用
 > - 如果要开放给所有人使用，可将 `enabled` 设为 `false` 关闭白名单
 
-### 启动适配器
-
-**前台运行（调试模式）：**
+### 重启`OpenClaw`网关
 
 ```bash
-openclaw-adapter
-# 或使用别名
-wf-openclaw
-```
-
-**后台守护进程模式（生产环境）：**
-
-```bash
-# 启动
-openclaw-adapter start
-
-# 查看状态
-openclaw-adapter status
-
-# 停止
-openclaw-adapter stop
-
-# 重启
-openclaw-adapter restart
-```
-
-启动成功后，你会看到如下输出：
-
-```
-╔════════════════════════════════════════════════════════╗
-║        Openclaw Adapter - 野火IM/Openclaw桥接器         ║
-║                     Version 1.0.3                      ║
-╚════════════════════════════════════════════════════════╝
-
-Connecting to Wildfire Gateway: ws://localhost:8884/robot/gateway
-Connected to Wildfire Gateway as robot: my_ai_assistant
-Connecting to Openclaw Gateway: ws://127.0.0.1:18789
-Openclaw Gateway connection authenticated successfully
-Openclaw Bridge started successfully
-
-Adapter is running. Press Ctrl+C to stop.
-```
-
-### 验证连接
-
-打开浏览器或使用 curl 检查健康状态：
-
-```bash
-curl http://localhost:8080/health
-```
-
-返回：
-```json
-{
-  "status": "UP",
-  "components": {
-    "wildfire": { "status": "UP", "details": { "connected": true } },
-    "openclaw": { "status": "UP", "details": { "connected": true } }
-  }
-}
+openclaw gateway restart
 ```
 
 ### 开始使用
@@ -475,7 +382,7 @@ curl http://localhost:8080/health
 │                      │              │                                                      │
 │  ┌─────────────┐     │              │  ┌─────────────────┐                                 │
 │  │   野火IM     │     │              │  │  Openclaw       │                                 │
-│  │  客户端      │     │              │  │  Adapter        │                                  │
+│  │  客户端      │     │              │  │  Plguin         │                                  │
 │  └─────────────┘     │              │  └─────────────────┘                                  │
 │                      │              │           ▲                                           │
 │                      │              │           ▼                                           │
@@ -497,8 +404,8 @@ curl http://localhost:8080/health
 1. 用户在野火IM客户端发送消息
 2. 消息通过野火IM服务接收并处理
 3. 野火IM服务将消息推送到 Robot Gateway
-4. Robot Gateway 通过 WebSocket 转发到本地 Openclaw Adapter
-5. Adapter 转换格式后发送到 Openclaw Gateway
+4. Robot Gateway 通过 WebSocket 转发到本地 Openclaw Plugin
+5. Plugin 转换格式后发送到 Openclaw Gateway
 6. Pi Agent（AI大脑）处理并生成回复
 7. 回复沿原路返回给用户
 
@@ -510,24 +417,12 @@ curl http://localhost:8080/health
 
 1. **检查白名单**：确认 `allowedUsers` 中包含你的用户ID
 2. **检查群聊策略**：确认是否被@或包含关键词
-3. **查看日志**：`tail -f ~/.wf-openclaw-adapter/openclaw-adapter.log`
+3. **查看日志**：`openclaw logs --follow`
 
 ### 连接失败
 
 1. 确认 Openclaw Gateway 已启动：`openclaw gateway --verbose`
 2. 确认 Robot Gateway 已启动：`npm start`（在 gateway 目录）
-3. 检查 Token 是否正确配置
-
-### 守护进程问题
-
-```bash
-# 手动查找进程
-ps aux | grep openclaw-adapter
-
-# 强制停止
-kill -9 <PID>
-rm ~/.wf-openclaw-adapter/openclaw-adapter.pid
-```
 
 ---
 
@@ -537,7 +432,7 @@ rm ~/.wf-openclaw-adapter/openclaw-adapter.pid
 
 1. ✅ **安装 OpenClaw** —— 你的本地AI助手网关
 2. ✅ **申请野火IM机器人** —— 通过机器人工厂一键创建
-3. ✅ **部署桥接适配器** —— 打通两个系统的任督二脉
+3. ✅ **OpenClaw安装野火IM 插件** —— 打通两个系统的任督二脉
 4. ✅ **理解核心优势** —— 内网穿透、企业级能力、智能策略
 
 现在，你已经拥有了一个"私有化AI助手"，它：
@@ -562,4 +457,4 @@ rm ~/.wf-openclaw-adapter/openclaw-adapter.pid
 
 ---
 
-*本文基于 `@wildfirechat/openclaw-adapter` v1.0.3 版本编写，如有更新请以官方文档为准。*
+*本文基于 `@wildfirechat/openclaw-plugin` v1.0.4 版本编写，如有更新请以官方文档为准。*
