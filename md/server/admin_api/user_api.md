@@ -515,6 +515,65 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 获取所有机器人(分页)
+分页获取系统中的所有机器人。
+
+#### 地址
+```
+http://domain:18080/admin/user/get_all_robots
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| count | int | 是 | 每页数量 |
+| offset | int | 是 | 偏移量 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| robotInfoList | Object[] | 是 | 机器人信息列表 |
+
+机器人信息
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| name | string | 是 | 登录名 |
+| displayName | string | 是 | 显示名字 |
+| portrait | string | 否 | 用户头像 |
+| gender | int | 否 | 用户性别 |
+| mobile | string | 否 | 用户手机号码 |
+| email | string | 否 | 用户邮箱 |
+| address | string | 否 | 用户地址 |
+| company | string | 否 | 用户公司 |
+| social | string | 否 | 用户社交账号 |
+| extra | string | 否 | 附加信息 |
+| updateDt | long | 否 | 最后更新时间 |
+| owner | string | 否 | 机器人拥有者id |
+| secret | string | 否 | 机器人密钥 |
+| callback | string | 否 | 回调地址 |
+| robotExtra | string | 否 | 机器人附加信息 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"count\":10,\"offset\":0}" http://localhost:18080/admin/user/get_all_robots
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "robotInfoList":[
+      {
+        "userId":"robot1",
+        "name":"robotname1",
+        "displayName":"机器人1",
+        "owner":"user1",
+        "secret":"xxxxx"
+      }
+    ]
+  }
+}
+```
+
 ## 销毁用户或者机器人
 #### 地址
 ```
