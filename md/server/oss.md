@@ -229,7 +229,57 @@ Web用户需要设置跨域信息，从下图进入设置
 media_type设置为7，同其他云存储一样，配置ak/sk，然后创建合适的桶，IM服务配置中需要配置正确的region。
 
 ## 京东云和其他兼容S3的对象存储服务。
-media_type设置为8，同其他云存储一样，配置ak/sk，还有server_host和server_port，然后创建合适的桶，IM服务配置中需要配置正确的region。
+野火IM专业版支持任意兼容S3的对象存储服务，可以使用兼容模式。至少2个桶（bucket）（一个用来保存头像/收藏等需要长期保存的桶，另外一个用来保存会话内发送的图片、文件、语音、视频等可以定期清除的桶。所有的桶都要在同一个区域内，不能分散在不同的区域。建议为每种媒体类型都创建一个桶，这里示例就只创建2个桶，可以参考示例为每个类型创建一个桶）。
+
+完整配置完如下：
+```
+## 类型要设置为8
+media.server.media_type 8
+## 对象存储服务的域名或者IP，不用带HTTP(S)头和端口
+media.server_host ${IP}
+## 对象存储服务的HTTP端口
+media.server_port 80
+## 对象存储服务的HTTPS端口，如果不支持HTTPS，一定要改成0
+media.server_ssl_port 443
+## 对象存储的AK/SK
+media.access_key 0M7YVO70QPKBPWBZW5FWM7YVO70QPK
+media.secret_key 1Qjap+Nfs3P2BujHCHDuqrsrYi0zNn8
+
+## bucket名字（桶的名字）
+media.bucket_general_name media
+## bucket中的路径前缀，包括IP/端口/桶名。如果支持HTTPS，地址配置为HTTPS的
+## 如果是域名，路径也可能是http://media.${domain}:${port}，可以看一下供应商的文档，文件的地址是什么。
+media.bucket_general_domain http://${IP}:${port}/media
+
+## 其他bucket类型依此类推
+media.bucket_image_name media
+media.bucket_image_domain http://${IP}:${port}/media
+media.bucket_voice_name media
+media.bucket_voice_domain http://${IP}:${port}/media
+media.bucket_video_name media
+media.bucket_video_domain http://${IP}:${port}/media
+media.bucket_file_name media
+media.bucket_file_domain http://${IP}:${port}/media
+media.bucket_sticker_name media
+media.bucket_sticker_domain http://${IP}:${port}/media
+
+## 下面几个是长期保存的，至少要分开
+media.bucket_moments_name static
+media.bucket_moments_domain http://${IP}:${port}/static
+media.bucket_portrait_name static
+media.bucket_portrait_domain http://${IP}:${port}/static
+media.bucket_favorite_name static
+media.bucket_favorite_domain http://${IP}:${port}/static
+```
+
+### 设置访问权限
+设置每个桶权限管理，设置读写权限为公共读。
+
+### Web用户
+Web用户需要设置跨域信息。如果不设置跨域信息，web客户端可能上传下载文件有问题。
+
+### 使用HTTPS
+可以改成强制HTTPS。
 
 ## 使用野火对象存储网关
 专业版IM服务还可以使用野火对象存储网关来对接其它任意类型的存储服务，比较常见的FastDFS，HDFS或者其它云服务等等。实现的方法是上传时上传到网关，网关再对接到客户选定的存储服务。具体使用方法请按照[野火对象存储网关](https://github.com/wildfirechat/wf-oss-gateway)说明部署对接。
