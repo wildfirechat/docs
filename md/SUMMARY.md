@@ -203,3 +203,4 @@
   * [野火IM如何做单点登录](blogs/野火IM如何做单点登录.md)
   * [野火IM x OpenClaw打造你的私有化AI助手](blogs/野火IM×OpenClaw：打造你的私有化AI助手.md)
   * [如何迁移数据到野火](blogs/如何迁移数据到野火.md)
+  * [如何创建用户并设置密码](blogs/如何创建用户并设置密码.md)
