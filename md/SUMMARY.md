@@ -16,7 +16,6 @@
     * [试用专业版和Web/小程序](trial/trial.md)
     * [音视频高级版](trial/voip.md)
     * [朋友圈](trial/moments.md)
-    * [管理后台](trial/management_server.md)
     * [鸿蒙SDK试用](trial/harmony.md)
 * [性能测试报告](performance_test/README.md)
 * [系统架构](architecture/README.md)
