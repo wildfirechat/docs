@@ -42,7 +42,7 @@ A. [回答](./web/https.md)
 A. ```APP_SERVER```配置错误，具体请端口控制台，看下控制台提示。
 
 ### Q. 二维码不显示
-A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)
+A. 请确保已正确修改```config.js```里面的```APP_SERVER```，可控制台 -> 网络，看下pc_session请求是否正常访问你们部署的[app server](../quick_start/server.md)。关于Web配置的更多说明，请参考[Web配置](../web/web_config.md)和[IM服务配置](../web/im_server_config.md)。
 
 ### Q. ```pc_session```接口提示跨域
 A. 非常可能是通过`nginx`等代理了`app-server`相关请求，但是`nginx`配置错误，请参考`app-server`项目`nginx`目录的参考配置。

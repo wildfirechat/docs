@@ -37,4 +37,6 @@
    ```
 
 ## 集成ChatClient
-`ChatClient`只是个功能库，所有的UI都是需要自己来实现，难度也比较高，需要资深研发工程师进行集成。首先参考集成`ChatUIKit`的方法，只引入`client`模块，然后去掉所有关于`ChatUIKit`和音视频的操作。然后参考`ChatClient`库中`ChatManager`里面的方法进行各种接口调用和回调监听。如果有问题可以参考`ChatUIKit`的代码。
+`ChatClient`只是个功能库，所有的UI都是需要自己来实现，难度也比较高，需要资深研发工程师进行集成。首先参考集成`ChatUIKit`的方法，只引入`client`模块，然后去掉所有关于`ChatUIKit`和音视频的操作。然后参考`ChatClient`库中`ChatManager`里面的方法进行各种接口调用和回调监听。如果有问题可以参考`ChatUIKit`的代码。关于ChatClient使用的注意事项，请参考[使用ChatClient的注意事项](../blogs/使用ChatClient的注意事项.md)。
+
+关于Android签名验证，请参考[签名验证](../blogs/签名验证.md)。

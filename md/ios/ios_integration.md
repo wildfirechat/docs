@@ -5,7 +5,7 @@
 1. 运行ios-chat空间目录下的```release_libs.sh```脚本，编译成功后会自动打开release目录。
 2. 把release目录下的所有framework都拖拽到新工程中。
 3. 把野火的库都改成Embed & Sign
-4. 添加库 CallKit.framework, UserNotifications.framework.
+4. 添加库 CallKit.framework, UserNotifications.framework。关于CallKit的更多说明，请参考[iOS如何启用CallKit](../blogs/iOS如何启用CallKit.md)。
 5. Build Settings -> Allow Non-modular Includes In Framework Modules 设置为YES
 6. 在AppDelegate文件中做如下处理:
     1. 引入header
@@ -387,7 +387,7 @@
 
 12. Background Modes 勾选 "Voice over IP" 和 "Remote notifications"
 13. 添加URL Schemes。注意我们demo使用的是```wildfirechat```，需要更换成你们自己的，然后步骤11，Scheme替换成你们自己的
-14. 添加ATS。如果IM服务对象存储服务支持https，可以不用添加ATS支持。
+14. 添加ATS。如果IM服务对象存储服务支持https，可以不用添加ATS支持。关于ATS的更多处理，请参考[苹果ATS处理](../blogs/苹果ATS处理.md)。
 15. 添加权限，麦克风，地理位置，相机，相册等
 16. 添加登录代码。应用登录时返回token，然后使用token连接
 ```

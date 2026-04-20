@@ -1,5 +1,7 @@
 # 野火开源项目
 
+> 关于野火IM开源和商业逻辑，请参考[为什么野火IM不全免费](../blogs/为什么野火IM不全免费.md)和[野火IM的商业逻辑](../blogs/野火IM的商业逻辑.md)
+
 | [GitHub仓库地址](https://github.com/wildfirechat)      | [码云仓库地址](https://gitee.com/wfchat)        | 说明
 | ------------------------------------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------
 | [im-server](https://github.com/wildfirechat/im-server)       | [im-server](https://gitee.com/wfchat/im-server)          | 野火社区版IM服务，野火IM的核心服务，处理所有IM相关业务。                                                                                 |

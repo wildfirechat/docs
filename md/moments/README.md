@@ -25,7 +25,7 @@ public Feed postFeed(int type, String text, List<FeedEntry> medias, List<String>
 ```
 public Comment postComment(int type, long feedId, String text, String replyTo, long replyId, String extra, final PostCallback callback);
 ```
-其中type为评论的类型，0是评论，1是点赞; feedId是朋友圈的Id; replyTo是回复某个用户的; replyId是回复的评论ID。
+其中type为评论的类型，0是评论，1是点赞; feedId是朋友圈的Id; replyTo是回复某个用户的; replyId是回复的评论ID。关于消息点赞和评论的推荐实现方案，请参考[消息点赞和评论推荐实现方案](../blogs/消息点赞和评论推荐实现方案.md)。
 
 ### 3. 拉取朋友圈
 ```

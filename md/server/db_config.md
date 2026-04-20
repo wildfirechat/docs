@@ -52,6 +52,8 @@ MySQL的默认最大连接数是150，其他数据库可能默认值也不会很
 
 ## 使用mongodb
 专业版本可以组合使用关系型和mongodb，需要先配置关系型数据库再正确配置mongodb。修改下面开关，改成```true```。在专业版的使用手册里有mongodb的配置方式。
+
+> 如果使用了专业版IM服务+MySQL，且会大量更新消息场景，遇到数据库重复消息ID的问题，请参考[数据库重复消息ID的问题](../blogs/数据库重复消息ID的问题.md)进行修复。
 ```
 ## 消息是否存储在mongodb中。当embed.db为2时，db.save_message_in_mongodb取true值(兼容历史配置)。
 ## 当save_messages_in_mongodb为true时，必须配置后面的mongodb相关配置。

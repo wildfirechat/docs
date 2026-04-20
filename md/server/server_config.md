@@ -83,10 +83,14 @@ message.forward.url http://localhost:8087/message/forward
 #### 更多配置
 请参考```wildfirechat.conf```文件
 
+> 关于Linux Service方式运行，请参考[Systemd Service部署](../blogs/systemd.md)
+
+> 关于基于TCP的短链接配置，请参考[基于TCP的短链接](../blogs/基于TCP的短链接.md)
+
 #### 启动脚本的配置
 启动脚本在```./bin/wildfirechat.sh```。windows也在对应目录有bat文件。在启动脚本中有各种的jvm的参数配置，其中最重要的是jvm堆内存大小的配置。
 ```
 #JAVA_OPTS="$JAVA_OPTS -Xmx4G"
 #JAVA_OPTS="$JAVA_OPTS -Xms4G"
 ```
-默认是关闭的，请打开然后设置上给IM服务分配的大小。如果不设置将以来系统默认的jvm参数，如果默认堆内存太小会导致内存浪费甚至出现OOM问题。
+默认是关闭的，请打开然后设置上给IM服务分配的大小。如果不设置将以来系统默认的jvm参数，如果默认堆内存太小会导致内存浪费甚至出现OOM问题。关于内存问题的排查，请参考[内存泄漏排查](../blogs/内存泄漏排查.md)。

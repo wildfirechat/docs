@@ -683,3 +683,6 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，Shentong7，h2db，Mon
 </table>
 
 > PC的SDK是与移动端完全一致，但UI的功能相对于移动端有部分没有实现，客户可以自己来实现。
+
+
+> 关于野火IM安全性的更多说明，请参考[野火安全吗](../blogs/野火安全吗.md)
