@@ -59,6 +59,10 @@ server {
 }
 ```
 
+执行`nginx -t` 检查配置是否正确
+
+执行`nginx -s reload` 让配置生效
+
 > 检查项：
 > 1. 浏览器访问`https://{ip}:8443`，看是否返回`vue-chat`前端页面
 
@@ -93,6 +97,10 @@ server {
 
 }
 ```
+
+执行`nginx -t` 检查配置是否正确
+
+执行`nginx -s reload` 让配置生效
 
 > 检查项：
 > 1. 访问`https://{ip}:8888`，确认是否返回`OK`两个字符
@@ -226,6 +234,11 @@ server {
         }
 }
 ```
+
+执行 `nginx -t` 检查配置是否正确
+
+执行 `nginx -s reload` 让配置生效
+
 > 检查项
 > 1. 访问`https://{your_ip}/api/version`，看是否返回一个 json 文本
 > 2. 访问`http://{your_ip}/api/version`，看是否返回一个 json 文本
@@ -266,7 +279,11 @@ server {
 
 ```
 
+
+执行 `nginx -t` 检查配置是否正确
+
+执行 `nginx -s reload` 让配置生效
+
 > 检查项
-> 1. 执行`nginx -t`进行 nginx 配置测试，确保配置正确
-> 2. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss://{your_ip}:8084` 是否工作正常
-> 3. 如果内网使用，不能用在线监测工具时，可以下载[离线测试工具](https://static.wildfirechat.cn/wstool-offline.zip)
+> 1. 用这个[在线工具](http://docs.wildfirechat.cn/web/wstool/index.html)，检查 `wss://{your_ip}:8084` 是否工作正常
+> 2. 如果内网使用，不能用在线监测工具时，可以下载[离线测试工具](https://static.wildfirechat.cn/wstool-offline.zip)
