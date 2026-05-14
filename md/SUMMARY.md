@@ -131,6 +131,7 @@
       * [https](faq/web/https.md)
       * [快速体验 Web 端](faq/web/all_in_one_http.md)
       * [all-in-one](faq/web/all_in_one_https.md)
+      * [all-in-one-ip](faq/web/all_in_one_ip_https.md)
     * [PC Electron版本问题](faq/pc_electron.md)
     * [PC Qt版本问题](faq/pc_qt.md)
     * [小程序问题](faq/wx.md)
