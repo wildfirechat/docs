@@ -33,3 +33,7 @@ JSSDK在开放平台源码中 [源码目录中](https://github.com/wildfirechat/
 客户端浏览器代码在对应各个平台的开源项目中。
 
 IM服务SDK在 [服务SDK](https://github.com/wildfirechat/im-server/tree/wildfirechat/sdk)
+
+## 常见问题
+### 获取authCode返回251错误
+获取authCode时，传入的host参数是当前页面的host，IM服务会对这个host进行校验，如果和机器人配置的回调地址的host不一致就会返回251错误。如果回调地址配置的是127.0.0.1，则不做这个校验。
