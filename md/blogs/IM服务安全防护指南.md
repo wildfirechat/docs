@@ -211,6 +211,12 @@ message.encrypt_message_content true
 message.disable_remote_search true
 ```
 
+### 4.5 启用 TLS 传输加密
+
+野火IM最新版本已全面支持 TLS 连接方式，可在原有 AES/SM2 数据加密的基础上，再叠加 TLS 传输层加密，满足对安全合规有强制要求的场景。
+
+详细配置方法请参考：[野火IM支持TLS与KCP连接方式](./野火IM支持TLS与KCP连接方式.md)
+
 ---
 
 ## 五、安全配置速查表
