@@ -207,3 +207,4 @@
   * [如何创建用户并设置密码](blogs/如何创建用户并设置密码.md)
   * [IM服务安全防护指南](blogs/IM服务安全防护指南.md)
   * [野火IM支持TLS与KCP连接方式](blogs/野火IM支持TLS与KCP连接方式.md)
+  * [Electron PC客户的升级功能说明](blogs/electron-auto-updater-guide.md)
