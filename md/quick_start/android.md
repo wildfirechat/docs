@@ -10,6 +10,8 @@
 1. IM_SERVER_HOST：仅需填写host即可，没有http开头，也没有端口结尾!!!
 2. APP_SERVER_ADDRESS：需要APP SERVER完整的地址!!!
 
+## 申请SDK
+为了反诈，android SDK需要申请才可以使用，免费申请，需要国内个人或者公司才行，微信联系```wildfirechat```或者```wfchat```。iOS不需要申请，可以直接下载使用。
 
 ## 运行
 编译运行，填入您的手机号码，验证码填写服务器部署时指定的```superCode```，默认是 ```66666```（五个6）。

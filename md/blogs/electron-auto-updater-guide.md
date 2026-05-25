@@ -1,7 +1,8 @@
 # Electron 应用自动升级实现指南（全平台）
 
 > 适用项目：基于 `vue-cli-plugin-electron-builder` + `electron-updater` 的 Electron 桌面应用  
-> 目标平台：Windows、macOS、Linux（AppImage / deb）
+> 目标平台：Windows、macOS、Linux（AppImage / deb）  
+> 在线文档：[https://docs.wildfirechat.cn/blogs/electron-auto-updater-guide.html](https://docs.wildfirechat.cn/blogs/electron-auto-updater-guide.html)
 
 ---
 
@@ -553,3 +554,7 @@ releases/
 | **版本发布** | 修改 version → 打包 → 上传覆盖 latest.yml |
 
 按以上步骤配置后，即可实现全平台的自动更新能力。
+
+---
+
+> **参考链接**：[https://docs.wildfirechat.cn/blogs/electron-auto-updater-guide.html](https://docs.wildfirechat.cn/blogs/electron-auto-updater-guide.html)
