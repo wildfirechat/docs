@@ -15,6 +15,8 @@
 | expireDuration | long | 否 | 消息过期时间 |
 | mentionedType | int | 否 | 消息提醒类型 |
 | mentionedTarget | string list | 否 | 消息提醒对象列表 |
+| persistFlag | int | 否 | 消息持久化标志，0 不持久化；1 持久化；3 持久化并且计数；4 透明(不存储，只用来传递指令)。需要和客户端设定一致。 |
+| extra | string | 否 | 消息扩展信息 |
 
 示例:
 ```

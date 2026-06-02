@@ -13,6 +13,7 @@ http://domain:18080/admin/message/send
 | conv | [json](./models.md#Conversation) | 是 | 会话 |
 | payload | [json](./models.md#MessagePayload) | 是 | 消息负载 |
 | toUsers | string[] | 否 | 群组或者频道中发给指定用户 |
+| isUserMessage | boolean | 否 | 是否用户消息，缺省为false |
 
 > 消息内容对应的json格式payload请参考[内置消息](../predefined_message_content.md)
 
@@ -57,6 +58,7 @@ http://domain:18080/admin/message/update
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
+| operator | string | 是 | 操作者用户ID |
 | messageUid | long | 是 | 消息唯一ID |
 | payload | [json](./models.md#MessagePayload) | 是 | 消息负载 |
 | distribute | int | 是 | 是否重新分发给用户，0不重新分发，1重新分发，建议用1 |
@@ -327,6 +329,7 @@ http://domain:18080/admin/message/get_one
 | targetUserInfo | Object | 否 | 目标用户信息 |
 | targetGroupInfo | Object | 否 | 目标群组信息 |
 | targetChannelInfo | Object | 否 | 目标频道信息 |
+| toRobotId | string | 否 | 机器人ID |
 
 #### 示例
 ```
@@ -532,5 +535,59 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "result":{
     "timestamp":13123423234324
   }
+}
+```
+
+## 导入消息
+导入历史消息。只用在服务正式使用之前，从别的IM服务进行导入历史消息。当导入时，只能部署一个节点，可以多线程导入。当导入结束后，检查有没有异常日志，如果有异常日志需要解决后重新导入。
+当导入完成后，重启IM服务（不要用kill -9，需要等待缓存写入）。重启之后再用客户端验证是否有历史消息可以从远端加载。另外需要保留之前IM服务的备份记录，以防有消息泄漏。
+下面所有参数必须有效才行，如果是群组消息，还需要先创建群组。
+
+#### 地址
+```
+http://domain:18080/admin/message/import
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messages | [ImportMessage](#ImportMessage)[] | 是 | 消息列表 |
+
+<span id="ImportMessage"></span>
+**ImportMessage 结构：**
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| sender | string | 是 | 发送者ID |
+| conversation | [json](./models.md#Conversation) | 是 | 会话 |
+| payload | [json](./models.md#MessagePayload) | 是 | 消息负载 |
+| receivers | string[] | 否 | 指定接收用户列表 |
+| timestamp | long | 是 | 消息时间戳（毫秒） |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"messages\": [{                     \
+      \"sender\":\"a\",       \
+      \"conversation\":{              \
+        \"type\":1,            \
+        \"target\":\"a\",      \
+        \"line\":0           \
+      },                        \
+      \"payload\":{                 \
+        \"type\":1,                       \
+        \"searchableContent\":\"hello\"   \
+      },                                   \
+      \"timestamp\":1609459200000                        \
+    }]                                \
+  }"                                \
+  http://localhost:18080/admin/message/import
+
+{
+  "code":0,
+  "msg":"success"
 }
 ```
