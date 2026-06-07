@@ -1,5 +1,5 @@
 # 二次开发
-[vue-chat](https://github.com/wildfirechat/vue-chat)是一个可以直接使用的demo，推荐参考```vue-chat```进行二次开发，如果不想基于```vue-chat```进行二次开发
+[vue-chat](https://github.com/wildfirechat/vue-chat)是一个产品级开源客户端，推荐参考```vue-chat```进行二次开发，如果不想基于```vue-chat```进行二次开发
 
 ## 基于```vue-chat```二次开发
 1. 修改```config.js```中的配置信息，修改是请仔细阅读所修改字段的相关注释，如果不进行修改或修改错误，将不能正确连接IM：

@@ -20,7 +20,7 @@
 | 机器人服务 | 演示自动应答功能 | [码云](https://gitee.com/wfchat/robot_server)/[Github](https://github.com/wildfirechat/robot_server) |
 | 开放平台服务 | 开放平台，第三方系统可以通过开放平台对接 | [码云](https://gitee.com/wfchat/open-platform)/[Github](https://github.com/wildfirechat/open-platform) |
 | 野火IM桥接服务 | 使用野火IM桥接服务，可联通不同的IM服务，让隶属于不同IM服务的用户直接互通，包括发送各种消息和拨打音视频电话。 | [码云](https://gitee.com/wfchat/mesh-bridge)/[Github](https://github.com/wildfirechat/mesh-bridge) |
-| Demo日报服务 | 第三方系统对接的Demo | [码云](https://gitee.com/wfchat/daily-report)/[Github](https://github.com/wildfirechat/daily-report) |
+| 日报示例服务 | 演示第三方系统对接的示例服务 | [码云](https://gitee.com/wfchat/daily-report)/[Github](https://github.com/wildfirechat/daily-report) |
 | 频道（公众号）服务 | 处理频道相关业务，实现类似于微信公众号的功能 | [码云](https://gitee.com/wfchat/channel-platform)/[Github](https://github.com/wildfirechat/channel-platform) |
 | 组织通讯录服务 | 展现组织架构和员工信息 | [码云](https://gitee.com/wfchat/organization-platform)/[Github](https://github.com/wildfirechat/organization-platform) |
 | 归档服务 | 旧消息归档 | [码云](https://gitee.com/wfchat/archive-server)/[Github](https://github.com/wildfirechat/archive-server) |
@@ -31,7 +31,7 @@
 | Flutter平台插件 | 基于原生客户端SDK封装，只有功能库，需要客户自己开发UI | [码云](https://gitee.com/wfchat/flutter_imclient)/[Github](https://github.com/wildfirechat/flutter_imclient) |
 | 免费版音视频SDK | 基于Mesh架构的音视频SDK，可以支持多人音视频通话，包含在各个平台的客户端项目中 | 闭源，可以免费商用 |
 
-上述免费内容可以完成一套高质量的移动社交App，支持常见即时通讯功能和多人实时音视频通话，可以进行二开，添加自定义消息和通过server api对接其他系统。嵌入到其他现有系统也是很方便的，把Demo应用服务逻辑移植到现有服务中，把客户端SDK集成到现有App中，即可给已有应用添加上即时通讯和实时音视频功能。可以自行从码云或者Github上下载源码、二开开发和进行商用。
+上述免费内容可以完成一套高质量的移动社交App，支持常见即时通讯功能和多人实时音视频通话，可以进行二开，添加自定义消息和通过server api对接其他系统。嵌入到其他现有系统也是很方便的，把应用服务逻辑移植到现有服务中，把客户端SDK集成到现有App中，即可给已有应用添加上即时通讯和实时音视频功能。可以自行从码云或者Github上下载源码、二开开发和进行商用。
 
 ## 收费项目
 按需付费，不是所有的付费项目都需要购买，只选择您需要的组件即可。请查看下述收费项目，或者使用***[价格计算器](https://docs.wildfirechat.cn/price/pricing-calculator/)***计算您所需要的项目。
@@ -42,11 +42,11 @@ IM相关，有如下收费项目
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
 | 专业版IM服务 | [专业版IM服务](../commercial_server/README.md)的软件包，不包含源码 | 2.9W/套 |
-| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[开源Electron Demo](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
-| PC SDK（C语言风格版本 Win/Mac平台） | 功能库闭源，提供[开源Qt Demo](https://github.com/wildfirechat/qt-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
-| 鸿蒙原生SDK | 功能库闭源，提供[开源Demo](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机、鸿蒙Pad和鸿蒙PC上。 | 2.9W/套 |
-| Web SDK | Web功能库（发布包，提供[开源Demo](https://github.com/wildfirechat/vue-chat)，依赖专业版IM） | 1W/套 |
-| 小程序SDK | 小程序功能库（发布包，支持微信、QQ、支付宝、百度、今日头条，提供开源的[微信小程序Demo](https://github.com/wildfirechat/wx-chat)，依赖专业版IM) | 1W/套 |
+| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
+| PC SDK（C语言风格版本 Win/Mac平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
+| 鸿蒙原生SDK | 功能库闭源，提供[产品级开源鸿蒙客户端](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机、鸿蒙Pad和鸿蒙PC上。 | 2.9W/套 |
+| Web SDK | Web功能库（发布包，提供[产品级开源Web客户端](https://github.com/wildfirechat/vue-chat)，依赖专业版IM） | 1W/套 |
+| 小程序SDK | 小程序功能库（发布包，支持微信、QQ、支付宝、百度、今日头条，提供开源的[微信小程序客户端](https://github.com/wildfirechat/wx-chat)，依赖专业版IM) | 1W/套 |
 
 如果需要更高质量的音视频功能或者二开Mesh架构音视频，可以选用如下：
 
@@ -59,8 +59,8 @@ IM相关，有如下收费项目
 
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
-| 国产化Linux PC SDK（Electron版本 Linux平台） | 功能库闭源，提供[开源Electron Demo](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
-| 国产化Linux PC SDK（C语言风格版本 Linux平台） | 功能库闭源，提供[开源Qt Demo](https://github.com/wildfirechat/qt-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
+| 国产化Linux PC SDK（Electron版本 Linux平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
+| 国产化Linux PC SDK（C语言风格版本 Linux平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
 | PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 2.9W/套 |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
 | 对讲SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 2.9W/套 |

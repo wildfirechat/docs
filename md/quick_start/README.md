@@ -1,5 +1,5 @@
 # 快速开始
-部署2个服务（app-server和im-server）和打包运行客户端Demo源码即可体验私有部署的野火IM功能。
+部署2个服务（app-server和im-server）和打包运行开源客户端源码即可体验私有部署的野火IM功能。
 > 如果需要快速体验官方发布的版本，请参考[体验野火](../demo/README.md)
 
 * [服务器快速部署](server.md)

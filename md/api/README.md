@@ -7,7 +7,7 @@
 ## Android SDK
 Android的client sdk提供所有的IM服务的能力，包括连接、发送消息、会话列表等。接口文件在[这里](https://gitee.com/wfchat/android-chat/blob/master/client/src/main/java/cn/wildfirechat/remote/ChatManager.java)。接口文件中常用接口都有详细的注释。
 
-Android的音视频SDK没有源码，但可以在android代码中搜索```AVEngineKit```，看一下demo中怎么使用音视频SDK。
+Android的音视频SDK没有源码，但可以在android代码中搜索```AVEngineKit```，看一下 Android 客户端中怎么使用音视频SDK。
 
 ## iOS SDK
 iOS的client sdk有2个接口文件，分别是[WFCCNetworkService](https://gitee.com/wfchat/ios-chat/blob/master/wfclient/WFChatClient/Client/WFCCNetworkService.h)和[WFCCIMService](https://gitee.com/wfchat/ios-chat/blob/master/wfclient/WFChatClient/Client/WFCCIMService.h)。其中```WFCCNetworkService```是关于连接和回调的接口，```WFCCIMService```是业务的接口。接口上都有详细的注释。音视频的接口请参考[WFAVEngineKit](https://gitee.com/wfchat/ios-chat/blob/master/wfuikit/WFChatUIKit/AVEngine/WFAVEngineKit.xcframework/ios-arm64/WFAVEngineKit.framework/Headers/WFAVEngineKit.h)。

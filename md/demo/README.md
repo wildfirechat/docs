@@ -1,4 +1,4 @@
-# 体验即时通讯Demo
+# 体验野火IM 客户端
 > 野火IM 产品截图展示，可以点击 [这儿](https://static.wildfirechat.cn/wf-gallery.html) 查看
 
 > 以下是官方发布的版本，开发者可以直接体验。需要自行私有化部署的话，请参考[快速开始](https://docs.wildfirechat.cn/quick_start/)
@@ -10,7 +10,7 @@
 
 > 野火IM 移动端是开源的，早期为了方便开发者，甚至将签名等信息也直接放到了代码仓库里面。不法分子利用野火IM 进行非法活动，导致野火IM 的包名、签名，以及其他特征被国家反诈中心标记，进而导致正常开发者安装野火IM 之后，可能会接到反诈中心的电话。
 
-> 开发者自行部署时，没有上述问题，但务必要修改包名，不能直接使用 demo 的包名。
+> 开发者自行部署时，没有上述问题，但务必要修改包名，不能直接使用开源客户端的包名。
 
  <a href="https://static.wildfirechat.cn/download-demo.html" target="_blank">
   <img src="https://static.wildfirechat.cn/download_qrcode.png" alt="下载二维码" />
