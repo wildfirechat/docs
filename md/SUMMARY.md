@@ -208,3 +208,4 @@
   * [IM服务安全防护指南](blogs/IM服务安全防护指南.md)
   * [野火IM支持TLS与KCP连接方式](blogs/野火IM支持TLS与KCP连接方式.md)
   * [Electron PC客户的升级功能说明](blogs/electron-auto-updater-guide.md)
+  * [野火IM数据库表结构说明](blogs/wfchat_schema_documentation.md)
