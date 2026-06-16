@@ -405,6 +405,113 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 获取机器人owner的好友列表
+获取机器人owner的好友列表。
+
+#### 地址
+```
+http://domain/robot/friend/list
+```
+#### body
+N/A
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| friends | string[] | 是 | 好友用户ID列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" http://localhost/robot/friend/list
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "friends":["userId1","userId2","userId3"]
+  }
+}
+```
+
+## 根据昵称搜索用户
+根据昵称搜索用户。
+
+#### 地址
+```
+http://domain/robot/user/search
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| keyword | string | 是 | 搜索关键词，匹配用户昵称 |
+| searchType | int | 否 | 搜索类型 |
+| userType | int | 否 | 用户类型 |
+| page | int | 否 | 分页页码，从0开始 |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userInfos | [json](../admin_api/models.md#InputOutputUserInfo)[] | 是 | 匹配的用户列表 |
+| keyword | string | 是 | 搜索关键词 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"keyword\":\"user\"}" http://localhost/robot/user/search
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "userInfos":[
+      {
+        "userId":"userId1",
+        "name":"user1",
+        "displayName":"用户1"
+      }
+    ],
+    "keyword":"user"
+  }
+}
+```
+
+## 获取指定用户拥有的机器人列表
+获取指定用户所拥有的机器人列表。
+
+#### 地址
+```
+http://domain/robot/user/get_user_robots
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID（机器人owner） |
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| robotInfoList | [json](./models.md#OutputRobot)[] | 是 | 机器人信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d "{\"userId\":\"user1\"}" http://localhost/robot/user/get_user_robots
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "robotInfoList":[
+      {
+        "userId":"robot1",
+        "name":"robot1",
+        "displayName":"测试机器人",
+        "owner":"user1",
+        "callback":"http://127.0.0.1:8883/robot/recvmsg"
+      }
+    ]
+  }
+}
+```
+
 ## 发送会议请求
 机器人发送会议相关请求。
 
