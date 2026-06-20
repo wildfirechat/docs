@@ -67,3 +67,4 @@
 * [野火IM支持TLS与KCP连接方式](野火IM支持TLS与KCP连接方式.md)
 * [Electron PC客户的升级功能说明](electron-auto-updater-guide.md)
 * [野火IM数据库表结构说明](wfchat_schema_documentation.md)
+* [Agent通信的未来](A2A_vs_WeChat_Agent_Communication.md)
