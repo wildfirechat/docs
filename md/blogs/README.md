@@ -68,3 +68,5 @@
 * [Electron PC客户的升级功能说明](electron-auto-updater-guide.md)
 * [野火IM数据库表结构说明](wfchat_schema_documentation.md)
 * [Agent通信的未来](A2A_vs_WeChat_Agent_Communication.md)
+* [野火机器人MCP服务简介](野火机器人MCP服务简介.md)
+
