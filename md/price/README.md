@@ -28,7 +28,7 @@
 | iOS原生客户端 | iOS平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/ios-chat)/[Github](https://github.com/wildfirechat/ios-chat) |
 | UniApp插件SDK | UniApp平台的插件，支持IM和实时音视频功能，基于原生客户端SDK封装而来，支持iOS和Android平台 | [码云](https://gitee.com/wfchat/uni-wfc-client)/[Github](https://github.com/wildfirechat/uni-wfc-client) |
 | UniApp客户端 | UniApp平台应用，基于UniApp平台插件开发，支持iOS和Andoid平台，具有IM和实时音视频能力 | [码云](https://gitee.com/wfchat/uni-chat)/[Github](https://github.com/wildfirechat/uni-chat) |
-| Flutter平台插件 | 基于原生客户端SDK封装，只有功能库，需要客户自己开发UI | [码云](https://gitee.com/wfchat/flutter_imclient)/[Github](https://github.com/wildfirechat/flutter_imclient) |
+| Flutter平台客户端 | SDK是闭源的，UI层开源，支持所有移动端和PC端，有部分平台SDK需要购买 | [码云](https://gitee.com/wfchat/flutter-chat)/[Github](https://github.com/wildfirechat/flutter-chat) |
 | 免费版音视频SDK | 基于Mesh架构的音视频SDK，可以支持多人音视频通话，包含在各个平台的客户端项目中 | 闭源，可以免费商用 |
 
 上述免费内容可以完成一套高质量的移动社交App，支持常见即时通讯功能和多人实时音视频通话，可以进行二开，添加自定义消息和通过server api对接其他系统。嵌入到其他现有系统也是很方便的，把应用服务逻辑移植到现有服务中，把客户端SDK集成到现有App中，即可给已有应用添加上即时通讯和实时音视频功能。可以自行从码云或者Github上下载源码、二开开发和进行商用。
@@ -43,8 +43,8 @@ IM相关，有如下收费项目
 | ------ | ------ | ------ |
 | 专业版IM服务 | [专业版IM服务](../commercial_server/README.md)的软件包，不包含源码 | 2.9W/套 |
 | PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
-| PC SDK（C语言风格版本 Win/Mac平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
-| 鸿蒙原生SDK | 功能库闭源，提供[产品级开源鸿蒙客户端](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机、鸿蒙Pad和鸿蒙PC上。 | 2.9W/套 |
+| PC SDK（C语言风格版本 Win/Mac平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)和[Flutter客户端](https://github.com/wildfirechat/flutter-chat)，仅包含win/mac平台。 | 2.9W/套 |
+| 鸿蒙原生SDK | 功能库闭源，提供[产品级开源鸿蒙客户端](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机和鸿蒙Pad。 | 2.9W/套 |
 | Web SDK | Web功能库（发布包，提供[产品级开源Web客户端](https://github.com/wildfirechat/vue-chat)，依赖专业版IM） | 1W/套 |
 | 小程序SDK | 小程序功能库（发布包，支持微信、QQ、支付宝、百度、今日头条，提供开源的[微信小程序客户端](https://github.com/wildfirechat/wx-chat)，依赖专业版IM) | 1W/套 |
 
@@ -60,7 +60,9 @@ IM相关，有如下收费项目
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
 | 国产化Linux PC SDK（Electron版本 Linux平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
-| 国产化Linux PC SDK（C语言风格版本 Linux平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
+| 国产化Linux PC SDK（C语言风格版本 Linux平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)和[Flutter客户端](https://github.com/wildfirechat/flutter-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
+| 鸿蒙PC SDK（Electron版本 鸿蒙平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含鸿蒙平台 | 2.9W/套 |
+| 鸿蒙PC SDK（C语言风格版本 鸿蒙平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)和[Flutter客户端](https://github.com/wildfirechat/flutter-chat)，不影响二次开发，仅包含鸿蒙平台 | 2.9W/套 |
 | PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 2.9W/套 |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
 | 对讲SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 2.9W/套 |
