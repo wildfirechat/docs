@@ -437,7 +437,7 @@ Flyway 数据库迁移框架自动维护的元数据表，记录每次迁移脚�
 | `_data` | blob | 消息内容的 Protobuf 二进制数据 |
 | `_searchable_key` | text | 可搜索的文本内容（用于全文检索） |
 | `_dt` | datetime | 消息时间 |
-| `_content_type` | int | （仅分片表有）消息内容类型：0-文本，1-图片，2-语音，3-视频，4-位置，5-文件，6-贴图，7-链接等 |
+| `_content_type` | int | （仅分片表有）消息内容类型，请参考[消息类型定义](https://docs.wildfirechat.cn/base_knowledge/message_payload.html) |
 | `_to` | varchar(64) | 显式接收者（群聊中指定特定成员可见时使用） |
 
 **索引**: `_mid`(唯一), `(_type, _target, _line)`
