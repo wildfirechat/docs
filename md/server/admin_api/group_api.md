@@ -746,13 +746,13 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 ```
 http://domain:18080/admin/user/put_setting
 ```
-> 此接口复用用户设置接口，设置scope=6, key=groupId
+> 此接口复用用户设置接口，设置scope=26, key=groupId
 
 #### body
 | 参数 | 类型 | 必需 | 描述 |
 | ------ | ------ | --- | ------ |
 | userId | string | 是 | 用户ID |
-| scope | int | 是 | 范围，设置为6 |
+| scope | int | 是 | 范围，设置为26 |
 | key | string | 是 | 群组ID |
 | value | string | 是 | 备注内容 |
 
@@ -764,7 +764,7 @@ http://domain:18080/admin/user/put_setting
 curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
   "{                       \
     \"userId\":\"user1\",       \
-    \"scope\": 6,    \
+    \"scope\": 26,    \
     \"key\": \"groupId1\",   \
     \"value\": \"重要群组\"   \
     }"                                \
@@ -778,88 +778,6 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 
 ## 获取群备注
 获取用户对群组的备注信息。
-
-#### 地址
-```
-http://domain:18080/admin/user/get_setting
-```
-> 此接口复用用户设置接口，获取scope=6, key=groupId
-
-#### body
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
-| scope | int | 是 | 范围，设置为6 |
-| key | string | 是 | 群组ID |
-
-#### 响应
-
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-| scope | int | 是 | 范围 |
-| key | string | 是 | 键 |
-| value | string | 是 | 备注内容 |
-
-#### 示例
-```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
-  "{                       \
-    \"userId\":\"user1\",       \
-    \"scope\": 6,    \
-    \"key\": \"groupId1\"   \
-    }"                                \
-  http://localhost:18080/admin/user/get_setting
-
-{
-  "code":0,
-  "msg":"success",
-  "result":{
-    "scope":6,
-    "key":"groupId1",
-    "value":"重要群组"
-  }
-}
-```
-
-## 收藏群组
-为用户设置群组的收藏状态。
-
-#### 地址
-```
-http://domain:18080/admin/user/put_setting
-```
-> 此接口复用用户设置接口，设置scope=26, key=groupId, value为"1"表示收藏，"0"表示取消收藏
-
-#### body
-| 参数 | 类型 | 必需 | 描述 |
-| ------ | ------ | --- | ------ |
-| userId | string | 是 | 用户ID |
-| scope | int | 是 | 范围，设置为26 |
-| key | string | 是 | 群组ID |
-| value | string | 是 | "1"收藏，"0"取消收藏 |
-
-#### 响应
-无
-
-#### 示例
-```
-curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
-  "{                       \
-    \"userId\":\"user1\",       \
-    \"scope\": 26,    \
-    \"key\": \"groupId1\",   \
-    \"value\": \"1\"   \
-    }"                                \
-  http://localhost:18080/admin/user/put_setting
-
-{
-  "code":0,
-  "msg":"success"
-}
-```
-
-## 是否收藏群组
-获取用户是否收藏了指定群组。
 
 #### 地址
 ```
@@ -880,7 +798,7 @@ http://domain:18080/admin/user/get_setting
 | ------ | ------ | --- | ------ |
 | scope | int | 是 | 范围 |
 | key | string | 是 | 键 |
-| value | string | 是 | "1"已收藏，"0"未收藏 |
+| value | string | 是 | 备注内容 |
 
 #### 示例
 ```
@@ -897,6 +815,88 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
   "msg":"success",
   "result":{
     "scope":26,
+    "key":"groupId1",
+    "value":"重要群组"
+  }
+}
+```
+
+## 收藏群组
+为用户设置群组的收藏状态。
+
+#### 地址
+```
+http://domain:18080/admin/user/put_setting
+```
+> 此接口复用用户设置接口，设置scope=6, key=groupId, value为"1"表示收藏，"0"表示取消收藏
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| scope | int | 是 | 范围，设置为6 |
+| key | string | 是 | 群组ID |
+| value | string | 是 | "1"收藏，"0"取消收藏 |
+
+#### 响应
+无
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"user1\",       \
+    \"scope\": 6,    \
+    \"key\": \"groupId1\",   \
+    \"value\": \"1\"   \
+    }"                                \
+  http://localhost:18080/admin/user/put_setting
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
+## 是否收藏群组
+获取用户是否收藏了指定群组。
+
+#### 地址
+```
+http://domain:18080/admin/user/get_setting
+```
+> 此接口复用用户设置接口，获取scope=6, key=groupId
+
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| userId | string | 是 | 用户ID |
+| scope | int | 是 | 范围，设置为6 |
+| key | string | 是 | 群组ID |
+
+#### 响应
+
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| scope | int | 是 | 范围 |
+| key | string | 是 | 键 |
+| value | string | 是 | "1"已收藏，"0"未收藏 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d   \
+  "{                       \
+    \"userId\":\"user1\",       \
+    \"scope\": 6,    \
+    \"key\": \"groupId1\"   \
+    }"                                \
+  http://localhost:18080/admin/user/get_setting
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "scope":6,
     "key":"groupId1",
     "value":"1"
   }
