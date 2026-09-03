@@ -70,4 +70,4 @@
 * [Agent通信的未来](A2A_vs_WeChat_Agent_Communication.md)
 * [野火机器人MCP服务简介](野火机器人MCP服务简介.md)
 * [野火 IM × Hermes：用一座桥，把企业即时通讯接入 AI Agent 时代](野火IMxHermes：用一座桥，把企业即时通讯接入AIAgent时代.md)
-
+* [野火IM与AI对接开发说明](野火IM与AI对接开发说明.md)
