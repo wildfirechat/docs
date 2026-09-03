@@ -555,6 +555,47 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 设置会话级用户设置
+机器人设置会话级别的用户设置，支持单聊和群聊。群聊时会写入到群内所有成员（机器人本身除外）的用户设置中；单聊时会写入到对方用户的用户设置中。
+
+设置以[用户设置](../base_knowledge/user_setting.md)的形式存储，scope为31（会话级用户设置），key的格式为 ```会话类型-会话线路-会话目标_type```，按会话隔离。此scope只允许机器人写入，普通客户端无权修改。用户设置会自动实时同步到用户的所有端，客户端读取当前用户关于该会话的用户设置即可获取机器人写入的内容。
+
+可用于向会话内用户同步机器人/AI的状态和进度等信息。
+
+#### 地址
+```
+http://domain/robot/conversation/user_setting
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| conversation | [json](../admin_api/models.md#Conversation) | 是 | 会话，仅支持单聊（type为0）和群聊（type为1） |
+| type | int | 是 | 设置类型，业务方自定义 |
+| value | string | 否 | 设置的值，可以为任意内容（如JSON），为空时清空 |
+
+#### 响应
+N/A
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
+  "{                       \
+    \"conversation\": {              \
+      \"type\":1,            \
+      \"target\":\"groupId1\",      \
+      \"line\":0,           \
+    },                        \
+    \"type\":1,                       \
+    \"value\":\"processing 60%\"   \
+  }"                                \
+  http://localhost/robot/conversation/user_setting
+
+{
+  "code":0,
+  "msg":"success"
+}
+```
+
 ## 群操作
 [机器人群操作](./group_api.md)
 
