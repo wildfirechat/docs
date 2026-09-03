@@ -71,6 +71,12 @@ UserSettingScope_Group_Remark = 26,
 UserSettingScope_Privacy_Searchable = 27,
 //不能直接使用，协议栈内会使用此值
 UserSettingScope_AddFriend_NoVerify = 28,
+//不能直接使用，协议栈内会使用此值
+UserSettingScope_Sync_Badge = 29,
+//不能直接使用，协议栈内会使用此值
+UserSettingScope_Lock_PC = 30,
+//会话级用户设置，只允许机器人写入，普通客户端无权修改。key的格式为“会话类型-会话线路-会话目标_type”，按会话隔离；可用于向会话内用户同步机器人/AI的状态和进度等信息。详情请参考 Robot API 的[设置会话级用户设置](../server/robot_api/README.md)
+UserSettingScope_Conversation_Setting = 31,
 
 //自定义用户设置，请使用1000以上的key
 UserSettingScope_Custom_Begin = 1000
