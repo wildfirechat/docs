@@ -42,11 +42,31 @@ IM相关，有如下收费项目
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
 | 专业版IM服务 | [专业版IM服务](../commercial_server/README.md)的软件包，不包含源码 | 2.9W/套 |
-| PC SDK（Electron版本 Win/Mac平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，仅包含win/mac平台。 | 2.9W/套 |
-| PC SDK（C语言风格版本 Win/Mac平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)和[Flutter客户端](https://github.com/wildfirechat/flutter-chat)，仅包含win/mac平台。 | 2.9W/套 |
+| PC SDK | PC 端功能库，支持 Windows/macOS、国产化Linux、鸿蒙PC，技术栈可选，详见下方 [PC SDK](#pc-sdk) | - |
 | 鸿蒙原生SDK | 功能库闭源，提供[产品级开源鸿蒙客户端](https://github.com/wildfirechat/hm-chat)，可以运行在鸿蒙手机和鸿蒙Pad。 | 2.9W/套 |
 | Web SDK | Web功能库（发布包，提供[产品级开源Web客户端](https://github.com/wildfirechat/vue-chat)，依赖专业版IM） | 1W/套 |
 | 小程序SDK | 小程序功能库（发布包，支持微信、QQ、支付宝、百度、今日头条，提供开源的[微信小程序客户端](https://github.com/wildfirechat/wx-chat)，依赖专业版IM) | 1W/套 |
+
+### PC SDK
+PC SDK 按 ***平台*** 购买，每个平台下有多种 ***技术栈*** 可选。同一平台的不同技术栈功能一致、价格相同，购买时按照自己的开发技术栈任选一种即可。
+
+| 项目 | 支持平台 | 可选技术栈 | 价格 |
+| ------ | ------ | ------ | ------ |
+| PC SDK | Windows、macOS | Electron / C语言风格 / VC++、VC#（仅Windows） | 2.9W/套 |
+| Linux PC SDK（国产化） | 国产化Linux，支持 X86_64/Arm64/龙芯/申威 架构 | Electron / C语言风格 | 2.9W/套/架构 |
+| 鸿蒙 PC SDK | 鸿蒙PC | Electron / C语言风格 | 2.9W/套 |
+
+各技术栈的区别如下，功能库均为闭源，但不影响二次开发：
+
+| 技术栈 | 说明 | 配套开源客户端 |
+| ------ | ------ | ------ |
+| Electron | 以 Electron 插件形式提供，适合使用 JS/TS + Vue/React 等前端技术栈开发 | [产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat) |
+| C语言风格 | 提供 C 风格接口，适合使用 C/C++/Qt/Flutter 等原生技术栈开发 | [开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)、[Flutter客户端](https://github.com/wildfirechat/flutter-chat) |
+| VC++、VC# | DLL 版本 SDK，在 Windows 原生应用中使用，不包含 UI 代码，没有开源 UI | 无 |
+
+> 一套授权只包含一个平台的一种技术栈，如需多个平台或者多种技术栈，需要分别购买。
+
+> Linux PC SDK 按 CPU 架构收费，需要支持几种架构就购买几套。
 
 如果需要更高质量的音视频功能或者二开Mesh架构音视频，可以选用如下：
 
@@ -59,11 +79,6 @@ IM相关，有如下收费项目
 
 | 项目 | 包含内容 | 价格 |
 | ------ | ------ | ------ |
-| 国产化Linux PC SDK（Electron版本 Linux平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
-| 国产化Linux PC SDK（C语言风格版本 Linux平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)和[Flutter客户端](https://github.com/wildfirechat/flutter-chat)，不影响二次开发，仅包含linux平台，支持 X86_64/Arm64/龙芯/申威 架构，按照架构收费 | 2.9W/套/架构 |
-| 鸿蒙PC SDK（Electron版本 鸿蒙平台） | 功能库闭源，提供[产品级开源Electron客户端](https://github.com/wildfirechat/vue-pc-chat)，不影响二次开发，仅包含鸿蒙平台 | 2.9W/套 |
-| 鸿蒙PC SDK（C语言风格版本 鸿蒙平台） | 功能库闭源，提供[开源Qt客户端](https://github.com/wildfirechat/qt-pc-chat)和[Flutter客户端](https://github.com/wildfirechat/flutter-chat)，不影响二次开发，仅包含鸿蒙平台 | 2.9W/套 |
-| PC SDK（VC++/VC#版本） | DLL版本SDK，可以在windows原生应用中使用，不包含UI代码，没有开源UI | 2.9W/套 |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
 | 对讲SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 2.9W/套 |
 | 接龙服务 | 接龙服务源码 | 1W |
