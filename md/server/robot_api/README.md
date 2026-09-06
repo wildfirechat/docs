@@ -79,6 +79,61 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 获取单条消息
+#### 地址
+```
+http://domain/robot/message/get_one
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| messageUid | long | 是 | 消息唯一ID |
+
+> 机器人只能获取**自己参与会话中**的消息；其它会话/无权限的消息会返回错误。
+> 文本消息的正文在响应 `payload.searchableContent` 中（引用消息场景：客户端引用里携带的
+> `u`（被引消息uid）即为本接口的 `messageUid`，可用它取回被引消息的完整原文）。
+
+#### 响应
+`result` 为消息数据（`OutputMessageData`），主要字段如下：
+
+| 参数 | 类型 | 描述 |
+| ------ | ------ | ------ |
+| messageId | long | 消息ID |
+| sender | string | 发送者uid |
+| conv | [json](../admin_api/models.md#Conversation) | 会话 |
+| payload | [json](../admin_api/models.md#MessagePayload) | 消息负载（文本正文在 searchableContent） |
+| toUsers | string[] | 消息的目标用户（群/频道中指定接收者时才有） |
+| timestamp | long | 服务器时间 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -H "rid":"robota" -d   \
+  "{                       \
+    \"messageUid\":574459227613954178    \
+  }"                                \
+  http://domain/robot/message/get_one
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "messageId":160399542,
+    "sender":"user1",
+    "conv":{
+      "type":1,
+      "target":"groupId",
+      "line":0
+    },
+    "payload":{
+      "type":1,
+      "searchableContent":"hello world"
+    },
+    "toUsers":[],
+    "timestamp":17123423234324
+  }
+}
+```
+
 ## 更新消息
 #### 地址
 ```

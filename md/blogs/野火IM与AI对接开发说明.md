@@ -30,8 +30,11 @@ Agent服务暴露一个HTTP回调地址，IM服务把用户消息推送到该地
 └───────────────┘    (8884)     └──────────────┘        (8885)          └─────────┘
 ```
 
-- Agent服务作为客户端通过WebSocket主动连出到网关，无需公网IP，即可与IM服务双向通信。
-- 网关支持多机器人同时接入、动态鉴权、心跳保活与自动重连，提供Java和JS版本的客户端SDK。
+- Agent服务作为客户端通过WebSocket主动连出到网关，无需公网IP，即可与IM服务双向通信。实现这种穿透连接的**客户端SDK**由[robot-gateway仓库](https://github.com/wildfirechat/robot-gateway)随附提供：
+  - [Java版客户端SDK](https://github.com/wildfirechat/robot-gateway/tree/main/client)：位于仓库`client/`目录，编译产物为`client-1.0.0.jar`，封装了RobotService的完整接口；
+  - [JS版客户端SDK](https://github.com/wildfirechat/robot-gateway/tree/main/client.js)：位于仓库`client.js/`目录，也发布到npm（[@wildfirechat/robot-gateway-client-sdk](https://www.npmjs.com/package/@wildfirechat/robot-gateway-client-sdk)）；
+  - 使用示例见仓库[demo](https://github.com/wildfirechat/robot-gateway/tree/main/demo)目录。
+- 网关支持多机器人同时接入、动态鉴权、心跳保活与自动重连。
 - 网关内置**机器人工厂（BotFather）**功能，用户在IM客户端内通过聊天命令（`/create`、`/list` 等）即可在线创建和管理机器人，创建后自动下发机器人ID、密钥和网关连接地址。
 - 网关仓库中还提供了多种AI平台的现成对接插件：OpenClaw适配器、DeepSeek Harness（dsh）插件、Hermes桥接、Claude Code桥接（cc-connect）等，多数场景可以拿来即用。
 
