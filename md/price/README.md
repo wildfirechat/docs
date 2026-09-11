@@ -24,6 +24,9 @@
 | 频道（公众号）服务 | 处理频道相关业务，实现类似于微信公众号的功能 | [码云](https://gitee.com/wfchat/channel-platform)/[Github](https://github.com/wildfirechat/channel-platform) |
 | 组织通讯录服务 | 展现组织架构和员工信息 | [码云](https://gitee.com/wfchat/organization-platform)/[Github](https://github.com/wildfirechat/organization-platform) |
 | 归档服务 | 旧消息归档 | [码云](https://gitee.com/wfchat/archive-server)/[Github](https://github.com/wildfirechat/archive-server) |
+| 接龙服务 | 处理群接龙相关业务 | [码云](https://gitee.com/wfchat/wf-jielong-server)/[Github](https://github.com/wildfirechat/wf-jielong-server) |
+| 投票服务 | 处理投票相关业务 | [码云](https://gitee.com/wfchat/wf-poll-server)/[Github](https://github.com/wildfirechat/wf-poll-server) |
+| 网盘服务 | 处理网盘相关业务 | [码云](https://gitee.com/wfchat/wf-pan)/[Github](https://github.com/wildfirechat/wf-pan) |
 | Android原生客户端 | Android平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/android-chat)/[Github](https://github.com/wildfirechat/android-chat) |
 | iOS原生客户端 | iOS平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/ios-chat)/[Github](https://github.com/wildfirechat/ios-chat) |
 | UniApp插件SDK | UniApp平台的插件，支持IM和实时音视频功能，基于原生客户端SDK封装而来，支持iOS和Android平台 | [码云](https://gitee.com/wfchat/uni-wfc-client)/[Github](https://github.com/wildfirechat/uni-wfc-client) |
@@ -80,9 +83,6 @@ PC SDK 按 ***平台*** 购买，每个平台下有多种 ***技术栈*** 可选
 | ------ | ------ | ------ |
 | 朋友圈SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 1W/套 |
 | 对讲SDK | sdk闭源，UI开源，只支持移动端，依赖专业版IM服务。 | 2.9W/套 |
-| 接龙服务 | 接龙服务源码 | 1W |
-| 投票服务 | 投票服务源码 | 1W |
-| 网盘服务 | 网盘服务源码 | 1W |
 | 管理后台源码 | 包括数据统计，用户管理，敏感词管理，群组管理，消息查看，消息撤回，机器人管理，频道管理。现有截图参考[后台管理](https://github.com/wildfirechat/admin/blob/master/README.md)。可用于多个项目。 | 3W |
 | 语音转文字服务 | 实现语音消息转文字功能，私有化部署。软件包分架构，只支持linux系统的amd64架构或arm64架构。语音消息转文字和会议纪要功能依赖此服务 | 软件包1W/源码5W |
 | 直播互动 | 把WebRTC转直播，支持直播连麦，依赖专业版IM服务和音视频高级版 | 软件包2.9W |
