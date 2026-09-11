@@ -27,11 +27,15 @@
 | 接龙服务 | 处理群接龙相关业务 | [码云](https://gitee.com/wfchat/wf-jielong-server)/[Github](https://github.com/wildfirechat/wf-jielong-server) |
 | 投票服务 | 处理投票相关业务 | [码云](https://gitee.com/wfchat/wf-poll-server)/[Github](https://github.com/wildfirechat/wf-poll-server) |
 | 网盘服务 | 处理网盘相关业务 | [码云](https://gitee.com/wfchat/wf-pan)/[Github](https://github.com/wildfirechat/wf-pan) |
+| 消息搜索服务 | 提供消息搜索能力 | [码云](https://gitee.com/wfchat/search_server) |
+| 音视频会议媒体服务 | 音视频高级版使用的媒体服务，SFU 架构 | [码云](https://gitee.com/wfchat/wf-janus)/[Github](https://github.com/wildfirechat/wf-janus) |
+| 机器人MCP服务 | 让机器人接入 MCP 协议，扩展机器人能力 | [码云](https://gitee.com/wfchat/wf-robot-mcp-server.ts)/[Github](https://github.com/wildfirechat/wf-robot-mcp-server.ts) |
 | Android原生客户端 | Android平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/android-chat)/[Github](https://github.com/wildfirechat/android-chat) |
 | iOS原生客户端 | iOS平台原生客户端，包括SDK，和应用，拥有完善的即时通讯和实时音视频功能，协议栈闭源其他都开源 | [码云](https://gitee.com/wfchat/ios-chat)/[Github](https://github.com/wildfirechat/ios-chat) |
 | UniApp插件SDK | UniApp平台的插件，支持IM和实时音视频功能，基于原生客户端SDK封装而来，支持iOS和Android平台 | [码云](https://gitee.com/wfchat/uni-wfc-client)/[Github](https://github.com/wildfirechat/uni-wfc-client) |
 | UniApp客户端 | UniApp平台应用，基于UniApp平台插件开发，支持iOS和Andoid平台，具有IM和实时音视频能力 | [码云](https://gitee.com/wfchat/uni-chat)/[Github](https://github.com/wildfirechat/uni-chat) |
 | Flutter平台客户端 | SDK是闭源的，UI层开源，支持所有移动端和PC端，有部分平台SDK需要购买 | [码云](https://gitee.com/wfchat/flutter-chat)/[Github](https://github.com/wildfirechat/flutter-chat) |
+| ESP32客户端 | 基于 ESP32 开发的野火IM 客户端，支持 IM、音频通话和对讲功能 | [码云](https://gitee.com/wfchat/esp-chat)/[Github](https://github.com/wildfirechat/esp-chat) |
 | 免费版音视频SDK | 基于Mesh架构的音视频SDK，可以支持多人音视频通话，包含在各个平台的客户端项目中 | 闭源，可以免费商用 |
 
 上述免费内容可以完成一套高质量的移动社交App，支持常见即时通讯功能和多人实时音视频通话，可以进行二开，添加自定义消息和通过server api对接其他系统。嵌入到其他现有系统也是很方便的，把应用服务逻辑移植到现有服务中，把客户端SDK集成到现有App中，即可给已有应用添加上即时通讯和实时音视频功能。可以自行从码云或者Github上下载源码、二开开发和进行商用。
