@@ -326,7 +326,7 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，Shentong7，h2db，Mon
       <td >支持</td>
   </tr>
   <tr >
-	    <td rowspan="3" bgcolor="white">安全</td>
+	    <td rowspan="4" bgcolor="white">安全</td>
 	    <td>信令加密</td>
 	    <td>支持</td>
       <td>支持</td>
@@ -338,6 +338,11 @@ MySQL，PostgreSQL，SQL Server，Kingbase-v8，Dameng8，Shentong7，h2db，Mon
 	</tr>
 	<tr>
 	    <td >token验证</td>
+	    <td >支持</td>
+	    <td >支持</td>
+	</tr>
+	<tr>
+	    <td >传输加密（TLS/WSS）</td>
 	    <td >支持</td>
 	    <td >支持</td>
 	</tr>

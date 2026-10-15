@@ -26,7 +26,7 @@ server{
 }
 
 server {
-    listen 443;
+    listen 443 ssl;
     server_name  web.wildfirechat.net;
 
     root /home/ubuntu/wildfirechat_web/src; #将 vue-chat 打包出来的 dist 目录下的所有内容放到这儿
@@ -61,8 +61,8 @@ server {
         ssl_certificate   cert/app.pem;
         ssl_certificate_key  cert/app.key;
         ssl_session_timeout 5m;
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
+        ssl_protocols TLSv1.2 TLSv1.3;
         ssl_prefer_server_ciphers on;
 
         ## 不需要添加 add_header Access-Control-Allow-Origin $http_origin; 等添加跨域相关 header 的配置，app-server 已经处理了跨域了，所有请求透传过去即可
@@ -114,16 +114,15 @@ server {
 }
 
 server {
-        listen 443;
+        listen 443 ssl;
         server_name wildfirechat.net;
-        ssl on;
         root html;
         index index.html index.htm;
         ssl_certificate   cert/a.pem;
         ssl_certificate_key  cert/a.key;
         ssl_session_timeout 5m;
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
+        ssl_protocols TLSv1.2 TLSv1.3;
         ssl_prefer_server_ciphers on;
         location /route {
                 proxy_set_header  Host  $host;

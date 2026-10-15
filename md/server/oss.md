@@ -52,7 +52,7 @@ server_url对应不同的七牛存储区域，选择下表中对应区域的服�
 ![bucket和domain](./assert/qiniu_bucket_domain.jpeg)
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照七牛网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照七牛网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式（如果客户端启用了TLS连接方式，协议栈上传走HTTPS，则可以开启强制HTTPS）。
 
 然后修改配置，domain改成https地址
 ```
@@ -60,10 +60,10 @@ media.bucket_XXXX_domain https://cdn.mediaserver.com
 ```
 
 ## 使用野火IM私有存储
-野火IM专业版支持野火IM私有存储，请[点击这里](https://gitee.com/wfchat/WF-minio)查看说明。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传（数据经过加密上传的）。
+野火IM专业版支持野火IM私有存储，请[点击这里](https://gitee.com/wfchat/WF-minio)查看说明。需要注意的是如果添加HTTPS支持，需要确保HTTP同时支持，因为协议栈内会用HTTP的方式上传（数据经过加密上传的）。如果客户端启用了TLS连接方式，协议栈上传走HTTPS，则可以只开启HTTPS。
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。可以使用Nginx，增加HTTPS访问功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式（如果客户端启用了TLS连接方式，协议栈上传走HTTPS，则可以开启强制HTTPS）。
 
 然后修改配置，domain改成https地址
 ```
@@ -118,7 +118,7 @@ Web用户需要设置跨域信息，从下图进入设置
 ![CORS](./assert/aliyun_oss_cors.png)
 
 ### 配置HTTPS
-可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式。
+可以开启HTTPS增强安全性，另外如果WebIM使用了HTTPS，那么对象存储服务器也必须支持HTTPS。按照阿里云网站指引，开启HTTPS功能，注意 ***一定不要开启强制HTTPS***，因为移动端和PC端协议栈上传数据是用的HTTP方式（如果客户端启用了TLS连接方式，协议栈上传走HTTPS，则可以开启强制HTTPS）。
 
 然后修改配置，domain改成https地址
 ```
@@ -173,7 +173,7 @@ Web用户需要设置跨域信息，从下图进入设置
 ![CORS](./assert/tencent_oss_cors.png)
 
 ### 使用HTTPS
-腾讯云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS。
+腾讯云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS（如果客户端启用了TLS连接方式，协议栈上传走HTTPS，则可以改成强制HTTPS）。
 
 ## 使用使用华为云OBS
 野火IM专业版支持华为云对象存储，在同一个区域内创建至少2个桶（bucket）（一个用来保存头像/收藏等需要长期保存的桶，另外一个用来保存会话内发送的图片、文件、语音、视频等可以定期清除的桶。所有的桶都要在同一个区域内，不能分散在不同的区域。建议为每种媒体类型都创建一个桶，这里示例就只创建2个桶，可以参考示例为每个类型创建一个桶）。如下图所示：
@@ -223,7 +223,7 @@ Web用户需要设置跨域信息，从下图进入设置
 ![CORS](./assert/huawei_oss_cors.png)
 
 ### 使用HTTPS
-华为云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS。
+华为云默认是可以HTTPS和HTTP，移动端和PC上传使用HTTP，下载可以用HTTPS。注意不要改成强制HTTPS（如果客户端启用了TLS连接方式，协议栈上传走HTTPS，则可以改成强制HTTPS）。
 
 ## 使用亚马逊S3
 media_type设置为7，同其他云存储一样，配置ak/sk，然后创建合适的桶，IM服务配置中需要配置正确的region。
