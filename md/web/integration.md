@@ -16,7 +16,7 @@
 1. 将```src/wfc```、```src/platform.js``` 和 ```src/config.js```拷贝到自己项目，并且```wfc```目录、```platform.js``` 和```config.js```处于同级目录。
 2. 安装额外的依赖
 
-   ```npm install --save long detectrtc base64-arraybuffer```
+   `npm install --save long detectrtc base64-arraybuffer`
 3. 修改```config.js```中的配置信息，如果不进行修改或修改错误，将不能正确连接IM：
    * ```USE_WSS```：是否使用WSS进行连接，```IM SERVER```默认没有开启WSS，需要手动配置。
    * ```ROUTE_PORT```：http route请求的端口，默认是80；当配置https之后，需要修改为对应端口，如443等
