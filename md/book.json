@@ -48,6 +48,7 @@
         "3-ba@^0.9.0",
         "terminal@^0.3.2",
         "alerts@^0.2.0",
+        "include-csv@^0.1.0",
         "-sharing",
         "sharing-plus@^0.0.2",
         "include-codeblock@^3.0.2",

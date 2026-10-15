@@ -1,8 +1,8 @@
 set -e
 
-npx honkit build
+gitbook build
 mv _book docs
-npx honkit pdf .  野火IM开发文档.pdf
+gitbook pdf .  野火IM开发文档.pdf
 mkdir -p docs/pdf
 mv 野火IM开发文档.pdf docs/pdf
 cp -af ../trickle-ice docs/webrtc/
