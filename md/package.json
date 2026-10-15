@@ -23,6 +23,8 @@
     "gitbook-plugin-github-buttons": "^3.0.0",
     "gitbook-plugin-include-codeblock": "^3.2.3",
     "gitbook-plugin-navigator": "^1.1.1",
+    "gitbook-plugin-prism": "^2.4.0",
+    "gitbook-plugin-prism-themes": "^0.0.2",
     "gitbook-plugin-search-plus": "^1.0.4-alpha-3",
     "gitbook-plugin-sectionx": "^3.1.0",
     "gitbook-plugin-sharing-plus": "^0.0.2",
@@ -32,9 +34,6 @@
     "gitbook-plugin-tbfed-pagefooter": "^0.0.1",
     "gitbook-plugin-terminal": "^0.3.2",
     "gitbook-plugin-todo": "^0.1.3",
-    "honkit": "^6.2.2"
-  },
-  "overrides": {
-    "qs": "^6.16.0"
+    "honkit": "^3.7.5"
   }
 }
