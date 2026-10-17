@@ -1,5 +1,5 @@
 # Channel API接口
-Channel API是供频道服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。***端口使用80端口，不同于Sever API的端口(默认18080)***。
+Channel API是供频道服务器调用的。所有的请求都是POST请求，请求body使用json格式。所有接口的调用都必须经过签名。所有的响应数据都是JSON格式。***社区版IM服务使用HTTP，默认端口为80；专业版IM服务支持HTTP和HTTPS，具体协议和端口以部署配置为准。Server API的端口默认为18080。***
 
 > 关于频道属性和基础概念的更多说明，请参考[频道](../../base_knowledge/channel.md)
 

@@ -9,8 +9,8 @@
 3. 需要准备一个 ip，多个端口，并准备对应 ip 的证书
    1. 8888 http 访问 app-server 的端口
    2. 8884 https 访问 app-server 的端口
-   3. 80 http 方式访问 im-server 的端口，im-server 默认监听，一定要求支持，移动端需要
-   4. 443 https 方式访问 im-server 的端口
+   3. 80 http 方式访问 im-server 的端口，未启用 TLS 的原生客户端需要
+   4. 443 https 方式访问 im-server 的端口，Web客户端以及专业版启用 TLS 的原生客户端需要
    5. 1883 im-server 长连接端口
    6. 8083 im-server websocket 端口
    7. 8084 im-server secure websocket 端口

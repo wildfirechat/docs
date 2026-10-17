@@ -97,7 +97,7 @@ AVEngineKit.getInstance().init(robotService, engineKitCallback);
 
 #### 2.3.1 发送接口（HTTP API）
 
-机器人API通过HTTP协议提供，所有请求均为POST，请求体使用JSON格式。**端口使用80端口**（不同于Server API的18080端口）。
+机器人API在社区版IM服务中通过HTTP提供，默认使用80端口；专业版IM服务支持HTTP和HTTPS，具体协议和端口以部署配置为准（Server API默认使用18080端口）。所有请求均为POST，请求体使用JSON格式。
 
 完整API文档请参考：https://docs.wildfirechat.cn/server/robot_api/
 
@@ -1649,7 +1649,7 @@ public interface AudioDevice {
 
 #### 8.2.2 设置回调地址
 
-应用层需要提供一个HTTP接口供IM服务推送消息和会议事件。
+应用层需要提供回调接口供IM服务推送消息和会议事件。社区版IM服务使用HTTP回调；专业版IM服务支持HTTP和HTTPS回调，回调地址的协议必须与应用层实际部署一致，生产环境建议使用HTTPS。
 
 **步骤1**：在应用层实现回调接口
 
@@ -1698,7 +1698,7 @@ import cn.wildfirechat.sdk.RobotService;
 
 // 初始化机器人服务
 RobotService robotService = new RobotService(
-    "http://im-server:80",  // IM服务器地址（注意是80端口）
+    "http://im-server:80",  // 社区版IM服务HTTP示例，默认使用80端口
     "robot_av_001",          // 机器人用户ID
     "robot_password"         // 机器人密码
 );
@@ -1722,7 +1722,7 @@ AVEngineKit.getInstance().enableWebRTCLog();
 
 **⚠️ 重要：回调配置是音视频功能正常工作的关键！**
 
-应用层需要提供一个HTTP接口供IM服务推送消息和会议事件。
+应用层需要提供回调接口供IM服务推送消息和会议事件。社区版IM服务使用HTTP回调；专业版IM服务支持HTTP和HTTPS回调，回调地址的协议必须与应用层实际部署一致，生产环境建议使用HTTPS。
 
 #### 8.3.1 回调接口规范
 

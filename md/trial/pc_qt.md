@@ -18,7 +18,7 @@ PC需要自己打包，从[Github](https://github.com/wildfirechat/qt-pc-chat)�
 
 ## 修改配置
 修改```qt-pc-chat/src/config.cpp```文件，修改```APP_SERVER```为你的应用服务器地址，比如```http://192.168.1.100:8888```。
-> APP服务配置host与端口组成的完整http地址。
+> APP服务需要配置包含```http://```或```https://```、host与端口的完整地址，协议必须与应用服务实际配置一致，生产环境建议使用HTTPS。
 
 ## 打包运行
 打包之后运行，使用野火IM手机版扫码登录。
