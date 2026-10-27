@@ -1,0 +1,47 @@
+# 旧版 gitbook-cli 只能运行在 Node 10 上,新系统已无法安装 Node 10,
+# 因此使用 node:10-buster 镜像完成文档构建。
+#
+# 构建镜像:
+#   docker build -f Dockerfile.gitbook -t wildfire-gitbook-builder .
+#
+# 建议使用 docker-build.sh 脚本,它会完成镜像构建和产物导出。
+
+FROM node:10-buster
+
+# 默认生成 PDF(与原 publish.sh 行为一致),PDF 依赖 calibre(ebook-convert),
+# 会使镜像体积增大很多,且首次构建较慢。通过 --build-arg WITH_PDF=false 关闭。
+ARG WITH_PDF=true
+
+# 国内网络构建慢时,可以取消下面一行的注释,使用 npm 镜像加速
+# RUN npm config set registry https://registry.npmmirror.com
+
+RUN npm install -g gitbook-cli@2.3.2 \
+    && if [ "$WITH_PDF" = "true" ]; then \
+         sed -i 's|deb\.debian\.org|archive.debian.org|g; s|security\.debian\.org|archive.debian.org|g' /etc/apt/sources.list \
+         && apt-get -o Acquire::Check-Valid-Until=false update \
+         && apt-get -o Acquire::Check-Valid-Until=false install -y --no-install-recommends calibre \
+         && rm -rf /var/lib/apt/lists/*; \
+       fi
+
+WORKDIR /gitbook
+
+# 先拷贝 book.json 并安装插件,只要 book.json 不变,
+# 插件安装这层就能命中 docker 缓存,后续构建很快。
+# 注意:不用 gitbook install,因为 gitbook 内置的 npm v3 已无法解析
+# 现在的 npm registry 元数据(报 Missing required argument #1),
+# 这里改用 node10 自带的 npm 6 直接安装插件,效果相同。
+# cheerio 固定到 0.22.0:gitbook-plugin-anchors 的依赖是 "cheerio": "*",
+# 不固定会装到新版 cheerio,依赖 node:stream 等 Node 16+ 特性而无法加载。
+COPY book.json ./
+RUN node -e "const b=require('./book.json');console.log(b.plugins.filter(p=>!p.startsWith('-')).map(p=>{const i=p.lastIndexOf('@');return i>0?'gitbook-plugin-'+p.slice(0,i)+p.slice(i):'gitbook-plugin-'+p}).join(' '))" > /tmp/plugins.txt \
+    && npm install --no-save cheerio@0.22.0 $(cat /tmp/plugins.txt)
+
+# 拷贝全部文档并构建,同时完成原 publish.sh 中的 bootstrap CDN 替换
+COPY . .
+RUN gitbook build . _book \
+    && find _book/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|https://static.wildfirechat.cn/bootstrap-3.3.7.min.css|g' {} \; \
+    && find _book/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js|https://static.wildfirechat.cn/bootstrap-3.3.7.min.js|g' {} \; \
+    && if [ "$WITH_PDF" = "true" ]; then \
+         mkdir -p _book/pdf \
+         && gitbook pdf . "_book/pdf/野火IM开发文档.pdf"; \
+       fi

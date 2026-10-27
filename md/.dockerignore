@@ -1,0 +1,12 @@
+.git
+.dockerignore
+Dockerfile.gitbook
+docker-build.sh
+docker-publish.sh
+docs
+_book
+node_modules
+docs.tar.gz
+*.pdf
+.DS_Store
+**/.DS_Store
