@@ -177,6 +177,53 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 搜索群组
+根据群组名称模糊搜索群组，仅返回未删除的群组。
+
+#### 地址
+```
+http://domain:18080/admin/group/search
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| keyword | string | 是 | 搜索关键词，匹配群组名称 |
+| page | int | 否 | 页码，从0开始，默认为0 |
+| count | int | 否 | 每页数量，默认为20，最大100 |
+
+> 关键词中的 `%`、`_` 等 LIKE 特殊字符会被转义，按普通字符匹配。
+> 结果按更新时间倒序排列；返回数量小于 `count` 时表示没有更多数据。
+> Java SDK 可以直接调用 `GroupAdmin.searchGroup` 或 `GroupAdmin.searchGroupByName`。
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| keyword | string | 是 | 搜索关键词 |
+| groupInfos | [GroupInfo](./models.md#GroupInfo) 数组 | 是 | 匹配到的群组信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp:1558350862502" -H "sign:b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"keyword\":\"Team\",\"page\":0,\"count\":20}" http://localhost:18080/admin/group/search
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "keyword":"Team",
+    "groupInfos":[
+      {
+        "target_id":"groupId1",
+        "name":"Team Alpha",
+        "portrait":"",
+        "owner":"laowang",
+        "type":2,
+        "member_count":3
+      }
+    ]
+  }
+}
+```
+
 ## 转移群组
 #### 地址
 ```

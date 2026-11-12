@@ -244,6 +244,51 @@ curl -X POST -H "nonce:76616" -H "timestamp":"1558350862502" -H "sign":"b98f9b07
 }
 ```
 
+## 搜索用户
+根据用户名或昵称模糊搜索用户，仅返回未删除的普通用户和机器人。该接口为管理员接口，不受用户隐私搜索设置限制。
+
+#### 地址
+```
+http://domain:18080/admin/user/search_by_name
+```
+#### body
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| keyword | string | 是 | 搜索关键词，同时匹配用户名（name）和昵称（displayName） |
+| page | int | 否 | 页码，从0开始，默认为0 |
+| count | int | 否 | 每页数量，默认为20，最大100 |
+
+> 关键词中的 `%`、`_` 等 LIKE 特殊字符会被转义，按普通字符匹配。
+> 结果按更新时间倒序排列；返回数量小于 `count` 时表示没有更多数据。
+> Java SDK 可以直接调用 `UserAdmin.searchUserByName`。
+
+#### 响应
+| 参数 | 类型 | 必需 | 描述 |
+| ------ | ------ | --- | ------ |
+| keyword | string | 是 | 搜索关键词 |
+| userInfos | [UserInfo](./models.md#UserInfo) 数组 | 是 | 匹配到的用户信息列表 |
+
+#### 示例
+```
+curl -X POST -H "nonce:76616" -H "timestamp:1558350862502" -H "sign:b98f9b0717f59febccf1440067a7f50d9b31bdde" -H "Content-Type:application/json" -d "{\"keyword\":\"alice\",\"page\":0,\"count\":20}" http://localhost:18080/admin/user/search_by_name
+
+{
+  "code":0,
+  "msg":"success",
+  "result":{
+    "keyword":"alice",
+    "userInfos":[
+      {
+        "userId":"user1",
+        "name":"alice",
+        "displayName":"Alice Wang",
+        "portrait":""
+      }
+    ]
+  }
+}
+```
+
 ## 获取所有用户(分页)
 分页获取系统中的所有用户。
 
