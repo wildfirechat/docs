@@ -23,6 +23,9 @@ RUN npm install -g gitbook-cli@2.3.2 \
          && rm -rf /var/lib/apt/lists/*; \
        fi
 
+RUN npm install --registry=https://registry.npmmirror.com --prefix /opt/gitbook gitbook@3.2.3 \
+    && gitbook alias /opt/gitbook/node_modules/gitbook 3.2.3
+
 WORKDIR /gitbook
 
 # 先拷贝 book.json 并安装插件,只要 book.json 不变,
@@ -34,11 +37,11 @@ WORKDIR /gitbook
 # 不固定会装到新版 cheerio,依赖 node:stream 等 Node 16+ 特性而无法加载。
 COPY book.json ./
 RUN node -e "const b=require('./book.json');console.log(b.plugins.filter(p=>!p.startsWith('-')).map(p=>{const i=p.lastIndexOf('@');return i>0?'gitbook-plugin-'+p.slice(0,i)+p.slice(i):'gitbook-plugin-'+p}).join(' '))" > /tmp/plugins.txt \
-    && npm install --no-save cheerio@0.22.0 $(cat /tmp/plugins.txt)
+    && npm install --registry=https://registry.npmmirror.com --no-save cheerio@0.22.0 $(cat /tmp/plugins.txt)
 
 # 拷贝全部文档并构建,同时完成原 publish.sh 中的 bootstrap CDN 替换
 COPY . .
-RUN gitbook build . _book \
+RUN gitbook -v 3.2.3 build . _book \
     && find _book/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|https://static.wildfirechat.cn/bootstrap-3.3.7.min.css|g' {} \; \
     && find _book/ -type f -name "*.html" -exec sed -i 's|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js|https://static.wildfirechat.cn/bootstrap-3.3.7.min.js|g' {} \; \
     && if [ "$WITH_PDF" = "true" ]; then \
